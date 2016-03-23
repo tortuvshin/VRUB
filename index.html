@@ -16,7 +16,7 @@
 		}
 
 	</style>
-	<script type="text/javascript">
+	<script>
 
 		var canvas, context;
 		var data;
@@ -61,23 +61,31 @@
 
 			if (tile == null) {
 
-				var _canvas = document.createElement("canvas");
-				_canvas.width = _canvas.height = 100;
-				_context = _canvas.getContext("2d");
+				var _c = document.createElement("canvas");
+				_c.width = _c.height = 100;
+				_ctx = _c.getContext("2d");
 
-				_context.fillStyle = "skyblue";
+				_ctx.fillStyle = "skyblue";
+				_ctx.lineWidth = 4;
+				_ctx.strokeStyle = "white";
 				
-				_context.fillRect(0, 0, 100, 100);
+				_ctx.fillRect(0, 0, 100, 100);
 				Tile.BLANK = new Image();
-				Tile.BLANK.src = _context.toDataURL();
+				Tile.BLANK.src = _c.toDataURL();
 
-				tile = Tile.BLANK;
 
-				// _context.fillStyle(0, 0, 100, 100);
+				_ctx.fillRect(0, 0, 100, 100);
 
-				// _context.beginPath();
-				// _context.arc(50, 50, 30);
-				// _context.stroke();
+				_ctx.beginPath();
+				_ctx.arc(50, 50, 30, 0, 2*Math.PI);
+				_ctx.stroke();
+
+				Tile.NOUGHT = new Image();
+				Tile.NOUGHT.src = _c.toDataURL();
+				tile = Tile.NOUGHT;
+
+				// _ctx.fillStyle(0, 0, 100, 100);
+
 			}
 
 
@@ -85,8 +93,8 @@
 
 			}
 
-			this.draw = function(context) {
-				context.drawImage(tile, x, y);
+			this.draw = function(ctx) {
+				ctx.drawImage(tile, x, y);
 			}
 
 		}
