@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>AI</title>
+	<style type="text/css">
+		canvas {
+			border: 1px solid black;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+		}
+
+	</style>
+	<script type="text/javascript">
+
+		var canvas, context;
+		var data;
+
+		window.onload = function main() {
+			
+			canvas = document.createElement("canvas");
+			canvas.width = canvas.height = 200;
+			context = canvas.getContext("2d");
+
+			document.body.appendChild(canvas);
+
+			init();
+			tick();
+		}
+
+		function init() {
+			data = new Tile(20, 20);
+		}
+
+		function tick() {
+			window.requestAnimationFrame(tick);
+
+			update();
+			render();
+
+		}
+
+		function update() {
+
+		}
+
+		function render() {
+			data.draw(context);
+		}
+
+		function Tile(x, y) {
+			
+			var x = x, y = y;
+			
+			var tile = Tile.BLANK;
+
+			if (tile == null) {
+
+				var _canvas = document.createElement("canvas");
+				_canvas.width = _canvas.height = 100;
+				_context = _canvas.getContext("2d");
+
+				_context.fillStyle = "skyblue";
+				
+				_context.fillRect(0, 0, 100, 100);
+				Tile.BLANK = new Image();
+				Tile.BLANK.src = _context.toDataURL();
+
+				tile = Tile.BLANK;
+
+				// _context.fillStyle(0, 0, 100, 100);
+
+				// _context.beginPath();
+				// _context.arc(50, 50, 30);
+				// _context.stroke();
+			}
+
+
+			this.update = function() {
+
+			}
+
+			this.draw = function(context) {
+				context.drawImage(tile, x, y);
+			}
+
+		}
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
