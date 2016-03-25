@@ -20,15 +20,27 @@
 		window.onload = function main() {
 			
 			canvas = document.createElement("canvas");
-			canvas.width = canvas.height = 200;
+			canvas.width = canvas.height = 3 * 120 + 20;
 			ctx = canvas.getContext("2d");
+
 			document.body.appendChild(canvas);
+			
+			canvas.addEventListener("mousedown", mouseDown);
+
 			init();
 			tick();
 		}
 		function init() {
-			data = new Tile(20, 20);
-			data.flip(Tile.NOUGHT);
+
+			if (data == null) {
+				data = [];
+
+				for (var i = 0; i < 9; i++) {
+					var x = (i % 3)*120 + 20;
+					var y = Math.floor(i / 3)*120 + 20;
+					data.push(new Tile(x, y));
+				}
+			}
 		}
 		function tick() {
 			window.requestAnimationFrame(tick);
@@ -36,12 +48,38 @@
 			render();
 		}
 		function update() {
-			data.update();
+			for (var i = data.length; i--;){
+				data[i].update();
+			}
 		}
 		function render() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			data.draw(ctx);
+			for (var i = data.length; i--;){
+				data[i].draw(ctx);
+			}
 		}
+
+		function mouseDown(evt) {
+			var el = evt.target;
+
+			var px = evt.clientX - el.offsetLeft;
+			var py = evt.clientY - el.offsetTop;
+
+			console.log(px + " , " + py);
+
+			if (px % 120 >= 20 || py % 120 >= 20) {
+				var idx = Math.floor(px/120);
+				idx += Math.floor(py/120)*3;
+
+				console.log(idx);
+
+				if (data[idx].hasData()) {
+					return;
+				}
+				data[idx].flip(Tile.NOUGHT);
+			}
+		}
+
 		function Tile(x, y) {
 			
 			var x = x, y = y;
@@ -78,6 +116,11 @@
 				Tile.CROSS.src = _c.toDataURL();
 				tile = Tile.BLANK;
 			}
+
+			this.hasData = function (){
+				return tile != Tile.BLANK;
+			}
+
 			this.flip = function(next) {
 				tile = next;
 				anim = 1;
@@ -100,7 +143,7 @@
 				
 				for (var i =0; i < 100; i += res) {
 					
-					var j = anim > 0.5 ? 100 - i : i;
+					var j = 50 - (anim > 0.5 ? 100 - i : i);
 
 					ctx.drawImage(t, i, 0, res, 100, 
 						x + i - p*i + 50*p,
