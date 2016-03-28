@@ -1,1 +1,1 @@
-# Artificial Intelligence Tic Tac Toy Game
+Artificial Intelligence Tic Tac Toy Game
