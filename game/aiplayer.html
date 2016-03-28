@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tic-tac-toe</title>
-	<script src="./js/gameLogic.js"></script>
+	<script src="../js/gameLogic.js"></script>
 <style>
 	canvas {
 		position: absolute;
@@ -12,6 +12,7 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
+		background-color: #3f3f3f;
 	}
 </style>
 
@@ -101,9 +102,9 @@ function Tile(x, y) {
 		var _c = document.createElement("canvas");
 		_c.width = _c.height = 100;
 		var _ctx = _c.getContext("2d");
-		_ctx.fillStyle = "skyblue";
+		_ctx.fillStyle = "white";
 		_ctx.lineWidth = 4;
-		_ctx.strokeStyle = "white";
+		_ctx.strokeStyle = "black";
 		_ctx.lineCap = "round";
 		// Blank
 		_ctx.fillRect(0, 0, 100, 100);

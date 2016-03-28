@@ -59,37 +59,20 @@ function AIPlayer(data) {
 	}
 	function evaluate() {
 		var s = 0;
-		s += evaluateLine(0, 1, 2);
-		s += evaluateLine(2, 3, 4);
-		s += evaluateLine(5, 6, 7);
-		s += evaluateLine(6, 7, 8);
-		s += evaluateLine(9, 10, 11);
-		s += evaluateLine(10, 11, 12);
-		s += evaluateLine(13, 14, 15);
-		s += evaluateLine(14, 15, 16);
-
-		s += evaluateLine(1, 5, 9);
-		s += evaluateLine(5, 9, 13);
-		s += evaluateLine(2, 6, 10);
-		s += evaluateLine(6, 10, 14);
-		s += evaluateLine(3, 7, 11);
-		s += evaluateLine(7, 11, 15);
-		s += evaluateLine(4, 8, 12);
-		s += evaluateLine(8, 12, 16);
+		s += evaluateLine(0, 1, 2, 3);
+		s += evaluateLine(4, 5, 6, 7);
+		s += evaluateLine(8, 9, 10, 11);
+		s += evaluateLine(12, 13, 14, 15);
 		
-		// s += evaluateLine(2, 7, 12);
-		// s += evaluateLine(1, 6, 11);
-		// s += evaluateLine(6, 11, 16);
-		// s += evaluateLine(5, 10, 15);
-		// s += evaluateLine(3, 6, 9);
-		// s += evaluateLine(4, 7, 10);
-		// s += evaluateLine(7, 10, 13);
-		// s += evaluateLine(8, 11, 14);
-
+		s += evaluateLine(0, 4, 8, 12);
+		s += evaluateLine(1, 5, 9, 13);
+		s += evaluateLine(2, 6, 10, 14);
+		s += evaluateLine(3, 7, 11, 15);
+		
 		return s;
 	}
 	
-	function evaluateLine(idx1, idx2, idx3) {
+	function evaluateLine(idx1, idx2, idx3, idx4) {
 		var s = 0;
 
 		if (data[idx1].equals(seed)) {
@@ -134,6 +117,24 @@ function AIPlayer(data) {
 			}
 		}
 
+		if (data[idx4].equals(seed)) {
+			if (s < 0) {
+				s *= 10;
+			} else if (s > 0) {
+				return 0;
+			} else {
+				s = 1;
+			}
+		} else if (data[idx4].equals(oppSeed)) {
+			if (s > 0) {
+				s *= 10;
+			} else if (s < 0){
+				return 0;
+			} else {
+				s = -1;
+			}
+		}
+
 		return s;
 	}
 
@@ -164,6 +165,7 @@ function AIPlayer(data) {
 				  "0001000100010000",
 				  "0000001001001000",
 				  "0000000100100100",
+
 				  ],
 			r = new Array(wp.length);
 		for (var i = wp.length;i--;) {
