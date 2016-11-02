@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Panda Resort - CMS for hotels, resorts, spa</title>
+    <meta name="author" content="Pandao">
+    <meta name="copyright" content="Pandao">
+    <meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+    <meta name="date" content="2014-12-09T00:00:00+01:00">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <link href="assets/images/favicon.png" rel="favicon">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="documenter-project-pandao-manager-" data-spy="scroll" id="top">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <a class="brand" href="#"><img src="assets/images/logo.png" alt="Pandao CMS - Simple and Effective CMS"></a>
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                    <li><a href="#get_started" title="GET STARTED">GET STARTED</a></li>
+                    <li><a href="#back_office" title="BACK OFFICE">BACK OFFICE</a></li>
+                    <li><a href="#templates" title="TEMPLATES">TEMPLATES</a></li>
+                    <li><a href="#payment" title="PAYMENT">PAYMENT</a></li>
+                    <li><a href="#screenshots" title="SCREENSHOTS">SCREENSHOTS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>    
+<div class="container" id="documenter_content">
+    <div id="documenter-cover">
+        <div class="masthead">
+            <h1>Panda Resort<br><small>a web software to create and manage websites for hotels, resorts, spa...</small></h1>
+            <p>Pandao Resort uses Pandao CMS, a Content Managment System which contains a simple, ergonomic and complete admin panel which allows you to manage easily the content of your website
+            coupled with an easyly customizable template.<br>
+            Several new specific modules: bookings, rooms, rates, currencies, extra services and facilities.<br>
+            Pandao CMS is fully responsive, so use it as well on your smartphone as on your computer.<br>
+            Based on PDO/MySQL - PHP 4.x/5.x - HTML5 - CSS3 - Bootstrap 3.x</p>
+            <ul class="marketing-byline">
+                <li>created: 15/09/2015</li>
+                <li>latest update: 21/01/2016</li>
+                <li>by: Pandao</li>
+            </ul>
+            <p class="download-info">
+                <a href="http://www.pandao.eu/items/?item=PandaResort" target="_blank" class="btn btn-primary btn-large">Front office Demo</a>
+                <a href="http://www.pandao.eu/items/?item=PandaResortbo" target="_blank" class="btn btn-default btn-large">Admin panel Demo</a>
+                <a href="http://codecanyon.net/item/pandao-resort-cms-for-hotel-resort-spa/12913332" target="_blank" class="btn btn-primary btn-large">Purchase &amp; Download</a>
+            </p>
+            <p><strong>Thank you for purchasing our CMS. If you have any questions that are beyond the scope of this help file, please contact us. Thanks so much!</strong></p>
+            <img src="assets/images/doc-header.jpg" alt="Features" class="img-responsive">
+        </div>
+    </div>
+    <section id="get_started">
+        <div class="page-header"><h3>GET STARTED</h3></div>
+
+        <img src="assets/images/steps.png" class="img-responsive" alt="">
+        
+        <h2>The following sections are useful only for a manual installation</h2>
+        <h4 id="get_started_files_and_folders_rights">Files and folders rights</h4>
+        <p>According to your host, you could need to grant the rights 777 (r+w+x) to the following files</p>
+        <ul>
+            <li><strong>/common/config.php</strong>&nbsp;&nbsp; &nbsp;the settings editable in the manager</li>
+            <li><strong>/medias/</strong>&nbsp;&nbsp; &nbsp;the files and pictures of dynamic elements</li>
+            <li><strong>/.htaccess</strong>&nbsp;&nbsp; &nbsp;general rules, basedir and url rewriting</li>
+        </ul>
+        <div class="alert">To set 777 rights on &quot;medias&quot; folder including all the files within all the subfolders, use the unix command in the /medias/ directory: chmod -R 777 ./</div>
+        <h4 id="get_started_htaccess_htpasswd_configuration">.htaccess</h4>
+        <p>
+        <strong>/.htaccess</strong> : general rules, basedir and url rewriting</p>
+        <ul>
+            <li>line 67: replace {DOCBASE} with "/" (unless your website is in subdirectory (ex: /dev/mywebsite/)</li>
+            <li>for local use only: replace with your absolute local path</li>
+        </ul>
+        <h4 id="get_started_database">Database</h4>
+        <p><strong>/common/db.sql</strong></p>
+        <ol>
+            <li>
+                Edit this file and replace the header values
+                <ul>
+                    <li>MY_DATABASE: database name</li>
+                    <li>MY_DB_USER: username (if required by your host)</li>
+                    <li>MY_DB_PASS: password (if required by your host)</li>
+                    <li>USER_EMAIL: email of the administrator</li>
+                    <li>USER_LOGIN: username of the administrator</li>
+                    <li>USER_PASS: password of the administrator</li>
+                    <li>INSTALL_DATE: current date (timestamp)</li>
+                </ul>
+            </li>
+            <li>Execute this script (in your phpMyAdmin for example)</li>
+        </ol>
+        <h4 id="get_started_database">Settings</h4>
+        <p><strong>/common/config.php</strong></p>
+        
+        Edit this file with you own values. All the following settings are available in the settings section of your manager.
+        <table border="1" cellpadding="5" cellspacing="0" style="width: 500px;">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SITE_TITLE</td>
+                    <td>text</td>
+                    <td>title of the website</td>
+                </tr>
+                <tr>
+                    <td>TIME_ZONE</td>
+                    <td>text</td>
+                    <td>"Europe/London"</td>
+                </tr>
+                <tr>
+                    <td>LANG_ENABLED</td>
+                    <td>1 or 0</td>
+                    <td>enables or disables the foreign languages (multilingual or not)</td>
+                </tr>
+                <tr>
+                    <td>TEMPLATE</td>
+                    <td>text</td>
+                    <td>name of the template in use (name of the folder)</td>
+                </tr>
+                <tr>
+                    <td>OWNER</td>
+                    <td>text</td>
+                    <td>Contact name</td>
+                </tr>
+                <tr>
+                    <td>EMAIL</td>
+                    <td>text</td>
+                    <td>Contact email</td>
+                </tr>
+                <tr>
+                    <td>ADDRESS</td>
+                    <td>text</td>
+                    <td>Contact address</td>
+                </tr>
+                <tr>
+                    <td>PHONE</td>
+                    <td>text</td>
+                    <td>Contact phone</td>
+                </tr>
+                <tr>
+                    <td>MOBILE</td>
+                    <td>text</td>
+                    <td>Contact mobile</td>
+                </tr>
+                <tr>
+                    <td>FAX</td>
+                    <td>text</td>
+                    <td>Contact fax</td>
+                </tr>
+                <tr>
+                    <td>DB_NAME</td>
+                    <td>text</td>
+                    <td>Database name</td>
+                </tr>
+                <tr>
+                    <td>DB_HOST</td>
+                    <td>text</td>
+                    <td>Database host (localost)</td>
+                </tr>
+                <tr>
+                    <td>DB_PORT</td>
+                    <td>integer</td>
+                    <td>Database port (3306)</td>
+                </tr>
+                <tr>
+                    <td>DB_USER</td>
+                    <td>text</td>
+                    <td>Database user</td>
+                </tr>
+                <tr>
+                    <td>DB_PASS</td>
+                    <td>text</td>
+                    <td>Database password</td>
+                </tr>
+                <tr>
+                    <td>SENDER_EMAIL</td>
+                    <td>text</td>
+                    <td>Email of the sender</td>
+                </tr>
+                <tr>
+                    <td>SENDER_NAME</td>
+                    <td>text</td>
+                    <td>Name of the sender</td>
+                </tr>
+                <tr>
+                    <td>USE_SMTP</td>
+                    <td>1 or 0</td>
+                    <td>Use SMTP to send emails</td>
+                </tr>
+                <tr>
+                    <td>SMTP_SECURITY</td>
+                    <td>"" | "ssl" | "tls"</td>
+                    <td>Security of the SMTP connection</td>
+                </tr>
+                <tr>
+                    <td>SMTP_AUTH</td>
+                    <td>1 or 0</td>
+                    <td>Enable SMTP autentication</td>
+                </tr>
+                <tr>
+                    <td>SMTP_HOST</td>
+                    <td>text</td>
+                    <td>Name of the SMTP server</td>
+                </tr>
+                <tr>
+                    <td>SMTP_USER</td>
+                    <td>text</td>
+                    <td>Username</td>
+                </tr>
+                <tr>
+                    <td>SMTP_PASS</td>
+                    <td>text</td>
+                    <td>Password</td>
+                </tr>
+                <tr>
+                    <td>SMTP_PORT</td>
+                    <td>integer</td>
+                    <td>usually 25, 465 or 587</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4 id="get_started_database">Let's GO!</h4>
+        <p>First of all, <strong>enter your settings</strong> (database connexion, contact infos, project name...) in the settings section.</p>
+        <div class="alert alert-info">To access to the manager : http://www.mywebsite.com<strong>/admin</strong></div>
+    </section>
+
+    <section id="back_office">
+        <div class="page-header"><h3>BACK OFFICE</h3></div>
+        <p>The package contains basic modules like the articles, the pages, the comments, the slideshow, etc.</p>
+        <p>
+            The first part of a module section lists recorded elements for this module, the second part is a form to add or modify an element.<br>
+            In the settings section, you can manage the parameters essential to the smooth running of the web site and its manager.
+        </p>
+        <hr>
+        <h3>Translation</h3>
+        <p>
+            To translate the back office, simply change the values into the file <strong>/admin/includes/lang.ini</strong><br/>
+            Example:
+            <pre class="prettyprint lang-php linenums">
+BACK_TO_LIST=&quot;Back to list&quot;
+SAVE=&quot;Save&quot;
+SAVE_EXIT=&quot;Save and exit&quot;
+REPLICATE=&quot;Replicate&quot;
+EXPECTED_IMAGES_SIZE=&quot;Expected images size:&quot;
+RELEASE=&quot;Release&quot;
+...</pre>
+        </p>
+        <hr>
+        <h3>Add / configure your own modules</h3>
+        <p>You can add and personalize your own modules:</p>
+        <ol>
+            <li>Duplicate the /admin/modules/.TABLE_NAME/ folder and his content</li>
+            <li>Rename it with the same name of the table in the database (module name = table name = folder name)</li>
+            <li>Edit db.sql file and execute this script (in your phpMyAdmin for example)</li>
+            <li>Edit config.xml file</li>
+        </ol>
+        <h4 id="back_office_dbsql_configuration">db.sql configuration</h4>
+        <pre class="lang-html"><ol class="linenums"><li class="L0"><span class="pln"><span class="pln"><span class="pln">-- ================ CREATION OF THE TABLE article =============</span></span></span></li><li class="L1"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L2"><span class="pln"><span class="pln"><span class="pln">CREATE TABLE article(</span></span></span></li><li class="L3"><span class="pln"><span class="pln"><span class="pln">    id int NOT NULL AUTO_INCREMENT,</span></span></span></li><li class="L4"><span class="pln"><span class="pln"><span class="pln">    lang int NOT NULL,</span></span></span></li><li class="L5"><span class="pln"><span class="pln"><span class="pln">    title varchar(250),</span></span></span></li><li class="L6"><span class="pln"><span class="pln"><span class="pln">    subtitle varchar(250),</span></span></span></li><li class="L7"><span class="pln"><span class="pln"><span class="pln">    text longtext,</span></span></span></li><li class="L8"><span class="pln"><span class="pln"><span class="pln">    url varchar(250),</span></span></span></li><li class="L9"><span class="pln"><span class="pln"><span class="pln">    tags varchar(250),</span></span></span></li><li class="L0"><span class="pln"><span class="pln"><span class="pln">    id_page int,</span></span></span></li><li class="L1"><span class="pln"><span class="pln"><span class="pln">    home int DEFAULT 0,</span></span></span></li><li class="L2"><span class="pln"><span class="pln"><span class="pln">    checked int DEFAULT 0,</span></span></span></li><li class="L3"><span class="pln"><span class="pln"><span class="pln">    rank int DEFAULT 0,</span></span></span></li><li class="L4"><span class="pln"><span class="pln"><span class="pln">    add_date int,</span></span></span></li><li class="L5"><span class="pln"><span class="pln"><span class="pln">    edit_date int,</span></span></span></li><li class="L6"><span class="pln"><span class="pln"><span class="pln">    PRIMARY KEY(id,lang)</span></span></span></li><li class="L7"><span class="pln"><span class="pln"><span class="pln">) ENGINE=INNODB DEFAULT CHARSET=utf8;</span></span></span></li><li class="L8"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L9"><span class="pln"><span class="pln"><span class="pln">ALTER TABLE article ADD CONSTRAINT article_lang_fkey FOREIGN KEY (lang) REFERENCES lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;</span></span></span></li><li class="L0"><span class="pln"><span class="pln"><span class="pln">ALTER TABLE article ADD CONSTRAINT article_page_fkey FOREIGN KEY (id_page) REFERENCES page(id) ON DELETE CASCADE ON UPDATE NO ACTION;</span></span></span></li><li class="L1"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L2"><span class="pln"><span class="pln"><span class="pln">-- ============= CREATION OF THE TABLE article_file ===========</span></span></span></li><li class="L3"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L4"><span class="pln"><span class="pln"><span class="pln">CREATE TABLE article_file (</span></span></span></li><li class="L5"><span class="pln"><span class="pln"><span class="pln">    id int NOT NULL AUTO_INCREMENT,</span></span></span></li><li class="L6"><span class="pln"><span class="pln"><span class="pln">    lang int NOT NULL,</span></span></span></li><li class="L7"><span class="pln"><span class="pln"><span class="pln">    id_item int NOT NULL,</span></span></span></li><li class="L8"><span class="pln"><span class="pln"><span class="pln">    home int DEFAULT 0,</span></span></span></li><li class="L9"><span class="pln"><span class="pln"><span class="pln">    checked int DEFAULT 1,</span></span></span></li><li class="L0"><span class="pln"><span class="pln"><span class="pln">    rank int DEFAULT 0,</span></span></span></li><li class="L1"><span class="pln"><span class="pln"><span class="pln">    file varchar(250),</span></span></span></li><li class="L2"><span class="pln"><span class="pln"><span class="pln">    label varchar(250),</span></span></span></li><li class="L3"><span class="pln"><span class="pln"><span class="pln">    type varchar(20),</span></span></span></li><li class="L4"><span class="pln"><span class="pln"><span class="pln">    PRIMARY KEY(id,lang)</span></span></span></li><li class="L5"><span class="pln"><span class="pln"><span class="pln">) ENGINE=INNODB DEFAULT CHARSET=utf8;</span></span></span></li><li class="L6"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L7"><span class="pln"><span class="pln"><span class="pln">ALTER TABLE article_file ADD CONSTRAINT article_file_fkey FOREIGN KEY (id_item,lang) REFERENCES article(id,lang) ON UPDATE NO ACTION ON DELETE CASCADE;</span></span></span></li><li class="L8"><span class="pln"><span class="pln"><span class="pln">ALTER TABLE article_file ADD CONSTRAINT article_file_lang_fkey FOREIGN KEY (lang) REFERENCES lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;</span></span></span></li></ol></pre>
+        <p>Usefull and reserved columns names for the tables</p>
+        <ul>
+            <li><strong>id</strong> : required</li>
+            <li><strong>lang</strong> : required if &quot;multi&quot; attribute has the value 1 in config.xml (for multilingual modules)</li>
+            <li><strong>rank</strong> : required if &quot;ranking&quot; attribute has the value 1 in config.xml (if the elements can be sorted with drag&#39;n&#39;drop on the list)</li>
+            <li><strong>home</strong> : required if &quot;home&quot; attribute has the value 1 in config.xml (if the element can appear on homepage)</li>
+            <li><strong>checked</strong> : required if &quot;validation&quot; attribute has the value 1 in config.xml (if the element can be published or not)</li>
+            <li><strong>add_date</strong> / <strong>edit_date</strong> : required if &quot;date&quot; attribute has the value 1 in config.xml (if the element neads a add date and an edit date)</li>
+        </ul>
+        <p>Conserve the &quot;TABLE_NAME_file&quot; if the element neads medias (pdf, pictures, videos...)</p>
+        <h4 id="back_office_configxml_configuration">config.xml configuration</h4>
+        <p>The file config.xml define the module settings and the columns displayed in <strong>list.php</strong> and <strong>form.php</strong> (/admin/module/default/). config.xsd check the syntax of this document</p>
+
+        <pre class="prettyprint lang-html linenums">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;module title=&quot;Articles&quot; name=&quot;article&quot; multi=&quot;1&quot; library=&quot;1&quot; dashboard=&quot;1&quot; icon=&quot;thumb-tack&quot; ranking=&quot;1&quot; home=&quot;1&quot; validation=&quot;1&quot; dates=&quot;1&quot; index=&quot;1&quot;&gt;
+    &lt;!-- resizing
+    [0] 1 single image
+    [1] 1x big, 1x medium, 1x small --&gt;
+    &lt;medias max=&quot;30&quot; resizing=&quot;1&quot;&gt;
+        &lt;big maxw=&quot;1920&quot; maxh=&quot;1440&quot;/&gt;
+        &lt;medium maxw=&quot;600&quot; maxh=&quot;600&quot;/&gt;
+        &lt;small maxw=&quot;400&quot; maxh=&quot;400&quot;/&gt;
+    &lt;/medias&gt;
+    &lt;list order=&quot;rank&quot;&gt;
+        &lt;filter label=&quot;Page&quot; name=&quot;id_page&quot; table=&quot;pm_page&quot; fieldlabel=&quot;name&quot; fieldvalue=&quot;id&quot; order=&quot;name&quot;/&gt;
+        &lt;col label=&quot;Title&quot; name=&quot;title&quot; type=&quot;none&quot;/&gt;
+        &lt;col label=&quot;Page&quot; name=&quot;id_page&quot; table=&quot;pm_page&quot; fieldvalue=&quot;name&quot; fieldref=&quot;id&quot;/&gt;
+    &lt;/list&gt;
+    &lt;form&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;Title&quot; name=&quot;title&quot; type=&quot;text&quot; required=&quot;1&quot; unique=&quot;0&quot; validation=&quot;none&quot;/&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;Subtitle&quot; name=&quot;subtitle&quot; type=&quot;text&quot; required=&quot;0&quot; unique=&quot;0&quot; validation=&quot;none&quot;/&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;Alias&quot; name=&quot;alias&quot; type=&quot;text&quot; required=&quot;1&quot; unique=&quot;1&quot; validation=&quot;none&quot; comment=&quot;Article URL&quot;/&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;Text&quot; name=&quot;text&quot; type=&quot;textarea&quot; editor=&quot;1&quot; required=&quot;0&quot; unique=&quot;0&quot; validation=&quot;none&quot;/&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;URL&quot; name=&quot;url&quot; type=&quot;text&quot; required=&quot;0&quot; unique=&quot;0&quot; validation=&quot;none&quot;/&gt;
+        &lt;field multi=&quot;0&quot; label=&quot;Page&quot; name=&quot;id_page&quot; type=&quot;select&quot; required=&quot;1&quot; unique=&quot;0&quot; validation=&quot;none&quot;&gt;
+            &lt;options table=&quot;pm_page&quot; fieldlabel=&quot;name&quot; fieldvalue=&quot;id&quot; order=&quot;name&quot;/&gt;
+        &lt;/field&gt;
+        &lt;field multi=&quot;0&quot; label=&quot;Tags&quot; name=&quot;tags&quot; type=&quot;multiselect&quot; required=&quot;0&quot; unique=&quot;0&quot; validation=&quot;none&quot;&gt;
+            &lt;options table=&quot;pm_tag&quot; fieldlabel=&quot;value&quot; fieldvalue=&quot;id&quot; order=&quot;value&quot;/&gt;
+        &lt;/field&gt;
+        &lt;field multi=&quot;0&quot; label=&quot;Allow comment ?&quot; name=&quot;comment&quot; type=&quot;radio&quot; required=&quot;1&quot; unique=&quot;0&quot; validation=&quot;none&quot; roles=&quot;administrator&quot;&gt;
+            &lt;options&gt;
+                &lt;option value=&quot;1&quot;&gt;Yes&lt;/option&gt;
+                &lt;option value=&quot;0&quot;&gt;No&lt;/option&gt;
+            &lt;/options&gt;
+        &lt;/field&gt;
+        &lt;field multi=&quot;0&quot; label=&quot;User&quot; name=&quot;id_user&quot; type=&quot;select&quot; required=&quot;1&quot; unique=&quot;0&quot; validation=&quot;none&quot; roles=&quot;administrator&quot;&gt;
+            &lt;options table=&quot;pm_user&quot; fieldlabel=&quot;login&quot; fieldvalue=&quot;id&quot; order=&quot;login&quot;/&gt;
+        &lt;/field&gt;
+    &lt;/form&gt;
+    &lt;roles&gt;
+        &lt;user type=&quot;administrator&quot; permissions=&quot;all&quot;/&gt;
+        &lt;user type=&quot;manager&quot; permissions=&quot;all&quot;/&gt;
+        &lt;user type=&quot;editor&quot; permissions=&quot;add,edit,upload&quot;/&gt;
+    &lt;/roles&gt;
+&lt;/module&gt;</pre>
+
+        <p>&lt;module&gt; has the following attributes</p>
+        
+        <table border="1" cellpadding="5" cellspacing="0" style="width: 500px;">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>title</td>
+                    <td>text</td>
+                    <td>title of the module</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>text</td>
+                    <td>column name in the table</td>
+                </tr>
+                <tr>
+                    <td>multi</td>
+                    <td>1 or 0</td>
+                    <td>enables or disables the foreign languages (multilingual or not)</td>
+                </tr>
+                <tr>
+                    <td>library</td>
+                    <td>1 or 0</td>
+                    <td>the medias of the module appear or not in the library of medias on the form page</td>
+                </tr>
+                <tr>
+                    <td>dashboard</td>
+                    <td>1 or 0</td>
+                    <td>shows or hides a focus box on the manager homepage</td>
+                </tr>
+                <tr>
+                    <td>icon</td>
+                    <td>text</td>
+                    <td>the icon associated with the module (it&#39;s the suffix of &quot;Font Awesome&quot;: fa fa-xxxx)</td>
+                </tr>
+                <tr>
+                    <td>ranking</td>
+                    <td>1 or 0</td>
+                    <td>enables or disables the ranking of the elements in the list</td>
+                </tr>
+                <tr>
+                    <td>home</td>
+                    <td>1 or 0</td>
+                    <td>possible or not to show/hide an element on the homepage</td>
+                </tr>
+                <tr>
+                    <td>validation</td>
+                    <td>1 or 0</td>
+                    <td>possible or not to publish/unpublish an element</td>
+                </tr>
+                <tr>
+                    <td>dates</td>
+                    <td>1 or 0</td>
+                    <td>enables or disables the add date and the edit date</td>
+                </tr>
+                <tr>
+                    <td>index</td>
+                    <td>integer > 0</td>
+                    <td>rank of the module in the main menu</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&lt;module&gt; contains 1 element &lt;media&gt;, 1 element &lt;list&gt;, 1 element &lt;form&gt; and 1 element &lt;roles&gt;</p>
+        <p>&lt;medias&gt; has the following attributes</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                </tr>
+                <tr>
+                    <td>max</td>
+                    <td>integer</td>
+                    <td>maximum number of medias</td>
+                </tr>
+                <tr>
+                    <td>resizing</td>
+                    <td>1 or 0</td>
+                    <td>resizing type for the picture: &quot;0&quot; = 1 single image, &quot;1&quot; = 1x big, 1x medium and 1x small</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&lt;medias&gt; contains 1x &lt;big&gt;, 1x &lt;medium&gt; and 1x &lt;small&gt;</p>
+        <p>&lt;big&gt;, &lt;medium&gt; and &lt;small&gt; has the following attributes</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                </tr>
+                <tr>
+                    <td>maxw</td>
+                    <td>integer</td>
+                    <td>maximum width of the pictures in pixels</td>
+                </tr>
+                <tr>
+                    <td>maxh</td>
+                    <td>integer</td>
+                    <td>maximum height of the pictures in pixels</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&lt;list&gt; has the following attributes</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                </tr>
+                <tr>
+                    <td>order</td>
+                    <td>text</td>
+                    <td>column name in the table followed by DESC or ASC if necessary</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&lt;list&gt; contains 1 or more elements &lt;col&gt;</p>
+        <p>&lt;col&gt; has the following attributes</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                </tr>
+                <tr>
+                    <td>label</td>
+                    <td>text</td>
+                    <td>title in the header cel</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>text</td>
+                    <td>column name in the table</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>&quot;date&quot; | &quot;price&quot; | &quot;none&quot; (for text)</td>
+                    <td>display format (price: currency in fn_form.php)</td>
+                </tr>
+                <tr>
+                    <td>table</td>
+                    <td>text</td>
+                    <td>table referencing the values (optional)</td>
+                </tr>
+                <tr>
+                    <td>fieldref</td>
+                    <td>text</td>
+                    <td>column name referencing the values of this table (visible, optional)</td>
+                </tr>
+                <tr>
+                    <td>fieldvalue</td>
+                    <td>text</td>
+                    <td>column name containing the value referenced by &quot;fieldref&quot; (hidden, optional)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&lt;form&gt; contains 1 or more elements &lt;field&gt;</p>
+        <p>&lt;field&gt; has the following attributes</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                </tr>
+                <tr>
+                    <td>multi</td>
+                    <td>1 or 0</td>
+                    <td>display for all languages or not</td>
+                </tr>
+                <tr>
+                    <td>label</td>
+                    <td>text</td>
+                    <td>label of the field (optional)</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>&quot;radio&quot; | &quot;text&quot; | &quot;textarea&quot; | &quot;select&quot; | &quot;checkbox&quot; | &quot;date&quot; | &quot;current_date&quot; | &quot;separator&quot;</td>
+                    <td>field type</td>
+                </tr>
+                <tr>
+                    <td>editor</td>
+                    <td>1 or 0</td>
+                    <td>CKEditor or basic input</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>text</td>
+                    <td>column name in the table or other for a &quot;separator&quot; field, it must be unique for a module</td>
+                </tr>
+                <tr>
+                    <td>required</td>
+                    <td>1 or 0</td>
+                    <td>required value or not</td>
+                </tr>
+                <tr>
+                    <td>validation</td>
+                    <td>&quot;mail&quot; | &quot;numeric&quot; | &quot;none&quot;</td>
+                    <td>validation type</td>
+                </tr>
+                <tr>
+                    <td>unique</td>
+                    <td>1 or 0</td>
+                    <td>unique value in the table or not (e-mail for exmaple)</td>
+                </tr>
+                <tr>
+                    <td>comment</td>
+                    <td>text</td>
+                    <td>instruction about this field</td>
+                </tr>
+                <tr>
+                    <td>roles</td>
+                    <td>comma separated values: administrator, manager, editor</td>
+                    <td>user types allowed to edit this field</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&lt;roles&gt; contains 3 elements &lt;user&gt; (1 for each type of user)</p>
+        <p>&lt;user&gt; has the following attributes</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Expected type / values</th>
+                    <th scope="col">Description</th>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>&quot;administrator&quot; | &quot;manager&quot; | &quot;editor&quot;</td>
+                    <td>type of user</td>
+                </tr>
+                <tr>
+                    <td>permissions</td>
+                    <td>comma separated values: all, add, edit, delete, publish, upload, no_access</td>
+                    <td>permissions for this user</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5>Details about the field types</h5>
+        <ul>
+            <li><strong>radio</strong> : radio buttons - the options are defined into the &lt;options&gt; tag</li>
+            <li><strong>select</strong> : drop-down list - the options are defined into the &lt;options&gt; tag</li>
+            <li><strong>multiselect</strong> : multiple-choice list - the options are defined into the &lt;options&gt; tag</li>
+            <li><strong>checkbox</strong> : as the name suggests - the options are defined into the &lt;options&gt; tag</li>
+            <li><strong>text</strong> : text field</li>
+            <li><strong>textarea</strong> : as the name suggests</li>
+            <li><strong>date</strong> : automatic drop-down lists with year, month, day (converted in timestamp)</li>
+            <li><strong>datetime</strong> : automatic drop-down lists with year, month, day, hours, minutes, seconds (converted in timestamp)</li>
+            <li><strong>current_date</strong> : hidden field with the current date (timestamp)</li>
+            <li><strong>separator</strong> : separator between different parts of the form</li>
+        </ul>
+        <p>&lt;field&gt; can contain a &lt;options&gt; tag which define the options of the &quot;checkbox&quot;, &quot;radio&quot; and &quot;select&quot; fields</p>
+        <h5>Different uses</h5>
+        <ol>
+            <li>
+                the options are &quot;continuous&quot; values<br>
+                &lt;options&gt; tag must contain 1 &lt;min&gt; and 1 &lt;max&gt; tags
+            </li>
+            <li>
+                the options are &quot;one-off&quot;<br>
+                L&#39;&eacute;l&eacute;ment &lt;options&gt; devra comporter un ou plusieurs &eacute;l&eacute;ments &lt;option&gt; contenant le libell&eacute; de l&#39;item.<br>
+                each &lt;option&gt; tag must contain an attribute &quot;value&quot; like the html tag.
+            </li>
+            <li>
+                the options are stored in a specific table of the database<br>
+                &lt;options&gt; must contain the following attributes
+                <ul>
+                    <li><strong>table</strong> : table name containing the values</li>
+                    <li><strong>fieldlabel</strong> : column name of the item label (visible)</li>
+                    <li><strong>fieldvalue</strong> : column name of the item value (hidden)</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+    
+    <section id="templates">
+        <div class="page-header"><h3>TEMPLATES</h3></div>
+    
+        <img src="assets/images/demo-template.png" class="img-responsive" alt="">
+
+        <p>/templates/ contains the templates of your website. "default" is the basic template.<br/>A template is composted by 4 folders :</p>
+        <ul>
+            <li>
+                common: common files for all models
+                <ul>
+                    <li>header.php : the header tag with meta tags, scripts... and the top of the web site (logo, navigation, flags...)</li>
+                    <li>page_header.php : the header of all models except the homepage (heading 1, breadcrumb...)</li>
+                    <li>footer.php : the footer tag with the widgets and the copyrights</li>
+                </ul>
+            </li>
+            <li>
+                css: stylesheets
+                <ul>
+                    <li>custom.css</li>
+                </ul>
+            </li>
+            <li>
+                images: as the name suggests... the images used by the template
+            </li>
+            <li>
+                models: models files of the template.<br>The models are simply PHP files which defines the models of pages and articles.
+                <ul>
+                    <li>home.php : homepage model</li>
+                    <li>page.php : model for a simple page</li>
+                    <li>article.php : model for an article</li>
+                    <li>gallery.php : model for a gallery with its pictures</li>
+                    <li>contact.php : contact form model</li>
+                    <li>sitemap.php : sitemap model</li>
+                    <li>search.php : model for the search engine results</li>
+                    <li>404.php : custom 404 page model</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="alert">You can create your own template by replicating the "default" folder with an other name and enable it into the manager in the settings section.</div>
+        <p>Create your own models and bind a page to this model in the manager</p>
+        <div class="alert alert-info">Modules &gt; Pages &gt; Edit &gt; Page / Article model</div>
+        <p>There are 3 possible levels of models for each page:</p>
+        <ol>
+            <li><strong>page</strong> (required) : defines the page model</li>
+            <li><strong>article</strong>&nbsp; (optional) : display the model of each article of this page</li>
+        </ol>
+        <p>URL examples</p>
+        <table border="1" cellpadding="5" cellspacing="0" style="width: 500px;">
+            <thead>
+                <tr>
+                    <th scope="col">Affirmation</th>
+                    <th scope="col">URL example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>a page can contain no article</td>
+                    <td>http://www.mywebsite.com/my-page</td>
+                </tr>
+                <tr>
+                    <td>a page can contains one or several articles</td>
+                    <td>http://www.mywebsite.com/my-page/my-article</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+    </section>
+    
+    <section id="payment">
+        <div class="page-header"><h3>PAYMENT</h3></div>
+        
+        <p>
+            <ol>
+                <li><strong>No Paypal account</strong>? Create one <a href="https://registration.paypal.com/">here</a>.</li>
+                <li><strong>Create 2 Sandbox test accounts</strong> (1 business and 1 personal) via <a href="https://developer.paypal.com/webapps/developer/docs/classic/lifecycle/sb_create-accounts/" target="_blank">PayPal Developer</a>.
+                For example <i>pandao.buyer@gmail.com</i> and <i>pandao.merchant@gmail.com</i>.</li>
+                <li><strong>Get your API credentials</strong> in your <a href="https://developer.paypal.com/developer/accounts/" target="_blank">Dashboard</a>.</li>
+                <li><strong>Edit the file</strong> /templates/booking/common/paypal.php with your API credentials.</li>
+                <li><strong>Test your application</strong> by making a booking.</li>
+                <li><strong>Enable live payment</strong> in your PayPal account: <a href="https://developer.paypal.com/docs/classic/lifecycle/goingLive/" target="_blank">https://developer.paypal.com/docs/classic/lifecycle/goingLive/</a>.</li>
+                <li><strong>Update the Sandbox API credentials</strong> in the file paypal.php with your live PayPal account and disable $test_mode (false).</li>
+                <li>It's over!</li>
+            </ol>
+        </p>
+        
+        <pre class="prettyprint lang-php linenums">
+function paypal_request(){
+
+    $test_mode = true; // TRUE for test mode (Sandbox account), FALSE for production (live PayPal account)
+    $version = 56.0;
+    $user = "pandao.merchant_api1.gmail.com"; // YOUR_OWN_API_USERNAME
+    $pass = "VRBEQRSU4QS29Y76"; // YOUR_OWN_API_PASSWORD
+    $signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31APKJ9JjZA1gPRd-aPsIR2ERTVvEF"; // YOUR_OWN_API_SIGNATURE
+
+    $api_paypal = ($test_mode === false) ? "https://api-3t.paypal.com/nvp?" : "https://api-3t.sandbox.paypal.com/nvp?";
+
+    $api_paypal .= "VERSION=".$version."&amp;USER=".$user."&amp;PWD=".$pass."&amp;SIGNATURE=".$signature;
+
+    return $api_paypal;
+}</pre>
+
+    </section>
+    
+    <section id="screenshots">
+        <div class="page-header"><h3>SCREENSHOTS</h3></div>
+
+        <img src="assets/images/infography-1.jpg" class="img-responsive" alt="">
+        <img src="assets/images/infography-2.jpg" class="img-responsive" alt="">
+        <img src="assets/images/infography-3.jpg" class="img-responsive" alt="">
+        <img src="assets/images/infography-4.jpg" class="img-responsive" alt="">
+    </section>
+    
+    <hr>
+    
+    <footer>
+        <p>Copyright Pandao 2015 made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+    </footer>
+</div>
+<script>document.createElement('section');var duration='500',easing='swing';</script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/google-code-prettify/prettify.js"></script>
+<script src="assets/js/bootstrap-min.js"></script>
+</body>
+</html>

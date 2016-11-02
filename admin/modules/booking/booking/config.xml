@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="Bookings" name="booking" multi="0" library="0" dashboard="1" icon="calendar-check-o" ranking="0" home="0" main="0" validation="0" dates="1" release="0" index="13">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="0" resizing="1">
+		<big maxw="1920" maxh="1440"/>
+		<medium maxw="600" maxh="600"/>
+		<small maxw="400" maxh="400"/>
+	</medias>
+	<list order="id DESC">
+        <filter label="Status" name="status">
+            <options>
+                <option value="1">Awaiting</option>
+                <option value="2">Cancelled</option>
+                <option value="3">Rejected payment</option>
+                <option value="4">Payed</option>
+            </options>
+        </filter>
+		<col label="Room" name="room"/>
+		<col label="Customer" name="lastname firstname"/>
+		<col label="Booking date" name="add_date" type="date"/>
+		<col label="Check in" name="from_date" type="date"/>
+		<col label="Check out" name="to_date" type="date"/>
+		<col label="Nights" name="nights"/>
+		<col label="Adults" name="adults"/>
+		<col label="Children" name="children"/>
+		<col label="Total" name="total" type="price"/>
+	</list>
+	<form>
+        <field multi="0" label="Room" name="id_room" type="select" required="1" unique="0" validation="none">
+            <options table="pm_room" fieldlabel="title" fieldvalue="id" order="title"></options>
+        </field>
+        <field multi="0" label="Check in" name="from_date" type="date" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Check out" name="to_date" type="date" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Nights" name="nights" type="text" required="1" unique="0" validation="numeric"/>
+        <field multi="0" label="Adults" name="adults" type="text" required="1" unique="0" validation="numeric"/>
+        <field multi="0" label="Children" name="children" type="text" required="0" unique="0" validation="numeric"/>
+        <field multi="0" label="Amount" name="amount" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
+        <field multi="0" label="Tourist tax" name="tourist_tax" type="text" required="1" unique="0" validation="numeric" comment="{currency}"/>
+        <field multi="0" label="Total" name="total" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
+        <field multi="0" label="Down payment" name="down_payment" type="text" required="0" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
+        <field multi="0" label="Services" name="extra_services" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Firstname" name="firstname" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Lastname" name="lastname" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Email" name="email" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Company" name="company" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Address" name="address" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Postcode" name="postcode" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="City" name="city" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Phone" name="phone" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Mobile" name="mobile" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Country" name="country" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Comments" name="comments" type="textarea" editor="0" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Status" name="status" type="select" required="1" unique="0" validation="none">
+            <options>
+                <option value="1">Awaiting</option>
+                <option value="2">Cancelled</option>
+                <option value="3">Rejected payment</option>
+                <option value="4">Payed</option>
+            </options>
+        </field>
+        <field multi="0" label="Transaction ID" name="trans" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Payment date" name="payment_date" type="datetime" required="0" unique="0" validation="none"/>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="no_access"/>
+        <user type="editor" permissions="no_access"/>
+    </roles>
+</module>

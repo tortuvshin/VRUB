@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="MODULE_LABEL" name="TABLE_NAME" multi="1" library="0" dashboard="1" icon="circle-o" ranking="1" home="1" validation="1" dates="1">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="10" resizing="1">
+		<big maxw="1920" maxh="1440"/>
+		<medium maxw="600" maxh="600"/>
+		<small maxw="400" maxh="400"/>
+	</medias>
+	<list order="rank">
+		<col label="Title" name="title" type="none"/>
+	</list>
+	<form>
+		<field multi="1" label="Title" name="title" type="text" required="1" unique="0" validation="none"/>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="no_access"/>
+        <user type="editor" permissions="no_access"/>
+    </roles>
+</module>

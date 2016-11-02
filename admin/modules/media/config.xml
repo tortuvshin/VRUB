@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="Medias" name="media" multi="0" library="1" dashboard="0" icon="camera" ranking="0" home="0" main="0" validation="0" dates="0" release="0" index="2">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="1" resizing="0">
+		<big maxw="1200" maxh="900"/>
+		<medium maxw="600" maxh="450"/>
+		<small maxw="300" maxh="225"/>
+	</medias>
+	<list order="id DESC">
+	</list>
+	<form>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="all"/>
+        <user type="editor" permissions="add,upload"/>
+    </roles>
+</module>

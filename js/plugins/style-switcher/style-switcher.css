@@ -1,0 +1,53 @@
+a:focus {
+    outline: none;
+}
+#style-switcher {
+    position: fixed;
+    top: 205px;
+    left: -200px;
+    z-index: 9999;
+    width: 200px;
+    padding: 10px 20px;
+    background: rgba(180, 180, 180, 0.7);
+    box-sizing: border-box;
+}
+#style-switcher h1 {
+    font-size: 24px;
+    margin: 0 0 20px;
+    color: #000;
+}
+#style-switcher h2 {
+    font-size: 18px;
+    margin: 0 0 6px;
+    color: #000;
+}
+#switcherToggle {
+    position: absolute;
+    right: -40px;
+    top: 0;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    text-align: center;
+    background: rgba(180, 180, 180, 0.7);
+    color: #000;
+}
+#style-switcher ul {
+    list-style: none;
+    float: left;
+    clear: left;
+    padding: 0;
+    margin-top:;
+}
+#style-switcher ul li {
+    float: left;
+}
+#style-switcher ul li a {
+    display: block;
+    height: 35px;
+    width: 35px;
+    margin: 0 5px 5px 0;
+    overflow: hidden;
+    text-indent: -1000px;
+}

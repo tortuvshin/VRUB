@@ -1,0 +1,58 @@
+.lazy-wrapper {
+    position: relative!important;
+    box-sizing: content-box!important;
+    -moz-box-sizing: content-box!important;
+    -webkit-box-sizing: content-box!important;
+    -ms-box-sizing: content-box!important;
+    -o-box-sizing: content-box!important;
+}
+.lazy-wrapper.loading {
+    padding-bottom: 104px!important;
+    transition: all 0.3s!important;
+}
+.lazy-more-wrapper {
+    position: absolute;
+    bottom: 0;
+    padding: 20px 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    display: none;
+    height: 104px;
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+.lazy-img-loading {
+    background: url("loading.gif") center no-repeat;
+    height: 64px;
+    width: 64px;
+    margin: 0 auto;
+}
+a.lazy-more-btn {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+a.lazy-more-btn:active, a.lazy-more-btn:focus, a.lazy-more-btn:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    color: #333;
+}

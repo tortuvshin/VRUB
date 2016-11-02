@@ -1,0 +1,231 @@
+/****************** GENERAL ******************/
+body {
+    color: #333;
+}
+h2, h3 {
+    color: #A0D04C;
+}
+a {
+    color: #A0D04C;
+}
+a:hover {
+    color: #A0D04C;
+}
+a p {
+    color: #333;
+}
+
+/***************** BOOTSTRAP *****************/
+.btn-primary {
+    background-color: #A0D04C;
+    border-color: #A0D04C;
+    color: #fff;
+}
+.btn-default,
+.btn-primary:hover {
+    background-color: #aaa;
+    border-color: #ddd;
+    color: #fff;
+}
+.label.label-default {
+    background: #aaa;
+}
+blockquote {
+    color: #555;
+}
+
+/****************** HEADERS ******************/
+#preHeader {
+    background: #A0D04C;
+    color: #fff;
+}
+#preHeader a {
+    color: #fff;
+}
+#mainHeader {
+    background: rgba(255, 255, 255, 0.9);
+}
+ul.navbar-nav > li.primary > a.firstLevel {
+    color: #333;
+}
+ul.navbar-nav > li.primary > a.firstLevel.active,
+ul.navbar-nav > li.primary > a.firstLevel:hover,
+ul.navbar-nav > li.primary > a.firstLevel:focus {
+    border-bottom: 5px solid #A0D04C;
+    color: #A0D04C;
+    background: none;
+}
+.navbar-toggle .icon-bar {
+    background: #333;
+}
+.navbar-toggle {
+    border-color: #333;
+}
+@media(max-width:767px) {
+    ul.navbar-nav > li.primary > a.firstLevel.active,
+    ul.navbar-nav > li.primary > a.firstLevel:hover,
+    ul.navbar-nav > li.primary > a.firstLevel:focus {
+        border-bottom: none;
+    }
+    #mainMenu .navbar-nav li {
+        border-bottom: 1px solid #eee;
+    }
+}
+#mainMenu .navbar-nav ul li a {
+    border-bottom: 1px solid #444;
+}
+.navbar-nav ul li a {
+    color: #999;
+}
+.navbar-nav ul li a:hover, .navbar-nav ul li.hover > a {
+    background: #A0D04C;
+    color: #fff;
+}
+@media(min-width:768px) {
+    .navbar-nav ul {
+        background: #333;
+    }
+}
+#lang-btn {
+    background: transparent;
+    border: 0;
+}
+#lang-btn:hover,
+#lang-btn:focus {
+    color: #ccc;
+}
+#lang-menu a {
+    color: #333;
+}
+.info-header i {
+    background: #fff;
+    color: #A0D04C;
+}
+#searchWrapper {
+    color: #888;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#searchWrapper button:hover {
+    background: #A0D04C;
+}
+#searchWrapper .form-control {
+    color: #fff;
+}
+#searchWrapper .form-control::-webkit-input-placeholder {
+    color: #ddd;
+}
+#searchWrapper .form-control:-moz-placeholder {
+    color: #ddd;
+}
+#searchWrapper .form-control::-moz-placeholder {
+    color: #ddd;
+}
+#searchWrapper .form-control:-ms-input-placeholder {
+    color: #ddd;
+}
+.page-header {
+    background-color: #CDE098;
+    color: #fff;
+    border: none;
+}
+.page-header a {
+    color: #fff;
+}
+.breadcrumb {
+    background: transparent;
+}
+
+/*************** ROYAL SLIDER ****************/
+#full-width-slider {
+    color: #000;
+}
+.infoBlock a {
+    color: #fff;
+}
+.photosBy {
+    background: #fff;
+    color: #000;
+} 
+.photosBy a {
+    color: #000;
+}
+
+/***************** HOMEPAGE ******************/
+.iconBlocHome i.fa {
+    color: #A0D04C;
+}
+
+/************ ISOTOPE / PORTFOLIO ************/
+.isotopeWrapper.loaded {
+    background: none;
+}
+.isotopeContent {
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.more-action figcaption p {
+    color: #fff;
+}
+.more-link:hover .more-action {
+    background: rgba(160, 208, 76, 0.5);
+}
+.more-icon i {
+    color: #A0D04C;
+    background: #fff;
+}
+.lazy-more-btn {
+    background: #aaa!important;
+    color: #fff!important;
+}
+.lazy-more-btn:hover {
+    background: #fff!important;
+    color: #333!important;
+}
+
+/*************** MISCELLANEOUS ***************/
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #A0D04C;
+}
+.hotBox {
+    background: #A0D04C;
+    color: #fff;
+}   
+.hotBox h2,
+.hotBox a {
+    color: #fff;
+}
+#pages-list li a {
+    border: 1px solid #ddd;
+    background-color: #aaa;
+    color: #fff;
+}
+#pages-list li a:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    color: #333;
+}
+/******************* FOOTER ******************/
+#footerRights {
+    background: #000;
+}
+footer {
+    background: #333;
+    color: #fff;
+}
+footer a {
+    color: #fff;
+}
+footer p.lead {
+    color: #A0D04C;
+}
+#toTop {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+#toTop:hover {
+    background: #A0D04C;
+    color: #fff;
+}

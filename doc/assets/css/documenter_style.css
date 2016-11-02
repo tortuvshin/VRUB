@@ -1,0 +1,203 @@
+/*!
+ * Documenter 2.0
+ * http://rxa.li/documenter
+ *
+ * Copyright 2013, Xaver Birsak
+ * http://revaxarts.com
+ *
+ */
+html, body{max-width:100%;}
+body{ padding-bottom: 40px;}
+
+#documenter_content{
+	padding-top: 80px;
+}
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+	width: 1170px;
+}
+#documenter-cover{
+	min-height: 600px;
+}
+
+.masthead h1{
+	margin-top: 48px;
+}
+
+section h3,
+section h4,
+section h5,
+section h6 {
+	padding: 0;
+	clear: both;
+	line-height: 1.2em;
+	margin-top: 1.2em;
+}
+section h3{ font-size:2em;}
+section h4{ font-size:1.5em;}
+section h5{ font-size:1.3em;}
+section h6{ font-size:1.1em;}
+
+section table{
+	border-top:1px solid;
+	margin: 18px 0 18px;
+}
+section table td, section table th{
+	border-bottom:1px solid;
+	text-align:left;
+	padding: 10px 10px 10px 3px;
+}
+section table th{
+	font-weight: 900;
+}
+
+hr.notop{
+	margin-top:3px;
+}
+	
+footer{
+	padding-bottom:500px;
+}
+.container{
+	padding-bottom:3px;
+	position: relative;
+}
+.navbar a.brand{
+	display:inline-block;
+	width:200px;
+	background-position:center left;
+	background-repeat:no-repeat;
+	background-size: contain;
+	margin:0;
+	padding:0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.navbar .nav {
+	margin: 10px 10px 0 200px;
+	float: none;
+}
+.navbar-inner, .navbar .nav li ul {
+	height: 90px;
+	padding: 10px 0;
+}
+.navbar .nav li a{
+	border-radius:3px;
+	display:block;
+	white-space:nowrap;
+	padding:6px 11px 7px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	text-decoration:none;
+	margin-left: 3px;
+	margin-bottom: 3px;
+}
+.navbar .nav li ul{
+	border-radius:5px;
+	display:none;
+	position:absolute;
+	list-style-type:none;
+	min-width:100px;
+	padding:3px;
+	box-shadow:0 0 3px rgba(0,0,0,0.3);
+
+}
+.navbar .nav > li:hover ul{
+	display:block;
+}
+
+.marketing-byline {
+	list-style:none;
+	margin-left: 0;
+	margin-bottom: 24px;
+}
+.marketing-byline li{
+	display:inline;
+	padding:0 2px;
+}
+.download-info{
+	clear:both;
+}
+section{
+	margin-top:300px;
+}
+img{
+	height:auto !important;
+}
+iframe{
+	max-width:100% !important;
+}
+
+@media (max-width: 979px) {
+	#documenter_content{
+		padding-top: 0px;
+	}
+	.navbar .nav {
+		margin: 10px 10px 0 0;
+	}
+	.navbar .nav > li > a{
+		padding:6px 11px 7px;
+		max-width:100%;
+		overflow:hidden;
+		text-overflow:ellipsis;
+	}
+	.navbar .nav li ul{
+		display:none;
+		box-shadow:none;
+		position:static;
+	}
+	.navbar .nav li:hover ul{
+		display:block;
+	}
+	.navbar .nav li ul li{
+		display:block;
+	}
+	.navbar .nav li a{
+		max-width:100%;
+	}
+
+	section{
+		margin-top:80px;
+	}
+}
+@media (max-width: 480px) {
+	section{
+		margin-top:30px;
+	}
+}
+html, body{background-color:#ffffff;color:#383838;}
+h1{margin-top:120px;}
+h1,h2,h3,h4,h5,h6{color:#383838;}
+section table{background-color:#EEEEEE;}
+::-moz-selection{background:#333636;color:#1488BA;}
+::selection{background:#333636;color:#1488BA;}
+a.brand{background-image:url(assets/images/image_1.png);}
+a, a:hover, a:active{color:#1488BA;}
+hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+div.navbar-inner, .navbar .nav li ul{background:#343838;color:#FFFFFF;}
+a.btn-navbar{background:#343838;color:#FFFFFF;}
+.navbar .nav li a{color:#FFFFFF;text-shadow:1px 1px 0px #494F4F;}
+.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+div.navbar-inner ul{}
+.marketing-byline{color:#888888;}
+.navbar .nav > li a{color:#FFFFFF;}
+.navbar .nav > li a:hover, a.btn-navbar:hover{background:#333636;color:#1488BA;}
+.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#333636;color:#1488BA;}
+.navbar .nav li ul li a:hover{background:#333636;color:#1488BA;}
+.navbar .nav li ul li a:active{background:#333636;color:#1488BA;}
+.btn-primary {
+      background: #1488BA;
+      border-color: #64BBDB;
+      color:#FFFFFF;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+    background-color: #64BBDB;
+    border-color: #64BBDB;
+}
+#documenter_copyright{display:block !important;visibility:visible !important;}

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="user">
+		<xs:complexType>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="administrator" />
+						<xs:enumeration value="manager" />
+						<xs:enumeration value="editor" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="permissions" use="required">
+				<xs:simpleType>
+                    <xs:annotation>
+                        <xs:documentation>
+                            all,add,edit,delete,no_access,publish,upload
+                        </xs:documentation>
+                    </xs:annotation>
+					<xs:restriction base="xs:string">
+                        <xs:pattern value="[^,]+(,\s*[^,]+)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+    
+	<xs:element name="col">
+		<xs:complexType>
+			<xs:attribute name="fieldvalue" type="xs:string" use="optional" />
+			<xs:attribute name="name" type="xs:string" use="required" />
+			<xs:attribute name="label" type="xs:string" use="required" />
+			<xs:attribute name="type" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="datetime" />
+						<xs:enumeration value="date" />
+						<xs:enumeration value="none" />
+						<xs:enumeration value="price" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="table" type="xs:string" use="optional" />
+			<xs:attribute name="fieldref" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="filter">
+		<xs:complexType>
+			<xs:sequence>
+                <xs:element ref="options" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute name="fieldvalue" type="xs:string" use="optional" />
+			<xs:attribute name="name" type="xs:string" use="required" />
+			<xs:attribute name="label" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="filter" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="col" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="order" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="field">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="options" minOccurs="0" />
+				<xs:element ref="relation" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute name="validation" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="mail" />
+						<xs:enumeration value="numeric" />
+						<xs:enumeration value="none" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="name" type="xs:string" use="required" />
+			<xs:attribute name="multi" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="label" type="xs:string" use="optional" />
+			<xs:attribute name="type" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="datetime" />
+						<xs:enumeration value="date" />
+						<xs:enumeration value="add_date" />
+						<xs:enumeration value="edit_date" />
+						<xs:enumeration value="text" />
+						<xs:enumeration value="alias" />
+						<xs:enumeration value="password" />
+						<xs:enumeration value="textarea" />
+						<xs:enumeration value="select" />
+						<xs:enumeration value="multiselect" />
+						<xs:enumeration value="filelist" />
+						<xs:enumeration value="checkbox" />
+						<xs:enumeration value="radio" />
+						<xs:enumeration value="separator" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="editor" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="required" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="comment" type="xs:string" use="optional" />
+			<xs:attribute name="unique" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="active" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+            <xs:attribute name="roles" use="optional">
+				<xs:simpleType>
+                    <xs:annotation>
+                        <xs:documentation>
+                            administrator,manager,editor
+                        </xs:documentation>
+                    </xs:annotation>
+					<xs:restriction base="xs:string">
+                        <xs:pattern value="[^,]+(,\s*[^,]+)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="form">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="field" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="max">
+		<xs:complexType mixed="true" />
+	</xs:element>
+
+	<xs:element name="min">
+		<xs:complexType mixed="true" />
+	</xs:element>
+
+	<xs:element name="option">
+		<xs:complexType mixed="true">
+			<xs:attribute name="value" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="options">
+		<xs:complexType>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="min" />
+					<xs:element ref="max" />
+				</xs:sequence>
+				<xs:element ref="option" minOccurs="0" maxOccurs="unbounded" />
+			</xs:choice>
+			<xs:attribute name="fieldvalue" type="xs:string" use="optional" />
+			<xs:attribute name="table" type="xs:string" use="optional" />
+			<xs:attribute name="fieldlabel" type="xs:string" use="optional" />
+			<xs:attribute name="order" type="xs:string" use="optional" />
+			<xs:attribute name="directory" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="relation">
+		<xs:complexType>
+			<xs:attribute name="tablerel" type="xs:string" use="required" />
+			<xs:attribute name="leftidfield" type="xs:string" use="required" />
+			<xs:attribute name="rightidfield" type="xs:string" use="required" />
+			<xs:attribute name="leftlangfield" type="xs:string" use="optional" />
+			<xs:attribute name="rightlangfield" type="xs:string" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="big">
+		<xs:complexType>
+			<xs:attribute name="maxw" type="xs:integer" use="required" />
+			<xs:attribute name="maxh" type="xs:integer" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="medium">
+		<xs:complexType>
+			<xs:attribute name="maxw" type="xs:integer" use="required" />
+			<xs:attribute name="maxh" type="xs:integer" use="required" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="small">
+		<xs:complexType>
+			<xs:attribute name="maxw" type="xs:integer" use="required" />
+			<xs:attribute name="maxh" type="xs:integer" use="required" />
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="medias">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="big" />
+				<xs:element ref="medium" />
+				<xs:element ref="small" />
+			</xs:sequence>
+			<xs:attribute name="max" type="xs:integer" use="required" />
+			<xs:attribute name="resizing" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+    
+    <xs:element name="roles">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="user" minOccurs="3" maxOccurs="3" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="module">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="medias" />
+				<xs:element ref="list" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="form" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="roles" minOccurs="1" maxOccurs="1" />
+			</xs:sequence>
+			<xs:attribute name="title" type="xs:string" use="required" />
+			<xs:attribute name="name" type="xs:string" use="required" />
+			<xs:attribute name="multi" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="dates" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="release" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="library" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="dashboard" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="icon" type="xs:string" use="optional" />
+			<xs:attribute name="ranking" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="validation" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="home" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="main" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0" />
+						<xs:enumeration value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="index" type="xs:integer" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

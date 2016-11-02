@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="Articles" name="article" multi="1" library="0" dashboard="1" icon="thumb-tack" ranking="1" home="1" main="0" validation="1" dates="1" release="1" index="1">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="30" resizing="1">
+		<big maxw="1024" maxh="768"/>
+		<medium maxw="600" maxh="600"/>
+		<small maxw="400" maxh="400"/>
+	</medias>
+	<list order="rank">
+		<filter label="Page" name="id_page">
+            <options table="pm_page" fieldlabel="name" fieldvalue="id" order="name"/>
+        </filter>
+		<col label="Title" name="title" type="none"/>
+		<col label="Page" name="id_page" table="pm_page" fieldvalue="name" fieldref="id"/>
+	</list>
+	<form>
+		<field multi="1" label="Title" name="title" type="text" required="1" unique="0" validation="none"/>
+		<field multi="1" label="Subtitle" name="subtitle" type="text" required="0" unique="0" validation="none"/>
+		<field multi="1" label="Alias" name="alias" type="alias" required="1" unique="1" validation="none" comment="Article URL"/>
+		<field multi="1" label="Text" name="text" type="textarea" editor="1" required="0" unique="0" validation="none"/>
+		<field multi="1" label="URL" name="url" type="text" required="0" unique="0" validation="none"/>
+		<field multi="0" label="Page" name="id_page" type="select" required="1" unique="0" validation="none">
+			<options table="pm_page" fieldlabel="name" fieldvalue="id" order="name"/>
+		</field>
+		<field multi="0" label="Tags" name="tags" type="multiselect" required="0" unique="0" validation="none">
+			<options table="pm_tag" fieldlabel="value" fieldvalue="id" order="value"/>
+		</field>
+		<field multi="0" label="Allow comment ?" name="comment" type="radio" required="1" unique="0" validation="none" roles="administrator">
+			<options>
+				<option value="1">Yes</option>
+				<option value="0">No</option>
+			</options>
+		</field>
+        <field multi="0" label="User" name="id_user" type="select" required="1" unique="0" validation="none" roles="administrator">
+			<options table="pm_user" fieldlabel="login" fieldvalue="id" order="login"/>
+		</field>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="all"/>
+        <user type="editor" permissions="add,edit,upload"/>
+    </roles>
+</module>
