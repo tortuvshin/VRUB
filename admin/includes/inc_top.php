@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo DOCBASE; ?>admin/"><?php echo SITE_TITLE; ?> | Pandao CMS</a>
+        <a class="navbar-brand" href="<?php echo DOCBASE; ?>admin/"><?php echo SITE_TITLE; ?> | Taracode</a>
         <div class="pull-right hidden-xs" id="info-header">
             <?php echo $texts['CONNECTED_AS']; ?> <i class="fa fa-user"></i> <?php echo "<b>".$_SESSION['user']['login']."</b> (".$_SESSION['user']['type'].")"; ?>&nbsp;
             <a href="<?php echo DOCBASE; ?>admin/login.php?action=logout"><i class="fa fa-power-off"></i> <?php echo $texts['LOG_OUT']; ?></a>

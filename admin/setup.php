@@ -255,7 +255,7 @@ $csrf_token = get_token("setup"); ?>
                         <button type="submit" name="install" class="btn btn-default mt15">
                             <i class="fa fa-download"></i> Install
                         </button> 
-                    </div>C O D E L I S T . C C
+                    </div>TAGTAA SOLUTION DEVELOPMENT TEAM
                 </div>
             </form>
             <?php
