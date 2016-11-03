@@ -10,9 +10,9 @@ if(!defined("ADMIN")) define("ADMIN", false);
 require_once("setenv.php");
 
 $default_lang = 2;
-$default_lang_tag = "en";
+$default_lang_tag = "fr";
 $lang_alias = "";
-$locale = "en_GB";
+$locale = "fr_FR";
 $default_currency_code = "USD";
 $default_currency_sign = "$";
 $default_currency_rate = 1;
