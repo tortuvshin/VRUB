@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module title="Users" name="user" multi="0" library="0" dashboard="0" icon="user" ranking="0" home="0" main="0" validation="1" dates="1" release="0" index="11">
+<module title="Хэрэглэгчид" name="user" multi="0" library="0" dashboard="0" icon="user" ranking="0" home="0" main="0" validation="1" dates="1" release="0" index="11">
 	<!-- resizing
 	[0] 1 single image
 	[1] 1x big, 1x medium, 1x small -->
@@ -9,23 +9,23 @@
 		<small maxw="400" maxh="400"/>
 	</medias>
 	<list order="id">
-		<col label="Name" name="name" type="none"/>
-		<col label="Email" name="email" type="none"/>
-		<col label="Login" name="login" type="none"/>
-		<col label="Type" name="type" type="none"/>
+		<col label="Нэр" name="name" type="none"/>
+		<col label="Мэйл хаяг" name="email" type="none"/>
+		<col label="Хэрэглэгчийн нэр" name="login" type="none"/>
+		<col label="Төрөл" name="type" type="none"/>
 	</list>
 	<form>
-		<field multi="0" label="Name" name="name" type="text" required="1" unique="0" validation="none"/>
-		<field multi="0" label="Email" name="email" type="text" required="1" unique="1" validation="none"/>
-		<field multi="0" label="Login" name="login" type="text" required="1" unique="1" validation="none"/>
-		<field multi="0" label="Pass" name="pass" type="password" required="1" unique="0" validation="none"/>
-		<field multi="0" label="Type" name="type" type="select" required="1" unique="0" validation="none">
+		<field multi="0" label="Нэр" name="name" type="text" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Мэйл хаяг" name="email" type="text" required="1" unique="1" validation="none"/>
+		<field multi="0" label="Хэрэглэгчийн нэр" name="login" type="text" required="1" unique="1" validation="none"/>
+		<field multi="0" label="Нууц үг" name="pass" type="password" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Tөрөл" name="type" type="select" required="1" unique="0" validation="none">
             <options>
-                <option value="administrator">administrator</option>
-                <option value="manager">manager</option>
-                <option value="editor">editor</option>
-                <option value="registered">registered</option>
-                <option value="hotel">hotel</option>
+                <option value="administrator">Админ</option>
+                <option value="manager">Менежер</option>
+                <option value="editor">Засварлагч</option>
+                <option value="registered">Бүртгэгдсэн</option>
+                <option value="hotel">Зочид буудал</option>
             </options>
         </field>
 	</form>
