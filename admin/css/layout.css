@@ -66,10 +66,10 @@ body.white {
 }
 @media (min-width: 768px) {
 	#wrapper {
-		margin-left: 185px;
+		margin-left: 220px;
 	}
 	.page-header .container-fluid {
-		padding-left: 205px;
+		padding-left: 220px;
 	}
 }
 #page-wrapper {
@@ -219,16 +219,16 @@ ul.alert-dropdown {
         background-color: #22353f;
         border: medium none;
         border-radius: 0;
-        left: 185px;
-        margin-left: -185px;
+        left: 220px;
+        margin-left: -220px;
         overflow-x: hidden;
         overflow-y: auto;
         position: fixed;
         top: 50px;
-        width: 185px;
+        width: 220px;
     }
     .side-nav>li>a {
-        width: 185px;
+        width: 220px;
     }
     .side-nav li a:hover,
     .side-nav li a.active {
