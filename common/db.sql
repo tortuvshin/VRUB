@@ -1421,14 +1421,15 @@ CREATE TABLE IF NOT EXISTS pm_currency(
 --
 
 INSERT INTO pm_currency (id, code, sign, main, rank) VALUES
-(1, 'USD', '$', 1, 1),
-(2, 'EUR', '€', 0, 2),
-(3, 'GBP', '£', 0, 3),
-(4, 'INR', '₹', 0, 4),
-(5, 'AUD', 'A$', 0, 5),
-(6, 'CAD', 'C$', 0, 6),
-(7, 'CNY', '¥', 0, 7),
-(8, 'TRY', '₺', 0, 8);
+(1, 'MNT', '₮', 1, 1),
+(2, 'USD', '$', 0, 2),
+(3, 'EUR', '€', 0, 3),
+(4, 'GBP', '£', 0, 4),
+(5, 'INR', '₹', 0, 5),
+(6, 'AUD', 'A$', 0, 6),
+(7, 'CAD', 'C$', 0, 7),
+(8, 'CNY', '¥', 0, 8),
+(9, 'TRY', '₺', 0, 9);
 
 -- =============== CREATION OF THE TABLE pm_country ==============
 
