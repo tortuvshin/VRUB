@@ -7,7 +7,7 @@ define("CURRENCY_ENABLED", "1");
 define("LANG_ENABLED", "0");
 define("ENABLE_COOKIES_NOTICE", "1");
 define("MAINTENANCE_MODE", "0");
-define("MAINTENANCE_MSG", "<h1><i class=\"fa fa-rocket\"></i> Coming soon...</h1><p>We are sorry, our website is down for maintenance.</p>");
+define("MAINTENANCE_MSG", "<h1><i class=\"fa fa-rocket\"></i> Тун удахгүй...</h1><p>Сайт засвартай байна.</p>");
 define("TEMPLATE", "default");
 define("OWNER", "");
 define("EMAIL", "");
