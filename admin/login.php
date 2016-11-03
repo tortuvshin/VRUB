@@ -40,17 +40,17 @@ if($db !== false && isset($_POST['reset'])){
             $url = getUrl();
             $new_pass = genPass(6);
             $mailContent = "
-            <p>Hi,<br>You requested a new password from <a href=\"".$url."\" target=\"_blank\">".$url."</a><br>
-            Bellow, your new connection informations<br>
-            Username: ".$row['login']."<br>
-            Password: <b>".$new_pass."</b><br>
-            You can modify this random password in the settings via the manager.</p>";
-            if(sendMail($email, $row['name'], "Your new password", $mailContent) !== false)
+            <p>Сайн байна уу,<br>шинэ нууц үг <a href=\"".$url."\" target=\"_blank\">".$url."</a><br>
+            Таны шинэ мэдээлэл<br>
+            Хэрэглэгчийн нэр: ".$row['login']."<br>
+            Нууц үг: <b>".$new_pass."</b><br>
+            Та шинэ нууц үгээ шинэчилнэ үү.</p>";
+            if(sendMail($email, $row['name'], "Таны шинэ нууц үг", $mailContent) !== false)
                 $db->query("UPDATE pm_user SET pass = '".md5($new_pass)."' WHERE id = ".$row['id']);
         }
-        $_SESSION['msg_success'][] = "A new password has been sent to your e-mail.<br>";
+        $_SESSION['msg_success'][] = "Таны мэйл хаягруу шинэ нууц үг илгээлээ.<br>";
     }else
-        $_SESSION['msg_error'][] = "Bad token! Thank you for re-trying by clicking on \"New password\".<br>";
+        $_SESSION['msg_error'][] = "Буруу холбоос байна дахин оролдно уу \"Шинэ нууц үг авах\".<br>";
 }
 
 $csrf_token = get_token("login"); ?>
@@ -73,10 +73,10 @@ $csrf_token = get_token("login"); ?>
                     </div>
                     <?php
                     if($action == "reset"){ ?>
-                        <p>Please enter your e-mail address corresponding to your account. A new password will be sent to you by e-mail.</p>
+                        <p>Мэйл хаягаа оруулна уу. Таны мэйл хаягруу шаардлагатай мэдээллийг илгээх болно.</p>
                         <div class="row">
                             <label class="col-sm-12">
-                                E-mail
+                                И-мэйл хаяг
                             </label>
                         </div>
                         <div class="row mb10">
@@ -86,10 +86,10 @@ $csrf_token = get_token("login"); ?>
                         </div>
                         <div class="row mb10">
                             <div class="col-xs-3 text-left">
-                                <a href="login.php"><i class="fa fa-power-off"></i> Login</a>
+                                <a href="login.php"><i class="fa fa-power-off"></i> Нэвтрэх</a>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <button class="btn btn-default" type="submit" value="" name="reset"><i class="fa fa-refresh"></i> New password</button>
+                                <button class="btn btn-default" type="submit" value="" name="reset"><i class="fa fa-refresh"></i> Нууц үг шинэчлэх</button>
                             </div>
                         </div>
                         <?php
@@ -116,7 +116,7 @@ $csrf_token = get_token("login"); ?>
                         </div>
                         <div class="row mb10">
                             <div class="col-sm-7 text-left">
-                                <a href="login.php?action=reset">Remember password&nbsp;?</a>
+                                <a href="login.php?action=reset">Нууц үг сэргээх&nbsp;?</a>
                             </div>
                             <div class="col-sm-5 text-right">
                                 <button class="btn btn-default" type="submit" value="" name="login"><i class="fa fa-power-off"></i> <?php echo $texts['LOGIN']; ?></button>
