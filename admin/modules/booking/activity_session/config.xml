@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module title="Activity sessions" name="activity_session" multi="0" library="0" dashboard="0" icon="clock-o" ranking="0" home="0" main="0" validation="0" dates="0" release="0" index="20">
+<module title="Үйл ажиллагааны бүртгэл" name="activity_session" multi="0" library="0" dashboard="0" icon="clock-o" ranking="0" home="0" main="0" validation="0" dates="0" release="0" index="20">
 	<!-- resizing
 	[0] 1 single image
 	[1] 1x big, 1x medium, 1x small -->
@@ -9,40 +9,40 @@
 		<small maxw="400" maxh="400"/>
 	</medias>
 	<list order="id_activity DESC, start_date DESC">
-		<col label="Activity" name="id_activity" table="pm_activity" fieldref="id" fieldvalue="title"/>
-		<col label="Start date" name="start_date" type="date"/>
-		<col label="End date" name="end_date" type="date"/>
-		<col label="Price" name="price" type="price"/>
+		<col label="Үйл ажиллагаа" name="id_activity" table="pm_activity" fieldref="id" fieldvalue="title"/>
+		<col label="Эхлэх өдөр" name="start_date" type="date"/>
+		<col label="Дуусах өдөр" name="end_date" type="date"/>
+		<col label="Үнэ" name="price" type="price"/>
 	</list>
 	<form>
-        <field multi="0" label="Activity" name="id_activity" type="select" required="1" unique="0" validation="none">
+        <field multi="0" label="Үйл ажиллагаа" name="id_activity" type="select" required="1" unique="0" validation="none">
             <options table="pm_activity" fieldlabel="title" fieldvalue="id" order="title"></options>
         </field>
-		<field multi="0" label="Start date" name="start_date" type="date" required="1" unique="0" validation="none"/>
-        <field multi="0" label="End date" name="end_date" type="date" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Days" name="days" type="checkbox" required="0" unique="0" validation="none" comment="">
+		<field multi="0" label="Эхлэх өдөр" name="start_date" type="date" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Дуусах өдөр" name="end_date" type="date" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Өдөр" name="days" type="checkbox" required="0" unique="0" validation="none" comment="">
             <options>
-                <option value="1">Monday</option>
-                <option value="2">Tuesday</option>
-                <option value="3">Wednesday</option>
-                <option value="4">Thursday</option>
-                <option value="5">Friday</option>
-                <option value="6">Saterday</option>
-                <option value="7">Sunday</option>
+                <option value="1">Даваа</option>
+                <option value="2">Мягмар</option>
+                <option value="3">Лхагва</option>
+                <option value="4">Пүрэв</option>
+                <option value="5">Баасан</option>
+                <option value="6">Бямба</option>
+                <option value="7">Ням</option>
             </options>  
         </field>
-		<field multi="0" label="Price/adult" name="price" type="text" required="1" unique="0" validation="numeric" comment="{currency}"/>
-		<field multi="0" label="Price/child" name="price_child" type="text" required="1" unique="0" validation="numeric" comment="{currency}"/>
-        <field multi="0" label="Discount rate" name="discount" type="text" required="0" unique="0" validation="numeric" comment="% - Applied to the amount"/>
-        <field multi="0" label="VAT rate" name="vat_rate" type="text" required="1" unique="0" validation="numeric" comment="%"/>
-        <table label="Hours" name="activity_session_hour" fieldref="id_activity_session">
-            <field multi="0" label="Hour" name="start_h" type="select" required="1" unique="0" validation="none">
+		<field multi="0" label="Үнэ/том хүн" name="price" type="text" required="1" unique="0" validation="numeric" comment="{currency}"/>
+		<field multi="0" label="Үнэ/хүүхэд" name="price_child" type="text" required="1" unique="0" validation="numeric" comment="{currency}"/>
+        <field multi="0" label="Хөнгөлөлт" name="discount" type="text" required="0" unique="0" validation="numeric" comment="% - тооцоонд бодогдсон"/>
+        <field multi="0" label="НӨАТ хувь" name="vat_rate" type="text" required="1" unique="0" validation="numeric" comment="%"/>
+        <table label="Цаг" name="activity_session_hour" fieldref="id_activity_session">
+            <field multi="0" label="Цаг" name="start_h" type="select" required="1" unique="0" validation="none">
                 <options>
                     <min>0</min>
                     <max>23</max>
                 </options>
             </field>
-            <field multi="0" label="Minutes" name="start_m" type="select" required="1" unique="0" validation="none">
+            <field multi="0" label="Минут" name="start_m" type="select" required="1" unique="0" validation="none">
                 <options>
                     <option value="0">00</option>
                     <option value="5">05</option>
