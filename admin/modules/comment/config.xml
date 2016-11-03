@@ -19,10 +19,10 @@
 		<field multi="1" label="Зурвас" name="msg" type="textarea" editor="0" required="0" unique="0" validation="none"/>
         <field multi="0" label="Item төрөл" name="item_type" type="select" required="1" unique="0" validation="none">
 			<options>
-                <option value="article">Article</option>
-                <option value="page">Page</option>
-                <option value="hotel">Hotel</option>
-                <option value="activity">Activity</option>
+                <option value="article">Нийтлэл</option>
+                <option value="page">Нууцлал</option>
+                <option value="hotel">Зочид буудал</option>
+                <option value="activity">Үйл ажилллагаа</option>
             </options>
 		</field>
 		<field multi="0" label="Item ID" name="id_item" type="text" required="1" unique="0" validation="numeric"/>

@@ -17,8 +17,8 @@
 		<field multi="0" label="Товчлол" name="tag" type="text" required="1" unique="1" validation="none"/>
 		<field multi="0" label="Баруунаас зүүн" name="rtl" type="radio" required="1" unique="0" validation="none">
 			<options>
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">Тийм</option>
+				<option value="0">Үгүй</option>
 			</options>
 		</field>
 	</form>
