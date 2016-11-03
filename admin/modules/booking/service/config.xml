@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module title="Services" name="service" multi="1" library="0" dashboard="0" icon="thumbs-up" ranking="1" home="0" main="0" validation="1" dates="0" release="0" index="17">
+<module title="Үйлчилгээ" name="service" multi="1" library="0" dashboard="0" icon="thumbs-up" ranking="1" home="0" main="0" validation="1" dates="0" release="0" index="17">
 	<!-- resizing
 	[0] 1 single image
 	[1] 1x big, 1x medium, 1x small -->
@@ -9,28 +9,28 @@
 		<small maxw="400" maxh="400"/>
 	</medias>
 	<list order="rank">
-		<col label="Title" name="title" type="none"/>
-		<col label="Package" name="type"/>
-		<col label="Price" name="price" type="price"/>
+		<col label="Нэр" name="title" type="none"/>
+		<col label="Багц" name="type"/>
+		<col label="Үнэ" name="price" type="price"/>
 	</list>
 	<form>
-		<field multi="1" label="Title" name="title" type="text" required="1" unique="0" validation="none"/>
-		<field multi="1" label="Short description" name="descr" type="textarea" editor="0" required="0" unique="0" validation="none"/>
-		<field multi="1" label="Long description" name="long_descr" type="textarea" editor="1" required="0" unique="0" validation="none"/>
-		<field multi="0" label="Price type" name="type" type="select" required="1" unique="0" validation="none">
+		<field multi="1" label="Нэр" name="title" type="text" required="1" unique="0" validation="none"/>
+		<field multi="1" label="Товч тайлбар" name="descr" type="textarea" editor="0" required="0" unique="0" validation="none"/>
+		<field multi="1" label="Дэлгэрэнгүй тайлбар" name="long_descr" type="textarea" editor="1" required="0" unique="0" validation="none"/>
+		<field multi="0" label="Үнийн төрөл" name="type" type="select" required="1" unique="0" validation="none">
             <options>
-                <option value="night">Night</option>
-                <option value="person">Person</option>
-                <option value="person-night">Person/night</option>
-                <option value="package">Fixed price</option>
-                <option value="qty">Quantity</option>
-                <option value="qty-night">Quantity/night</option>
-                <option value="qty-person-night">Quantity/person/night</option>
+                <option value="night">Шөнө</option>
+                <option value="person">Хүн</option>
+                <option value="person-night">Хүн/шөнө</option>
+                <option value="package">Тохирсон үнэ</option>
+                <option value="qty">Тоо ширхэг</option>
+                <option value="qty-night">Тоо/шөнө</option>
+                <option value="qty-person-night">Тоо/хүн/шөнө</option>
             </options>
         </field>
-        <field multi="0" label="Price" name="price" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
-        <field multi="0" label="VAT rate" name="vat_rate" type="text" required="1" unique="0" validation="numeric" comment="%"/>
-        <field multi="0" label="Room" name="rooms" type="multiselect" required="0" unique="0" validation="none">
+        <field multi="0" label="Үнэ" name="price" type="text" required="1" unique="0" validation="numeric" comment="{currency} (НӨАТ орсон)"/>
+        <field multi="0" label="НӨАТ хувь" name="vat_rate" type="text" required="1" unique="0" validation="numeric" comment="%"/>
+        <field multi="0" label="Өрөө" name="rooms" type="multiselect" required="0" unique="0" validation="none">
 			<options table="pm_room" fieldlabel="title" fieldvalue="id" order="title"/>
 		</field>
 	</form>
