@@ -51,7 +51,7 @@ if($allow_comment == 1 && $result_comment !== false && $item_id > 0 && isset($it
                 <?php
                 if($allow_rating == 1){ ?>
                     <div class="form-group form-inline">
-                        <label for="rating">Rating</label>
+                        <label for="rating">Үнэлгээ</label>
                         <div class="input-group mb5">
                             <input type="hidden" name="rating" class="rating" value="<?php echo $rating; ?>" data-rtl="<?php echo (RTL_DIR) ? true : false; ?>" min="1" max="5" data-step="1" data-size="xs">
                         </div>

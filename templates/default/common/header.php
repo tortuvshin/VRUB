@@ -1,5 +1,6 @@
 <?php debug_backtrace() || die ("Direct access not permitted"); ?>
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -154,7 +155,7 @@ if(ENABLE_COOKIES_NOTICE == 1 && !isset($_COOKIE['cookies_enabled'])){ ?>
             <div class="row">
                 <div class="col-md-12">
                     <?php echo $texts['COOKIES_NOTICE']; ?>
-                    <button class="btn btn-success btn-xs">OK</button>
+                    <button class="btn btn-success btn-xs">ТИйм</button>
                 </div>
             </div>
         </div>
@@ -427,7 +428,7 @@ if(ENABLE_COOKIES_NOTICE == 1 && !isset($_COOKIE['cookies_enabled'])){ ?>
             <div class="navbar navbar-default">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">Цэс</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
