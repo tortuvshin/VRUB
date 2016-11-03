@@ -1,5 +1,5 @@
 <?php
-define("TITLE_ELEMENT", "404 page not found !");
+define("TITLE_ELEMENT", "404 хуудас олдсонгүй !");
 require_once("../common/lib.php");
 require_once("../common/define.php");
 if(!isset($_SESSION['user'])){
@@ -19,7 +19,7 @@ require_once("includes/fn_module.php"); ?>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 clearfix">
-                            <h1 class="pull-left"><i class="fa fa-warning"></i> 404 page not found !</h1>
+                            <h1 class="pull-left"><i class="fa fa-warning"></i> 404 хуудас олдсонгүй !</h1>
                         </div>
                     </div>
                 </div>
@@ -28,13 +28,13 @@ require_once("includes/fn_module.php"); ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Error 404</h2>
-                    <p>The wanted URL was not found on this server.<br>
-                    The page you wish to display does not exist, or is temporarily unavailable.</p>
-                    Thank you for trying the following actions :
+                    <h2>Алдаа 404</h2>
+                    <p>Энэ хуудас анхнаасаа байгаагүй, хаяг нь солигдсон эсвэл түр зуур хандах боломжгүй байна.</p>
+                    
+                    Доорх зааврыг дагана уу :
                     <ul>
-                        <li>Be sure the URL in the address bar of your browser is correctly spelt and formated.</li>
-                        <li>If you reached this page by clicking a link or if you think that it is about an error of the server, contact the administrator to alert him.</li>
+                        <li>Таны интернэт хөтөчийн хандах хэсэгт буй URL хаяг зөв бичигдсэн эсэхийг шалгана уу.</li>
+                        <li>Хэрвээ та энэ хуудасруу сайтын холбоос линкээр дамжиж орсон эсвэл энэ алдаа нь серверийн алдаатай үйлдэл гэж үзэж байвал сайтын администраторт хандаж мэдэгдэнэ үү.</li>
                     </ul>
                 </div>
             </div>

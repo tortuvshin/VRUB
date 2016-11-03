@@ -50,7 +50,7 @@ if($db !== false && isset($_POST['reset'])){
         }
         $_SESSION['msg_success'][] = "Таны мэйл хаягруу шинэ нууц үг илгээлээ.<br>";
     }else
-        $_SESSION['msg_error'][] = "Буруу холбоос байна дахин оролдно уу \"Шинэ нууц үг авах\".<br>";
+        $_SESSION['msg_error'][] = "Буруу холбоос байна дахин оролдоно уу \"Шинэ нууц үг авах\".<br>";
 }
 
 $csrf_token = get_token("login"); ?>
