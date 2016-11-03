@@ -178,8 +178,8 @@ INSERT INTO pm_page (id, lang, name, title, subtitle, title_tag, alias, descr, r
 (7, 1, 'Galerie', 'Galerie', '', 'Galerie', 'galerie', '', 'index,follow', '', '', '', '', null, 'page', 'gallery', 1, 0, 0, 1, 5, INSTALL_DATE, INSTALL_DATE, 0, 0, 0),
 (7, 2, 'Gallery', 'Gallery', '', 'Gallery', 'gallery', '', 'index,follow', '', '', '', '', null, 'page', 'gallery', 1, 0, 0, 1, 5, INSTALL_DATE, INSTALL_DATE, 0, 0, 0),
 (7, 3, 'صور معرض', 'صور معرض', '', 'صور معرض', 'gallery', '', 'index,follow', '', '', '', '', null, 'page', 'gallery', 1, 0, 0, 1, 5, INSTALL_DATE, INSTALL_DATE, 0, 0, 0),
-(8, 1, '404', 'Erreur 404 : Page introuvable !', '', '404 Page introuvable', '404', '', 'noindex,nofollow', '', '', '<p>L''URL demandée n''a pas été trouvée sur ce serveur.<br />\r\nLa page que vous voulez afficher n''existe pas, ou est temporairement indisponible.</p>\r\n\r\n<p>Merci d''essayer les actions suivantes :</p>\r\n\r\n<ul>\r\n	<li>Assurez-vous que l''URL dans la barre d''adresse de votre navigateur est correctement orthographiée et formatée.</li>\r\n	<li>Si vous avez atteint cette page en cliquant sur un lien ou si vous pensez que cela concerne une erreur du serveur, contactez l''administrateur pour l''alerter.</li>\r\n</ul>\r\n', '', null, '404', '', 0, 0, 0, 1, 15, INSTALL_DATE, INSTALL_DATE, 0, 0, 1),
-(8, 2, '404', '404 Error: Page not found!', '', '404 Not Found', '404', '', 'noindex,nofollow', '', '', '<p>The wanted URL was not found on this server.<br />\r\nThe page you wish to display does not exist, or is temporarily unavailable.</p>\r\n\r\n<p>Thank you for trying the following actions :</p>\r\n\r\n<ul>\r\n	<li>Be sure the URL in the address bar of your browser is correctly spelt and formated.</li>\r\n	<li>If you reached this page by clicking a link or if you think that it is about an error of the server, contact the administrator to alert him.</li>\r\n</ul>\r\n', '', null, '404', '', 0, 0, 0, 1, 15, INSTALL_DATE, INSTALL_DATE, 0, 0, 1),
+(8, 1, '404', 'Erreur 404 : Page introuvable !', '', '404 Page introuvable', '404', '', 'noindex,nofollow', '', '', '<p>L''URL demandée n''a pas été trouvée sur ce serveur.<br />\r\nLa page que vous voulez afficher n''existe pas, ou est temporairement indisponible.</p>\r\n\r\n<p>Merci d''essayer les actions suivantes :</p>\r\n\r\n<ul>\r\n    <li>Assurez-vous que l''URL dans la barre d''adresse de votre navigateur est correctement orthographiée et formatée.</li>\r\n   <li>Si vous avez atteint cette page en cliquant sur un lien ou si vous pensez que cela concerne une erreur du serveur, contactez l''administrateur pour l''alerter.</li>\r\n</ul>\r\n', '', null, '404', '', 0, 0, 0, 1, 15, INSTALL_DATE, INSTALL_DATE, 0, 0, 1),
+(8, 2, '404', '404 Error: Page not found!', '', '404 Not Found', '404', '', 'noindex,nofollow', '', '', '<p>The wanted URL was not found on this server.<br />\r\nThe page you wish to display does not exist, or is temporarily unavailable.</p>\r\n\r\n<p>Thank you for trying the following actions :</p>\r\n\r\n<ul>\r\n    <li>Be sure the URL in the address bar of your browser is correctly spelt and formated.</li>\r\n    <li>If you reached this page by clicking a link or if you think that it is about an error of the server, contact the administrator to alert him.</li>\r\n</ul>\r\n', '', null, '404', '', 0, 0, 0, 1, 15, INSTALL_DATE, INSTALL_DATE, 0, 0, 1),
 (8, 3, '404', '404 Error: Page not found!', '', '404 Not Found', '404', '', 'noindex,nofollow', '', '', '', '', null, '404', '', 0, 0, 0, 1, 15, INSTALL_DATE, INSTALL_DATE, 0, 0, 1),
 (9, 1, 'Hôtels', 'Hôtels', '', 'Hôtels', 'hotels', '', 'index,follow', '', '', '', '', null, 'hotels', 'hotel', 1, 0, 0, 1, 3, INSTALL_DATE, INSTALL_DATE, 0, 0, 1),
 (9, 2, 'Hotels', 'Hotels', '', 'Hotels', 'hotels', '', 'index,follow', '', '', '', '', null, 'hotels', 'hotel', 1, 0, 0, 1, 3, INSTALL_DATE, INSTALL_DATE, 0, 0, 1),
@@ -1421,15 +1421,14 @@ CREATE TABLE IF NOT EXISTS pm_currency(
 --
 
 INSERT INTO pm_currency (id, code, sign, main, rank) VALUES
-(1, 'MNT', '₮', 1, 1),
-(2, 'USD', '$', 0, 2),
-(3, 'EUR', '€', 0, 3),
-(4, 'GBP', '£', 0, 4),
-(5, 'INR', '₹', 0, 5),
-(6, 'AUD', 'A$', 0, 6),
-(7, 'CAD', 'C$', 0, 7),
-(8, 'CNY', '¥', 0, 8),
-(9, 'TRY', '₺', 0, 9);
+(1, 'USD', '$', 1, 1),
+(2, 'EUR', '€', 0, 2),
+(3, 'GBP', '£', 0, 3),
+(4, 'INR', '₹', 0, 4),
+(5, 'AUD', 'A$', 0, 5),
+(6, 'CAD', 'C$', 0, 6),
+(7, 'CNY', '¥', 0, 7),
+(8, 'TRY', '₺', 0, 8);
 
 -- =============== CREATION OF THE TABLE pm_country ==============
 
