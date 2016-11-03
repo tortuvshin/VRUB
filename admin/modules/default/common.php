@@ -3,7 +3,7 @@
  * Common file for all modules
  * checks the media directory and display the listing or the form according to the url
  */
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 define("ADMIN", true);
 
 define("SYSBASE", str_replace("\\", "/", realpath(dirname(__FILE__)."/../../../")."/"));
@@ -15,7 +15,7 @@ if(!isset($_SESSION['user'])){
     header("Location: ".DOCBASE.ADMIN_FOLDER."/login.php");
     exit();
 }elseif($_SESSION['user']['type'] == "registered"){
-    $_SESSION['msg_error'] = "Access denied.<br/>";
+    $_SESSION['msg_error'] = "Хандалт амжилтгүй.<br/>";
     header("Location: ".DOCBASE.ADMIN_FOLDER."/login.php");
     exit();
 }

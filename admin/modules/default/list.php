@@ -2,7 +2,7 @@
 /**
  * Template of the module listing
  */
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
  
 // Action to perform
 $action = (isset($_GET['action'])) ? htmlentities($_GET['action'], ENT_QUOTES, "UTF-8") : "";

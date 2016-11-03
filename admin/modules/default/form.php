@@ -2,7 +2,7 @@
 /**
  * Template of the module form
  */
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
  
 // Item ID
 if(isset($_GET['id']) && is_numeric($_GET['id'])) $id = $_GET['id'];
