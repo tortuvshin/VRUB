@@ -5,7 +5,7 @@
 session_start();
 
 define("ADMIN", true);
-define("TITLE_ELEMENT", "Quick installation");
+define("TITLE_ELEMENT", "Суулгаж эхлэх");
 require_once("../common/lib.php");
 require_once("../common/setenv.php");
         
@@ -47,7 +47,7 @@ if(is_file($config_file)){
 
 if($db !== false && db_table_exists($db, "pm_%") === true){
     $installed = true;
-    $_SESSION['msg_notice'][] = "It seems that Pandao CMS is already installed. Remove your former tables from your database to reinstall it <a class=\"btn btn-default\" href=\"login.php\">Log in</a>";
+    $_SESSION['msg_notice'][] = "Сайтын өгөгдлийг аль хэдийн бүртгэсэн байна. Дахин суулгахыг хүсвэл хуучин өгөгдлийн сангуудыг устгана уу. <a class=\"btn btn-default\" href=\"login.php\">Нэвтрэх</a>";
 }
 
 if(isset($_POST['install']) && !$installed){
@@ -67,17 +67,17 @@ if(isset($_POST['install']) && !$installed){
     
     if(check_token("/admin/setup.php", "setup", "post")){
         
-        if($config_tmp['db_name'] == "") $field_notice['db_name'] = "Required field";
-        if($config_tmp['db_host'] == "") $field_notice['db_host'] = "Required field";
-        if($config_tmp['db_port'] == "") $field_notice['db_port'] = "Required field";
-        if($config_tmp['db_user'] == "") $field_notice['db_user'] = "Required field";
-        if($config_tmp['db_pass'] == "") $field_notice['db_pass'] = "Required field";
+        if($config_tmp['db_name'] == "") $field_notice['db_name'] = "Заавал бөглөх";
+        if($config_tmp['db_host'] == "") $field_notice['db_host'] = "Заавал бөглөх";
+        if($config_tmp['db_port'] == "") $field_notice['db_port'] = "Заавал бөглөх";
+        if($config_tmp['db_user'] == "") $field_notice['db_user'] = "Заавал бөглөх";
+        if($config_tmp['db_pass'] == "") $field_notice['db_pass'] = "Заавал бөглөх";
     
-        if($user == "") $field_notice['user'] = "Required field";
-        if($password == "") $field_notice['password'] = "Required field";
-        elseif($password != $_POST['password2']) $field_notice['password'] = "The passwords don't match";
-        elseif(mb_strlen($password, "UTF-8") < 6) $field_notice['password'] = "The password is too short";
-        if($email == "" || !preg_match("/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$/i", $email)) $field_notice['email'] = "Invalid email address";
+        if($user == "") $field_notice['user'] = "Заавал бөглөх";
+        if($password == "") $field_notice['password'] = "Заавал бөглөх";
+        elseif($password != $_POST['password2']) $field_notice['password'] = "Нууц үг тохирохгүй байна";
+        elseif(mb_strlen($password, "UTF-8") < 6) $field_notice['password'] = "Нууц үг хэт богино байна";
+        if($email == "" || !preg_match("/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$/i", $email)) $field_notice['email'] = "Буруу и-мэйл хаяг байна";
         
         if(count($field_notice) == 0){
 
@@ -85,7 +85,7 @@ if(isset($_POST['install']) && !$installed){
                 $db = new db("mysql:host=".$config_tmp['db_host'].";port=".$config_tmp['db_port'].";dbname=".$config_tmp['db_name'].";charset=utf8", $config_tmp['db_user'], $config_tmp['db_pass']);
                 $db->exec("SET NAMES 'utf8'");
             }catch(PDOException $e){
-                $_SESSION['msg_error'][] = "Unable to connect to the database. Please check the database connection parameters.<br>".$e->getMessage();
+                $_SESSION['msg_error'][] = "Өгөгдлийн сантай холболт үүсгэж чадсангүй. Өгөгдлийн сантай холбох утгуудыг дахин шалгана уу.<br>".$e->getMessage();
             }
             
             if($db !== false){
@@ -107,7 +107,7 @@ if(isset($_POST['install']) && !$installed){
 
                 if($db_success === true){
 
-                    $_SESSION['msg_success'][] = "Congratulations! You have successfully finished the quick installation of your website. Click on <a class=\"btn btn-default\" href=\"login.php\">Log in</a> to begin.<br>";
+                    $_SESSION['msg_success'][] = "Баяр хүргье! Та өөрийн сайтыг амжилттай суулгалаа. Нэвтрэх товчлуур дээр дарж <a class=\"btn btn-default\" href=\"login.php\">Нэвтрэх</a> цааш үргэлжлүүлнэ үү.<br>";
 
                     $installed = true;
 
@@ -120,26 +120,26 @@ if(isset($_POST['install']) && !$installed){
                     }
                     
                     if(file_put_contents($config_file, $config_str) === false){
-                        $_SESSION['msg_notice'][] = "<b>But... We cannot write into the file common/config.php.<br>";
-                        $_SESSION['msg_notice'][] = "To complete the installation, edit manualy this file, copy and past the following lines:</b><br>";
+                        $_SESSION['msg_notice'][] = "<b>Гэсэн хэдий ч... Бид common/config.php файлд бичилт хийж чадсангүй.<br>";
+                        $_SESSION['msg_notice'][] = "Сайтаа суулгах үйл явцаа дуусгахын тулд, уг файлыг гараар засварлан, дараах кодуудыг хуулж бичнэ үү:</b><br>";
                         $_SESSION['msg_notice'][] = preg_replace("/(\r\n|\n|\r)/", "", nl2br(htmlentities($config_str, ENT_QUOTES, "UTF-8")));
                     }
 
                     if(!is_file($htaccess_file)){
                         $ht_content = str_replace("{DOCBASE}", DOCBASE, file_get_contents($tmp_htaccess_file));
                         if(file_put_contents($htaccess_file, $ht_content) === false){
-                            $_SESSION['msg_notice'][] = "<b>We cannot write into the file .htaccess.<br>";
-                            $_SESSION['msg_notice'][] = "To complete the installation, edit manualy this file, copy and past the following lines:</b><br>";
+                            $_SESSION['msg_notice'][] = "<b>Бид .htaccess файлд бичилт хийж чадсангүй.<br>";
+                            $_SESSION['msg_notice'][] = "Сайтаа суулгах үйл явцаа дуусгахын тулд, уг файлыг гараар засварлан, дараах кодуудыг хуулж бичнэ үү:</b><br>";
                             $_SESSION['msg_notice'][] = preg_replace("/(\r\n|\n|\r)/", "", nl2br(htmlentities($ht_content, ENT_QUOTES, "UTF-8")));
                         }
                     }
                 }else
-                    $_SESSION['msg_error'][] = "We cannot modify the database. Try to execute the script common/db.sql in your SQL manager.<br/>";
+                    $_SESSION['msg_error'][] = "Бид өгөгдлийн санг удирдах боломжгүй байна. Өөрийн SQL удирдагч дээрээ common/db.sql хавтаст байрлах кодыг ажиллуулна уу.<br/>";
             }
         }else
-            $_SESSION['msg_error'][] = "The following form contains some errors.<br/>";
+            $_SESSION['msg_error'][] = "Дараах форм алдаатай байна.<br/>";
     }else
-        $_SESSION['msg_error'][] = "Bad token! Thank you for re-trying by clicking on \"Install\".<br>";
+        $_SESSION['msg_error'][] = "Буруу утга! \"Суулгах\" товчлуур дээр дарж дахин оролдоно уу.<br>";
 }
 
 $csrf_token = get_token("setup"); ?>
@@ -166,15 +166,15 @@ $csrf_token = get_token("setup"); ?>
         </div>
         <?php
         if(!$installed){ ?>
-            <h1>Welcome</h1>
-            <p>Fill fields with your information. It will take only a few seconds. You can always modify these parameters later.</p>
+            <h1>Тавтай морил</h1>
+            <p>Дараах талбаруудад өөрийн мэдээллүүдийг оруулна уу. Хэдхэн секунд л зарцуулна. Уг утгуудыг дараа нь хэдийд ч өөрчилж болно.</p>
             <form id="form" class="form-horizontal" role="form" action="setup.php" method="post">
                 <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                 <fieldset>
-                    <legend>Général</legend>
+                    <legend>Ерөнхий</legend>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            Site title
+                            Сайтын гарчиг
                         </label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" value="<?php echo $config_tmp['site_title']; ?>" name="site_title">
@@ -182,7 +182,7 @@ $csrf_token = get_token("setup"); ?>
                     </div>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            E-mail
+                            И-мэйл
                         </label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" value="<?php echo $email; ?>" name="email">
@@ -191,7 +191,7 @@ $csrf_token = get_token("setup"); ?>
                     </div>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            Username
+                            Хэрэглэгчийн нэр
                         </label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" value="<?php echo $user; ?>" name="user">
@@ -200,22 +200,22 @@ $csrf_token = get_token("setup"); ?>
                     </div>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            Password
+                            Нууц үг
                         </label>
                         <div class="col-md-3">
-                            <input class="form-control" type="password" value="<?php echo $password; ?>" name="password" placeholder="> 5 caracters">
+                            <input class="form-control" type="password" value="<?php echo $password; ?>" name="password" placeholder="> 5-аас дээш тэмдэгт">
                             <div class="field-notice" rel="password"></div>
                         </div>
                         <div class="col-md-3">
-                            <input class="form-control" type="password" value="" name="password2" placeholder="Confirm password">
+                            <input class="form-control" type="password" value="" name="password2" placeholder="Нууц үгээ баталгаажуулна уу.">
                         </div>
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>Database</legend>
+                    <legend>Өгөгдлийн сан</legend>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            Name
+                            Нэр
                         </label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" value="<?php echo $config_tmp['db_name']; ?>" name="db_name">
@@ -224,7 +224,7 @@ $csrf_token = get_token("setup"); ?>
                     </div>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            Host
+                            Хост
                         </label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" value="<?php echo $config_tmp['db_host']; ?>" name="db_host">
@@ -233,7 +233,7 @@ $csrf_token = get_token("setup"); ?>
                     </div>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            Port
+                            Порт
                         </label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" value="<?php echo $config_tmp['db_port']; ?>" name="db_port">
@@ -242,7 +242,7 @@ $csrf_token = get_token("setup"); ?>
                     </div>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            User
+                            Хэрэглэгчийн нэр
                         </label>
                         <div class="col-md-6">
                             <input class="form-control" type="text" value="<?php echo $config_tmp['db_user']; ?>" name="db_user">
@@ -251,7 +251,7 @@ $csrf_token = get_token("setup"); ?>
                     </div>
                     <div class="row mb10">
                         <label class="col-md-3 control-label">
-                            Password
+                            Нууц үг
                         </label>
                         <div class="col-md-6">
                             <input class="form-control" type="password" value="<?php echo $config_tmp['db_pass']; ?>" name="db_pass">
@@ -262,7 +262,7 @@ $csrf_token = get_token("setup"); ?>
                 <div class="row mb10">
                     <div class="col-md-9 text-right">
                         <button type="submit" name="install" class="btn btn-default mt15">
-                            <i class="fa fa-download"></i> Install
+                            <i class="fa fa-download"></i> Суулгах
                         </button>
                     </div>
                 </div>
