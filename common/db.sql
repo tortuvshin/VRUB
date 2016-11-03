@@ -1382,8 +1382,8 @@ CREATE TABLE IF NOT EXISTS `pm_user` (
 -- Dumping data for table `pm_user`
 --
 
-INSERT INTO `pm_user` (`id`, `name`, `email`, `login`, `pass`, `type`, `add_date`, `edit_date`, `checked`, `fb_id`, `address`, `postcode`, `city`, `company`, `country`, `mobile`, `phone`, `token`) VALUES
-(1, 'Administrator', 'admin@admin.com', 'admin', '5f4dcc3b5aa765d61d8327deb882cf99', 'administrator', 1478177832, 1478177832, 1, '', '', '', '', '', '', '', '', '');
+INSERT INTO pm_user (id, name, email, login, pass, type, add_date, edit_date, checked, fb_id, address, postcode, city, company, country, mobile, phone, token) VALUES
+(1, 'Administrator', 'USER_EMAIL', 'USER_LOGIN', 'USER_PASS', 'administrator', INSTALL_DATE, INSTALL_DATE, 1, '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
