@@ -8,7 +8,7 @@ if(!isset($_SESSION['user'])){
     header("Location: login.php");
     exit();
 }elseif($_SESSION['user']['type'] == "registered"){
-    $_SESSION['msg_error'][] = "Access denied.";
+    $_SESSION['msg_error'][] = "Хандах эрхгүй байна.";
     header("Location: login.php");
     exit();
 }
