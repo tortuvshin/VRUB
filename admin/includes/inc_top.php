@@ -3,12 +3,12 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Цэс</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php echo DOCBASE.ADMIN_FOLDER; ?>/"><?php echo SITE_TITLE; ?><span class="hidden-xs"> | Pandao CMS</span></a>
+        <a class="navbar-brand" href="<?php echo DOCBASE.ADMIN_FOLDER; ?>/"><?php echo SITE_TITLE; ?><span class="hidden-xs"> | TARACODE</span></a>
         <div class="pull-right hidden-xs" id="info-header">
             <?php echo $texts['CONNECTED_AS']; ?> <i class="fa fa-user"></i> <?php echo "<b>".$_SESSION['user']['login']."</b> (".$_SESSION['user']['type'].")"; ?>&nbsp;
             <a href="<?php echo DOCBASE.ADMIN_FOLDER; ?>/login.php?action=logout"><i class="fa fa-power-off"></i> <?php echo $texts['LOG_OUT']; ?></a>
