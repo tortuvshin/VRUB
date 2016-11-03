@@ -12,7 +12,7 @@
                 <div class="col-md-6">
                     <p>
                         &copy; <?php echo date("Y"); ?>
-                        <?php echo OWNER." ".$texts['ALL_RIGHTS_RESERVED']; ?> - S H A R E D    O N    C`O`D`E`L`I`S`T`.`C`C`
+                        <?php echo OWNER." ".$texts['ALL_RIGHTS_RESERVED']; ?> - Tagtaa solution development team
                     </p>
                 </div>
                 <div class="col-md-6">

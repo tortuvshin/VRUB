@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>
-    Pandao CMS
+    Taracode
     <?php
     echo TITLE_ELEMENT;
     if(defined("SITE_TITLE")) echo " | ".SITE_TITLE; ?>
