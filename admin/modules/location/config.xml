@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module title="Locations" name="location" multi="0" library="0" dashboard="0" icon="map-marker" ranking="0" home="0" main="0" validation="1" dates="0" release="0" index="8">
+<module title="Байршилууд" name="location" multi="0" library="0" dashboard="0" icon="map-marker" ranking="0" home="0" main="0" validation="1" dates="0" release="0" index="8">
 	<!-- resizing
 	[0] 1 single image
 	[1] 1x big, 1x medium, 1x small -->
@@ -11,12 +11,12 @@
 	<list order="id">
 		<col label="Нэр" name="name" type="none"/>
 		<col label="Хаяг" name="address" type="none"/>
-		<col label="Latitude" name="lat" type="none"/>
-		<col label="Longitude" name="lng" type="none"/>
+		<col label="Өргөрөг" name="lat" type="none"/>
+		<col label="Уртраг" name="lng" type="none"/>
 	</list>
 	<form>
-		<field multi="0" label="Name" name="name" type="text" required="1" unique="0" validation="none"/>
-		<field multi="0" label="Address" name="address" type="text" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Нэр" name="name" type="text" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Хаяг" name="address" type="text" required="1" unique="0" validation="none"/>
 		<field multi="0" label="Өргөрөг" name="lat" type="text" required="1" unique="0" validation="numeric"/>
 		<field multi="0" label="Уртраг" name="lng" type="text" required="1" unique="0" validation="numeric"/>
         <field multi="0" label="Хуудасууд" name="pages" type="multiselect" required="0" unique="0" validation="none">
