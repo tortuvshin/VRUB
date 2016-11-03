@@ -7,43 +7,42 @@ if(!is_session_started()) session_start();
 
 if(!defined("ADMIN")) define("ADMIN", false);
 
-// Messages
-if(!isset($_SESSION['msg_error'])) $_SESSION['msg_error'] = "";
-if(!isset($_SESSION['msg_success'])) $_SESSION['msg_success'] = "";
-if(!isset($_SESSION['msg_notice'])) $_SESSION['msg_notice'] = "";
-
 require_once("setenv.php");
 
 $default_lang = 2;
 $default_lang_tag = "en";
 $lang_alias = "";
-$locale = "en-GB";
+$locale = "en_GB";
 $default_currency_code = "USD";
 $default_currency_sign = "$";
 $default_currency_rate = 1;
 $rtl_dir = false;
 $db = false;
 
-if(ADMIN && is_file(SYSBASE."admin/includes/lang.ini"))
-    $texts = parse_ini_file(SYSBASE."admin/includes/lang.ini");
-
 if(is_file(SYSBASE."common/config.php")){
     require_once(SYSBASE."common/config.php");
+    
+    if(ADMIN && is_file(SYSBASE.ADMIN_FOLDER."/includes/lang.ini"))
+        $texts = parse_ini_file(SYSBASE.ADMIN_FOLDER."/includes/lang.ini");
+    
     try{
         $db = new db("mysql:host=".DB_HOST.";port=".DB_PORT.";dbname=".DB_NAME.";charset=utf8", DB_USER, DB_PASS);
         $db->exec("SET NAMES 'utf8'");
     }catch(PDOException $e){
-        $_SESSION['msg_error'] .= $texts['DATABASE_ERROR'];
+        if(ADMIN) $_SESSION['msg_error'][] = $texts['DATABASE_ERROR'];
+        else die("Unable to connect to the database. Please contact the webmaster or retry later.");
     }
 }
 
+if(!defined("ADMIN_FOLDER")) define("ADMIN_FOLDER", "admin");
+
 if(($db !== false && db_table_exists($db, "pm_%") === false) || !is_file(SYSBASE."common/config.php")){
-    header("Location: ".DOCBASE."admin/setup.php");
+    header("Location: ".DOCBASE.ADMIN_FOLDER."/setup.php");
     exit();
 }
 
 if(!ADMIN){
-    $request_uri = (DOCBASE != "/") ? str_replace(DOCBASE, "", $_SERVER['REQUEST_URI']) : $_SERVER['REQUEST_URI'];
+    $request_uri = (DOCBASE != "/") ? substr($_SERVER['REQUEST_URI'], strlen(DOCBASE)) : $_SERVER['REQUEST_URI'];
     $request_uri = trim($request_uri, "/");
     $pos = strpos($request_uri, "?");
     if($pos !== false) $request_uri = substr($request_uri, 0, $pos);
@@ -53,20 +52,19 @@ if(!ADMIN){
 
 if($db !== false){
     
-    if(CURRENCY_ENABLED == 1){
-        $result_currency = $db->query("SELECT * FROM pm_currency");
-        if($result_currency !== false){
-            foreach($result_currency as $i => $row){
-                $currency_code = $row['code'];
-                $currency_sign = $row['sign'];
-                if($row['main'] == 1){
-                    $default_currency_code = $currency_code;
-                    $default_currency_sign = $currency_sign;
-                }
-                $currencies[$currency_code] = $row;
+    $result_currency = $db->query("SELECT * FROM pm_currency");
+    if($result_currency !== false){
+        foreach($result_currency as $i => $row){
+            $currency_code = $row['code'];
+            $currency_sign = $row['sign'];
+            if($row['main'] == 1){
+                $default_currency_code = $currency_code;
+                $default_currency_sign = $currency_sign;
             }
+            $currencies[$currency_code] = $row;
         }
     }
+        
     $result_lang = $db->query("SELECT l.id AS lang_id, lf.id AS file_id, title, tag, file, locale, rtl, main FROM pm_lang as l, pm_lang_file as lf WHERE id_item = l.id AND l.checked = 1 AND file != '' ORDER BY l.rank");
     if($result_lang !== false){
         foreach($result_lang as $i => $row){
@@ -81,7 +79,8 @@ if($db !== false){
     }
     $id_lang = $default_lang;
     $lang_tag = $default_lang_tag;
-    if(!ADMIN){
+    
+    if(!ADMIN && (MAINTENANCE_MODE == 0  || (isset($_SESSION['user']) && ($_SESSION['user']['type'] != "administrator" || $_SESSION['user']['type'] != "manager")))){
         if(LANG_ENABLED == 1){
             
             $uri = explode("/", REQUEST_URI);
@@ -115,6 +114,9 @@ if($db !== false){
                 $id_lang = $langs[$lang_tag]['lang_id'];
                 $locale = $langs[$lang_tag]['locale'];
                 $rtl_dir = $langs[$lang_tag]['rtl'];
+                
+                $sublocale = substr($locale, 0, 2);
+                if($sublocale == "tr" || $sublocale == "az") $locale = "en_GB";
             }
             $lang_alias = $lang_tag."/";
         }
@@ -129,13 +131,21 @@ if($db !== false){
         foreach($result_widget as $row)
             $widgets[$row['pos']][] = $row;
     }
+}else{
+    $id_lang = $default_lang;
+    $lang_tag = $default_lang_tag;
 }
-
-date_default_timezone_set(TIME_ZONE);
 
 $currency_code = (isset($_SESSION['currency']['code'])) ? $_SESSION['currency']['code'] : $default_currency_code;
 $currency_sign = (isset($_SESSION['currency']['sign'])) ? $_SESSION['currency']['sign'] : $default_currency_sign;
 $currency_rate = (isset($_SESSION['currency']['rate'])) ? $_SESSION['currency']['rate'] : $default_currency_rate;
+
+date_default_timezone_set(TIME_ZONE);
+
+if(setlocale(LC_ALL, $locale.".UTF-8", $locale) === false){
+    $locale = "en_GB";
+    setlocale(LC_ALL, $locale.".UTF-8", $locale);
+}
 
 define("DEFAULT_CURRENCY_CODE", $default_currency_code);
 define("DEFAULT_CURRENCY_SIGN", $default_currency_sign);
@@ -143,12 +153,11 @@ define("CURRENCY_CODE", $currency_code);
 define("CURRENCY_SIGN", $currency_sign);
 define("CURRENCY_RATE", $currency_rate);
 define("DEFAULT_LANG", $default_lang);
+define("LOCALE", $locale);
 define("LANG_ID", $id_lang);
 define("LANG_TAG", $lang_tag);
 define("LANG_ALIAS", $lang_alias);
 define("RTL_DIR", $rtl_dir);
-
-setlocale(LC_ALL, $locale.".UTF-8", $locale);
 
 $allowable_file_exts = array(
     "pdf" => "pdf.png",

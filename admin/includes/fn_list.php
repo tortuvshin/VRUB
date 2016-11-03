@@ -45,9 +45,9 @@ function getCols()
 /***********************************************************************
  * getColsValues() sets the value of columns and returns a collection of column objects
  *
- * @param $db database connection ressource
- * @param $row current row in the database
- * @param $i index of the current row
+ * @param $db   database connection ressource
+ * @param $row  current row in the database
+ * @param $i    index of the current row
  * @param $cols collection of column objects
  * 
  * @return array
@@ -62,9 +62,9 @@ function getColsValues($db, $row, $i, $cols)
         if($table != ""){
             $value = $row[$colname];
             
-            if($db !== false && db_table_exists($db, $table) && !is_null($value)){
+            if($db !== false && db_table_exists($db, $table)){
                 
-                if(preg_match("/.*(int).*/i", db_column_type($db, $table, $col->getFieldRef())) === false || $value != ""){
+                if(preg_match("/.*(int).*/i", db_column_type($db, $table, $col->getFieldRef())) === false || !empty($value)){
                     
                     if($value == 0) $value = "-";
                     else{
@@ -94,9 +94,8 @@ function getColsValues($db, $row, $i, $cols)
                         }
                     }
                 }
-            }else{
-                die($table." : Table not found for this schema, check the file list.xml");
-            }
+            }else
+                die($table.": Table not found, check the file config.xml");
         }else{
 
             $arr_colname = preg_split("/([^a-z0-9_]+)/i", $colname);
@@ -225,7 +224,7 @@ function getFilters($db)
 }
 
 /***********************************************************************
- * displayFilters()
+ * displayFilters() displays the filters fields in the listing
  *
  * @param $filters collection of filter objects
  *

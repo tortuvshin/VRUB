@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Panda Resort - CMS for hotels, resorts, spa</title>
+    <title>Panda Multi Resorts - CMS for hotels, resorts, spa</title>
     <meta name="author" content="Pandao">
     <meta name="copyright" content="Pandao">
     <meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
@@ -29,6 +29,7 @@
                     <li><a href="#get_started" title="GET STARTED">GET STARTED</a></li>
                     <li><a href="#back_office" title="BACK OFFICE">BACK OFFICE</a></li>
                     <li><a href="#templates" title="TEMPLATES">TEMPLATES</a></li>
+                    <li><a href="#translation" title="TRANSLATION">TRANSLATION</a></li>
                     <li><a href="#payment" title="PAYMENT">PAYMENT</a></li>
                     <li><a href="#screenshots" title="SCREENSHOTS">SCREENSHOTS</a></li>
                 </ul>
@@ -39,24 +40,24 @@
 <div class="container" id="documenter_content">
     <div id="documenter-cover">
         <div class="masthead">
-            <h1>Panda Resort<br><small>a web software to create and manage websites for hotels, resorts, spa...</small></h1>
-            <p>Pandao Resort uses Pandao CMS, a Content Managment System which contains a simple, ergonomic and complete admin panel which allows you to manage easily the content of your website
+            <h1>Panda Multi Resorts<br><small>a web software to create and manage websites for MULTIPLE hotels, resorts, spa...</small></h1>
+            <p>Panda Multi Resorts uses <a href="https://codecanyon.net/item/pandao-cms-pro-3/10768918" target="_blank">Pandao CMS</a>, a Content Managment System which contains a simple, ergonomic and complete admin panel which allows you to manage easily the content of your website
             coupled with an easyly customizable template.<br>
-            Several new specific modules: bookings, rooms, rates, currencies, extra services and facilities.<br>
+            Several new specific modules: <strong>bookings, hotels, rooms, rates, currencies, extra services and facilities</strong>.<br>
             Pandao CMS is fully responsive, so use it as well on your smartphone as on your computer.<br>
             Based on PDO/MySQL - PHP 4.x/5.x - HTML5 - CSS3 - Bootstrap 3.x</p>
             <ul class="marketing-byline">
-                <li>created: 15/09/2015</li>
-                <li>latest update: 21/01/2016</li>
+                <li>created: 13/12/2015</li>
+                <li>latest update: 25/10/2016</li>
                 <li>by: Pandao</li>
             </ul>
             <p class="download-info">
-                <a href="http://www.pandao.eu/items/?item=PandaResort" target="_blank" class="btn btn-primary btn-large">Front office Demo</a>
-                <a href="http://www.pandao.eu/items/?item=PandaResortbo" target="_blank" class="btn btn-default btn-large">Admin panel Demo</a>
-                <a href="http://codecanyon.net/item/pandao-resort-cms-for-hotel-resort-spa/12913332" target="_blank" class="btn btn-primary btn-large">Purchase &amp; Download</a>
+                <a href="http://www.pandao.eu/items/?item=PandaMultiResorts" target="_blank" class="btn btn-primary btn-large">Front office Demo</a>
+                <a href="http://www.pandao.eu/items/?item=PandaMultiResortsbo" target="_blank" class="btn btn-default btn-large">Admin panel Demo</a>
+                <a href="http://codecanyon.net/item/panda-multi-resorts-cms-for-multi-hotels/14084137" target="_blank" class="btn btn-primary btn-large">Purchase &amp; Download</a>
             </p>
             <p><strong>Thank you for purchasing our CMS. If you have any questions that are beyond the scope of this help file, please contact us. Thanks so much!</strong></p>
-            <img src="assets/images/doc-header.jpg" alt="Features" class="img-responsive">
+            <img src="assets/images/preview.png" alt="Features" class="img-responsive">
         </div>
     </div>
     <section id="get_started">
@@ -75,24 +76,23 @@
         <div class="alert">To set 777 rights on &quot;medias&quot; folder including all the files within all the subfolders, use the unix command in the /medias/ directory: chmod -R 777 ./</div>
         <h4 id="get_started_htaccess_htpasswd_configuration">.htaccess</h4>
         <p>
-        <strong>/.htaccess</strong> : general rules, basedir and url rewriting</p>
+        <strong>/.htaccess</strong>: general rules, basedir and url rewriting</p>
         <ul>
-            <li>line 67: replace {DOCBASE} with "/" (unless your website is in subdirectory (ex: /dev/mywebsite/)</li>
-            <li>for local use only: replace with your absolute local path</li>
+            <li>line 67: replace {DOCBASE} with / (unless your website is in a subdirectory, for ex: /dev/mywebsite/)</li>
         </ul>
         <h4 id="get_started_database">Database</h4>
         <p><strong>/common/db.sql</strong></p>
         <ol>
             <li>
-                Edit this file and replace the header values
+                Edit this file and replace the values specified at the beginning of the file ("search and replace" function of your text editor is usefull):
                 <ul>
                     <li>MY_DATABASE: database name</li>
                     <li>MY_DB_USER: username (if required by your host)</li>
                     <li>MY_DB_PASS: password (if required by your host)</li>
                     <li>USER_EMAIL: email of the administrator</li>
                     <li>USER_LOGIN: username of the administrator</li>
-                    <li>USER_PASS: password of the administrator</li>
-                    <li>INSTALL_DATE: current date (timestamp)</li>
+                    <li>USER_PASS: password of the administrator (md5 hash >> <a href="http://www.miraclesalad.com/webtools/md5.php" target="_blank">generate a md5 hash</a>)</li>
+                    <li>INSTALL_DATE: current date (timestamp >> <a href="http://www.unixtimestamp.com/" target="_blank">generate a timestamp</a>)</li>
                 </ul>
             </li>
             <li>Execute this script (in your phpMyAdmin for example)</li>
@@ -234,7 +234,7 @@
         </table>
         <h4 id="get_started_database">Let's GO!</h4>
         <p>First of all, <strong>enter your settings</strong> (database connexion, contact infos, project name...) in the settings section.</p>
-        <div class="alert alert-info">To access to the manager : http://www.mywebsite.com<strong>/admin</strong></div>
+        <div class="alert alert-info">To access to the manager: http://www.mywebsite.com<strong>/admin</strong></div>
     </section>
 
     <section id="back_office">
@@ -243,20 +243,6 @@
         <p>
             The first part of a module section lists recorded elements for this module, the second part is a form to add or modify an element.<br>
             In the settings section, you can manage the parameters essential to the smooth running of the web site and its manager.
-        </p>
-        <hr>
-        <h3>Translation</h3>
-        <p>
-            To translate the back office, simply change the values into the file <strong>/admin/includes/lang.ini</strong><br/>
-            Example:
-            <pre class="prettyprint lang-php linenums">
-BACK_TO_LIST=&quot;Back to list&quot;
-SAVE=&quot;Save&quot;
-SAVE_EXIT=&quot;Save and exit&quot;
-REPLICATE=&quot;Replicate&quot;
-EXPECTED_IMAGES_SIZE=&quot;Expected images size:&quot;
-RELEASE=&quot;Release&quot;
-...</pre>
         </p>
         <hr>
         <h3>Add / configure your own modules</h3>
@@ -271,12 +257,12 @@ RELEASE=&quot;Release&quot;
         <pre class="lang-html"><ol class="linenums"><li class="L0"><span class="pln"><span class="pln"><span class="pln">-- ================ CREATION OF THE TABLE article =============</span></span></span></li><li class="L1"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L2"><span class="pln"><span class="pln"><span class="pln">CREATE TABLE article(</span></span></span></li><li class="L3"><span class="pln"><span class="pln"><span class="pln">    id int NOT NULL AUTO_INCREMENT,</span></span></span></li><li class="L4"><span class="pln"><span class="pln"><span class="pln">    lang int NOT NULL,</span></span></span></li><li class="L5"><span class="pln"><span class="pln"><span class="pln">    title varchar(250),</span></span></span></li><li class="L6"><span class="pln"><span class="pln"><span class="pln">    subtitle varchar(250),</span></span></span></li><li class="L7"><span class="pln"><span class="pln"><span class="pln">    text longtext,</span></span></span></li><li class="L8"><span class="pln"><span class="pln"><span class="pln">    url varchar(250),</span></span></span></li><li class="L9"><span class="pln"><span class="pln"><span class="pln">    tags varchar(250),</span></span></span></li><li class="L0"><span class="pln"><span class="pln"><span class="pln">    id_page int,</span></span></span></li><li class="L1"><span class="pln"><span class="pln"><span class="pln">    home int DEFAULT 0,</span></span></span></li><li class="L2"><span class="pln"><span class="pln"><span class="pln">    checked int DEFAULT 0,</span></span></span></li><li class="L3"><span class="pln"><span class="pln"><span class="pln">    rank int DEFAULT 0,</span></span></span></li><li class="L4"><span class="pln"><span class="pln"><span class="pln">    add_date int,</span></span></span></li><li class="L5"><span class="pln"><span class="pln"><span class="pln">    edit_date int,</span></span></span></li><li class="L6"><span class="pln"><span class="pln"><span class="pln">    PRIMARY KEY(id,lang)</span></span></span></li><li class="L7"><span class="pln"><span class="pln"><span class="pln">) ENGINE=INNODB DEFAULT CHARSET=utf8;</span></span></span></li><li class="L8"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L9"><span class="pln"><span class="pln"><span class="pln">ALTER TABLE article ADD CONSTRAINT article_lang_fkey FOREIGN KEY (lang) REFERENCES lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;</span></span></span></li><li class="L0"><span class="pln"><span class="pln"><span class="pln">ALTER TABLE article ADD CONSTRAINT article_page_fkey FOREIGN KEY (id_page) REFERENCES page(id) ON DELETE CASCADE ON UPDATE NO ACTION;</span></span></span></li><li class="L1"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L2"><span class="pln"><span class="pln"><span class="pln">-- ============= CREATION OF THE TABLE article_file ===========</span></span></span></li><li class="L3"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L4"><span class="pln"><span class="pln"><span class="pln">CREATE TABLE article_file (</span></span></span></li><li class="L5"><span class="pln"><span class="pln"><span class="pln">    id int NOT NULL AUTO_INCREMENT,</span></span></span></li><li class="L6"><span class="pln"><span class="pln"><span class="pln">    lang int NOT NULL,</span></span></span></li><li class="L7"><span class="pln"><span class="pln"><span class="pln">    id_item int NOT NULL,</span></span></span></li><li class="L8"><span class="pln"><span class="pln"><span class="pln">    home int DEFAULT 0,</span></span></span></li><li class="L9"><span class="pln"><span class="pln"><span class="pln">    checked int DEFAULT 1,</span></span></span></li><li class="L0"><span class="pln"><span class="pln"><span class="pln">    rank int DEFAULT 0,</span></span></span></li><li class="L1"><span class="pln"><span class="pln"><span class="pln">    file varchar(250),</span></span></span></li><li class="L2"><span class="pln"><span class="pln"><span class="pln">    label varchar(250),</span></span></span></li><li class="L3"><span class="pln"><span class="pln"><span class="pln">    type varchar(20),</span></span></span></li><li class="L4"><span class="pln"><span class="pln"><span class="pln">    PRIMARY KEY(id,lang)</span></span></span></li><li class="L5"><span class="pln"><span class="pln"><span class="pln">) ENGINE=INNODB DEFAULT CHARSET=utf8;</span></span></span></li><li class="L6"><span class="pln"><span class="pln"><span class="pln">&nbsp;</span></span></span></li><li class="L7"><span class="pln"><span class="pln"><span class="pln">ALTER TABLE article_file ADD CONSTRAINT article_file_fkey FOREIGN KEY (id_item,lang) REFERENCES article(id,lang) ON UPDATE NO ACTION ON DELETE CASCADE;</span></span></span></li><li class="L8"><span class="pln"><span class="pln"><span class="pln">ALTER TABLE article_file ADD CONSTRAINT article_file_lang_fkey FOREIGN KEY (lang) REFERENCES lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;</span></span></span></li></ol></pre>
         <p>Usefull and reserved columns names for the tables</p>
         <ul>
-            <li><strong>id</strong> : required</li>
-            <li><strong>lang</strong> : required if &quot;multi&quot; attribute has the value 1 in config.xml (for multilingual modules)</li>
-            <li><strong>rank</strong> : required if &quot;ranking&quot; attribute has the value 1 in config.xml (if the elements can be sorted with drag&#39;n&#39;drop on the list)</li>
-            <li><strong>home</strong> : required if &quot;home&quot; attribute has the value 1 in config.xml (if the element can appear on homepage)</li>
-            <li><strong>checked</strong> : required if &quot;validation&quot; attribute has the value 1 in config.xml (if the element can be published or not)</li>
-            <li><strong>add_date</strong> / <strong>edit_date</strong> : required if &quot;date&quot; attribute has the value 1 in config.xml (if the element neads a add date and an edit date)</li>
+            <li><strong>id</strong>: required</li>
+            <li><strong>lang</strong>: required if &quot;multi&quot; attribute has the value 1 in config.xml (for multilingual modules)</li>
+            <li><strong>rank</strong>: required if &quot;ranking&quot; attribute has the value 1 in config.xml (if the elements can be sorted with drag&#39;n&#39;drop on the list)</li>
+            <li><strong>home</strong>: required if &quot;home&quot; attribute has the value 1 in config.xml (if the element can appear on homepage)</li>
+            <li><strong>checked</strong>: required if &quot;validation&quot; attribute has the value 1 in config.xml (if the element can be published or not)</li>
+            <li><strong>add_date</strong> / <strong>edit_date</strong>: required if &quot;date&quot; attribute has the value 1 in config.xml (if the element neads a add date and an edit date)</li>
         </ul>
         <p>Conserve the &quot;TABLE_NAME_file&quot; if the element neads medias (pdf, pictures, videos...)</p>
         <h4 id="back_office_configxml_configuration">config.xml configuration</h4>
@@ -577,16 +563,16 @@ RELEASE=&quot;Release&quot;
         </table>
         <h5>Details about the field types</h5>
         <ul>
-            <li><strong>radio</strong> : radio buttons - the options are defined into the &lt;options&gt; tag</li>
-            <li><strong>select</strong> : drop-down list - the options are defined into the &lt;options&gt; tag</li>
-            <li><strong>multiselect</strong> : multiple-choice list - the options are defined into the &lt;options&gt; tag</li>
-            <li><strong>checkbox</strong> : as the name suggests - the options are defined into the &lt;options&gt; tag</li>
-            <li><strong>text</strong> : text field</li>
-            <li><strong>textarea</strong> : as the name suggests</li>
-            <li><strong>date</strong> : automatic drop-down lists with year, month, day (converted in timestamp)</li>
-            <li><strong>datetime</strong> : automatic drop-down lists with year, month, day, hours, minutes, seconds (converted in timestamp)</li>
-            <li><strong>current_date</strong> : hidden field with the current date (timestamp)</li>
-            <li><strong>separator</strong> : separator between different parts of the form</li>
+            <li><strong>radio</strong>: radio buttons - the options are defined into the &lt;options&gt; tag</li>
+            <li><strong>select</strong>: drop-down list - the options are defined into the &lt;options&gt; tag</li>
+            <li><strong>multiselect</strong>: multiple-choice list - the options are defined into the &lt;options&gt; tag</li>
+            <li><strong>checkbox</strong>: as the name suggests - the options are defined into the &lt;options&gt; tag</li>
+            <li><strong>text</strong>: text field</li>
+            <li><strong>textarea</strong>: as the name suggests</li>
+            <li><strong>date</strong>: automatic drop-down lists with year, month, day (converted in timestamp)</li>
+            <li><strong>datetime</strong>: automatic drop-down lists with year, month, day, hours, minutes, seconds (converted in timestamp)</li>
+            <li><strong>current_date</strong>: hidden field with the current date (timestamp)</li>
+            <li><strong>separator</strong>: separator between different parts of the form</li>
         </ul>
         <p>&lt;field&gt; can contain a &lt;options&gt; tag which define the options of the &quot;checkbox&quot;, &quot;radio&quot; and &quot;select&quot; fields</p>
         <h5>Different uses</h5>
@@ -604,9 +590,9 @@ RELEASE=&quot;Release&quot;
                 the options are stored in a specific table of the database<br>
                 &lt;options&gt; must contain the following attributes
                 <ul>
-                    <li><strong>table</strong> : table name containing the values</li>
-                    <li><strong>fieldlabel</strong> : column name of the item label (visible)</li>
-                    <li><strong>fieldvalue</strong> : column name of the item value (hidden)</li>
+                    <li><strong>table</strong>: table name containing the values</li>
+                    <li><strong>fieldlabel</strong>: column name of the item label (visible)</li>
+                    <li><strong>fieldvalue</strong>: column name of the item value (hidden)</li>
                 </ul>
             </li>
         </ol>
@@ -617,46 +603,93 @@ RELEASE=&quot;Release&quot;
     
         <img src="assets/images/demo-template.png" class="img-responsive" alt="">
 
-        <p>/templates/ contains the templates of your website. "default" is the basic template.<br/>A template is composted by 4 folders :</p>
+        <p>/templates/ lists the templates of your website. "booking" is the basic template.</p>
+        <div class="alert">Create your own template by replicating the "booking" folder with an other name and enable it into the manager in the settings section.</div>
+        <p>A template contains 5 folders:</p>
         <ul>
             <li>
-                common: common files for all models
+                <b>common</b>: common files for all models
                 <ul>
-                    <li>header.php : the header tag with meta tags, scripts... and the top of the web site (logo, navigation, flags...)</li>
-                    <li>page_header.php : the header of all models except the homepage (heading 1, breadcrumb...)</li>
-                    <li>footer.php : the footer tag with the widgets and the copyrights</li>
+                    <li><b>header.php</b>: &lt;head&gt; tag with meta tags, css and js scripts... and the top of the web site (logo, navigation, flags...)</li>
+                    <li><b>page_header.php</b>: top of all internal pages (heading 1, breadcrumb...)</li>
+                    <li><b>footer.php</b>: &lt;footer&gt; tag with widgets and the copyrights</li>
+                    <li><b>get_articles.php</b>: articles of a page</li>
+                    <li><b>get_images.php</b>: images of an article (e.g. gallery)</li>
+                    <li><b>comments.php</b>: the form to add comments and layout of the reviews about the current item (hotel, article, page...)</li>
+                    <li><b>change_currency.php</b>: called when the user change his preferred currency</li>
+                </ul>
+                Specific files of Panda Multi Resorts in the folder "common":
+                <ul>
+                    <li><b>2checkout_notify.php</b>: called by 2Checkout.com after payment (database update, sending of emails)</li>
+                    <li><b>paypal_notify.php</b>: called by PayPal after payment (database update, sending of emails)</li>
+                    <li><b>get_hotels.php</b>: list of hotels (hotels.php)</li>
+                    <li><b>get_days.php</b>: the availabilities of the calendars in the results of the booking search engine (booking.php)</li>
+                    <li><b>search.php</b>: booking search engine</li>
+                    <li><b>update_booking.php</b>: called when the user adds/changes extra services of the booking (details.php)</li>
                 </ul>
             </li>
             <li>
-                css: stylesheets
+                <b>css</b>: stylesheets
                 <ul>
-                    <li>custom.css</li>
+                    <li><b>layout.css</b>: basic layout of <a href="https://codecanyon.net/item/pandao-cms-pro-3/10768918" target="_blank">Pandao CMS</a></li>
+                    <li><b>custom.css</b>: your own rules to customize the basic rules or add yours</li>
+                    <li><b>colors.css</b>: rules about colors of texts, buttons, backgrounds, border, etc (copy the content of a color file and past in colors.css)</li>
                 </ul>
             </li>
             <li>
-                images: as the name suggests... the images used by the template
+                <b>images</b>: as the name suggests... the images used by the template. Replace the following files:
+                <ul>
+                    <li><b>logo.png</b></li>
+                    <li><b>favicon.png</b></li>
+                    <li><b>header-mail.png</b>: banner used in the emails sent</li> 
+                </ul>
+                Specific images of Panda Resort:
+                <ul>
+                    <li><b>page-header.jpg</b>: header image of the internal pages</li>
+                    <li><b>footer.jpg</b>: footer image of all pages</li>
+                </ul>
             </li>
             <li>
-                models: models files of the template.<br>The models are simply PHP files which defines the models of pages and articles.
+                <b>models</b>: models files of the template.<br>The models are simply PHP files which defines the models of pages and articles.
                 <ul>
-                    <li>home.php : homepage model</li>
-                    <li>page.php : model for a simple page</li>
-                    <li>article.php : model for an article</li>
-                    <li>gallery.php : model for a gallery with its pictures</li>
-                    <li>contact.php : contact form model</li>
-                    <li>sitemap.php : sitemap model</li>
-                    <li>search.php : model for the search engine results</li>
-                    <li>404.php : custom 404 page model</li>
+                    <li><b>home.php</b>: homepage</li>
+                    <li><b>page.php</b>: simple page with articles (or not)</li>
+                    <li><b>article.php</b>: a single article</li>
+                    <li><b>gallery.php</b>: a gallery with its pictures (e.g. album)</li>
+                    <li><b>contact.php</b>: contact form</li>
+                    <li><b>sitemap.php</b>: sitemap</li>
+                    <li><b>search.php</b>: search engine results</li>
+                    <li><b>404.php</b>: custom 404 page</li>
                 </ul>
+                Specific files of Panda Multi Resorts in the folder "models":
+                <ul>
+                    <li><b>booking.php</b>: booking search engine results (hotels and rooms)</li>
+                    <li><b>details.php</b>: step 2 of the booking process => contact information and extra services</li>
+                    <li><b>summary.php</b>: step 3 => summary of the booking</li>
+                    <li><b>payment.php</b>: step 4 => payment choice (if multiple payment modes), database update, payment system call (for PayPal and 2Checkout.com)</li>
+                    <li><b>hotels.php</b>: list of all hotels</li>
+                    <li><b>hotel.php</b>: a single hotel with rooms</li>
+                </ul>
+                <p>Create your own models (php file in the folder "models") and bind a page to this model in the manager</p>
+                <div class="alert alert-info">Admin > Modules &gt; Pages &gt; Add/Edit &gt; Page model / Article model</div>
+            </li>
+            <li>
+                <b>widgets</b>: widgets files of the template:
+                <ul>
+                    <li><b>contact_informations.php</b>: name, address, phone numbers, email of the owner (displayed in the the footer)</li>
+                    <li><b>footer_form.php</b>: currencies, languages and global search engine</li>
+                    <li><b>latest_articles.php</b>: most recent articles displayed in the footer</li>
+                    <li><b>pages_list.php</b>: list of pages of the current page</li>
+                </ul>
+                <p>Create your own widgets (php file in the folder "widgets") and bind a widget to this file in the manager</p>
+                <div class="alert alert-info">Admin > Modules &gt; Widgets &gt; New/Edit &gt; Type</div>
             </li>
         </ul>
-        <div class="alert">You can create your own template by replicating the "default" folder with an other name and enable it into the manager in the settings section.</div>
-        <p>Create your own models and bind a page to this model in the manager</p>
-        <div class="alert alert-info">Modules &gt; Pages &gt; Edit &gt; Page / Article model</div>
-        <p>There are 3 possible levels of models for each page:</p>
+        
+        <p>There are 2 possible levels of models for each page:</p>
         <ol>
-            <li><strong>page</strong> (required) : defines the page model</li>
-            <li><strong>article</strong>&nbsp; (optional) : display the model of each article of this page</li>
+            <li><strong>page</strong> (required): defines the page model (e.g. home.php, page.php, contact.php, hotels.php...)</li>
+            <li><strong>article</strong>&nbsp; (optional): display the model of each article of this page (e.g. article.php, gallery.php, hotel.php)</li>
         </ol>
         <p>URL examples</p>
         <table border="1" cellpadding="5" cellspacing="0" style="width: 500px;">
@@ -678,40 +711,106 @@ RELEASE=&quot;Release&quot;
             </tbody>
         </table>
         <p>&nbsp;</p>
+        
+        <p><strong>Add CSS and JS files if your model needs</strong> in the begining of the PHP model file.<br>Example for models/page.php which needs Isotope and LazyLoader plugins:</p>
+        <pre class="prettyprint lang-php linenums">
+/* ==============================================
+ * CSS AND JAVASCRIPT USED IN THIS MODEL
+ * ==============================================
+ */
+$stylesheets[] = array("file" => DOCBASE."js/plugins/isotope/css/style.css", "media" => "all");
+$javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.min.js";
+$javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.sloppy-masonry.min.js";
+
+$stylesheets[] = array("file" => DOCBASE."js/plugins/lazyloader/lazyloader.css", "media" => "all");
+$javascripts[] = DOCBASE."js/plugins/lazyloader/lazyloader.js";</pre>
     </section>
     
+    <section id="translation">
+        <div class="page-header"><h3>TRANSLATION</h3></div>
+        <h3>Back Office</h3>
+        <p>
+            To translate the back office, simply change the values into the file <strong>/admin/includes/lang.ini</strong><br/>
+            Example:
+            <pre class="prettyprint lang-php linenums">
+BACK_TO_LIST=&quot;Back to list&quot;
+SAVE=&quot;Save&quot;
+SAVE_EXIT=&quot;Save and exit&quot;
+REPLICATE=&quot;Replicate&quot;
+EXPECTED_IMAGES_SIZE=&quot;Expected images size:&quot;
+RELEASE=&quot;Release&quot;
+...</pre>
+        </p>
+        <h3>Front Office</h3>
+        <p>
+            To translate the front office, edit the values <b>directly in the modules</b>. When you add or edit an item, you can move between tabs, one per language.<br>
+            You can also translate the "small texts" like notices, captions of buttons, labels of fields, etc, in the <b>module Texts</b> in the admin panel.
+        </p>
+    </section>
+        
     <section id="payment">
         <div class="page-header"><h3>PAYMENT</h3></div>
-        
+        <h2>PayPal: express checkout</h2>
         <p>
             <ol>
-                <li><strong>No Paypal account</strong>? Create one <a href="https://registration.paypal.com/">here</a>.</li>
-                <li><strong>Create 2 Sandbox test accounts</strong> (1 business and 1 personal) via <a href="https://developer.paypal.com/webapps/developer/docs/classic/lifecycle/sb_create-accounts/" target="_blank">PayPal Developer</a>.
-                For example <i>pandao.buyer@gmail.com</i> and <i>pandao.merchant@gmail.com</i>.</li>
-                <li><strong>Get your API credentials</strong> in your <a href="https://developer.paypal.com/developer/accounts/" target="_blank">Dashboard</a>.</li>
-                <li><strong>Edit the file</strong> /templates/booking/common/paypal.php with your API credentials.</li>
-                <li><strong>Test your application</strong> by making a booking.</li>
+                <li><strong>No Paypal account</strong>? Create one <a href="https://registration.paypal.com/" target="_blank">here</a>.</li>
+                <li>If you need to make tests:
+                    <ol>
+                        <li><strong>Create 2 sandbox test accounts</strong> (1 business and 1 personal) via <a href="https://developer.paypal.com/webapps/developer/docs/classic/lifecycle/sb_create-accounts/" target="_blank">PayPal Developer</a>.
+                        <br>For example <i>pandao.buyer@gmail.com</i> and <i>pandao.merchant@gmail.com</i>.</li>
+                        <li><strong>Enable the payment test mode</strong> in the Pandao admin panel:
+                        <br>Admin > Settings > Booking > "Enable payment test mode" => Yes.</li>
+                        <li><strong>Insert your PayPal test email (business)</strong> in the Pandao admin panel:
+                        <br>Admin > Settings > Booking > "PayPal email".</li>
+                        <li><strong>Test your application</strong> by making a booking with the PayPal test account (personal).</li>
+                    </ol>
+                </li>
+                <li><strong>Insert your PayPal email (live account)</strong> in the Pandao admin panel:
+                <br>Admin > Settings > Booking > "PayPal email".</li>
                 <li><strong>Enable live payment</strong> in your PayPal account: <a href="https://developer.paypal.com/docs/classic/lifecycle/goingLive/" target="_blank">https://developer.paypal.com/docs/classic/lifecycle/goingLive/</a>.</li>
-                <li><strong>Update the Sandbox API credentials</strong> in the file paypal.php with your live PayPal account and disable $test_mode (false).</li>
+                <li><strong>Disable the payment test mode</strong> in the Pandao admin panel:
+                <br>Admin > Settings > Booking > "Enable payment test mode" => No.</li>
                 <li>It's over!</li>
             </ol>
         </p>
         
-        <pre class="prettyprint lang-php linenums">
-function paypal_request(){
-
-    $test_mode = true; // TRUE for test mode (Sandbox account), FALSE for production (live PayPal account)
-    $version = 56.0;
-    $user = "pandao.merchant_api1.gmail.com"; // YOUR_OWN_API_USERNAME
-    $pass = "VRBEQRSU4QS29Y76"; // YOUR_OWN_API_PASSWORD
-    $signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31APKJ9JjZA1gPRd-aPsIR2ERTVvEF"; // YOUR_OWN_API_SIGNATURE
-
-    $api_paypal = ($test_mode === false) ? "https://api-3t.paypal.com/nvp?" : "https://api-3t.sandbox.paypal.com/nvp?";
-
-    $api_paypal .= "VERSION=".$version."&amp;USER=".$user."&amp;PWD=".$pass."&amp;SIGNATURE=".$signature;
-
-    return $api_paypal;
-}</pre>
+        <h2>2Checkout.com: credit cards</h2>
+        <p>
+            <ol>
+                <li>If you need to make tests:
+                    <ol>
+                        <li><strong>Create a sandbox account</strong> <a href="http://sandbox.2checkout.com/sandbox/signup" target="_blank">here</a>.</li>
+                        <li><a href="https://sandbox.2checkout.com/sandbox" target="_blank">Log in to your sandbox account</a>.</li>
+                        <li>Get your <a href="http://help.2checkout.com/articles/FAQ/Where-is-my-Seller-ID" target="_blank">test account number</a>.</li>
+                        <li>Get your <a href="http://help.2checkout.com/articles/FAQ/Where-do-I-set-up-the-Secret-Word/" target="_blank">test account secret word</a>.</li>
+                        <li><strong>Define the return URL</strong> called by 2Checkout.com when a booking is performed <a href="https://sandbox.2checkout.com/sandbox/notifications/" target="_blank">here</a>:
+                        <br>> Order created > Enable and past URL > Save Settings.<br>
+                        This URL must be: http://REPLACE_WITH_YOUR_SITE_URL/templates/booking/common/2checkout_notify.php</li>
+                        <li><strong>Enable the payment test mode</strong> in the admin panel:
+                        <br>Admin > Settings > Booking > "Enable payment test mode" => Yes.</li>
+                        <li><strong>Insert your sandbox account number</strong> in the Pandao admin panel:
+                        <br>Admin > Settings > Booking > "2Checkout vendor ID".</li>
+                        <li><strong>Insert your sandbox secret word</strong> in the Pandao admin panel:
+                        <br>Admin > Settings > Booking > "2Checkout secret word".</li>
+                        <li><strong>Test your application</strong> by making a booking.</li>
+                    </ol>
+                </li>
+                <li><strong>No 2Checkout account</strong>? Create one <a href="https://www.2checkout.com/signup" target="_blank">here</a>.</li>
+                <li><a href="https://www.2checkout.com/login" target="_blank">Log in to your live account</a>.</li>
+                <li>Get your <a href="http://help.2checkout.com/articles/FAQ/Where-is-my-Seller-ID" target="_blank">live account number</a>.</li>
+                <li>Get your <a href="http://help.2checkout.com/articles/FAQ/Where-do-I-set-up-the-Secret-Word/" target="_blank">live account secret word</a>.</li>
+                <li><strong>Define the return URL</strong> called by 2Checkout.com when a booking is performed <a href="https://www.2checkout.com/va/notifications/" target="_blank">here</a>:
+                <br>> Order created > Enable and past URL > Save Settings.<br>
+                This URL must be: http://REPLACE_WITH_YOUR_SITE_URL/templates/booking/common/2checkout_notify.php</li>
+                <li><strong>Insert your live account number</strong> in the Pandao admin panel:
+                <br>Admin > Settings > Booking > "2Checkout vendor ID".</li>
+                <li><strong>Insert your live secret word</strong> in the Pandao admin panel:
+                <br>Admin > Settings > Booking > "2Checkout secret word".</li>
+                <li><strong>Disable the payment test mode</strong> in the admin panel:
+                <br>Admin > Settings > Booking > "Enable payment test mode" => No.</li>
+                <li>It's over!</li>
+            </ol>
+        </p>
 
     </section>
     

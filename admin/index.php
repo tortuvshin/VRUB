@@ -3,10 +3,16 @@ define("ADMIN", true);
 require_once("../common/lib.php");
 require_once("../common/define.php");
 define("TITLE_ELEMENT", $texts['DASHBOARD']);
+
 if(!isset($_SESSION['user'])){
     header("Location: login.php");
     exit();
+}elseif($_SESSION['user']['type'] == "registered"){
+    $_SESSION['msg_error'][] = "Access denied.";
+    header("Location: login.php");
+    exit();
 }
+
 require_once("includes/fn_module.php"); ?>
 <!DOCTYPE html>
 <head>
@@ -42,14 +48,19 @@ require_once("includes/fn_module.php"); ?>
                             $dates = $module->isDates();
                             $count = 0;
                             $last_date = "";
+                            $rights = $module->getPermissions($_SESSION['user']['type']);
                             
-                            if($module->isDashboard() && !in_array("no_access", $module->getPermissions($_SESSION['user']['type']))){
+                            if($module->isDashboard() && !in_array("no_access", $rights) && !empty($rights)){
                                 $query = "SELECT count(id) AS nb";
                                 if($dates) $query .= ", MAX(add_date) AS last_add_date, MAX(edit_date) AS last_add_date";
                                 $query .= " FROM pm_".$name."";
                                 if($module->isMultilingual()) $query .= " WHERE lang = ".DEFAULT_LANG;
+                                
+                                if(!in_array($_SESSION['user']['type'], array("administrator", "manager", "editor")) && db_column_exists($db, "pm_".$name, "id_user"))
+                                    $query .= " AND id_user = ".$_SESSION['user']['id'];
+                                
                                 $result = @$db->query($query);
-                                if($result !== false && $db->last_row_count() == 1){
+                                if($result !== false && $db->last_row_count() > 0){
                                     $row = $result->fetch();
                                     $count = $row[0];
                                     if($dates){
@@ -104,6 +115,6 @@ require_once("includes/fn_module.php"); ?>
 </body>
 </html>
 <?php
-$_SESSION['msg_error'] = "";
-$_SESSION['msg_success'] = "";
-$_SESSION['msg_notice'] = ""; ?>
+$_SESSION['msg_error'] = array();
+$_SESSION['msg_success'] = array();
+$_SESSION['msg_notice'] = array(); ?>

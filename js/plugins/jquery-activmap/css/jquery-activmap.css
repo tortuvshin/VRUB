@@ -1,0 +1,131 @@
+/* Activ'Map Plugin
+ * Copyright (c) 2015 Pandao
+ * Documentation : /doc/index.html
+ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Open Sans";
+    font-size: 14px;
+    box-sizing: border-box;
+}
+p {
+    margin: 3px 0;
+}
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+#activmap-accordion {
+    clear: both;
+}
+#activmap-accordion .panel-heading .activmap-accordion-toggle:after {
+    margin: 0 0 0 15px;
+}
+#activmap-accordion .panel-heading {
+    background: #07ABAC;
+    color: #fff;
+}
+#activmap-accordion .panel-title a {
+    display: block;
+}
+#activmap-accordion .panel-title a:hover {
+    text-decoration: none;
+}
+#activmap-accordion .panel-title a:after {
+    font-family: FontAwesome;
+    content: '';
+    float: right;
+}
+#activmap-accordion .panel-title a.collapsed:after {
+    content: '';
+}
+#activmap-reset {
+    float: right;
+    display: block;
+}
+#activmap-geolocate {
+    margin-bottom: 10px;
+}
+#activmap-wrapper {
+    height: 600px;
+    width: auto;
+    overflow: hidden;
+    position: relative;
+}
+#activmap-canvas {
+    width: 100%;
+    height: 100%;
+    float: right;
+}
+#activmap-places {
+    background: #fff;
+    position: absolute;
+    left: -320px;
+    z-index: 10;
+    height: 100%;
+    width: 320px;
+    padding: 0 20px;
+    overflow: auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+@media(max-width:767px){
+    #activmap-places.hidden-xs {
+        display: none!important;
+    }
+}
+@media(min-width:768px){
+    #activmap-places.hidden-xs {
+        display: block!important;
+    }
+}
+#activmap-results-num {
+    font-weight: bold;
+    font-size: 18px;
+    color: #F24937;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+.activmap-place {
+    display: none;
+    border-left: 5px solid #F24937;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.activmap-place:hover,
+.activmap-place.active {
+    background: #f3f3f3;
+    border-top: 1px solid #F24937;
+    border-bottom: 1px solid #F24937;
+    border-right: 1px solid #F24937;
+}
+.activmap-place h3 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+.activmap-place h3:before {
+    font-family: FontAwesome;
+    content: '';
+    margin-right: 10px;
+}
+h4.activmap-title {
+    font-size: 18px;
+    margin: 10px 0 0;
+}
+.activmap-brand {
+    float: left;
+    margin: 10px 10px 10px 0;
+    height: 80px;
+    width: 80px;
+}
+.activmap-brand img {
+    max-height: 100%;
+    max-width: 100%;
+}

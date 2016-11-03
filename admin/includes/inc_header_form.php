@@ -2,16 +2,16 @@
 debug_backtrace() || die ("Direct access not permitted");
 require_once("inc_header_common.php"); ?>
 
-<script src="<?php echo DOCBASE; ?>admin/js/plugins/ckeditor/ckeditor.js"></script>
-<script src="<?php echo DOCBASE; ?>admin/js/plugins/ckeditor/adapters/jquery.js"></script>
+<script src="<?php echo DOCBASE.ADMIN_FOLDER; ?>/js/plugins/ckeditor/ckeditor.js"></script>
+<script src="<?php echo DOCBASE.ADMIN_FOLDER; ?>/js/plugins/ckeditor/adapters/jquery.js"></script>
 <script>
     $(function(){
-        $('select[name="multiple_actions_file"]').change(function(){
-            if(($(this).val() == 'delete_multi_file' && confirm('<?php echo $texts['DELETE_CONFIRM1']; ?>'))
-            || ($(this).val() != 'delete_multi_file' && confirm('<?php echo $texts['ACTION_CONFIRM']; ?>')))
+        $('select[name="multiple_actions_file"]').on('change', function(){
+            if(($(this).val() == 'delete_multi_file' && confirm('<?php echo $texts['DELETE_CONFIRM1']." ".$texts['LOOSE_DATAS']; ?>'))
+            || ($(this).val() != 'delete_multi_file' && confirm('<?php echo $texts['ACTION_CONFIRM']." ".$texts['LOOSE_DATAS']; ?>')))
                 $('#form').attr('action','index.php?view=form&csrf_token=<?php echo $csrf_token; ?>&action='+$(this).val()).submit();
         });
-        $('.btn-slide').click(function(){
+        $('.btn-slide').on('click', function(){
             var library = $('#wrap-library');
             if($(this).hasClass('left')){
                 $(this).removeClass('left').addClass('right');
@@ -27,8 +27,8 @@ require_once("inc_header_common.php"); ?>
             return false;
         });
         
-        $('.actions-file a').click(function(){
-            if(!confirm('<?php echo $texts['ACTION_CONFIRM']; ?>')) return false;
+        $('.actions-file a').on('click', function(){
+            if(!confirm('<?php echo $texts['ACTION_CONFIRM']." ".$texts['LOOSE_DATAS']; ?>')) return false;
         });
         <?php
         $editors_count = 0;
@@ -37,31 +37,54 @@ require_once("inc_header_common.php"); ?>
             for($i = 0; $i < $total_lang; $i++){
                 $id_lang = (MULTILINGUAL) ? $langs[$i]['id'] : 0;
                 if(isset($result_lang)) $result_lang->closeCursor();
-                
-                foreach($fields as $field){
-                    if($field->isEditor() && $field->getType() == "textarea"){
-                        $editors_count++; ?>
-                        $('textarea#<?php echo $field->getName().$id_lang; ?>').ckeditor();
-                        <?php
+                foreach($fields as $tableName => $fields_table){
+                    foreach($fields_table['fields'] as $fieldName => $field){
+                        if($field->isEditor() && $field->getType() == "textarea"){
+                            $editors_count++; ?>
+                            $('textarea[id^="<?php echo $tableName."_".$fieldName."_".$id_lang; ?>"]').ckeditor();
+                            <?php
+                        }
                     }
                 }
             }
         } ?>
         
-        $('.add_option').click(function(){
+        if($('.datepicker').length){
+            $('.datepicker').datepicker({
+                dateFormat: 'yy-mm-dd',
+                minDate: null
+            });
+        }
+        
+        $('.add_option').on('click', function(){
             var list_id = $(this).attr('rel');
             $('#'+list_id+'_tmp > option:selected').remove().appendTo('#'+list_id);
             $('#'+list_id+' > option').prop('selected', true);
             return false;
             
         });
-        $('.remove_option').click(function(){
+        $('.remove_option').on('click', function(){
             var list_id = $(this).attr('rel');
             $('#'+list_id+' > option:selected').remove().appendTo('#'+list_id+'_tmp');
             $('#'+list_id+' > option').prop('selected', true);
             return false;
         });
-        $('form').submit(function(){
+        $('.new_entry').on('click', function(){
+            var table = $($(this).attr('href'));
+            var row = $('tr', table);
+            var index = row.length-1;
+            row = row.last().clone();
+            $('input, textarea', row).val('');
+            $('select > option', row).prop('selected', false);
+            $('checkbox, radio', row).prop('checked', false);
+            $('input, textarea, select, checkbox, radio', row).each(function(){
+                old_name = $(this).attr('name');
+                $(this).attr('name', old_name.replace(/([a-zA-Z_0-9\[\]]+)\[([0-9]+)\](\[\])?/, '$1['+index+']$3'));
+            });
+            row.appendTo(table);
+            return false;
+        });
+        $('form').on('submit', function(){
             $('#overlay').show();
         });
         <?php
@@ -75,9 +98,9 @@ require_once("inc_header_common.php"); ?>
 </script>
 <?php
 if(NB_FILES > 0 && (in_array("add", $permissions) || in_array("edit", $permissions) || in_array("all", $permissions))){ ?>
-    <script src="<?php echo DOCBASE; ?>admin/includes/uploadifive/jquery.uploadifive.js"></script>
-    <link href="<?php echo DOCBASE; ?>admin/includes/uploadifive/uploadifive.css" rel="stylesheet">
-    <script src="<?php echo DOCBASE; ?>admin/js/toolMan.js"></script>
+    <script src="<?php echo DOCBASE.ADMIN_FOLDER; ?>/includes/uploadifive/jquery.uploadifive.js"></script>
+    <link href="<?php echo DOCBASE.ADMIN_FOLDER; ?>/includes/uploadifive/uploadifive.css" rel="stylesheet">
+    <script src="<?php echo DOCBASE.ADMIN_FOLDER; ?>/js/toolMan.js"></script>
     <script>
         var dragsort = ToolMan.dragsort();
         var junkdrawer = ToolMan.junkdrawer();
@@ -100,17 +123,17 @@ if(NB_FILES > 0 && (in_array("add", $permissions) || in_array("edit", $permissio
                         
                         $.ajax({
                             type: "POST",
-                            url: '<?php echo DOCBASE; ?>admin/includes/order_medias.php?list='+list+'&table=<?php echo MODULE."_file"; ?>&id_item=<?php echo $id; ?>&prefix=file'
+                            url: '<?php echo DOCBASE.ADMIN_FOLDER; ?>/includes/order_medias.php?list='+list+'&table=<?php echo MODULE."_file"; ?>&id_item=<?php echo $id; ?>&prefix=file'
                         });
                     })
                 }
             });
             
             <?php
-            if($_SESSION['msg_error'] == ""){ ?>
+            if(empty($_SESSION['msg_error'])){ ?>
                 $.ajax({
                     type: 'POST',
-                    url: '<?php echo DOCBASE; ?>admin/includes/clear_tmp.php',
+                    url: '<?php echo DOCBASE.ADMIN_FOLDER; ?>/includes/clear_tmp.php',
                     data: 'dir=medias/<?php echo MODULE; ?>/tmp&token=<?php echo $_SESSION['token'];?>',
                     success: function(data){
                         
@@ -137,7 +160,7 @@ if(NB_FILES > 0 && (in_array("add", $permissions) || in_array("edit", $permissio
                         'uniqid' : '<?php echo $_SESSION['uniqid'];?>',
                         'token' : '<?php echo $_SESSION['token'];?>',
                         'dir' : '<?php echo MODULE; ?>',
-                        'root_bo' : '<?php echo DOCBASE; ?>admin/',
+                        'root_bo' : '<?php echo DOCBASE.ADMIN_FOLDER; ?>/',
                         'exts' : '<?php echo serialize(array_keys($allowable_file_exts)); ?>',
                         'lang' : lang
                     },
@@ -148,7 +171,7 @@ if(NB_FILES > 0 && (in_array("add", $permissions) || in_array("edit", $permissio
                     'queueSizeLimit': max_file,
                     'uploadLimit'     : max_file,
                     'queueID'        : 'file_upload_'+lang+'-queue',
-                    'uploadScript'     : '<?php echo DOCBASE; ?>admin/includes/uploadifive/uploader/uploadifive.php',
+                    'uploadScript'     : '<?php echo DOCBASE.ADMIN_FOLDER; ?>/includes/uploadifive/uploader/uploadifive.php',
                     'onUploadComplete' : function(file, data, response){
                         
                         data = data.split('|');

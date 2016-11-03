@@ -85,7 +85,7 @@ function getModules($dir, $modules = array())
     return $modules;
 }
 $indexes = array();
-$modules = getModules("admin/modules");
+$modules = getModules(ADMIN_FOLDER."/modules");
 $dirname = dirname($_SERVER['SCRIPT_NAME']);
 $dirname = substr($dirname, strrpos($dirname, "/")+1);
 

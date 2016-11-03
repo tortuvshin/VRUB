@@ -673,6 +673,7 @@ MagnificPopup.prototype = {
 		}
 	},
 	_openClick: function(e, el, options) {
+        e.defaultPrevented;
 		var midClick = options.midClick !== undefined ? options.midClick : $.magnificPopup.defaults.midClick;
 
 
@@ -695,7 +696,7 @@ MagnificPopup.prototype = {
 		}
 		
 		if(e.type) {
-			e.preventDefault();
+			e.defaultPrevented;
 
 			// This will prevent popup from closing if element is inside and popup is already opened
 			if(mfp.isOpen) {
@@ -1878,7 +1879,7 @@ addSwipeGesture: function() {
 		if(e.originalEvent.touches.length > 1) {
 			multipleTouches = e.originalEvent.touches.length;
 		} else {
-			//e.preventDefault();
+			//e.defaultPrevented;
 			moved = true;
 		}
 	}).on(mfp._tEnd + ' ' + mfp._tCancel, function(e) {
@@ -2008,7 +2009,7 @@ $.magnificPopup.registerModule(RETINA_NS, {
 							return;
 						}
 						lock = true;
-						e.preventDefault();
+						e.defaultPrevented;
 						clearTimeout(timeout);
 						timeout = setTimeout(function() {
 							lock = false;

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="Activities" name="activity" multi="1" library="0" dashboard="1" icon="ticket" ranking="1" home="1" main="0" validation="1" dates="0" release="0" index="19">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="20" resizing="1">
+		<big maxw="1920" maxh="1440"/>
+		<medium maxw="600" maxh="600"/>
+		<small maxw="400" maxh="400"/>
+	</medias>
+	<list order="rank">
+		<col label="Title" name="title" type="none"/>
+	</list>
+	<form>
+		<field multi="1" label="Title" name="title" type="text" required="1" unique="0" validation="none"/>
+		<field multi="1" label="Subtitle" name="subtitle" type="text" required="0" unique="0" validation="none"/>
+		<field multi="1" label="Alias" name="alias" type="alias" required="1" unique="1" validation="none"/>
+		<field multi="0" label="Max children" name="max_children" type="select" required="1" unique="0" validation="numeric">
+            <options>
+                <min>0</min>
+                <max>100</max>
+            </options>
+        </field>
+		<field multi="0" label="Max adults" name="max_adults" type="select" required="1" unique="0" validation="numeric">
+            <options>
+                <min>1</min>
+                <max>100</max>
+            </options>
+        </field>
+		<field multi="0" label="Max people" name="max_people" type="select" required="1" unique="0" validation="numeric">
+            <options>
+                <min>1</min>
+                <max>100</max>
+            </options>
+        </field>
+		<field multi="1" label="Description" name="descr" type="textarea" editor="1" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Hotel" name="hotels" type="multiselect" required="1" unique="0" validation="none">
+            <options table="pm_hotel" fieldlabel="title" fieldvalue="id" order="title"></options>
+        </field>
+		<field multi="0" label="Price/pers" name="price" type="text" required="1" unique="0" validation="numeric" comment="{currency} (default price)"/>
+		<field multi="0" label="Duration" name="duration" type="text" required="1" unique="0" validation="numeric"/>
+		<field multi="0" label="Duration unit" name="duration_unit" type="select" required="1" unique="0" validation="none">
+            <options>
+                <option value="hour(s)">hour(s)</option>
+                <option value="minute(s)">minute(s)</option>
+                <option value="day(s)">day(s)</option>
+            </options>
+        </field>
+		<field multi="0" label="Latitude" name="lat" type="text" required="1" unique="0" validation="numeric"/>
+		<field multi="0" label="Longitude" name="lng" type="text" required="1" unique="0" validation="numeric"/>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="no_access"/>
+        <user type="editor" permissions="no_access"/>
+        <user type="hotel" permissions="add,edit,upload"/>
+    </roles>
+</module>

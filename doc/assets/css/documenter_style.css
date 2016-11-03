@@ -170,10 +170,10 @@ html, body{background-color:#ffffff;color:#383838;}
 h1{margin-top:120px;}
 h1,h2,h3,h4,h5,h6{color:#383838;}
 section table{background-color:#EEEEEE;}
-::-moz-selection{background:#333636;color:#1488BA;}
-::selection{background:#333636;color:#1488BA;}
+::-moz-selection{background:#333636;color:#4CB7D3;}
+::selection{background:#333636;color:#4CB7D3;}
 a.brand{background-image:url(assets/images/image_1.png);}
-a, a:hover, a:active{color:#1488BA;}
+a, a:hover, a:active{color:#4CB7D3;}
 hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
 div.navbar-inner, .navbar .nav li ul{background:#343838;color:#FFFFFF;}
 a.btn-navbar{background:#343838;color:#FFFFFF;}
@@ -182,13 +182,13 @@ a.btn-navbar{background:#343838;color:#FFFFFF;}
 div.navbar-inner ul{}
 .marketing-byline{color:#888888;}
 .navbar .nav > li a{color:#FFFFFF;}
-.navbar .nav > li a:hover, a.btn-navbar:hover{background:#333636;color:#1488BA;}
-.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#333636;color:#1488BA;}
-.navbar .nav li ul li a:hover{background:#333636;color:#1488BA;}
-.navbar .nav li ul li a:active{background:#333636;color:#1488BA;}
+.navbar .nav > li a:hover, a.btn-navbar:hover{background:#333636;color:#4CB7D3;}
+.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#333636;color:#4CB7D3;}
+.navbar .nav li ul li a:hover{background:#333636;color:#4CB7D3;}
+.navbar .nav li ul li a:active{background:#333636;color:#4CB7D3;}
 .btn-primary {
-      background: #1488BA;
-      border-color: #64BBDB;
+      background: #4CB7D3;
+      border-color: #55C4E0;
       color:#FFFFFF;
 }
 .btn-primary:hover,
@@ -197,7 +197,7 @@ div.navbar-inner ul{}
 .btn-primary.active,
 .btn-primary.disabled,
 .btn-primary[disabled] {
-    background-color: #64BBDB;
-    border-color: #64BBDB;
+    background-color: #55C4E0;
+    border-color: #55C4E0;
 }
 #documenter_copyright{display:block !important;visibility:visible !important;}

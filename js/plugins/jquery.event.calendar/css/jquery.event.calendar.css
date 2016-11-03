@@ -14,7 +14,7 @@
 }
 .hb-calendar{
     color: #666;
-    height: 245px;
+    height: 200px;
 }
 .hb-calendar a{
 	color: inherit;
@@ -27,7 +27,7 @@
 
 /***** MONTHS *****/
 .hb-months{
-	height: 42px;
+	height: 38px;
     position: relative;
     text-align: center;
 }
@@ -37,21 +37,22 @@
 	clear: both;
 }
 .hb-current-month{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 200;
     height: 40px;
     line-height: 40px;
+    text-transform: uppercase;
 }
 .hb-change-month{
     cursor: pointer;
-	position: absolute;
-    top: 10px;
-	display: inline-block;
-	width: 30px;
-	height: 22px;
-	line-height: 20px;
-    font-size: 22px;
+    display: inline-block;
     font-family: FontAwesome;
+    font-size: 18px;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    top: 12px;
+    width: 30px;
 }
 .hb-prev-month{
 	left: 10px;
@@ -68,7 +69,7 @@
 
 /***** DAYS *****/
 .hb-days{
-	width: 249px;
+	width: 225px;
 	height: auto;
 	margin: 0 auto;
 	border-radius: 3px;
@@ -82,19 +83,19 @@
     border-radius: 1px;
     display: inline-block;
     float: left;
-    font-size: 11px;
-    height: 22px;
-    line-height: 22px;
+    font-size: 10px;
+    height: 20px;
+    line-height: 20px;
     margin: 1px;
     text-align: center;
     transition: all 0.2s ease 0s;
-    width: 32px;
+    width: 30px;
 }
 .hb-day:not(.hb-day-name):not(:empty){
 	background-color: #ddd;
 }
 .hb-day.hb-day-name{
-	margin-bottom: 6px;
+	margin-bottom: 2px;
 	color: #333;
 	font-size: 11px;
 }

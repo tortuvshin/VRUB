@@ -15,7 +15,8 @@ define("REDIRECTION", $redirection);
 /***********************************************************************
  * browse_files() browses the medias directory and get all files
  *
- * @param $dir directory containing files
+ * @param $dir      directory containing files
+ * @param $files    file data array
  *
  * @return array
  *
@@ -55,10 +56,10 @@ function browse_files($dir, $files = array())
 /***********************************************************************
  * upload_files() copies the files uploaded and inserts the recordings into the database
  *
- * @param $db database ressource connection
- * @param $id ID of the item
- * @param $id_lang ID of the current language
- * @param $dir directory containing files
+ * @param $db       database connection ressource
+ * @param $id       ID of the item
+ * @param $id_lang  ID of the current language
+ * @param $dir      directory containing files
  *
  * @return void
  *
@@ -77,7 +78,7 @@ function upload_files($db, $id, $id_lang, $dir)
                             
             if($id_lang == 0 || $id_lang == DEFAULT_LANG || FILE_MULTI){
 
-                $data['id'] = "";
+                $data['id'] = null;
                 $data['lang'] = $id_lang;
                 $data['file'] = $file[1].".".$file[2];
                 $data['id_item'] = $id;
@@ -157,10 +158,10 @@ function upload_files($db, $id, $id_lang, $dir)
 /***********************************************************************
  * add_item() inserts an item into the database and handles the update of files
  *
- * @param $db database ressource connection
- * @param $table concerned table
- * @param $result_insert PDOStatement object (prepared query)
- * @param $id_lang ID of the current language
+ * @param $db               database connection ressource
+ * @param $table            concerned table
+ * @param $result_insert    PDOStatement object (prepared query)
+ * @param $id_lang          ID of the current language
  *
  * @return void
  *
@@ -182,11 +183,11 @@ function add_item($db, $table, $result_insert, $id_lang)
         if($id == 0) $id = $db->lastInsertId();
         
         if(is_numeric($id) && $id > 0)
-            $_SESSION['msg_success'] .= $lang." ".$texts['ADD_SUCCESS']."<br>";
+            $_SESSION['msg_success'][] = $lang." ".$texts['ADD_SUCCESS'];
         else
-            $_SESSION['msg_error'] .= $lang." ".$texts['UPDATE_ERROR']."<br>";
+            $_SESSION['msg_error'][] = $lang." ".$texts['UPDATE_ERROR'];
     }else
-        $_SESSION['msg_error'] .= $lang." ".$texts['UPDATE_ERROR']."<br>";
+        $_SESSION['msg_error'][] = $lang." ".$texts['UPDATE_ERROR'];
         
     if(NB_FILES > 0){
         
@@ -203,10 +204,10 @@ function add_item($db, $table, $result_insert, $id_lang)
 /***********************************************************************
  * edit_item() updates an item in the database and handles the update of files
  *
- * @param $db database ressource connection
- * @param $table concerned table
- * @param $result_update PDOStatement object (prepared query)
- * @param $id_lang ID of the current language
+ * @param $db               database connection ressource
+ * @param $table            concerned table
+ * @param $result_update    PDOStatement object (prepared query)
+ * @param $id_lang          ID of the current language
  *
  * @return void
  *
@@ -223,9 +224,9 @@ function edit_item($db, $table, $result_update, $id, $id_lang)
     }
     
     if($result_update->execute() !== false)
-        $_SESSION['msg_success'] .= $lang." ".$texts['UPDATE_SUCCESS']."<br>";
+        $_SESSION['msg_success'][] = $lang." ".$texts['UPDATE_SUCCESS'];
     else
-        $_SESSION['msg_error'] .= $lang." ".$texts['UPDATE_ERROR']."<br>";
+        $_SESSION['msg_error'][] = $lang." ".$texts['UPDATE_ERROR'];
         
     if(NB_FILES > 0){
         
@@ -240,9 +241,9 @@ function edit_item($db, $table, $result_update, $id, $id_lang)
 /***********************************************************************
  * update_file_label() updates the label of a media in the database
  *
- * @param $db database ressource connection
- * @param $id ID of the item
- * @param $id_lang ID of the current language
+ * @param $db       database connection ressource
+ * @param $id       ID of the item
+ * @param $id_lang  ID of the current language
  *
  * @return void
  *
@@ -275,9 +276,9 @@ function update_file_label($db, $id, $id_lang)
 /***********************************************************************
  * define_main() updates the column "main" in the database for an item
  *
- * @param $db database ressource connection
- * @param $table concerned table
- * @param $id ID of the item
+ * @param $db       database connection ressource
+ * @param $table    concerned table
+ * @param $id       ID of the item
  *
  * @return void
  *
@@ -288,11 +289,11 @@ function define_main($db, $table, $id)
     if(MODULE == "lang") complete_lang($db, $id);
     if($db->query("UPDATE ".$table." SET main = 0") !== false){
         if($db->query("UPDATE ".$table." SET main = 1 WHERE id = ".$id) !== false)
-            $_SESSION['msg_success'] .= $texts['MAIN_DEFINED']."<br>";
+            $_SESSION['msg_success'][] = $texts['MAIN_DEFINED'];
         else
-            $_SESSION['msg_error'] .= $texts['UPDATE_ERROR']."<br>";
+            $_SESSION['msg_error'][] = $texts['UPDATE_ERROR'];
     }else
-        $_SESSION['msg_error'] .= $texts['UPDATE_ERROR']."<br>";
+        $_SESSION['msg_error'][] = $texts['UPDATE_ERROR'];
         
     
     $_SESSION['redirect'] = true;
@@ -303,10 +304,10 @@ function define_main($db, $table, $id)
 /***********************************************************************
  * display_home() updates the column "home" in the database for an item
  *
- * @param $db database ressource connection
- * @param $table concerned table
- * @param $id ID of the item
- * @param $value column "home" value
+ * @param $db       database connection ressource
+ * @param $table    concerned table
+ * @param $id       ID of the item
+ * @param $value    value of the column "home" 
  *
  * @return void
  *
@@ -315,9 +316,9 @@ function display_home($db, $table, $id, $value, $redirection = true)
 {
     global $texts;
     if($db->query("UPDATE ".$table." SET home = ".$value." WHERE id = ".$id) !== false)
-        if($redirection) $_SESSION['msg_success'] .= ($value == 1) ? $texts['HOME_ADD']."<br>" : $texts['HOME_REMOVE']."<br>";
+        if($redirection) $_SESSION['msg_success'][] = ($value == 1) ? $texts['HOME_ADD']."<br>" : $texts['HOME_REMOVE'];
     else
-        if($redirection) $_SESSION['msg_error'] .= $texts['UPDATE_ERROR']."<br>";
+        if($redirection) $_SESSION['msg_error'][] = $texts['UPDATE_ERROR'];
         
     if($redirection){
         $_SESSION['redirect'] = true;
@@ -329,10 +330,10 @@ function display_home($db, $table, $id, $value, $redirection = true)
 /***********************************************************************
  * display_home_multi() updates the column "home" in the database for multiple items
  *
- * @param $db database ressource connection
- * @param $table concerned table
- * @param $value column "home" value
- * @param $items array of items IDs
+ * @param $db       database connection ressource
+ * @param $table    concerned table
+ * @param $value    value of the column "home"
+ * @param $items    array of items IDs
  *
  * @return void
  *
@@ -349,10 +350,10 @@ function display_home_multi($db, $table, $value, $items)
 /***********************************************************************
  * check() updates the column "check" in the database for an item
  *
- * @param $db database ressource connection
- * @param $table concerned table
- * @param $id ID of the item
- * @param $value column "check" value
+ * @param $db       database connection ressource
+ * @param $table    concerned table
+ * @param $id       ID of the item
+ * @param $value    value of the column "check" 
  *
  * @return void
  *
@@ -361,9 +362,9 @@ function check($db, $table, $id, $value, $redirection = true)
 {
     global $texts;
     if($db->query("UPDATE ".$table." SET checked = ".$value." WHERE id = ".$id) !== false)
-        if($redirection) $_SESSION['msg_success'] .= ($value == 1) ? $texts['ELMT_ENABLED']."<br>" : $texts['ELMT_DISABLED']."<br>";
+        if($redirection) $_SESSION['msg_success'][] = ($value == 1) ? $texts['ELMT_ENABLED']."<br>" : $texts['ELMT_DISABLED'];
     else
-        if($redirection) $_SESSION['msg_error'] .= $texts['UPDATE_ERROR']."<br>";
+        if($redirection) $_SESSION['msg_error'][] = $texts['UPDATE_ERROR'];
         
     if($redirection){
         $_SESSION['redirect'] = true;
@@ -375,10 +376,10 @@ function check($db, $table, $id, $value, $redirection = true)
 /***********************************************************************
  * check() updates the column "check" in the database for multiple items
  *
- * @param $db database ressource connection
- * @param $table concerned table
- * @param $value column "check" value
- * @param $items array of items IDs
+ * @param $db       database connection ressource
+ * @param $table    concerned table
+ * @param $value    value of the column "check"
+ * @param $items    array of items IDs
  *
  * @return void
  *
@@ -395,8 +396,8 @@ function check_multi($db, $table, $value, $items)
 /***********************************************************************
  * delete_item() deletes an item from the database and handles the deletion of its associated files
  *
- * @param $db database ressource connection
- * @param $id ID of the item
+ * @param $db   database connection ressource
+ * @param $id   ID of the item
  *
  * @return void
  *
@@ -421,9 +422,9 @@ function delete_item($db, $id, $redirection = true)
     if(RANKING) update_rank($db, "pm_".MODULE, $id);
     
     if($db->query("DELETE FROM pm_".MODULE." WHERE id = ".$id) !== false)
-        if($redirection) $_SESSION['msg_success'] .= $texts['DELETE_SUCCESS']."<br>";
+        if($redirection) $_SESSION['msg_success'][] = $texts['DELETE_SUCCESS'];
     else
-        if($redirection) $_SESSION['msg_error'] .= $texts['UPDATE_ERROR']."<br>";
+        if($redirection) $_SESSION['msg_error'][] = $texts['UPDATE_ERROR'];
     
     if($redirection){
         $_SESSION['redirect'] = true;
@@ -435,9 +436,9 @@ function delete_item($db, $id, $redirection = true)
 /***********************************************************************
  * update_rank() updates the column "rank" in the database for all items
  *
- * @param $db database ressource connection
- * @param $table concerned table
- * @param $id ID of the item
+ * @param $db       database connection ressource
+ * @param $table    concerned table
+ * @param $id       ID of the item
  *
  * @return void
  *
@@ -465,8 +466,8 @@ function update_rank($db, $table, $id, $id_item = 0)
 /***********************************************************************
  * delete_file() deletes a media from the database and handles the deletion of the concerned file
  *
- * @param $db database ressource connection
- * @param $id_file ID of the media
+ * @param $db       database connection ressource
+ * @param $id_file  ID of the media
  *
  * @return void
  *
@@ -512,9 +513,9 @@ function delete_file($db, $id_file, $redirection = true)
         update_rank($db, MODULE."_file", $id_file, $id_item);
             
         if($db->query("DELETE FROM pm_".MODULE."_file WHERE id = ".$id_file) !== false)
-            if($redirection) $_SESSION['msg_success'] .= $filename." - ".$texts['DELETE_SUCCESS']."<br>";
+            if($redirection) $_SESSION['msg_success'][] = $filename." - ".$texts['DELETE_SUCCESS'];
         else
-            if($redirection) $_SESSION['msg_error'] .= $filename." - ".$texts['UPDATE_ERROR']."<br>";
+            if($redirection) $_SESSION['msg_error'][] = $filename." - ".$texts['UPDATE_ERROR'];
     }
         
     if($redirection){
@@ -527,8 +528,8 @@ function delete_file($db, $id_file, $redirection = true)
 /***********************************************************************
  * delete_multi_file() deletes multiple medias from the database and handles the deletion of the concerned files
  *
- * @param $db database ressource connection
- * @param $items array of medias IDs
+ * @param $db       database connection ressource
+ * @param $items    array of medias IDs
  *
  * @return void
  *
@@ -545,8 +546,8 @@ function delete_multi_file($db, $items)
 /***********************************************************************
  * delete_multi() deletes multiple items from the database
  *
- * @param $db database ressource connection
- * @param $items array of items IDs
+ * @param $db       database connection ressource
+ * @param $items    array of items IDs
  *
  * @return void
  *
@@ -561,12 +562,36 @@ function delete_multi($db, $items)
 }
 
 /***********************************************************************
+ * delete_row() deletes a row in the table of the form
+ *
+ * @param $db           database connection ressource
+ * @param $id           ID of the item
+ * @param $id_row       ID of the row
+ * @param $table        concerned table
+ * @param $fieldref     column of the foreign key
+ *
+ * @return void
+ *
+ */
+function delete_row($db, $id, $id_row, $table, $fieldref)
+{
+    global $texts;
+    if(db_table_exists($db, $table) && db_column_exists($db, $table, $fieldref)){
+        if($db->query("DELETE FROM ".$table." WHERE id = ".$id_row." AND ".$fieldref." = ".$id) !== false)
+            $_SESSION['msg_success'][] = $table." (ID ".$id_row.") - ".$texts['DELETE_SUCCESS'];
+    }
+    $_SESSION['redirect'] = true;
+    header("Location: ".REDIRECTION);
+    exit();
+}
+
+/***********************************************************************
  * complete_lang_module() fills the empty columns of a language with the
  * corresponding values in the default language for a module
  *
- * @param $db database ressource connection
- * @param $module module name
- * @param $id_lang ID of the current language
+ * @param $db       database connection ressource
+ * @param $module   module name
+ * @param $id_lang  ID of the current language
  *
  * @return void
  *
@@ -649,11 +674,11 @@ function complete_lang_module($db, $module, $id_lang, $loop = false)
     }
     
     if($error !== true){
-        if(!$loop) $_SESSION['msg_success'] .= $title." - ".$texts['TRANSLATE_SUCCESS']."<br>";
-        if(substr($module, -5) != "_file") complete_lang_module($db, "pm_".$module."_file", $id_lang, true);
+        if(!$loop) $_SESSION['msg_success'][] = $title." - ".$texts['TRANSLATE_SUCCESS'];
+        if(substr($module, -5) != "_file") complete_lang_module($db, $module."_file", $id_lang, true);
         return true;
     }else{
-        if(!$loop) $_SESSION['msg_error'] .= $title." - ".$texts['UPDATE_ERROR']."<br>";
+        if(!$loop) $_SESSION['msg_error'][] = $title." - ".$texts['UPDATE_ERROR'];
         return false;
     }
 }
@@ -662,8 +687,8 @@ function complete_lang_module($db, $module, $id_lang, $loop = false)
  * complete_lang() fills the empty columns of a language with the
  * corresponding values in the default language for all modules
  *
- * @param $db database ressource connection
- * @param $id_lang ID of the current language
+ * @param $db       database connection ressource
+ * @param $id_lang  ID of the current language
  *
  * @return void
  *
@@ -671,7 +696,7 @@ function complete_lang_module($db, $module, $id_lang, $loop = false)
 function complete_lang($db, $id_lang)
 {
     global $texts;
-    $modules_list = getModules("admin/modules");
+    $modules_list = getModules(ADMIN_FOLDER."/modules");
     
     $error = false;
     
@@ -681,7 +706,7 @@ function complete_lang($db, $id_lang)
         if(complete_lang_module($db, "pm_".$module->getName(), $id_lang, true) === false) $error = true;
     }
     if(!$error)
-        $_SESSION['msg_success'] .= $title." - ".$texts['TRANSLATE_SUCCESS']."<br>";
+        $_SESSION['msg_success'][] = $title." - ".$texts['TRANSLATE_SUCCESS'];
     else
-        $_SESSION['msg_error'] .= $title." - ".$texts['UPDATE_ERROR']."<br>";
+        $_SESSION['msg_error'][] = $title." - ".$texts['UPDATE_ERROR'];
 }

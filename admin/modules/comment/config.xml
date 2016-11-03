@@ -21,7 +21,8 @@
 			<options>
                 <option value="article">Article</option>
                 <option value="page">Page</option>
-                <option value="room">Room</option>
+                <option value="hotel">Hotel</option>
+                <option value="activity">Activity</option>
             </options>
 		</field>
 		<field multi="0" label="Item ID" name="id_item" type="text" required="1" unique="0" validation="numeric"/>

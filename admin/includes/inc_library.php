@@ -1,11 +1,11 @@
 <?php debug_backtrace() || die ("Direct access not permitted"); ?>
-<div id="wrap-library">
+<div id="wrap-library" class="hidden-xs">
     <div id="library" class="show-grid">
         <?php
         if($db !== false){
             $nb_medias = 0;
             
-            $modules_list = getModules("admin/modules");
+            $modules_list = getModules(ADMIN_FOLDER."/modules");
             
             $dirname = dirname($_SERVER['SCRIPT_NAME']);
             $dirname = substr($dirname, strrpos($dirname, "/")+1);

@@ -31,6 +31,7 @@
         <field multi="0" label="Room" name="id_room" type="select" required="1" unique="0" validation="none">
             <options table="pm_room" fieldlabel="title" fieldvalue="id" order="title"></options>
         </field>
+        <field multi="0" label="Room (full name)" name="room" type="text" required="1" unique="0" validation="none"/>
         <field multi="0" label="Check in" name="from_date" type="date" required="1" unique="0" validation="none"/>
         <field multi="0" label="Check out" name="to_date" type="date" required="1" unique="0" validation="none"/>
         <field multi="0" label="Nights" name="nights" type="text" required="1" unique="0" validation="numeric"/>
@@ -60,8 +61,17 @@
                 <option value="4">Payed</option>
             </options>
         </field>
+        <field multi="0" label="Payment method" name="payment_method" type="text" required="0" unique="0" validation="none"/>
         <field multi="0" label="Transaction ID" name="trans" type="text" required="0" unique="0" validation="none"/>
         <field multi="0" label="Payment date" name="payment_date" type="datetime" required="0" unique="0" validation="none"/>
+        <table label="Activities" name="booking_activity" fieldref="id_booking">
+            <field multi="0" label="Title" name="title" type="text" required="1" unique="0" validation="none"/>
+            <field multi="0" label="Adults" name="adults" type="text" required="0" unique="0" validation="numeric"/>
+            <field multi="0" label="Children" name="children" type="text" required="0" unique="0" validation="numeric"/>
+            <field multi="0" label="Duration" name="duration" type="text" required="1" unique="0" validation="none"/>
+            <field multi="0" label="Date" name="date" type="datetime" required="1" unique="0" validation="none"/>
+            <field multi="0" label="Amount" name="amount" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
+        </table>
 	</form>
     <roles>
         <user type="administrator" permissions="all"/>

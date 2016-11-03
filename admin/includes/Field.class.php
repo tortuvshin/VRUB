@@ -17,12 +17,11 @@ class Field
     private $comment;
     private $active;
     private $editor;
-    private $notice;
+    private $notices;
     private $optionTable;
-    private $relation;
     private $roles;
 
-    public function __construct ($name, $label, $type, $required, $validation, $options, $multilingual, $unique, $comment, $active, $editor, $optionTable, $relation, $roles, $notice = "")
+    public function __construct($name, $label, $type, $required, $validation, $options, $multilingual, $unique, $comment, $active, $editor, $optionTable, $roles)
     {
         $this->name = $name;
         $this->label = $label;
@@ -48,9 +47,8 @@ class Field
             $this->editor = $editor;
         else
             $this->editor = 0;
-        $this->notice = $notice;
+        $this->notices = array();
         $this->optionTable = $optionTable;
-        $this->relation = $relation;
         $this->roles = $roles;
     }
     function getName()
@@ -77,16 +75,25 @@ class Field
     {
         return $this->options;
     }
-    function getValue($encode = false, $id_lang = DEFAULT_LANG)
+    function getValue($encode = false, $index = 0, $id_lang = DEFAULT_LANG)
     {
         if(!MULTILINGUAL) $id_lang = 0;
-        if(isset($this->values[$id_lang])){
-            if(!is_array($this->values[$id_lang]))
-                return ($encode) ? htmlentities($this->values[$id_lang], ENT_QUOTES, "UTF-8") : stripslashes($this->values[$id_lang]);
+        if(isset($this->values[$index][$id_lang])){
+            if(!is_array($this->values[$index][$id_lang]))
+                return ($encode) ? htmlentities($this->values[$index][$id_lang], ENT_QUOTES, "UTF-8") : stripslashes($this->values[$index][$id_lang]);
             else
-                return $this->values[$id_lang];
+                return $this->values[$index][$id_lang];
         }else
             return "";
+    }
+    function removeValue($index)
+    {
+        if(isset($this->values[$index]))
+            unset($this->values[$index]);
+    }
+    function getAllValues()
+    {
+        return $this->values;
     }
     function getValidation()
     {
@@ -108,34 +115,33 @@ class Field
     {
         return $this->comment;
     }
-    function getNotice()
+    function getNotice($index = 0)
     {
-        return $this->notice;
+        if(isset($this->notices[$index]))
+            return $this->notices[$index];
+        else
+            return "";
     }
     function getOptionTable()
     {
         return $this->optionTable;
-    }
-    function getRelation()
-    {
-        return $this->relation;
     }
     function isAllowed($type)
     {
         $roles = $this->roles;
         return (in_array($type, $roles) || in_array("all", $roles));
     }
-    function setValue($value, $id_lang = null)
+    function setValue($value, $index = 0, $id_lang = null)
     {
         if(!is_null($id_lang))
-            $this->values[$id_lang] = (is_array($value)) ? $value : html_entity_decode($value, ENT_QUOTES, "UTF-8");
+            $this->values[$index][$id_lang] = (is_array($value)) ? $value : html_entity_decode($value, ENT_QUOTES, "UTF-8");
         else{
             for($i = 0; $i < count($this->values); $i++)
-                $this->values[$i] = (is_array($value)) ? $value : html_entity_decode($value, ENT_QUOTES, "UTF-8");
+                $this->values[$index][$i] = (is_array($value)) ? $value : html_entity_decode($value, ENT_QUOTES, "UTF-8");
         }
     }
-    function setNotice($notice)
+    function setNotice($notice, $index = 0)
     {
-        $this->notice = $notice;
+        $this->notices[$index] = $notice;
     }
 }
