@@ -94,7 +94,7 @@
     <link rel="stylesheet" href="<?php echo getFromTemplate("css/main.css"); ?>">
     <link rel="stylesheet" href="<?php echo getFromTemplate("css/custom.css"); ?>">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <!--[if lt IE 9]>
         <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

@@ -1,8 +1,8 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 /****************** GENERAL ******************/
 body {
     padding-top: 133px;
-    font-family: "Open Sans";
+    font-family: 'Roboto', sans-serif;
 }
 body#page-1 {
     padding: 0;
@@ -18,7 +18,7 @@ body:not(#page-1) {
 h1, h2, h3, .h1, .h2, .h3, .widget-title {
     text-transform: uppercase;
     font-weight: 400;
-    font-family: "Montserrat";
+    font-family: 'Roboto', sans-serif;
 }
 h2, .h2 {
     font-size: 22px;
@@ -75,7 +75,7 @@ header, header * {
     display: inline-block;
     float: none;
     margin: 0;
-    font-family: "Montserrat";
+    font-family: 'Roboto', sans-serif;
 }
 .navbar-nav > li > a {
     padding-bottom: 8px;

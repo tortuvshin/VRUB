@@ -3,16 +3,17 @@
 }
 html{
 	height: 100%;
+	font-family: 'Roboto', sans-serif;
 }
 body {
 	background: #22353F;
-	font-family: Open Sans,sans-serif;
+	font-family: 'Roboto', sans-serif;
 	height: 100%;
 	min-height: 100%;
 }
 body.white {
 	background: #fff;
-	font-family: Open Sans,sans-serif;
+	font-family: 'Roboto', sans-serif;
 	height: 100%;
 	min-height: 100%;
     padding-top: 30px;
