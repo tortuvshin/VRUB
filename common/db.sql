@@ -680,7 +680,7 @@ CREATE TABLE IF NOT EXISTS `pm_location` (
 --
 
 INSERT INTO `pm_location` (`id`, `name`, `address`, `lat`, `lng`, `checked`, `pages`) VALUES
-(1, 'Panda Multi Resorts', 'Maldives Mint, Neeloafaru Magu 20014, Maldives', 4.174411, 73.517851, 1, '2');
+(1, 'Tagtaa solution', 'Ulaanbaatar, Mongolia', 47.9216221, 106.9201769, 1, '2');
 
 -- --------------------------------------------------------
 
@@ -1206,21 +1206,21 @@ INSERT INTO `pm_text` (`id`, `lang`, `name`, `value`) VALUES
 (65, 2, 'CHILDREN', 'Children'),
 (66, 1, 'PERSONS', 'хүн(ий)'),
 (66, 2, 'PERSONS', 'person(s)'),
-(67, 1, 'CONTACT_DETAILS', 'Coordonnées'),
+(67, 1, 'CONTACT_DETAILS', 'Холбоо барих'),
 (67, 2, 'CONTACT_DETAILS', 'Contact details'),
-(68, 1, 'NO_AVAILABILITY', 'Aucune disponibilité'),
+(68, 1, 'NO_AVAILABILITY', 'Боломжгүй'),
 (68, 2, 'NO_AVAILABILITY', 'No availability'),
-(69, 1, 'AVAILABILITIES', 'Disponibilités'),
+(69, 1, 'AVAILABILITIES', 'Болможтой'),
 (69, 2, 'AVAILABILITIES', 'Availabilities'),
-(70, 1, 'CHECK', 'Vérifier'),
+(70, 1, 'CHECK', 'Шалгах'),
 (70, 2, 'CHECK', 'Check'),
-(71, 1, 'BOOKING_DETAILS', 'Détails de la réservation'),
+(71, 1, 'BOOKING_DETAILS', 'Захиалгын дэлгэрэнгүй'),
 (71, 2, 'BOOKING_DETAILS', 'Booking details'),
 (72, 1, 'SPECIAL_REQUESTS', 'Demandes spéciales'),
-(72, 2, 'SPECIAL_REQUESTS', 'Special requests'),
-(73, 1, 'PREVIOUS_STEP', 'Étape précédente'),
+(72, 2, 'SPECIAL_REQUESTS', 'Тусгай хүсэлт'),
+(73, 1, 'PREVIOUS_STEP', 'Дараагийн алхам'),
 (73, 2, 'PREVIOUS_STEP', 'Previous step'),
-(74, 1, 'CONFIRM_BOOKING', 'Confirmer la réservation'),
+(74, 1, 'CONFIRM_BOOKING', 'Захиалга баталгаажуулах'),
 (74, 2, 'CONFIRM_BOOKING', 'Confirm the booking'),
 (75, 1, 'ALSO_DISCOVER', 'Découvrez aussi'),
 (75, 2, 'ALSO_DISCOVER', 'Also discover'),
@@ -1509,7 +1509,7 @@ ALTER TABLE `pm_lang_file`
 --
 ALTER TABLE `pm_media_file`
   ADD CONSTRAINT `media_file_fkey` FOREIGN KEY (`id_item`) REFERENCES `pm_media` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
+*
 --
 -- Constraints for table `pm_page`
 --
