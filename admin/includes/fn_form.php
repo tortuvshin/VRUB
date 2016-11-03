@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 /**
  * Functions needed by the form of a module
  * build (from config.xml), check and display fields
@@ -168,7 +168,7 @@ function getFieldsFromNode($db, $itemList)
                 $itemOptions = $item->getElementsByTagName("options")->item(0);
                 $optionDirectory = htmlentities($itemOptions->getAttribute("directory"), ENT_QUOTES, "UTF-8");
                 $optionDirectory = str_replace("{template}", TEMPLATE, $optionDirectory);
-                $rep = opendir($optionDirectory) or die("Error directory opening : ".$optionDirectory);
+                $rep = opendir($optionDirectory) or die("Хавтсыг нээхэд алдаа гарлаа : ".$optionDirectory);
                 while($entry = @readdir($rep)){
                     if($entry != "." && $entry != ".."){
                         $entry = str_replace(".php", "", $entry);
@@ -194,7 +194,7 @@ function getFields($db)
     $file = "config.xml";
     $dom = new DOMDocument();
     if(!$dom->load($file))
-        die("Unable to load the XML file");
+        die("XML файлыг ачааллах боломжгүй байна");
     if(!$dom->schemaValidate(dirname(__FILE__)."/config.xsd"))
         die("The XML file does not respect the schema");
         

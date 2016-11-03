@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 /**
  * Library of actions performed since the listing and the form of a module
  */
@@ -23,7 +23,7 @@ define("REDIRECTION", $redirection);
  */
 function browse_files($dir, $files = array())
 {
-    if(is_dir($dir)) $rep = opendir($dir) or die("Error directory opening : ".$dir);
+    if(is_dir($dir)) $rep = opendir($dir) or die("Хавтас нээх үед алдаа гарлаа : ".$dir);
     
     while($entry = @readdir($rep)){
         if(is_dir($dir."/".$entry) && $entry != "." && $entry != "..")

@@ -1,4 +1,4 @@
-<?php debug_backtrace() || die ("Direct access not permitted"); ?>
+<?php debug_backtrace() || die ("Шууд хандах боломжгүй"); ?>
 <div id="wrap-library" class="hidden-xs">
     <div id="library" class="show-grid">
         <?php

@@ -155,7 +155,7 @@ if(ENABLE_COOKIES_NOTICE == 1 && !isset($_COOKIE['cookies_enabled'])){ ?>
             <div class="row">
                 <div class="col-md-12">
                     <?php echo $texts['COOKIES_NOTICE']; ?>
-                    <button class="btn btn-success btn-xs">ТИйм</button>
+                    <button class="btn btn-success btn-xs">Тийм</button>
                 </div>
             </div>
         </div>

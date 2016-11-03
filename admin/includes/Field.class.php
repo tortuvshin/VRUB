@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 /**
  * Class of the fields displayed in the form of a module
  */

@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 /**
  * Functions needed by the listing of a module
  * build (from config.xml) and display columns and filters
@@ -16,7 +16,7 @@ function getCols()
     $file = "config.xml";
     $dom = new DOMDocument();
     if(!$dom->load($file))
-        die("Unable to load the XML file");
+        die("XML файлыг ачааллах боломжгүй байна");
     if(!$dom->schemaValidate(dirname(__FILE__)."/config.xsd"))
         die("The XML file does not respect the schema");
     
@@ -280,7 +280,7 @@ function getOrder()
     $file = "config.xml";
     $dom = new DOMDocument();
     if(!$dom->load($file))
-        die("Unable to load the XML file");
+        die("XML файлыг ачааллах боломжгүй байна");
 
     $root = $dom->getElementsByTagName("module")->item(0);
     $list = $root->getElementsByTagName("list")->item(0);

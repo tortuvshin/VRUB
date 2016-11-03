@@ -12,7 +12,7 @@ if(isset($_POST['dir']) && isset($_POST['token']) && $_POST['token'] != ""){
     if(is_dir($dirname)){
     
         if(!is_writable($dirname))
-            throw new Exception("You do not have renaming permissions!");
+            throw new Exception("Танд нэр солих эрх алга байна!");
 
         $iterator = new RecursiveIteratorIterator(
             new RecursiveDirectoryIterator($dirname),

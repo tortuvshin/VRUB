@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 /**
  * Class of the filters displayed in the search engine in the listing of a module
  */

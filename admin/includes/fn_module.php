@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 /**
  * Function needed by all modules
  * build modules from config.xml and defines the constants
@@ -18,7 +18,7 @@ function getModules($dir, $modules = array())
     global $indexes;
     $realdir = SYSBASE.$dir;
 
-    $rep = opendir($realdir) or die("Error directory opening: ".$realdir);
+    $rep = opendir($realdir) or die("Хавтсыг нээхэд алдаа гарлаа: ".$realdir);
     
     while($entry = @readdir($rep)){
         
@@ -31,7 +31,7 @@ function getModules($dir, $modules = array())
                 $title = "";
                 
                 $dom = new DOMDocument();
-                $dom->load($realdir."/config.xml") or die("Unable to load the XML file");
+                $dom->load($realdir."/config.xml") or die("XML файлыг ачааллах боломжгүй байна");
                 $dom->schemaValidate(dirname(__FILE__)."/config.xsd") or die("The XML file does not respect the schema");
                     
                 $module = $dom->getElementsByTagName("module")->item(0);

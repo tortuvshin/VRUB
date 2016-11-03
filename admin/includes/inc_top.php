@@ -1,4 +1,4 @@
-<?php debug_backtrace() || die ("Direct access not permitted"); ?>
+<?php debug_backtrace() || die ("Шууд хандах боломжгүй"); ?>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-header">

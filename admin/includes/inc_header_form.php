@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 require_once("inc_header_common.php"); ?>
 
 <script src="<?php echo DOCBASE.ADMIN_FOLDER; ?>/js/plugins/ckeditor/ckeditor.js"></script>
