@@ -8,7 +8,7 @@ if(!isset($_SESSION['user'])){
     header("Location: login.php");
     exit();
 }elseif($_SESSION['user']['type'] == "registered"){
-    $_SESSION['msg_error'][] = "Access denied.<br/>";
+    $_SESSION['msg_error'][] = "Хандах эрхгүй байна.<br/>";
     header("Location: login.php");
     exit();
 }
@@ -414,7 +414,7 @@ $csrf_token = get_token("settings"); ?>
                                                         <select name="template" class="form-control">
                                                             <?php
                                                             $dir = "../templates/";
-                                                            $rep = opendir($dir) or die("Error directory opening : ".$dir);
+                                                            $rep = opendir($dir) or die("Хавтас нээхэд алдаа гарлаа : ".$dir);
                                                             while($entry = @readdir($rep)){
                                                                 if(is_dir($dir."/".$entry) && $entry != "." && $entry != ".."){
                                                                     $selected = ($config_tmp['template'] == $entry) ? " selected=\"selected\"" : ""; ?>
