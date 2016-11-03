@@ -9,12 +9,12 @@
 		<small maxw="200" maxh="150"/>
 	</medias>
 	<list order="id DESC">
-		<col label="Name" name="name" type="none"/>
-		<col label="Value" name="value" type="none"/>
+		<col label="Нэр" name="name" type="none"/>
+		<col label="Утга" name="value" type="none"/>
 	</list>
 	<form>
-		<field multi="0" label="Name" name="name" type="text" required="1" unique="0" validation="none" roles="administrator"/>
-		<field multi="1" label="Value" name="value" type="textarea" editor="0" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Нэр" name="name" type="text" required="1" unique="0" validation="none" roles="administrator"/>
+		<field multi="1" label="Утга" name="value" type="textarea" editor="0" required="1" unique="0" validation="none"/>
 	</form>
     <roles>
         <user type="administrator" permissions="all"/>
