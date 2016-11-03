@@ -16,8 +16,9 @@ class DB extends PDO
  */
 function autoloader($classname)
 {
-    $filename = SYSBASE."admin/includes/".$classname.".class.php";
-    require $filename;
+    $admin_folder = defined("ADMIN_FOLDER") ? ADMIN_FOLDER : "admin";
+    $filename = SYSBASE.$admin_folder."/includes/".$classname.".class.php";
+    if(is_file($filename)) require_once($filename);
 }
 if(version_compare(PHP_VERSION, "5.1.2", ">=")){
     if(version_compare(PHP_VERSION, "5.3.0", ">="))
@@ -48,9 +49,9 @@ function is_session_started()
 /***********************************************************************
  * db_prepareInsert() prepare a query for an insertion into the database
  *
- * @param $db database connection ressource
- * @param $table concerned table
- * @param $data array of values indexed by columns name
+ * @param PDOStatement $db  database connection ressource
+ * @param string $table     concerned table
+ * @param array $data       array of values indexed by columns name
  *
  * @return PDOStatement
  *
@@ -70,7 +71,7 @@ function db_prepareInsert($db, $table, $data)
     foreach($list_cols as $i => $column){
         if(array_key_exists($column, $data)){
             $col_type = db_column_type($db, $table, $column);
-            $value = (is_null($data[$column]) || (preg_match("/.*(char|text).*/i", $col_type) === false && $data[$column] == "")) ? null : $data[$column];
+            $value = (is_null($data[$column]) || (preg_match("/.*(char|text).*/i", $col_type) !== 1 && $data[$column] == "")) ? null : $data[$column];
             $result->bindValue(":".$column, $value);
         }else
             $result->bindValue(":".$column, null);
@@ -80,9 +81,9 @@ function db_prepareInsert($db, $table, $data)
 /***********************************************************************
  * db_prepareUpdate() prepare a query for an update into the database
  *
- * @param $db database connection ressource
- * @param $table concerned table
- * @param $data array of values indexed by columns name
+ * @param PDOStatement $db  database connection ressource
+ * @param string $table     concerned table
+ * @param array $data       array of values indexed by columns name
  *
  * @return PDOStatement
  *
@@ -109,7 +110,7 @@ function db_prepareUpdate($db, $table, $data)
     foreach($list_cols as $i => $column){
         if(array_key_exists($column, $data)){
             $col_type = db_column_type($db, $table, $column);
-            $value = (is_null($data[$column]) || (preg_match("/.*(char|text).*/i", $col_type) === false && $data[$column] == "")) ? null : $data[$column];
+            $value = (is_null($data[$column]) || (preg_match("/.*(char|text).*/i", $col_type) !== 1 && $data[$column] == "")) ? null : $data[$column];
             $result->bindValue(":".$column, $value);
         }
     }
@@ -118,8 +119,8 @@ function db_prepareUpdate($db, $table, $data)
 /***********************************************************************
  * db_table_exists() checks if a table exists in the database
  *
- * @param $db database connection ressource
- * @param $table concerned table
+ * @param PDOStatement $db  database connection ressource
+ * @param string $table     concerned table
  *
  * @return boolean
  *
@@ -135,9 +136,9 @@ function db_table_exists($db, $table)
 /***********************************************************************
  * db_column_exists() checks if a column exists in the database
  *
- * @param $db database connection ressource
- * @param $table concerned table
- * @param $column concerned column
+ * @param PDOStatement $db  database connection ressource
+ * @param string $table     concerned table
+ * @param string $column    concerned column
  *
  * @return boolean
  *
@@ -145,7 +146,7 @@ function db_table_exists($db, $table)
 function db_column_exists($db, $table, $column)
 {
     $result = $db->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = '".$table."' AND TABLE_SCHEMA = '".DB_NAME."' AND COLUMN_NAME = '".$column."'");
-    if($result !== false && $db->last_row_count() == 1)
+    if($result !== false && $db->last_row_count() > 0)
         return true;
     else
         return false;
@@ -153,9 +154,9 @@ function db_column_exists($db, $table, $column)
 /***********************************************************************
  * db_descr_table() gets the description of a table in the database
  *
- * @param $db database connection ressource
- * @param $table concerned table
- * @param $column concerned column
+ * @param PDOStatement $db  database connection ressource
+ * @param string $table     concerned table
+ * @param string $column    concerned column
  *
  * @return array table description
  *
@@ -170,8 +171,8 @@ function db_descr_table($db, $table, $column = "")
 /***********************************************************************
  * db_list_columns() returns the list of the columns name of a table in the database
  *
- * @param $db database connection ressource
- * @param $table concerned table
+ * @param PDOStatement $db  database connection ressource
+ * @param string $table     concerned table
  *
  * @return array columns list
  *
@@ -189,9 +190,9 @@ function db_list_columns($db, $table)
 /***********************************************************************
  * db_column_type() returns the type of a column in the database
  *
- * @param $db database connection ressource
- * @param $table concerned table
- * @param $column concerned column
+ * @param PDOStatement $db  database connection ressource
+ * @param string $table     concerned table
+ * @param string $column    concerned column
  *
  * @return string column type
  *
@@ -213,10 +214,10 @@ function db_column_type($db, $table, $column)
 /***********************************************************************
  * img_resize() copies and resizes an image
  *
- * @param $source_file source file path
- * @param $dest_dir target directory path
- * @param $max_w maximum width
- * @param $max_h maximum height
+ * @param string $source_file   source file path
+ * @param string $dest_dir      target directory path
+ * @param integer $max_w        maximum width
+ * @param integer $max_h        maximum height
  *
  * @return boolean
  *
@@ -333,7 +334,7 @@ function img_resize($source_file, $dest_dir, $max_w, $max_h, $stamp_file = null)
 /***********************************************************************
  * getFileMimeType() returns the mime type of a file
  *
- * @param $file path of the file
+ * @param string $file path of the file
  *
  * @return string
  */
@@ -361,7 +362,7 @@ function getFileMimeType($file){
 /***********************************************************************
  * fileSizeConvert() formats a number in bytes for the display (10 MB, 200.20 GB)
  *
- * @param $bytes number to format
+ * @param integer $bytes number to format
  *
  * @return string
  */
@@ -403,9 +404,9 @@ function fileSizeConvert($bytes)
 /***********************************************************************
  * recursive_rmdir() deletes or empties a directory recursively
  *
- * @param $dirname directory path to delete/empty
- * @param $contentOnly delete content only ?
- * @param $followLinks follow symbolic links ?
+ * @param string $dirname       directory path to delete/empty
+ * @param boolean $contentOnly  delete content only ?
+ * @param boolean $followLinks  follow symbolic links ?
  *
  * return void
  *
@@ -436,13 +437,13 @@ function recursive_rmdir($dirname, $contentOnly = false, $followLinks = false)
 /***********************************************************************
  * db_getRequestSelect() returns a query of selection
  *
- * @param $table concerned table
- * @param $cols array of columns (name) to compare
- * @param $q searched string
- * @param $condition adding conditions (WHERE clause)
- * @param $order display order of elements (ORDER clause)
- * @param $limit maximum elements to display (LIMIT clause)
- * @param $offset number of the line where beginning the research (OFFSET clause)
+ * @param string $table         concerned table
+ * @param array $cols           columns (name) to compare
+ * @param $q                    searched string
+ * @param string $condition     additionnal conditions (WHERE clause)
+ * @param string $order         display order of elements (ORDER clause)
+ * @param string $limit         maximum elements to display (LIMIT clause)
+ * @param string $offset        number of the line where beginning the research (OFFSET clause)
  *
  * @return string query
  *
@@ -490,10 +491,11 @@ function db_getRequestSelect($db, $table, $cols, $q, $condition_sup = "", $order
 /***********************************************************************
  * db_getFieldValue() gets the value of a colmuns in the database
  *
- * @param $db database connection ressource
- * @param $table concerned table
- * @param $col column name
- * @param $id ID of the line
+ * @param PDOStatement $db  database connection ressource
+ * @param string $table     concerned table
+ * @param string $col       column name
+ * @param integer $id       ID of the entry
+ * @param integer $lang     lang ID of the entry
  *
  * @return string value
  *
@@ -503,7 +505,7 @@ function db_getFieldValue($db, $table, $col, $id, $lang = 0)
     $query = "SELECT ".$col." FROM ".$table." WHERE id = ".$id;
     if($lang > 0 && db_column_exists($db, $table, "lang")) $query .= " AND lang = '".$lang."'";
     $result = $db->query($query);
-    if($result !== false && $db->last_row_count() == 1){
+    if($result !== false && $db->last_row_count() > 0){
         $row = $result->fetch(PDO::FETCH_ASSOC);
         $values = array();
         $cols = explode(",", $col);
@@ -515,10 +517,10 @@ function db_getFieldValue($db, $table, $col, $id, $lang = 0)
 /***********************************************************************
  * getNewSize() calculates new dimensions while keeping the proportions
  *
- * @param $w current width
- * @param $h current height
- * @param $max_w maximum width
- * @param $max_h maximum height
+ * @param integer $w        current width
+ * @param integer $h        current height
+ * @param integer $max_w    maximum width
+ * @param integer $max_h    maximum height
  *
  * @return array array containing the new dimensions ([0] => width, [1] => height)
  *
@@ -547,7 +549,7 @@ function getNewSize($w, $h, $max_w, $max_h)
 /***********************************************************************
  * close_html_tags() closes all html tags of a truncated string
  *
- * @param $text string to format
+ * @param string $text string to format
  *
  * @return string
  *
@@ -575,9 +577,10 @@ function close_html_tags($text){
 /***********************************************************************
  * strtrunc() truncates a string by keeping the HTML formatting
  *
- * @param $text string to truncate
- * @param $length maximum number of characters
- * @param $ending
+ * @param string $text      string to truncate
+ * @param integer $length   maximum number of characters
+ * @param string $ending    characters ending the returned string
+ * @param boolean $exact    truncate in the middle of a word
  *
  * @return string
  *
@@ -630,8 +633,7 @@ function strtrunc($text, $length, $html = true, $ending = "...", $exact = false)
 /***********************************************************************
  * cleanAccent() removes all accents from a string
  * 
- * @param $str string to format
- * @param $urf8 encoding
+ * @param string $str string to format
  * 
  * @return string
  * 
@@ -650,10 +652,10 @@ function cleanAccent($str)
 /***********************************************************************
  * highlight() places custom tags before and after a part of a string
  *
- * @param $haystack input string
- * @param $needle searched substring
- * @param $startTag string to insert before needle
- * @param $endTag string to insert after needle
+ * @param string $haystack  input string
+ * @param string $needle    searched substring
+ * @param string $startTag  string to insert before needle
+ * @param string $endTag    string to insert after needle
  *
  * @return string
  *
@@ -687,9 +689,9 @@ function highlight($haystack, $needle, $startTag = "<b>", $endTag = "</b>")
 /***********************************************************************
  * text_format() formats a string witout special caracters
  *
- * @param $str string to format
- * @param $tolower make a string lowercase
- * @param $sep words separator
+ * @param string $str       string to format
+ * @param boolean $tolower  make a string lowercase
+ * @param string $sep       words separator
  *
  * @return string
  *
@@ -707,9 +709,9 @@ function text_format($str, $tolower = true, $sep = "-")
 /***********************************************************************
  * format_string() formats a string
  *
- * @param $str string to format
- * @param $accents remove the accents
- * @param $alpha keep only alpha numeric characters
+ * @param string $str       string to format
+ * @param boolean $accents  remove the accents
+ * @param boolean $alpha    keep only alpha numeric characters
  *
  * @return string
  *
@@ -725,12 +727,13 @@ function format_string($str, $accents = true, $alpha = false)
 /***********************************************************************
  * format_string() formats a string for a research
  *
- * @param $needle searched string to format
+ * @param string $needle searched string to format
+ * @param string $len_min minimum length of each searched word
  *
  * @return string
  *
  */
-function format_search($needle)
+function format_search($needle, $len_min = 3)
 {
     $needle = mb_strtoupper(cleanAccent($needle), "UTF-8");
     $needle = preg_replace("/([^a-z0-9_\-\']+)/i", " ", $needle);
@@ -743,9 +746,10 @@ function format_search($needle)
     $needles += preg_split("/\s+/", $needle);
     
     foreach($needles as $i => $ndl)
-        if(mb_strlen($ndl, "UTF-8") <= 3)  $needles[$i] = "";
+        if(mb_strlen($ndl, "UTF-8") < $len_min)  $needles[$i] = "";
     
-    $needles = array_filter(array_unique($needles));
+    $needles = array_values(array_filter(array_unique($needles)));
+    
     $needle = implode(" ", $needles);
     
     return array($needle, $needles);
@@ -753,28 +757,27 @@ function format_search($needle)
 /***********************************************************************
  * db_getSearchRequest() returns a query of research
  *
- * @param $db database connection ressource
- * @param $table concerned table
- * @param $cols array of columns (name) to compare
- * @param $q searched string
- * @param $limit maximum elements to display (LIMIT clause)
- * @param $offset number of the line where beginning the research (OFFSET clause)
- * @param $condition adding conditions (WHERE clause)
- * @param $condition option conditions (OR in WHERE clause)
- * @param $order ORDER clause
- * @param $select custom SELECT clause
+ * @param PDOStatement $db      database connection ressource
+ * @param string $table         concerned table
+ * @param array $cols           columns (name) to compare
+ * @param string $q             searched string
+ * @param integer $limit        maximum elements to display (LIMIT clause)
+ * @param integer $offset       number of the line where beginning the research (OFFSET clause)
+ * @param string $condition     adding conditions (WHERE clause)
+ * @param string $condition     option conditions (OR in WHERE clause)
+ * @param string $order         ORDER clause
+ * @param string                $select custom SELECT clause
  *
  * @return string query string
  *
  */
-function db_getSearchRequest($db, $table, $cols, $q, $limit = 0, $offset = 0, $condition = "", $other_condition = "", $order = "", $select = "")
+function db_getSearchRequest($db, $table, $cols, $q, $limit = 0, $offset = 0, $condition = "", $other_condition = "", $order = "", $select = "", $len_min = 3)
 {
-    $search = format_search($q);
+    $search = format_search($q, $len_min);
     $q = $search[0];
     $wds = $search[1];
 
     if($q != ""){
-
         $nb_wds = count($wds);
         $nb_cols = count($cols);
         
@@ -864,7 +867,7 @@ function db_getSearchRequest($db, $table, $cols, $q, $limit = 0, $offset = 0, $c
 /***********************************************************************
  * br2nl() replaces HTML line breaks with newlines in a string
  *
- * @param $str string to format
+ * @param string $str string to format
  *
  * @return string
  *
@@ -876,7 +879,7 @@ function br2nl($str)
 /***********************************************************************
  * rip_tags() removes HTML tags from a string
  *
- * @param $str string to format
+ * @param string $str string to format
  *
  * @return string
  *
@@ -892,10 +895,10 @@ function rip_tags($str)
 /***********************************************************************
  * wrapSentence() wraps a string around searched terms
  *
- * @param $haystack string to wrap
- * @param $needle searched string
- * @param $numWords number of words to keep around the searched terms
- * @param $numOccur number of parts of the input string to return
+ * @param string $haystack      string to wrap
+ * @param string $needle        searched string
+ * @param integer $numWords     number of words to keep around the searched terms
+ * @param integer $numOccur     number of parts of the input string to return
  *
  * @return string
  *
@@ -971,9 +974,9 @@ function wrapSentence($haystack, $needle, $numWords = 5, $numOccur = 3)
 /***********************************************************************
  * htmlaccents() replaces the accents of a string by html entities
  *
- * @param $text string to format
- * @param $flags htmlentities() function flags
- * @param $charset character encoding used during the conversion
+ * @param string $text      string to format
+ * @param inetegr $flags    htmlentities() function flags
+ * @param string $charset   character encoding used during the conversion
  *
  * @return string
  *
@@ -984,32 +987,28 @@ function htmlaccents($text, $flags = ENT_NOQUOTES, $charset = "UTF-8")
     $text = htmlspecialchars_decode($text);
     return $text;
 }
-function encodeHeader($input, $charset = "iso-8859-1")
-{
-    $m=preg_match_all("/(\w*[\x80-\xFF]+\w*)/", $input, $matches);
-    if($m)$input=mb_encode_mimeheader($input, $charset, "Q");
-    return $input;
-}
 /***********************************************************************
  * sendMail() format and send an e-mail
  *
- * @param $recipient_email
- * @param $recipient_name
- * @param $subject
- * @param $content mail body
- * @param $reply_email
- * @param $reply_name
- * @param $from_email
- * @param $from_name
+ * @param string $recipient_email
+ * @param string $recipient_name
+ * @param string $subject
+ * @param string $content       mail body
+ * @param string $reply_email   email used as recipient by the action "reply"
+ * @param string $reply_name    name used as recipient by the action "reply"
+ * @param string $from_email    sender email
+ * @param string $from_name     sender name
+ * @param array $attachements   files paths
  *
  * @return boolean
  *
  */
-function sendMail($recipient_email, $recipient_name, $subject, $content, $reply_email = "", $reply_name = "", $from_email = "", $from_name = "")
+function sendMail($recipient_email, $recipient_name, $subject, $content, $reply_email = "", $reply_name = "", $from_email = "", $from_name = "", $attachements = array())
 {
     require_once(SYSBASE."common/phpmailer/class.phpmailer.php");
 
     $mail = new PHPMailer(true);
+    $mail->CharSet = "UTF-8";
 
     if(USE_SMTP == 1){
         $mail->IsSMTP();
@@ -1046,6 +1045,17 @@ function sendMail($recipient_email, $recipient_name, $subject, $content, $reply_
         $mail->AddEmbeddedImage(SYSBASE."templates/".TEMPLATE."/images/header-mail.png", "header-mail", "header-mail.png");
         $mail->MsgHTML($body);
         $mail->AltBody = rip_tags($content);
+        
+        if(is_array($attachements) && !empty($attachements)){
+            foreach($attachements as $path){
+                if(is_file($path)){
+                    $name = substr($path, strrpos($path, "/")+1);
+                    $mime = getFileMimeType($path);
+                    $mail->AddAttachment($path, $name, "base64", $mime);
+                }
+            }
+        }
+
         return $mail->Send();
     }catch(phpmailerException $e){
         //echo $e->errorMessage();
@@ -1058,7 +1068,7 @@ function sendMail($recipient_email, $recipient_name, $subject, $content, $reply_
 /***********************************************************************
  * genPass() generates a random password
  *
- * @param $len password length
+ * @param integer $len password length
  *
  * @return string
  *
@@ -1078,8 +1088,9 @@ function genPass($len = 8)
 /***********************************************************************
  * getMail() gets a specific e-mail template
  *
- * @param $db database connection ressource
- * @param $name e-mail template name
+ * @param PDOStatement $db  database connection ressource
+ * @param string $name      e-mail template name
+ * @param integer $lang     lang ID of the entry
  *
  * @return array
  *
@@ -1090,7 +1101,7 @@ function getMail($db, $name, $lang = 0)
     if(db_column_exists($db, "email", "lang")) $query .= " lang = '".$lang."' AND";
     $query .= " name = '".$name."'";
     $result = $db->query($query);
-    if($result !== false && $db->last_row_count() == 1){
+    if($result !== false && $db->last_row_count() > 0){
         
         $row_mail = $result->fetch();
         
@@ -1104,10 +1115,10 @@ function getMail($db, $name, $lang = 0)
 /***********************************************************************
  * get_distance() gets the distance between two geographical points
  *
- * @param $lat1 latitude of the 1st point
- * @param $lng1 longitude of the 1st point
- * @param $lat2 latitude of the 2nd point
- * @param $lng2 longitude of the 2nd point
+ * @param integer $lat1     latitude of the 1st point
+ * @param integer $lng1     longitude of the 1st point
+ * @param integer $lat2     latitude of the 2nd point
+ * @param integer $lng2     longitude of the 2nd point
  *
  * @return float distance in meters
  */
@@ -1127,7 +1138,7 @@ function get_distance($lat1, $lng1, $lat2, $lng2)
 /***********************************************************************
  * get_coords() gets the coordinates of a given address
  *
- * @param $address
+ * @param string $address
  *
  * @return array latitude and longitude
  */
@@ -1148,7 +1159,7 @@ function get_coords($address)
 /***********************************************************************
  * check_URI() checks the relevance of the supplied URI
  *
- * @param $uri
+ * @param string $uri
  *
  * @return void
  */
@@ -1162,6 +1173,8 @@ function check_URI($uri)
 }
 /***********************************************************************
  * err404() displays a 404 error
+ * 
+ * @param string $url url of the error 404 page
  *
  * @return void
  */
@@ -1173,6 +1186,8 @@ function err404($url = URL_404)
 }
 /***********************************************************************
  * get_token() generates a unique token to authenticate the admin user
+ * 
+ * @param string $name name of the token (page name)
  *
  * @return string
  */
@@ -1185,6 +1200,10 @@ function get_token($name)
 }
 /***********************************************************************
  * check_token() checks the validity of the token
+ * 
+ * @param string $referer   absolute path (web root) of the current page
+ * @param string $name      name of the token (page name)
+ * @param string $type      action used by the form (get or post)
  *
  * @return boolean
  */
@@ -1201,6 +1220,8 @@ function check_token($referer, $name, $type)
 }
 /***********************************************************************
  * is_rwx() checks if the file/folder exists and is readable, writable, executable for all users
+ * 
+ * @param string $file absolute path of the file
  *
  * @return boolean
  */
@@ -1210,13 +1231,17 @@ function is_rwx($file)
 }
 /***********************************************************************
  * getUrl() returns the current full URL
+ * 
+ * @param boolean $host_only return only the protocol followed by the domain name
  *
  * @return string
  */
-function getUrl()
+function getUrl($host_only = false)
 {
     $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != "" && $_SERVER['HTTPS'] != "off") ? "https" : "http";
-    return $protocol."://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    $url = $protocol."://".$_SERVER['HTTP_HOST'];
+    if($host_only === false) $url .= $_SERVER['REQUEST_URI'];
+    return $url;
 }
 /***********************************************************************
  * checkReferer() checks if the URL which referred the user agent to the current page comes from the same domain
@@ -1229,6 +1254,9 @@ function checkReferer()
 }
 /***********************************************************************
  * getWidgets() return the widgets of a page for the specified position
+ * 
+ * @param string $pos       position of the widget
+ * @param integer $page_id  ID of the current page
  *
  * @return array
  */
@@ -1246,6 +1274,9 @@ function getWidgets($pos, $page_id){
 }
 /***********************************************************************
  * displayWidgets() displays the widget for a page and the specified position
+ * 
+ * @param string $pos       position of the widget
+ * @param integer $page_id  ID of the current page
  *
  * @return void
  */
@@ -1279,6 +1310,8 @@ function displayWidgets($pos, $page_id){
 }
 /***********************************************************************
  * formatPrice() formats a number with spaces, dots, commas
+ * 
+ * @param float $price price to format
  *
  * @return float
  */
@@ -1288,4 +1321,30 @@ function formatPrice($price)
         return str_replace(",00", "", number_format($price, 2, ",", " "))." ".CURRENCY_SIGN;
     else
         return CURRENCY_SIGN.str_replace(".00", "", number_format($price, 2, ".", ","));
+}
+/***********************************************************************
+ * getFromTemplate() builds the path of the file from the correct template
+ * 
+ * @param string $path      path of the file from the template folder
+ * @param boolean $docbase  base of the path: true = from the web root, false = from the server root
+ *
+ * @return string
+ */
+function getFromTemplate($path, $docbase = true)
+{
+    $base = $docbase ? DOCBASE : SYSBASE;
+    $default_path = "templates/default/".$path;
+    if(TEMPLATE == "default")
+        return $base.$default_path;
+    else{
+        $template_path = "templates/".TEMPLATE."/".$path;
+        if(is_file(SYSBASE.$template_path))
+            return $base.$template_path;
+        else{
+            if(is_file(SYSBASE.$default_path))
+                return $base.$default_path;
+            else
+                return "File not found: ".$base.$template_path;
+        }
+    }
 }

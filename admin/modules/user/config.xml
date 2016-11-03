@@ -24,6 +24,8 @@
                 <option value="administrator">administrator</option>
                 <option value="manager">manager</option>
                 <option value="editor">editor</option>
+                <option value="registered">registered</option>
+                <option value="hotel">hotel</option>
             </options>
         </field>
 	</form>

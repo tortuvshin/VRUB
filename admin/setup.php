@@ -30,6 +30,13 @@ $config_tmp['db_pass'] = "";
 $email = "";
 $user = "";
 $password = "";
+                        
+$request_uri = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
+$pos = strrpos(SYSBASE, "/".$request_uri[0]);
+$docbase = false;
+if($pos !== false) $docbase = substr(SYSBASE, $pos);
+if($docbase === false) $docbase = "/";
+define("DOCBASE", $docbase);
 
 if(is_file($config_file)){
     require_once($config_file);
@@ -40,7 +47,7 @@ if(is_file($config_file)){
 
 if($db !== false && db_table_exists($db, "pm_%") === true){
     $installed = true;
-    $_SESSION['msg_notice'] .= "It seems that Pandao CMS is already installed. Remove your former tables from your database to reinstall it <a class=\"btn btn-default\" href=\"login.php\">Log in</a>";
+    $_SESSION['msg_notice'][] = "It seems that Pandao CMS is already installed. Remove your former tables from your database to reinstall it <a class=\"btn btn-default\" href=\"login.php\">Log in</a>";
 }
 
 if(isset($_POST['install']) && !$installed){
@@ -78,7 +85,7 @@ if(isset($_POST['install']) && !$installed){
                 $db = new db("mysql:host=".$config_tmp['db_host'].";port=".$config_tmp['db_port'].";dbname=".$config_tmp['db_name'].";charset=utf8", $config_tmp['db_user'], $config_tmp['db_pass']);
                 $db->exec("SET NAMES 'utf8'");
             }catch(PDOException $e){
-                $_SESSION['msg_error'] .= "Unable to connect to the database. Please check the database connection parameters.<br>".$e->getMessage()."<br>";
+                $_SESSION['msg_error'][] = "Unable to connect to the database. Please check the database connection parameters.<br>".$e->getMessage();
             }
             
             if($db !== false){
@@ -100,7 +107,7 @@ if(isset($_POST['install']) && !$installed){
 
                 if($db_success === true){
 
-                    $_SESSION['msg_success'] .= "Congratulations! You have successfully finished the quick installation of your website. Click on <a class=\"btn btn-default\" href=\"login.php\">Log in</a> to begin.<br>";
+                    $_SESSION['msg_success'][] = "Congratulations! You have successfully finished the quick installation of your website. Click on <a class=\"btn btn-default\" href=\"login.php\">Log in</a> to begin.<br>";
 
                     $installed = true;
 
@@ -113,32 +120,34 @@ if(isset($_POST['install']) && !$installed){
                     }
                     
                     if(file_put_contents($config_file, $config_str) === false){
-                        $_SESSION['msg_notice'] .= "<b>But... We cannot write into the file common/config.php.<br>";
-                        $_SESSION['msg_notice'] .= "To complete the installation, edit manualy this file, copy and past the following lines:</b><br>";
-                        $_SESSION['msg_notice'] .= preg_replace("/(\r\n|\n|\r)/", "", nl2br(htmlentities($config_str, ENT_QUOTES, "UTF-8")));
+                        $_SESSION['msg_notice'][] = "<b>But... We cannot write into the file common/config.php.<br>";
+                        $_SESSION['msg_notice'][] = "To complete the installation, edit manualy this file, copy and past the following lines:</b><br>";
+                        $_SESSION['msg_notice'][] = preg_replace("/(\r\n|\n|\r)/", "", nl2br(htmlentities($config_str, ENT_QUOTES, "UTF-8")));
                     }
 
                     if(!is_file($htaccess_file)){
                         $ht_content = str_replace("{DOCBASE}", DOCBASE, file_get_contents($tmp_htaccess_file));
                         if(file_put_contents($htaccess_file, $ht_content) === false){
-                            $_SESSION['msg_notice'] .= "<b>We cannot write into the file .htaccess.<br>";
-                            $_SESSION['msg_notice'] .= "To complete the installation, edit manualy this file, copy and past the following lines:</b><br>";
-                            $_SESSION['msg_notice'] .= preg_replace("/(\r\n|\n|\r)/", "", nl2br(htmlentities($ht_content, ENT_QUOTES, "UTF-8")));
+                            $_SESSION['msg_notice'][] = "<b>We cannot write into the file .htaccess.<br>";
+                            $_SESSION['msg_notice'][] = "To complete the installation, edit manualy this file, copy and past the following lines:</b><br>";
+                            $_SESSION['msg_notice'][] = preg_replace("/(\r\n|\n|\r)/", "", nl2br(htmlentities($ht_content, ENT_QUOTES, "UTF-8")));
                         }
                     }
                 }else
-                    $_SESSION['msg_error'] .= "We cannot modify the database. Try to execute the script common/db.sql in your SQL manager.<br/>";
+                    $_SESSION['msg_error'][] = "We cannot modify the database. Try to execute the script common/db.sql in your SQL manager.<br/>";
             }
         }else
-            $_SESSION['msg_error'] .= "The following form contains some errors.<br/>";
+            $_SESSION['msg_error'][] = "The following form contains some errors.<br/>";
     }else
-        $_SESSION['msg_error'] .= "Bad token! Thank you for re-trying by clicking on \"Install\".<br>";
+        $_SESSION['msg_error'][] = "Bad token! Thank you for re-trying by clicking on \"Install\".<br>";
 }
 
 $csrf_token = get_token("setup"); ?>
 <!DOCTYPE html>
 <head>
-    <?php include("includes/inc_header_common.php"); ?>
+    <?php
+    if(!defined("ADMIN_FOLDER")) define("ADMIN_FOLDER", "admin");
+    include("includes/inc_header_common.php"); ?>
     <script>
         $(function(){
             $('#db_name').bind('blur keyup', function(){
@@ -254,8 +263,8 @@ $csrf_token = get_token("setup"); ?>
                     <div class="col-md-9 text-right">
                         <button type="submit" name="install" class="btn btn-default mt15">
                             <i class="fa fa-download"></i> Install
-                        </button> 
-                    </div>TAGTAA SOLUTION DEVELOPMENT TEAM
+                        </button>
+                    </div>
                 </div>
             </form>
             <?php
@@ -264,6 +273,6 @@ $csrf_token = get_token("setup"); ?>
 </body>
 </html>
 <?php
-$_SESSION['msg_error'] = "";
-$_SESSION['msg_success'] = "";
-$_SESSION['msg_notice'] = ""; ?>
+$_SESSION['msg_error'] = array();
+$_SESSION['msg_success'] = array();
+$_SESSION['msg_notice'] = array(); ?>

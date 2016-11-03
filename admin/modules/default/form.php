@@ -14,6 +14,7 @@ else{
 
 // Item ID to delete
 $id_file = (isset($_GET['file']) && is_numeric($_GET['file'])) ? $_GET['file'] : 0;
+$id_row = (isset($_GET['row']) && is_numeric($_GET['row'])) ? $_GET['row'] : 0;
 
 // Action to perform
 $back = false;
@@ -43,10 +44,11 @@ $add_date = null;
 $edit_date = time();
 $publish_date = time();
 $unpublish_date = null;
+$id_user = $_SESSION['user']['id'];
 $referer = DIR."index.php?view=form";
 
 // Messages
-if(NB_FILES > 0) $_SESSION['msg_notice'] .= $texts['EXPECTED_IMAGES_SIZE']." ".MAX_W_BIG." x ".MAX_H_BIG."px<br>";
+if(NB_FILES > 0) $_SESSION['msg_notice'][] = $texts['EXPECTED_IMAGES_SIZE']." ".MAX_W_BIG." x ".MAX_H_BIG."px<br>";
 
 // Creation of the unique token for uploadifive
 if(!isset($_SESSION['uniqid'])) $_SESSION['uniqid'] = uniqid();
@@ -69,7 +71,7 @@ if(RANKING && $db != false){
 }
 
 // Inclusions
-require_once(SYSBASE."admin/includes/fn_form.php");
+require_once(SYSBASE.ADMIN_FOLDER."/includes/fn_form.php");
 
 $fields = getFields($db);
 if(is_null($fields)) $fields = array();
@@ -78,26 +80,60 @@ if(is_null($fields)) $fields = array();
 if($db !== false){
     $result = $db->query("SELECT * FROM pm_".MODULE." WHERE id = ".$id);
     if($result !== false){
+        
+        // Datas of the module
             
         foreach($result as $row){
             
             $id_lang = (MULTILINGUAL) ? $row['lang'] : 0;
             
-            foreach($fields as $field){
-                if($field->getType() != "separator" && $fields_checked)
-                    $field->setValue($row[$field->getName()], $id_lang);
+            foreach($fields[MODULE]['fields'] as $fieldName => $field){
+                if($field->getType() != "separator")
+                    $field->setValue($row[$fieldName], 0, $id_lang);
             }
             
-            if(HOME) $home = $row['home'];
-            if(VALIDATION) $checked = $row['checked'];
-            if(RANKING) $old_rank = $row['rank'];
-            if(DATES) $add_date = $row['add_date'];
-            if(RELEASE){
-                $publish_date = $row['publish_date'];
-                $unpublish_date = $row['unpublish_date'];
+            if($id_lang == DEFAULT_LANG || $id_lang == 0){
+                if(HOME) $home = $row['home'];
+                if(VALIDATION) $checked = $row['checked'];
+                if(RANKING) $old_rank = $row['rank'];
+                if(DATES) $add_date = $row['add_date'];
+                if(RELEASE){
+                    $publish_date = $row['publish_date'];
+                    $unpublish_date = $row['unpublish_date'];
+                }
+                if(db_column_exists($db, "pm_".MODULE, "id_user")){
+                    $id_user = $row['id_user'];
+                    if(!in_array($_SESSION['user']['type'], array("administrator", "manager", "editor")) && $id_user != $_SESSION['user']['id']){
+                        header("Location: index.php?view=list");
+                        exit();
+                    }
+                }
             }
         }
     }
+    
+    // Datas of the module's tables
+        
+    foreach($fields as $tableName => $fields_table){
+        
+        if($tableName != MODULE){
+        
+            $result = $db->query("SELECT * FROM pm_".$tableName." WHERE ".$fields_table['table']['fieldRef']." = ".$id);
+            if($result !== false){
+                
+                foreach($result as $i => $row){
+                    
+                    $id_lang = (MULTILINGUAL) ? $row['lang'] : 0;
+                
+                    foreach($fields_table['fields'] as $fieldName => $field){
+                        if($field->getType() != "separator")
+                            $field->setValue($row[$fieldName], $i, $id_lang);
+                    }
+                }
+            }
+        }
+    }
+    
     // Insersion / update
     if(in_array("add", $permissions) || in_array("edit", $permissions) || in_array("all", $permissions)){
         if((($action == "add") || ($action == "edit")) && check_token($referer, "form", "post")){
@@ -109,83 +145,121 @@ if($db !== false){
                 
                 $id_lang = (MULTILINGUAL) ? $langs[$i]['id'] : 0;
                 
-                foreach($fields as $field){
-                    $fieldName = $field->getName();
-                    $fieldName .= (MULTILINGUAL && !$field->isMultilingual()) ? DEFAULT_LANG : $id_lang;
+                foreach($fields as $tableName => $fields_table){
                     
-                    switch($field->getType()){
-                        case "date" :
-                            $day = (isset($_POST[$fieldName.'_day'])) ? $_POST[$fieldName.'_day'] : "";
-                            $month = (isset($_POST[$fieldName.'_month'])) ? $_POST[$fieldName.'_month'] : "";
-                            $year = (isset($_POST[$fieldName.'_year'])) ? $_POST[$fieldName.'_year'] : "";
-                            if(is_numeric($day) && is_numeric($month) && is_numeric($year))
-                                $field->setValue(mktime(0, 0, 0, $month, $day, $year), $id_lang);
-                            else
-                                $field->setValue(NULL, $id_lang);
-                        break;
-                        case "datetime" :
-                            $day = (isset($_POST[$fieldName.'_day'])) ? $_POST[$fieldName.'_day'] : "";
-                            $month = (isset($_POST[$fieldName.'_month'])) ? $_POST[$fieldName.'_month'] : "";
-                            $year = (isset($_POST[$fieldName.'_year'])) ? $_POST[$fieldName.'_year'] : "";
-                            $hour = (isset($_POST[$fieldName.'_hour'])) ? $_POST[$fieldName.'_hour'] : "";
-                            $minute = (isset($_POST[$fieldName.'_minute'])) ? $_POST[$fieldName.'_minute'] : "";
-                            if(is_numeric($day) && is_numeric($month) && is_numeric($year) && is_numeric($hour) && is_numeric($minute))
-                                $field->setValue(mktime($hour, $minute, 0, $month, $day, $year), $id_lang);
-                            else
-                                $field->setValue(NULL, $id_lang);
-                        break;
-                        case "password" :
-                            $pwd = (isset($_POST[$fieldName])) ? $_POST[$fieldName] : "";
-                            $pwd = ($pwd != "") ? md5($pwd) : "";
-                            if($pwd == "") $pwd = $field->getValue(false, $id_lang);
-                            $field->setValue($pwd, $id_lang);
-                        break;
-                        case "checkbox" :
-                        case "multiselect" :
-                            $value = (isset($_POST[$fieldName])) ? implode(",", $_POST[$fieldName]) : "";
-                            $field->setValue($value, $id_lang);
-                        break;
-                        case "alias" :
-                            $value = (isset($_POST[$fieldName])) ? text_format(filter_input(INPUT_POST, $fieldName, FILTER_SANITIZE_MAGIC_QUOTES)) : "";
-                            $field->setValue($value, $id_lang);
-                        break;
-                        default :
-                            $value = (isset($_POST[$fieldName])) ? filter_input(INPUT_POST, $fieldName, FILTER_SANITIZE_MAGIC_QUOTES) : "";
-                            $field->setValue($value, $id_lang);
-                        break;
-                    }
-                }
-                if(VALIDATION && isset($_POST['checked']) && is_numeric($_POST['checked'])) $checked = $_POST['checked'];
-                if(HOME && isset($_POST['home']) && is_numeric($_POST['home'])) $home = $_POST['home'];
-                if(DATES && (!is_numeric($add_date) || $add_date == 0)) $add_date = time();
-                if(RELEASE){
-                    $day = (isset($_POST['publish_date_day'])) ? $_POST['publish_date_day'] : "";
-                    $month = (isset($_POST['publish_date_month'])) ? $_POST['publish_date_month'] : "";
-                    $year = (isset($_POST['publish_date_year'])) ? $_POST['publish_date_year'] : "";
-                    $hour = (isset($_POST['publish_date_hour'])) ? $_POST['publish_date_hour'] : "";
-                    $minute = (isset($_POST['publish_date_minute'])) ? $_POST['publish_date_minute'] : "";
-                    if(is_numeric($day) && is_numeric($month) && is_numeric($year) && is_numeric($hour) && is_numeric($minute))
-                        $publish_date = mktime($hour, $minute, 0, $month, $day, $year);
-                    else
-                        $publish_date = NULL;
+                    foreach($fields_table['fields'] as $fieldName => $field){
+                        $fieldName = $tableName."_".$fieldName."_";
+                        $fieldName .= (MULTILINGUAL && !$field->isMultilingual()) ? DEFAULT_LANG : $id_lang;
                         
-                    $day = (isset($_POST['unpublish_date_day'])) ? $_POST['unpublish_date_day'] : "";
-                    $month = (isset($_POST['unpublish_date_month'])) ? $_POST['unpublish_date_month'] : "";
-                    $year = (isset($_POST['unpublish_date_year'])) ? $_POST['unpublish_date_year'] : "";
-                    $hour = (isset($_POST['unpublish_date_hour'])) ? $_POST['unpublish_date_hour'] : "";
-                    $minute = (isset($_POST['unpublish_date_minute'])) ? $_POST['unpublish_date_minute'] : "";
-                    if(is_numeric($day) && is_numeric($month) && is_numeric($year) && is_numeric($hour) && is_numeric($minute))
-                        $unpublish_date = mktime($hour, $minute, 0, $month, $day, $year);
-                    else
-                        $unpublish_date = NULL;
+                        if(isset($_POST[$fieldName])){
+                            
+                            foreach($_POST[$fieldName] as $index => $value){
+                        
+                                switch($field->getType()){
+                                    case "date" :
+                                        $date = isset($_POST[$fieldName][$index]['date']) ? $_POST[$fieldName][$index]['date'] : "";
+                                        if(!empty($date)) $date = strtotime($date." 00:00:00");
+                                        if(is_numeric($date) && $date !== false)
+                                            $field->setValue($date, $index, $id_lang);
+                                        else
+                                            $field->setValue(NULL, $index, $id_lang);
+                                    break;
+                                    case "datetime" :
+                                        $date = isset($_POST[$fieldName][$index]['date']) ? $_POST[$fieldName][$index]['date'] : "";
+                                        $hour = isset($_POST[$fieldName][$index]['hour']) ? $_POST[$fieldName][$index]['hour'] : "";
+                                        $minute = isset($_POST[$fieldName][$index]['minute']) ? $_POST[$fieldName][$index]['minute'] : 0;
+                                        if(!empty($date) && is_numeric($hour) && is_numeric($minute)) $date = strtotime($date." ".$hour.":".$minute.":00");
+                                        if(is_numeric($date) && $date !== false)
+                                            $field->setValue($date, $index, $id_lang);
+                                        else
+                                            $field->setValue(NULL, $index, $id_lang);
+                                    break;
+                                    case "password" :
+                                        $value = ($value != "") ? md5($value) : "";
+                                        if($value == "") $value = $field->getValue(false, $index, $id_lang);
+                                        $field->setValue($value, $index, $id_lang);
+                                    break;
+                                    case "checkbox" :
+                                    case "multiselect" :
+                                        $value = isset($_POST[$fieldName][$index]) ? implode(",", $_POST[$fieldName][$index]) : "";
+                                        $field->setValue($value, $index, $id_lang);
+                                    break;
+                                    case "alias" :
+                                        $value = text_format($_POST[$fieldName][$index]);
+                                        $field->setValue($value, $index, $id_lang);
+                                    break;
+                                    default :
+                                        $value = isset($_POST[$fieldName][$index]) ? $_POST[$fieldName][$index] : "";
+                                        $field->setValue($value, $index, $id_lang);
+                                    break;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             
-            if(checkFields($db, "pm_".MODULE, $fields, $id)){
+            // Remove row if (all fields = empty) and if (tableName != MODULE)
+            
+            foreach($fields as $tableName => $fields_table){
+                if($tableName != MODULE){
+                    $numRows = getNumMaxRows($fields, $tableName);
+                    for($index = 0; $index < $numRows; $index++){
+                        
+                        $empty = true;
+                        $id_row = 0;
+                        if(isset($_POST[$tableName."_id_".DEFAULT_LANG][$index]))
+                            $id_row = $_POST[$tableName."_id_".DEFAULT_LANG][$index];
+                            
+                        if($id_row == 0 || $id_row == ""){
+                        
+                            foreach($fields_table['fields'] as $fieldName => $field){
+                                $value = $field->getValue(false, $index);
+                                if(!empty($value)) $empty = false;
+                            }
+                            if($empty){
+                                foreach($fields_table['fields'] as $fieldName => $field){
+                                    $field->removeValue($index);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if(VALIDATION && isset($_POST['checked']) && is_numeric($_POST['checked'])) $checked = $_POST['checked'];
+            if(HOME && isset($_POST['home']) && is_numeric($_POST['home'])) $home = $_POST['home'];
+            if(DATES && (!is_numeric($add_date) || $add_date == 0)) $add_date = time();
+            if(RELEASE){
+                $day = (isset($_POST['publish_date_day'])) ? $_POST['publish_date_day'] : "";
+                $month = (isset($_POST['publish_date_month'])) ? $_POST['publish_date_month'] : "";
+                $year = (isset($_POST['publish_date_year'])) ? $_POST['publish_date_year'] : "";
+                $hour = (isset($_POST['publish_date_hour'])) ? $_POST['publish_date_hour'] : "";
+                $minute = (isset($_POST['publish_date_minute'])) ? $_POST['publish_date_minute'] : "";
+                if(is_numeric($day) && is_numeric($month) && is_numeric($year) && is_numeric($hour) && is_numeric($minute))
+                    $publish_date = mktime($hour, $minute, 0, $month, $day, $year);
+                else
+                    $publish_date = NULL;
+                    
+                $day = (isset($_POST['unpublish_date_day'])) ? $_POST['unpublish_date_day'] : "";
+                $month = (isset($_POST['unpublish_date_month'])) ? $_POST['unpublish_date_month'] : "";
+                $year = (isset($_POST['unpublish_date_year'])) ? $_POST['unpublish_date_year'] : "";
+                $hour = (isset($_POST['unpublish_date_hour'])) ? $_POST['unpublish_date_hour'] : "";
+                $minute = (isset($_POST['unpublish_date_minute'])) ? $_POST['unpublish_date_minute'] : "";
+                if(is_numeric($day) && is_numeric($month) && is_numeric($year) && is_numeric($hour) && is_numeric($minute))
+                    $unpublish_date = mktime($hour, $minute, 0, $month, $day, $year);
+                else
+                    $unpublish_date = NULL;
+            }
+            if(isset($_POST['id_user'])) $id_user = $_POST['id_user'];
+            
+            if(checkFields($db, $fields, $id)){
                 
                 for($i = 0; $i < $total_lang; $i++){
                     
                     $id_lang = (MULTILINGUAL) ? $langs[$i]['id'] : 0;
+                    
+                    // Add / Edit item in the table of the module
                     
                     $data = array();
                     $data['id'] = $id;
@@ -197,9 +271,10 @@ if($db !== false){
                     $data['edit_date'] = $edit_date;
                     $data['publish_date'] = $publish_date;
                     $data['unpublish_date'] = $unpublish_date;
+                    $data['id_user'] = $id_user;
                         
-                    foreach($fields as $field)
-                        $data[$field->getName()] = $field->getValue(false, $id_lang);
+                    foreach($fields[MODULE]['fields'] as $fieldName => $field)
+                        $data[$fieldName] = $field->getValue(false, 0, $id_lang);
                     
                     if($action == "add" && (in_array("add", $permissions) || in_array("all", $permissions))){
                             
@@ -216,7 +291,7 @@ if($db !== false){
                         $data['rank'] = $old_rank;
                         
                         if($result_exist !== false){
-                            if($db->last_row_count() == 1){
+                            if($db->last_row_count() > 0){
                                     
                                 $result_update = db_prepareUpdate($db, "pm_".MODULE, $data);
                                 
@@ -228,18 +303,71 @@ if($db !== false){
                             }
                         }
                     }
+                    
+                    // Add / Edit items in other tables
+                    if(empty($_SESSION['msg_error']) && $id > 0){
+                    
+                        foreach($fields as $tableName => $fields_table){
+                            if($tableName != MODULE){
+                                $numRows = getNumMaxRows($fields, $tableName);
+                                for($index = 0; $index < $numRows; $index++){
+                                    
+                                    $id_row = $fields_table['fields']['id']->getValue(false, $index, $id_lang);
+                                    
+                                    $data = array();
+                                    $data['lang'] = $id_lang;
+                                    $data[$fields_table['table']['fieldRef']] = $id;
+                                        
+                                    foreach($fields_table['fields'] as $fieldName => $field)
+                                        $data[$fieldName] = $field->getValue(false, $index, $id_lang);
+                                    
+                                    if($id_row == 0 && (in_array("add", $permissions) || in_array("all", $permissions))){
+                                            
+                                        $result_insert = db_prepareInsert($db, "pm_".$tableName, $data);
+                                        if($result_insert->execute() !== false){
+                                            $fields_table['fields']['id']->setValue($db->lastInsertId(), $index, $id_lang);
+                                        }
+
+                                    }elseif($id_row > 0 && (in_array("edit", $permissions) || in_array("all", $permissions))){
+                                        
+                                        $query_exist = "SELECT * FROM pm_".$tableName." WHERE id = ".$id_row;
+                                        if(MULTILINGUAL) $query_exist .= " AND lang = ".$id_lang;
+                                        $result_exist = $db->query($query_exist);
+                                        
+                                        if($result_exist !== false){
+                                            if($db->last_row_count() > 0){
+                                                    
+                                                $result_update = db_prepareUpdate($db, "pm_".$tableName, $data);
+                                                $result_update->execute();
+                                                
+                                            }else{
+                                                $result_insert = db_prepareInsert($db, "pm_".$tableName, $data);
+                                                if($result_insert->execute() !== false){
+                                                    $fields_table['fields']['id']->setValue($db->lastInsertId(), $index, $id_lang);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }else
-                $_SESSION['msg_error'] .= $texts['FORM_ERRORS'];
+                $_SESSION['msg_error'][] = $texts['FORM_ERRORS'];
         }
     }
 
-    if(($back === true) && $_SESSION['msg_error'] == "" && $_SESSION['msg_success'] != ""){
+    if(($back === true) && empty($_SESSION['msg_error']) && !empty($_SESSION['msg_success'])){
         header("Location: index.php?view=list");
         exit();
     }
 
     if(in_array("edit", $permissions) || in_array("all", $permissions)){
+        // Row deletion
+        if($action == "delete_row" && $id_row > 0 && isset($_GET['table']) && isset($_GET['fieldref']) && check_token($referer, "form", "get"))
+            delete_row($db, $id, $id_row, "pm_".$_GET['table'], $_GET['fieldref']);
+            
         // File deletion
         if($action == "delete_file" && $id_file > 0 && check_token($referer, "form", "get"))
             delete_file($db, $id_file);
@@ -283,7 +411,7 @@ if($action == "download" && isset($_GET['type'])){
             $query_file = "SELECT file FROM pm_".MODULE."_file WHERE id = ".$id_file;
             if(MULTILINGUAL) $query_file .= " AND lang = ".DEFAULT_LANG;
             $result_file = $db->query($query_file);
-            if($result_file !== false && $db->last_row_count() == 1){
+            if($result_file !== false && $db->last_row_count() > 0){
                 $file = $result_file->fetchColumn(0);
                 
                 if($type == "image"){
@@ -315,54 +443,55 @@ if($action == "download" && isset($_GET['type'])){
 $csrf_token = get_token("form"); ?>
 <!DOCTYPE html>
 <head>
-    <?php include(SYSBASE."admin/includes/inc_header_form.php"); ?>
+    <?php include(SYSBASE.ADMIN_FOLDER."/includes/inc_header_form.php"); ?>
 </head>
 <body>
     <div id="overlay"><div id="loading"></div></div>
     <div id="wrapper">
         <?php
-        include(SYSBASE."admin/includes/inc_top.php");
+        include(SYSBASE.ADMIN_FOLDER."/includes/inc_top.php");
         
         if(!in_array("no_access", $permissions)){
-            include(SYSBASE."admin/includes/inc_library.php"); ?>
+            include(SYSBASE.ADMIN_FOLDER."/includes/inc_library.php"); ?>
             <form id="form" class="form-horizontal" role="form" action="index.php?view=form" method="post" enctype="multipart/form-data">
                 <div id="page-wrapper">
                     <div class="page-header">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-xs-6 col-md-6 col-sm-8 clearfix">
+                                <div class="col-xs-6 col-sm-6 clearfix">
                                     <h1 class="pull-left"><i class="fa fa-<?php echo ICON; ?>"></i> <?php echo TITLE_ELEMENT; ?></h1>
-                                    <div class="pull-left text-right">
-                                        &nbsp;&nbsp;
-                                        <?php
-                                        if(in_array("add", $permissions) || in_array("all", $permissions)){ ?>
-                                            <a href="index.php?view=form&id=0">
-                                                <button class="btn btn-primary mt15" type="button"><i class="fa fa-plus-circle"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['NEW']; ?></span></button>
-                                            </a>
-                                            <?php
-                                        } ?>
-                                        <a href="index.php?view=list">
-                                            <button class="btn btn-default mt15" type="button"><i class="fa fa-reply"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['BACK_TO_LIST']; ?></span></button>
-                                        </a>
-                                    </div>
                                 </div>
-                                <div class="col-xs-6 col-md-6 col-sm-4 clearfix pb15 text-right">
+                                <div class="col-xs-6 col-sm-6 clearfix pb15 text-right">
+                                    <?php
+                                    if(in_array("add", $permissions) || in_array("all", $permissions)){ ?>
+                                        <a href="javascript:if(confirm('<?php echo $texts['LOOSE_DATAS']; ?>')) window.location = 'index.php?view=form&id=0';">
+                                            <button type="button" class="btn btn-primary mt15" data-toggle="tooltip" data-placement="bottom" title="<?php echo $texts['NEW']; ?>">
+                                                <i class="fa fa-plus-circle"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['NEW']; ?></span>
+                                            </button
+                                        </a>
+                                        <?php
+                                    } ?>
+                                    <a href="index.php?view=list">
+                                        <button type="button" class="btn btn-default mt15" data-toggle="tooltip" data-placement="bottom" title="<?php echo $texts['BACK_TO_LIST']; ?>">
+                                            <i class="fa fa-reply"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['BACK_TO_LIST']; ?></span>
+                                        </button>
+                                    </a>
                                     <?php
                                     if($db !== false){
                                         if($id > 0){
                                             if(in_array("edit", $permissions) || in_array("all", $permissions)){ ?>
-                                                <button type="submit" name="edit" class="btn btn-default mt15"><i class="fa fa-floppy-o"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['SAVE']; ?></span></button>
-                                                <button type="submit" name="edit_back" class="btn btn-success mt15"><i class="fa fa-floppy-o"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['SAVE_EXIT']; ?></span></button>
+                                                <span><button type="submit" name="edit" class="btn btn-default mt15 hidden-sm" data-toggle="tooltip" data-placement="bottom" data-placement="bottom" title="<?php echo $texts['SAVE']; ?>"><i class="fa fa-floppy-o"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['SAVE']; ?></span></button></span>
+                                                <span><button type="submit" name="edit_back" class="btn btn-success mt15" data-toggle="tooltip" data-placement="bottom" title="<?php echo $texts['SAVE_EXIT']; ?>"><i class="fa fa-floppy-o"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['SAVE_EXIT']; ?></span></button></span>
                                                 <?php
                                             }
                                             if(in_array("add", $permissions) || in_array("all", $permissions)){ ?>
-                                                <button type="submit" name="add" class="btn btn-default mt15"><i class="fa fa-files-o"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['REPLICATE']; ?></span></button>
+                                                <span><button type="submit" name="add" class="btn btn-default mt15" data-toggle="tooltip" data-placement="bottom" title="<?php echo $texts['REPLICATE']; ?>"><i class="fa fa-files-o"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['REPLICATE']; ?></span></button></span>
                                                 <?php
                                             }
                                         }else{
                                             if(in_array("add", $permissions) || in_array("all", $permissions)){ ?>
-                                                <button type="submit" name="add" class="btn btn-default mt15"><i class="fa fa-plus-circle"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['SAVE']; ?></span></button>
-                                                <button type="submit" name="add_back" class="btn btn-success mt15"><i class="fa fa-plus-circle"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['SAVE_EXIT']; ?></span></button>
+                                                <span><button type="submit" name="add" class="btn btn-default mt15 hidden-sm" data-toggle="tooltip" data-placement="bottom" title="<?php echo $texts['SAVE']; ?>"><i class="fa fa-floppy-o"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['SAVE']; ?></span></button></span>
+                                                <span><button type="submit" name="add_back" class="btn btn-success mt15" data-toggle="tooltip" data-placement="bottom" title="<?php echo $texts['SAVE_EXIT']; ?>"><i class="fa fa-floppy-o"></i><span class="hidden-sm hidden-xs"> <?php echo $texts['SAVE_EXIT']; ?></span></button></span>
                                                 <?php
                                             }
                                         }
@@ -395,16 +524,18 @@ $csrf_token = get_token("form"); ?>
                                             <a data-toggle="tab" href="#lang_<?php echo $id_lang; ?>">
                                                 <?php
                                                 $result_img_lang = $db->query("SELECT id, file FROM pm_lang_file WHERE type = 'image' AND id_item = ".$id_lang." AND file != '' ORDER BY rank LIMIT 1");
-                                                if($result_img_lang !== false && $db->last_row_count() == 1){
+                                                if($result_img_lang !== false && $db->last_row_count() > 0){
                                                     $row_img_lang = $result_img_lang->fetch();
                                                     $id_img_lang = $row_img_lang[0];
                                                     $file_img_lang = $row_img_lang[1];
                                                     
                                                     if(is_file(SYSBASE."medias/lang/big/".$id_img_lang."/".$file_img_lang))
                                                         echo "<img src=\"".DOCBASE."medias/lang/big/".$id_img_lang."/".$file_img_lang."\" alt=\"\" border=\"0\"> ";
-                                                }
-                                                echo $title_lang;
-                                                if(DEFAULT_LANG == $id_lang) echo " <em>(default)</em>"; ?>
+                                                } ?>
+                                                <span class="hidden-xs">
+                                                    <?php echo $title_lang;
+                                                    if(DEFAULT_LANG == $id_lang) echo " <em>(default)</em>"; ?>
+                                                </span>
                                             </a>
                                         </li>
                                         <?php
@@ -422,174 +553,340 @@ $csrf_token = get_token("form"); ?>
                                         <div id="lang_<?php echo $id_lang; ?>" class="<?php if(MULTILINGUAL) echo "tab-pane fade"; if(DEFAULT_LANG == $id_lang) echo " in active"; ?>">
                                         
                                             <?php
-                                            displayFields($fields, $id_lang);
+                                            // Display fields
                                             
-                                            if(in_array("publish", $permissions) || in_array("all", $permissions)){
-                                                if(RELEASE && ($id_lang == DEFAULT_LANG || $id_lang == 0)){ ?>
-                                                    <div class="row mb10">
-                                                        <label class="col-md-2 control-label"><?php echo $texts['PUBLISH_DATE']; ?></label>
-                                                        <div class="col-md-6 form-inline">
-                                                            <?php
-                                                            if(is_numeric($publish_date)){
-                                                                $day = date("j", $publish_date);
-                                                                $month = date("n", $publish_date);
-                                                                $year = date("Y", $publish_date);
-                                                                $hour = date("H", $publish_date);
-                                                                $minute = date("i", $publish_date);
-                                                            }else{
-                                                                $day = "";
-                                                                $month = "";
-                                                                $year = "";
-                                                                $hour = "";
-                                                                $minute = "";
-                                                            } ?>
-                                                            
-                                                            <select name="publish_date_year" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($y = date("Y") + 4; $y >= date("Y"); $y--){
-                                                                    $selected = ($y == $year) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$y."\"".$selected.">".$y."</option>\n";
-                                                                } ?>
-                                                            </select>&nbsp;/&nbsp;
-                                                            
-                                                            <select name="publish_date_month" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($n = 1; $n <= 12; $n++){
-                                                                    $selected = ($n == $month) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$n."\"".$selected.">".$n."</option>\n";
-                                                                } ?>
-                                                            </select>&nbsp;/&nbsp;
-                                                            
-                                                            <select name="publish_date_day" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($d = 1; $d <= 31; $d++){
-                                                                    $selected = ($d == $day) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$d."\"".$selected.">".$d."</option>\n";
-                                                                } ?>
-                                                            </select>
-                                                            
-                                                            &nbsp;at&nbsp;
-                                                            <select name="publish_date_hour" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($h = 0; $h <= 23; $h++){
-                                                                    $selected = ($h == $hour) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$h."\"".$selected.">".$h."</option>\n";
-                                                                } ?>
-                                                            </select>&nbsp;:&nbsp;
-                                                            
-                                                            <select name="publish_date_minute" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($m = 0; $m <= 59; $m++){
-                                                                    $selected = ($m == $minute) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$m."\"".$selected.">".$m."</option>\n";
-                                                                } ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mb10">
-                                                        <label class="col-md-2 control-label"><?php echo $texts['UNPUBLISH_DATE']; ?></label>
-                                                        <div class="col-md-6 form-inline">
-                                                            <?php
-                                                            if(is_numeric($unpublish_date)){
-                                                                $day = date("j", $unpublish_date);
-                                                                $month = date("n", $unpublish_date);
-                                                                $year = date("Y", $unpublish_date);
-                                                                $hour = date("H", $unpublish_date);
-                                                                $minute = date("i", $unpublish_date);
-                                                            }else{
-                                                                $day = "";
-                                                                $month = "";
-                                                                $year = "";
-                                                                $hour = "";
-                                                                $minute = "";
-                                                            } ?>
-                                                            
-                                                            <select name="unpublish_date_year" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($y = date("Y") + 4; $y >= date("Y"); $y--){
-                                                                    $selected = ($y == $year) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$y."\"".$selected.">".$y."</option>\n";
-                                                                } ?>
-                                                            </select>&nbsp;/&nbsp;
-                                                            
-                                                            <select name="unpublish_date_month" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($n = 1; $n <= 12; $n++){
-                                                                    $selected = ($n == $month) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$n."\"".$selected.">".$n."</option>\n";
-                                                                } ?>
-                                                            </select>&nbsp;/&nbsp;
-                                                            
-                                                            <select name="unpublish_date_day" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($d = 1; $d <= 31; $d++){
-                                                                    $selected = ($d == $day) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$d."\"".$selected.">".$d."</option>\n";
-                                                                } ?>
-                                                            </select>
-                                                            
-                                                            &nbsp;at&nbsp;
-                                                            <select name="unpublish_date_hour" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($h = 0; $h <= 23; $h++){
-                                                                    $selected = ($h == $hour) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$h."\"".$selected.">".$h."</option>\n";
-                                                                } ?>
-                                                            </select>&nbsp;:&nbsp;
-                                                            
-                                                            <select name="unpublish_date_minute" class="form-control">
-                                                                <option value="">-</option>
-                                                                <?php
-                                                                for($m = 0; $m <= 59; $m++){
-                                                                    $selected = ($m == $minute) ? " selected=\"selected\"" : "";
-                                                                    echo "<option value=\"".$m."\"".$selected.">".$m."</option>\n";
-                                                                } ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                                if(VALIDATION && ($id_lang == DEFAULT_LANG || $id_lang == 0)){ ?>
-                                                    <div class="row mb10">
-                                                        <label class="col-md-2 control-label"><?php echo $texts['RELEASE']; ?></label>
-                                                        <div class="col-md-6">
-                                                            <label class="radio-inline">
-                                                                <input name="checked" type="radio" value="1"<?php if($checked == 1) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['PUBLISHED']; ?><br>
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                                <input name="checked" type="radio" value="2"<?php if($checked == 2) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['NOT_PUBLISHED']; ?><br>
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                                <input name="checked" type="radio" value="0"<?php if($checked == 0) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['AWAITING']; ?>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <?php
-                                                }
-                                                if(HOME && ($id_lang == DEFAULT_LANG || $id_lang == 0)){ ?>
+                                            foreach($fields as $tableName => $fields_table){
+                                                if($tableName != MODULE){ ?>
                                                 
                                                     <div class="row mb10">
-                                                        <label class="col-md-2 control-label"><?php echo $texts['HOMEPAGE']; ?></label>
-                                                        <div class="col-md-6">
-                                                            <label class="radio-inline">
-                                                                <input name="home" type="radio" value="1"<?php if($home == 1) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['YES_OPTION']; ?><br>
-                                                            </label>
-                                                            <label class="radio-inline">
-                                                                <input name="home" type="radio" value="0"<?php if($home == 0) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['NO_OPTION']; ?>
-                                                            </label>
+                                                        <label class="col-lg-2 control-label text-left">
+                                                            <?php
+                                                            echo $fields_table['table']['tableLabel']; ?>
+                                                        </label>
+                                                        <div class="col-lg-10">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered table-hover table-striped form-table" id="table_<?php echo $tableName; ?>">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <?php
+                                                                            foreach($fields_table['fields'] as $field){ ?>
+                                                                                <th>
+                                                                                    <?php
+                                                                                    echo $field->getLabel();
+                                                                                    $comment = $field->getComment();
+                                                                                    if($comment != ""){ ?>
+                                                                                        <div class="text-info"><small><i class="fa fa-info"></i> <?php echo $comment; ?></small></div>
+                                                                                        <?php
+                                                                                    } ?>
+                                                                                </th>
+                                                                                <?php
+                                                                            } ?>
+                                                                            <th width="50"><?php echo $texts['ACTIONS']; ?></th>
+                                                                        </th>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <?php
+                                                                        $numRows = getNumMaxRows($fields, $tableName);
+                                                                        for($index = 0; $index < $numRows; $index++){ ?>
+                                                                            <tr>
+                                                                                <?php
+                                                                                foreach($fields_table['fields'] as $fieldName => $field){
+                                                                                    $notice = $field->getNotice($index);
+                                                                                    $type = $field->getType(); ?>
+                                                                                    <td class="text-center input-<?php echo $type.getClassAttr($type, $field->getValidation(), $notice, $id_lang); ?>">
+                                                                                        <?php
+                                                                                        displayField($field, $tableName, $index, $id_lang);
+                                                                                        if($notice != "" && ($id_lang == DEFAULT_LANG || $id_lang == 0)){ ?>
+                                                                                            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                                                                            <?php
+                                                                                        }
+                                                                                        if($notice != "" && ($id_lang == DEFAULT_LANG || $id_lang == 0)){ ?>
+                                                                                            <p class="help-block"><?php echo $notice; ?></p>
+                                                                                            <?php
+                                                                                        } ?>
+                                                                                    </td>
+                                                                                    <?php
+                                                                                } ?>
+                                                                                <td class="text-center">
+                                                                                    <?php
+                                                                                    if(in_array("delete", $permissions) || in_array("all", $permissions)){ ?>
+                                                                                        <a class="tips" href="javascript:if(confirm('<?php echo $texts['DELETE_CONFIRM2']." ".$texts['LOOSE_DATAS']; ?>')) window.location = 'index.php?view=form&id=<?php echo $id; ?>&table=<?php echo $tableName; ?>&row=<?php echo $fields_table['fields']['id']->getValue(false, $index); ?>&fieldref=<?php echo $fields_table['table']['fieldRef']; ?>&csrf_token=<?php echo $csrf_token; ?>&action=delete_row';" title="<?php echo $texts['DELETE']; ?>"><i class="fa fa-remove text-danger"></i></a>
+                                                                                        <?php
+                                                                                    } ?>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <?php
+                                                                        }
+                                                                        if($index == 0){ ?>
+                                                                            <tr>
+                                                                                <?php
+                                                                                foreach($fields_table['fields'] as $fieldName => $field){
+                                                                                    $type = $field->getType(); ?>
+                                                                                    <td class="text-center input-<?php echo $type.getClassAttr($type, $field->getValidation(), "", $id_lang); ?>">
+                                                                                        <?php displayField($field, $tableName, $index, $id_lang); ?>
+                                                                                    </td>
+                                                                                    <?php
+                                                                                } ?>
+                                                                                <td></td>
+                                                                            </tr>
+                                                                            <?php
+                                                                        } ?>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <a href="#table_<?php echo $tableName; ?>" class="new_entry btn btn-link"><i class="fa fa-plus"></i> <?php echo $texts['NEW_ENTRY']; ?></a>
                                                         </div>
                                                     </div>
+                                                    <?php
+                                                }else{
+                                                
+                                                    foreach($fields_table['fields'] as $fieldName => $field){
                                                     
+                                                        if($id_lang == DEFAULT_LANG || $field->isMultilingual() || $id_lang == 0){
+                                                            
+                                                            $type = $field->getType();
+                                                            $notice = $field->getNotice();
+                                                            $comment = $field->getComment();
+                                                            
+                                                            if($type == "separator"){ ?>
+                                                                <div class="row mb10">
+                                                                    <div class="col-lg-12">
+                                                                        <p><big><b><?php echo $label; ?></b></big></p>
+                                                                        <hr class="mt0 mb0">
+                                                                    </div>
+                                                                </div>
+                                                                <?php
+                                                            }else{
+                                                                $class = getClassAttr($type, $field->getValidation(), $notice, $id_lang); ?>
+                                                                
+                                                                <div class="row mb10">
+                                                                    <label class="col-lg-2 control-label">
+                                                                        <?php
+                                                                        echo $field->getLabel();
+                                                                        if(($id_lang == DEFAULT_LANG || $id_lang == 0) && $field->isRequired()) echo "&nbsp;<span class=\"red\">*</span>\n"; ?>
+                                                                    </label>
+                                                                    <div class="col-lg-6">
+                                                                        <div class="<?php echo $class; ?>">
+                                                                            <?php
+                                                                            displayField($field, $tableName, 0, $id_lang);
+                                                                            if($notice != "" && ($id_lang == DEFAULT_LANG || $id_lang == 0)){ ?>
+                                                                                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                                                                                <?php
+                                                                            }
+                                                                            if($notice != "" && ($id_lang == DEFAULT_LANG || $id_lang == 0)){ ?>
+                                                                                <p class="help-block"><?php echo $notice; ?></p>
+                                                                                <?php
+                                                                            } ?>
+                                                                        </div>
+                                                                    </div>
+                                                                    <?php
+                                                                    if($comment != ""){ ?>
+                                                                        <div class="col-lg-4">
+                                                                            <div class="pt5 pb5 bg-info text-info"><i class="fa fa-info"></i> <?php echo $comment; ?></div>
+                                                                        </div>
+                                                                        <?php
+                                                                    } ?>
+                                                                </div>
+                                                                <?php
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            
+                                            if($id_lang == DEFAULT_LANG || $id_lang == 0){
+                                                if(in_array("publish", $permissions) || in_array("all", $permissions)){
+                                                    if(RELEASE){ ?>
+                                                        <div class="row mb10">
+                                                            <label class="col-md-2 control-label"><?php echo $texts['PUBLISH_DATE']; ?></label>
+                                                            <div class="col-md-6 form-inline">
+                                                                <?php
+                                                                if(is_numeric($publish_date)){
+                                                                    $day = date("j", $publish_date);
+                                                                    $month = date("n", $publish_date);
+                                                                    $year = date("Y", $publish_date);
+                                                                    $hour = date("H", $publish_date);
+                                                                    $minute = date("i", $publish_date);
+                                                                }else{
+                                                                    $day = "";
+                                                                    $month = "";
+                                                                    $year = "";
+                                                                    $hour = "";
+                                                                    $minute = "";
+                                                                } ?>
+                                                                
+                                                                <select name="publish_date_year" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($y = date("Y") + 4; $y >= date("Y"); $y--){
+                                                                        $selected = ($y == $year) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$y."\"".$selected.">".$y."</option>\n";
+                                                                    } ?>
+                                                                </select>&nbsp;/&nbsp;
+                                                                
+                                                                <select name="publish_date_month" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($n = 1; $n <= 12; $n++){
+                                                                        $selected = ($n == $month) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$n."\"".$selected.">".$n."</option>\n";
+                                                                    } ?>
+                                                                </select>&nbsp;/&nbsp;
+                                                                
+                                                                <select name="publish_date_day" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($d = 1; $d <= 31; $d++){
+                                                                        $selected = ($d == $day) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$d."\"".$selected.">".$d."</option>\n";
+                                                                    } ?>
+                                                                </select>
+                                                                
+                                                                &nbsp;at&nbsp;
+                                                                <select name="publish_date_hour" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($h = 0; $h <= 23; $h++){
+                                                                        $selected = ($h == $hour) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$h."\"".$selected.">".$h."</option>\n";
+                                                                    } ?>
+                                                                </select>&nbsp;:&nbsp;
+                                                                
+                                                                <select name="publish_date_minute" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($m = 0; $m <= 59; $m++){
+                                                                        $selected = ($m == $minute) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$m."\"".$selected.">".$m."</option>\n";
+                                                                    } ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mb10">
+                                                            <label class="col-md-2 control-label"><?php echo $texts['UNPUBLISH_DATE']; ?></label>
+                                                            <div class="col-md-6 form-inline">
+                                                                <?php
+                                                                if(is_numeric($unpublish_date)){
+                                                                    $day = date("j", $unpublish_date);
+                                                                    $month = date("n", $unpublish_date);
+                                                                    $year = date("Y", $unpublish_date);
+                                                                    $hour = date("H", $unpublish_date);
+                                                                    $minute = date("i", $unpublish_date);
+                                                                }else{
+                                                                    $day = "";
+                                                                    $month = "";
+                                                                    $year = "";
+                                                                    $hour = "";
+                                                                    $minute = "";
+                                                                } ?>
+                                                                
+                                                                <select name="unpublish_date_year" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($y = date("Y") + 4; $y >= date("Y"); $y--){
+                                                                        $selected = ($y == $year) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$y."\"".$selected.">".$y."</option>\n";
+                                                                    } ?>
+                                                                </select>&nbsp;/&nbsp;
+                                                                
+                                                                <select name="unpublish_date_month" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($n = 1; $n <= 12; $n++){
+                                                                        $selected = ($n == $month) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$n."\"".$selected.">".$n."</option>\n";
+                                                                    } ?>
+                                                                </select>&nbsp;/&nbsp;
+                                                                
+                                                                <select name="unpublish_date_day" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($d = 1; $d <= 31; $d++){
+                                                                        $selected = ($d == $day) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$d."\"".$selected.">".$d."</option>\n";
+                                                                    } ?>
+                                                                </select>
+                                                                
+                                                                &nbsp;at&nbsp;
+                                                                <select name="unpublish_date_hour" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($h = 0; $h <= 23; $h++){
+                                                                        $selected = ($h == $hour) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$h."\"".$selected.">".$h."</option>\n";
+                                                                    } ?>
+                                                                </select>&nbsp;:&nbsp;
+                                                                
+                                                                <select name="unpublish_date_minute" class="form-control">
+                                                                    <option value="">-</option>
+                                                                    <?php
+                                                                    for($m = 0; $m <= 59; $m++){
+                                                                        $selected = ($m == $minute) ? " selected=\"selected\"" : "";
+                                                                        echo "<option value=\"".$m."\"".$selected.">".$m."</option>\n";
+                                                                    } ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <?php
+                                                    }
+                                                    if(VALIDATION){ ?>
+                                                        <div class="row mb10">
+                                                            <label class="col-md-2 control-label"><?php echo $texts['RELEASE']; ?></label>
+                                                            <div class="col-md-6">
+                                                                <label class="radio-inline">
+                                                                    <input name="checked" type="radio" value="1"<?php if($checked == 1) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['PUBLISHED']; ?><br>
+                                                                </label>
+                                                                <label class="radio-inline">
+                                                                    <input name="checked" type="radio" value="2"<?php if($checked == 2) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['NOT_PUBLISHED']; ?><br>
+                                                                </label>
+                                                                <label class="radio-inline">
+                                                                    <input name="checked" type="radio" value="0"<?php if($checked == 0) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['AWAITING']; ?>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <?php
+                                                    }
+                                                    if(HOME){ ?>
+                                                        <div class="row mb10">
+                                                            <label class="col-md-2 control-label"><?php echo $texts['HOMEPAGE']; ?></label>
+                                                            <div class="col-md-6">
+                                                                <label class="radio-inline">
+                                                                    <input name="home" type="radio" value="1"<?php if($home == 1) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['YES_OPTION']; ?><br>
+                                                                </label>
+                                                                <label class="radio-inline">
+                                                                    <input name="home" type="radio" value="0"<?php if($home == 0) echo " checked=\"checked\""; ?>/>&nbsp;<?php echo $texts['NO_OPTION']; ?>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <?php
+                                                    }
+                                                }
+                                                if($_SESSION['user']['type'] == "administrator" && db_column_exists($db, "pm_".MODULE, "id_user")){ ?>
+                                                    <div class="row mb10">
+                                                        <div class="col-lg-8">
+                                                            <div class="row">
+                                                                <label class="col-lg-3 control-label"><?php echo $texts['USER']; ?></label>
+                                                                <div class="col-lg-9">
+                                                                    <div class=" form-inline">
+                                                                        <select name="id_user" class="form-control">
+                                                                            <?php
+                                                                            $result_user = $db->query("SELECT * FROM pm_user ORDER BY login");
+                                                                            if($result_user !== false){
+                                                                                foreach($result_user as $user){ ?>
+                                                                                    <option value="<?php echo $user['id']; ?>"<?php if($user['id'] == $id_user) echo " selected=\"selected\""; ?>>
+                                                                                        <?php echo $user['login']; ?>
+                                                                                    </option>
+                                                                                    <?php
+                                                                                }
+                                                                            } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <?php
                                                 }
                                             }
@@ -606,7 +903,7 @@ $csrf_token = get_token("form"); ?>
                                                         $nb_file = $db->last_row_count();
                                                         
                                                         $uploaded = $nb_file;
-                                                        if($_SESSION['msg_error'] != "" && $_SESSION['msg_success'] == ""){
+                                                        if(!empty($_SESSION['msg_error']) && empty($_SESSION['msg_success'])){
                                                             $files = browse_files(SYSBASE."medias/".MODULE."/tmp/".$_SESSION['token']."/".$id_lang);
                                                             $uploaded += count($files);
                                                         }
@@ -652,7 +949,7 @@ $csrf_token = get_token("form"); ?>
                                                         <div class="uploaded clearfix alert alert-success" id="file_uploaded_<?php echo $id_lang; ?>">
                                                             <p><?php echo $texts['FILES_READY_UPLOAD']; ?></p>
                                                             <?php
-                                                            if($_SESSION['msg_error'] != "" && $_SESSION['msg_success'] == ""){
+                                                            if(!empty($_SESSION['msg_error']) && empty($_SESSION['msg_success'])){
                                                                 foreach($files as $file){ ?>
                                                                     <div class="prev-file">
                                                                         <?php
@@ -660,7 +957,7 @@ $csrf_token = get_token("form"); ?>
                                                     
                                                                             $icon_file = $allowable_file_exts[$file[2]]; ?>
                                                         
-                                                                            <img src="<?php echo DOCBASE; ?>admin/images/<?php echo $icon_file; ?>" alt=""><br>
+                                                                            <img src="<?php echo DOCBASE.ADMIN_FOLDER; ?>/images/<?php echo $icon_file; ?>" alt=""><br>
                                                                             <?php
                                                                             echo substr($file[1], 0, 15).((count($file[1]) >= 15) ? "..." : ".").$file[2]."<br>".$file[3];
                                                                         }else{ ?>
@@ -766,7 +1063,7 @@ $csrf_token = get_token("form"); ?>
                                                                                     <?php
                                                                                 }
                                                                                 if($upload_allowed){ ?>
-                                                                                    <a class="tips" href="javascript:if(confirm('<?php echo $texts['DELETE_FILE_CONFIRM']; ?>')) window.location = 'index.php?view=form&id=<?php echo $id; ?>&file=<?php echo $id_file; ?>&csrf_token=<?php echo $csrf_token; ?>&action=delete_file';" title="<?php echo $texts['DELETE']; ?>"><i class="fa fa-remove text-danger"></i></a>
+                                                                                    <a class="tips" href="javascript:if(confirm('<?php echo $texts['DELETE_FILE_CONFIRM']." ".$texts['LOOSE_DATAS']; ?>')) window.location = 'index.php?view=form&id=<?php echo $id; ?>&file=<?php echo $id_file; ?>&csrf_token=<?php echo $csrf_token; ?>&action=delete_file';" title="<?php echo $texts['DELETE']; ?>"><i class="fa fa-remove text-danger"></i></a>
                                                                                     <?php
                                                                                 }
                                                                             } ?>
@@ -808,8 +1105,8 @@ $csrf_token = get_token("form"); ?>
 </body>
 </html>
 <?php
-if($_SESSION['msg_error'] == "") recursive_rmdir(SYSBASE."medias/".MODULE."/tmp/".$_SESSION['token']);
+if(empty($_SESSION['msg_error'])) recursive_rmdir(SYSBASE."medias/".MODULE."/tmp/".$_SESSION['token']);
 $_SESSION['redirect'] = false;
-$_SESSION['msg_error'] = "";
-$_SESSION['msg_success'] = "";
-$_SESSION['msg_notice'] = ""; ?>
+$_SESSION['msg_error'] = array();
+$_SESSION['msg_success'] = array();
+$_SESSION['msg_notice'] = array(); ?>

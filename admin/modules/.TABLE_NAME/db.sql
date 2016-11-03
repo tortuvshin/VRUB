@@ -1,4 +1,3 @@
-
 -- ============================================================
 -- ============== CREATION OF THE TABLE TABLE_NAME ============
 -- ============================================================
@@ -15,7 +14,7 @@
 		PRIMARY KEY(id,lang)
 	) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-	ALTER TABLE TABLE_NAME ADD CONSTRAINT TABLE_NAME_lang_fkey FOREIGN KEY (lang) REFERENCES lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;
+	ALTER TABLE TABLE_NAME ADD CONSTRAINT TABLE_NAME_lang_fkey FOREIGN KEY (lang) REFERENCES pm_lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 -- ============================================================
 -- =========== CREATION OF THE TABLE TABLE_NAME_file ==========
@@ -35,4 +34,4 @@
 	) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 	ALTER TABLE TABLE_NAME_file ADD CONSTRAINT TABLE_NAME_file_fkey FOREIGN KEY (id_item,lang) REFERENCES TABLE_NAME(id,lang) ON UPDATE NO ACTION ON DELETE CASCADE;
-	ALTER TABLE TABLE_NAME_file ADD CONSTRAINT TABLE_NAME_file_lang_fkey FOREIGN KEY (lang) REFERENCES lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;
+	ALTER TABLE TABLE_NAME_file ADD CONSTRAINT TABLE_NAME_file_lang_fkey FOREIGN KEY (lang) REFERENCES pm_lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;

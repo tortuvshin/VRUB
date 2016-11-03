@@ -6,14 +6,14 @@ define("TITLE_ELEMENT", $texts['DASHBOARD']." - ".$texts['LOGIN']);
 
 $action = (isset($_GET['action'])) ? $_GET['action'] : "";
 
-if(isset($_POST['login'])){
+if($db !== false && isset($_POST['login'])){
     $user = htmlentities($_POST['user'], ENT_COMPAT, "UTF-8");
     $password = $_POST['password'];
     
-    if(check_token("/admin/login.php", "login", "post")){
+    if(check_token("/".ADMIN_FOLDER."/login.php", "login", "post")){
         
         $result_user = $db->query("SELECT * FROM pm_user WHERE login = ".$db->quote($user)." AND pass = '".md5($password)."' AND checked = 1");
-        if($result_user !== false && $db->last_row_count() == 1){
+        if($result_user !== false && $db->last_row_count() > 0){
             $row = $result_user->fetch();
             $_SESSION['user']['id'] = $row['id'];
             $_SESSION['user']['login'] = $user;
@@ -22,35 +22,35 @@ if(isset($_POST['login'])){
             header("Location: index.php");
             exit();
         }else
-            $_SESSION['msg_error'] .= $texts['LOGIN_FAILED'];
+            $_SESSION['msg_error'][] = $texts['LOGIN_FAILED'];
     }else
-        $_SESSION['msg_error'] .= $texts['BAD_TOKEN2'];
+        $_SESSION['msg_error'][] = $texts['BAD_TOKEN2'];
 }
 
 if($action == "logout" && isset($_SESSION['user'])) unset($_SESSION['user']);
 
-if(isset($_POST['reset'])){
+if($db !== false && isset($_POST['reset'])){
     $email = htmlentities($_POST['email'], ENT_COMPAT, "UTF-8");
 
-    if(check_token("/admin/login.php", "login", "post")){
+    if(check_token("/".ADMIN_FOLDER."/login.php", "login", "post")){
 
         $result_user = $db->query("SELECT * FROM pm_user WHERE email = ".$db->quote($email)." AND checked = 1");
-        if($result_user !== false && $db->last_row_count() == 1){
+        if($result_user !== false && $db->last_row_count() > 0){
             $row = $result_user->fetch();
             $url = getUrl();
             $new_pass = genPass(6);
             $mailContent = "
-            <p>Сайн уу,<br>Таны шинэ нууц үг <a href=\"".$url."\" target=\"_blank\">".$url."</a><br>
-            Таны шинэ мэдээлэл<br>
-            Хэрэглэгчийн нэр: ".$row['login']."<br>
-            Нууц үг: <b>".$new_pass."</b><br>
-            Та нууц үгээ шинээр солихыг хүсэе.</p>";
-            if(sendMail($email, $row['name'], "Таны шинэ нууц үг", $mailContent) !== false)
+            <p>Hi,<br>You requested a new password from <a href=\"".$url."\" target=\"_blank\">".$url."</a><br>
+            Bellow, your new connection informations<br>
+            Username: ".$row['login']."<br>
+            Password: <b>".$new_pass."</b><br>
+            You can modify this random password in the settings via the manager.</p>";
+            if(sendMail($email, $row['name'], "Your new password", $mailContent) !== false)
                 $db->query("UPDATE pm_user SET pass = '".md5($new_pass)."' WHERE id = ".$row['id']);
         }
-        $_SESSION['msg_success'] = "Шинэ нууц үг таны мэйл хаягруу илгээлээ<br>";
+        $_SESSION['msg_success'][] = "A new password has been sent to your e-mail.<br>";
     }else
-        $_SESSION['msg_error'] .= "Буруу холбоос байна. Холбоос дээр дарж дахин оролдоно уу \"Нууц үг сэргээх\".<br>";
+        $_SESSION['msg_error'][] = "Bad token! Thank you for re-trying by clicking on \"New password\".<br>";
 }
 
 $csrf_token = get_token("login"); ?>
@@ -73,10 +73,10 @@ $csrf_token = get_token("login"); ?>
                     </div>
                     <?php
                     if($action == "reset"){ ?>
-                        <p>Мэйл хаягаа оруулна уу. Таны мэйл хаягруу шаардлагатай мэдээллийг илгээх болно</p>
+                        <p>Please enter your e-mail address corresponding to your account. A new password will be sent to you by e-mail.</p>
                         <div class="row">
                             <label class="col-sm-12">
-                                Мэйл хаяг
+                                E-mail
                             </label>
                         </div>
                         <div class="row mb10">
@@ -86,10 +86,10 @@ $csrf_token = get_token("login"); ?>
                         </div>
                         <div class="row mb10">
                             <div class="col-xs-3 text-left">
-                                <a href="login.php"><i class="fa fa-power-off"></i> Нэвтрэх хэсэг</a>
+                                <a href="login.php"><i class="fa fa-power-off"></i> Login</a>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <button class="btn btn-default" type="submit" value="" name="reset"><i class="fa fa-refresh"></i> Шинэ нууц үг</button>
+                                <button class="btn btn-default" type="submit" value="" name="reset"><i class="fa fa-refresh"></i> New password</button>
                             </div>
                         </div>
                         <?php
@@ -116,11 +116,11 @@ $csrf_token = get_token("login"); ?>
                         </div>
                         <div class="row mb10">
                             <div class="col-sm-7 text-left">
-                                <a href="login.php?action=reset">Нууц үг сэргээх&nbsp;?</a>
+                                <a href="login.php?action=reset">Remember password&nbsp;?</a>
                             </div>
                             <div class="col-sm-5 text-right">
                                 <button class="btn btn-default" type="submit" value="" name="login"><i class="fa fa-power-off"></i> <?php echo $texts['LOGIN']; ?></button>
-                            </div>TAGTAA SOLUTION DEVELOPMENT TEAM
+                            </div>
                         </div>
                         <?php
                     } ?>
@@ -132,6 +132,6 @@ $csrf_token = get_token("login"); ?>
 </body>
 </html>
 <?php
-$_SESSION['msg_error'] = "";
-$_SESSION['msg_success'] = "";
-$_SESSION['msg_notice'] = ""; ?>
+$_SESSION['msg_error'] = array();
+$_SESSION['msg_success'] = array();
+$_SESSION['msg_notice'] = array(); ?>

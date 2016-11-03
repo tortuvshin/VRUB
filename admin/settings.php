@@ -3,15 +3,22 @@
  * This form serves you to modify the basic configuration of your installation
  */
 session_start();
+
 if(!isset($_SESSION['user'])){
     header("Location: login.php");
     exit();
+}elseif($_SESSION['user']['type'] == "registered"){
+    $_SESSION['msg_error'][] = "Access denied.<br/>";
+    header("Location: login.php");
+    exit();
 }
+
 define("ADMIN", true);
 require_once("../common/lib.php");
 require_once("../common/setenv.php");
         
 $config_file = "../common/config.php";
+$htaccess_file = "../.htaccess";
 $field_notice = array();
 $config_tmp = array();
 $db = false;
@@ -33,7 +40,7 @@ if(isset($_POST['edit_settings'])){
         $config_tmp['lang_enabled'] = isset($_POST['lang_enabled']) ? htmlentities($_POST['lang_enabled'], ENT_QUOTES, "UTF-8") : "";
         $config_tmp['template'] = htmlentities($_POST['template'], ENT_QUOTES, "UTF-8");
         $config_tmp['owner'] = htmlentities($_POST['owner'], ENT_QUOTES, "UTF-8");
-        $config_tmp['address'] = preg_replace("/([\n\r])/", "", nl2br(htmlentities($_POST['address'], ENT_QUOTES, "UTF-8")));
+        $config_tmp['address'] = addslashes(preg_replace("/([\n\r])/", "", nl2br(strip_tags($_POST['address']))));
         $config_tmp['phone'] = htmlentities($_POST['phone'], ENT_QUOTES, "UTF-8");
         $config_tmp['mobile'] = htmlentities($_POST['mobile'], ENT_QUOTES, "UTF-8");
         $config_tmp['fax'] = htmlentities($_POST['fax'], ENT_QUOTES, "UTF-8");
@@ -52,25 +59,39 @@ if(isset($_POST['edit_settings'])){
         $config_tmp['smtp_user'] = htmlentities($_POST['smtp_user'], ENT_QUOTES, "UTF-8");
         $config_tmp['smtp_pass'] = $_POST['smtp_pass'];
         $config_tmp['smtp_port'] = htmlentities($_POST['smtp_port'], ENT_QUOTES, "UTF-8");
+        $config_tmp['enable_cookies_notice'] = isset($_POST['enable_cookies_notice']) ? htmlentities($_POST['enable_cookies_notice'], ENT_QUOTES, "UTF-8") : "";
+        $config_tmp['maintenance_mode'] = isset($_POST['maintenance_mode']) ? htmlentities($_POST['maintenance_mode'], ENT_QUOTES, "UTF-8") : "";
+        $config_tmp['maintenance_msg'] = addslashes(preg_replace("/([\n\r])/", "", $_POST['maintenance_msg']));
+        $config_tmp['gmaps_api_key'] = htmlentities($_POST['gmaps_api_key'], ENT_QUOTES, "UTF-8");
+        $config_tmp['analytics_code'] = addslashes(preg_replace("/([\n\r])/", "", $_POST['analytics_code']));
+        $config_tmp['admin_folder'] = htmlentities($_POST['admin_folder'], ENT_QUOTES, "UTF-8");
         
-        $config_tmp['payment_type'] = htmlentities($_POST['payment_type'], ENT_QUOTES, "UTF-8");
+        $config_tmp['payment_type'] = isset($_POST['payment_type']) ? implode(",", $_POST['payment_type']) : "";
+        $config_tmp['paypal_email'] = htmlentities($_POST['paypal_email'], ENT_QUOTES, "UTF-8");
+        $config_tmp['vendor_id'] = htmlentities($_POST['vendor_id'], ENT_QUOTES, "UTF-8");
+        $config_tmp['secret_word'] = htmlentities($_POST['secret_word'], ENT_QUOTES, "UTF-8");
+        $config_tmp['payment_test_mode'] = isset($_POST['payment_test_mode']) ? htmlentities($_POST['payment_test_mode'], ENT_QUOTES, "UTF-8") : 0;
         $config_tmp['enable_down_payment'] = isset($_POST['enable_down_payment']) ? htmlentities($_POST['enable_down_payment'], ENT_QUOTES, "UTF-8") : 0;
         $config_tmp['down_payment_rate'] = htmlentities($_POST['down_payment_rate'], ENT_QUOTES, "UTF-8");
         $config_tmp['tourist_tax'] = htmlentities($_POST['tourist_tax'], ENT_QUOTES, "UTF-8");
         $config_tmp['tourist_tax_type'] = isset($_POST['tourist_tax_type']) ? htmlentities($_POST['tourist_tax_type'], ENT_QUOTES, "UTF-8") : "";
         $config_tmp['allow_comments'] = isset($_POST['allow_comments']) ? htmlentities($_POST['allow_comments'], ENT_QUOTES, "UTF-8") : 0;
         $config_tmp['allow_ratings'] = isset($_POST['allow_ratings']) ? htmlentities($_POST['allow_ratings'], ENT_QUOTES, "UTF-8") : 0;
+        $config_tmp['enable_booking_requests'] = isset($_POST['enable_booking_requests']) ? htmlentities($_POST['enable_booking_requests'], ENT_QUOTES, "UTF-8") : 0;
+        $config_tmp['enable_tourist_tax'] = isset($_POST['enable_tourist_tax']) ? htmlentities($_POST['enable_tourist_tax'], ENT_QUOTES, "UTF-8") : 0;
     }
     $email = htmlentities($_POST['email'], ENT_QUOTES, "UTF-8");
     $user = htmlentities($_POST['user'], ENT_QUOTES, "UTF-8");
     $password = $_POST['password'];
 
-    if(check_token("/admin/settings.php", "settings", "post")){
+    if(check_token("/".ADMIN_FOLDER."/settings.php", "settings", "post")){
 
         if($_SESSION['user']['type'] == "administrator"){
             if($config_tmp['time_zone'] == "") $field_notice['time_zone'] = $texts['REQUIRED_FIELD'];
             if(!is_numeric($config_tmp['lang_enabled'])) $field_notice['lang_enabled'] = $texts['REQUIRED_FIELD'];
             if(!is_numeric($config_tmp['currency_enabled'])) $field_notice['currency_enabled'] = $texts['REQUIRED_FIELD'];
+            if(!is_numeric($config_tmp['enable_cookies_notice'])) $field_notice['enable_cookies_notice'] = $texts['REQUIRED_FIELD'];
+            if(!is_numeric($config_tmp['maintenance_mode'])) $field_notice['maintenance_mode'] = $texts['REQUIRED_FIELD'];
             if($config_tmp['template'] == "") $field_notice['template'] = $texts['REQUIRED_FIELD'];
             if($config_tmp['db_name'] == "") $field_notice['db_name'] = $texts['REQUIRED_FIELD'];
             if($config_tmp['db_host'] == "") $field_notice['db_host'] = $texts['REQUIRED_FIELD'];
@@ -78,13 +99,39 @@ if(isset($_POST['edit_settings'])){
             if($config_tmp['db_user'] == "") $field_notice['db_user'] = $texts['REQUIRED_FIELD'];
             if($config_tmp['db_pass'] == "") $field_notice['db_pass'] = $texts['REQUIRED_FIELD'];
             
+            if($config_tmp['admin_folder'] != "" && preg_match("/(^[a-z0-9]+$)/i", $config_tmp['admin_folder']) !== 1) $field_notice['admin_folder'] = $texts['ALPHANUM_ONLY'];
+            
+            $curr_dirname = dirname(__FILE__);
+            $curr_folder = substr($curr_dirname, strrpos($curr_dirname, "/")+1);
+            $rep = opendir(SYSBASE);
+            while($entry = @readdir($rep)){
+                if(is_dir(SYSBASE.$entry) && $entry != $curr_folder){
+                    if($entry == $config_tmp['admin_folder']){
+                        $field_notice['admin_folder'] = $texts['FOLDER_EXISTS'];
+                        break;
+                    }
+                }
+            }
+            closedir($rep);
+            
             if($config_tmp['payment_type'] == "") $field_notice['payment_type'] = $texts['REQUIRED_FIELD'];
+            
+            if(strpos($config_tmp['payment_type'], "paypal") && ($config_tmp['paypal_email'] == "" || !preg_match("/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$/i", $config_tmp['paypal_email'])))
+                $field_notice['paypal_email'] = $texts['REQUIRED_FIELD'];
+            
+            if(strpos($config_tmp['payment_type'], "cards")){
+                if($config_tmp['vendor_id'] == "") $field_notice['vendor_id'] = $texts['REQUIRED_FIELD'];
+                if($config_tmp['secret_word'] == "") $field_notice['secret_word'] = $texts['REQUIRED_FIELD'];
+            }
+                
             if($config_tmp['enable_down_payment'] == "") $field_notice['enable_down_payment'] = $texts['REQUIRED_FIELD'];
             if(!is_numeric($config_tmp['down_payment_rate']) || $config_tmp['down_payment_rate'] < 0) $field_notice['down_payment_rate'] = $texts['REQUIRED_FIELD'];
             if(!is_numeric($config_tmp['tourist_tax']) || $config_tmp['tourist_tax'] < 0) $field_notice['tourist_tax'] = $texts['REQUIRED_FIELD'];
             if($config_tmp['tourist_tax_type'] == "") $field_notice['tourist_tax_type'] = $texts['REQUIRED_FIELD'];
             if($config_tmp['allow_comments'] == "") $field_notice['allow_comments'] = $texts['REQUIRED_FIELD'];
             if($config_tmp['allow_ratings'] == "") $field_notice['allow_ratings'] = $texts['REQUIRED_FIELD'];
+            if($config_tmp['enable_booking_requests'] == "") $field_notice['enable_booking_requests'] = $texts['REQUIRED_FIELD'];
+            if($config_tmp['enable_tourist_tax'] == "") $field_notice['enable_tourist_tax'] = $texts['REQUIRED_FIELD'];
             
             if($config_tmp['email'] == "" || !preg_match("/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$/i", $config_tmp['email'])) $field_notice['email2'] = $texts['INVALID_EMAIL'];
         }
@@ -95,9 +142,11 @@ if(isset($_POST['edit_settings'])){
         
         if($email == "" || !preg_match("/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$/i", $email)) $field_notice['email'] = $texts['INVALID_EMAIL'];
 
-        $result_user = $db->query("SELECT * FROM pm_user WHERE login = ".$db->quote($user));
-        if($result_user === false || $db->last_row_count() > 1) $field_notice['user'] = $texts['USER_EXISTS'];
-
+        if($db !== false){
+            $result_user = $db->query("SELECT * FROM pm_user WHERE login = ".$db->quote($user));
+            if($result_user === false || $db->last_row_count() > 1) $field_notice['user'] = $texts['USER_EXISTS'];
+        }
+        
         if(count($field_notice) == 0){
             
             if($_SESSION['user']['type'] == "administrator"){
@@ -105,26 +154,47 @@ if(isset($_POST['edit_settings'])){
                     $db = new db("mysql:host=".$config_tmp['db_host'].";port=".$config_tmp['db_port'].";dbname=".$config_tmp['db_name'].";charset=utf8", $config_tmp['db_user'], $config_tmp['db_pass']);
                     $db->exec("SET NAMES 'utf8'");
                 }catch(PDOException $e){
-                    $_SESSION['msg_error'] .= $texts['DATABASE_ERROR'];
+                    $_SESSION['msg_error'][] = $texts['DATABASE_ERROR'];
                 }
             }
-
+            
             if($db !== false){
+                
+                $key = array_search($texts['DATABASE_ERROR'], $_SESSION['msg_error']);
+                if($key !== false) unset($_SESSION['msg_error'][$key]);
 
                 if($_SESSION['user']['type'] == "administrator"){
-
+                    
+                    $renamed = false;
+                    if($config_tmp['admin_folder'] != "")
+                        $renamed = @rename($curr_dirname, SYSBASE.$config_tmp['admin_folder']);
+                    
+                    if($renamed){
+                        if(is_file($htaccess_file)){
+                            $admin_rule = "RewriteCond %{REQUEST_URI} /".ADMIN_FOLDER."/";
+                            $new_admin_rule = "RewriteCond %{REQUEST_URI} /".$config_tmp['admin_folder']."/";
+                            
+                            $ht_content = str_replace($admin_rule, $new_admin_rule, file_get_contents($htaccess_file));
+                            if(file_put_contents($htaccess_file, $ht_content) === false)
+                                $_SESSION['msg_notice'][] = $texts['ADMIN_RULE_NOTICE']." <b>".$new_admin_rule."</b><br>";
+                        }
+                    }
+                    
                     $config_str = file_get_contents($config_file);
+                    
+                    $count = substr_count($config_str, "define(");
 
                     foreach($config_tmp as $key => $value){
-                        $key = mb_strtoupper($key, "UTF-8");
-                        $config_str = preg_replace("/define\((\"|')".$key."(\"|'),\s*(\"|')?([^\n\"']*)(\"|')?\);/i", "define(\"".$key."\", \"".$value."\");", $config_str);
+                        if($key != "admin_folder" || ($config_tmp['admin_folder'] != "" && $renamed)){
+                            $key = mb_strtoupper($key, "UTF-8");
+                            $config_str = preg_replace("/define\((\"|')".$key."(\"|'),\s*(\"|')?([^\n\"']*)(\"|')?\);/i", "define(\"".$key."\", \"".$value."\");", $config_str);
+                        }
                     }
 
-                    if(file_put_contents($config_file, $config_str) === false){
-                        $_SESSION['msg_notice'] .= $texts['CONFIG_NOTICE'];
-                        $_SESSION['msg_notice'] .= preg_replace("/(\r\n|\n|\r)/", "", nl2br(htmlentities($config_str, ENT_QUOTES, "UTF-8")));
-                    }else
-                        $_SESSION['msg_success'] .= $texts['CONFIG_SAVED'];
+                    if($config_str == "" || substr_count($config_str, "define(") != $count || file_put_contents($config_file, $config_str) === false)
+                        $_SESSION['msg_notice'][] = $texts['CONFIG_NOTICE'].preg_replace("/(\r\n|\n|\r)/", "", nl2br(htmlentities($config_str, ENT_QUOTES, "UTF-8")));
+                    else
+                        $_SESSION['msg_success'][] = $texts['CONFIG_SAVED'];
                 }
                 
                 $data = array();
@@ -137,16 +207,19 @@ if(isset($_POST['edit_settings'])){
                 if($result_user->execute() !== false){
                     $_SESSION['user']['email'] = $email;
                     $_SESSION['user']['login'] = $user;
-                    $_SESSION['msg_success'] .= $texts['PROFILE_SUCCESS'];
+                    $_SESSION['msg_success'][] = $texts['PROFILE_SUCCESS'];
                 }
-                    
-                header("Location: settings.php");
-                exit();
+                
+                if($renamed)
+                    ;//header("Location: ../".$config_tmp['admin_folder']."/settings.php");
+                else
+                    ;//header("Location: settings.php");
+                //exit();
             }
         }else
-            $_SESSION['msg_error'] .= $texts['FORM_ERRORS'];
+            $_SESSION['msg_error'][] = $texts['FORM_ERRORS'];
     }else
-        $_SESSION['msg_error'] .= $texts['BAD_TOKEN1'];
+        $_SESSION['msg_error'][] = $texts['BAD_TOKEN1'];
 }
 define("TITLE_ELEMENT", $texts['SETTINGS']);
 
@@ -177,14 +250,25 @@ $config_tmp['smtp_host'] = SMTP_HOST;
 $config_tmp['smtp_user'] = SMTP_USER;
 $config_tmp['smtp_pass'] = SMTP_PASS;
 $config_tmp['smtp_port'] = SMTP_PORT;
-
+$config_tmp['enable_cookies_notice'] = ENABLE_COOKIES_NOTICE;
+$config_tmp['maintenance_mode'] = MAINTENANCE_MODE;
+$config_tmp['maintenance_msg'] = MAINTENANCE_MSG;
+$config_tmp['gmaps_api_key'] = GMAPS_API_KEY;
+$config_tmp['analytics_code'] = ANALYTICS_CODE;
+$config_tmp['admin_folder'] = ADMIN_FOLDER;
 $config_tmp['payment_type'] = PAYMENT_TYPE;
+$config_tmp['paypal_email'] = PAYPAL_EMAIL;
+$config_tmp['vendor_id'] = VENDOR_ID;
+$config_tmp['secret_word'] = SECRET_WORD;
+$config_tmp['payment_test_mode'] = PAYMENT_TEST_MODE;
 $config_tmp['enable_down_payment'] = ENABLE_DOWN_PAYMENT;
 $config_tmp['down_payment_rate'] = DOWN_PAYMENT_RATE;
 $config_tmp['tourist_tax'] = TOURIST_TAX;
 $config_tmp['tourist_tax_type'] = TOURIST_TAX_TYPE;
 $config_tmp['allow_comments'] = ALLOW_COMMENTS;
 $config_tmp['allow_ratings'] = ALLOW_RATINGS;
+$config_tmp['enable_booking_requests'] = ENABLE_BOOKING_REQUESTS;
+$config_tmp['enable_tourist_tax'] = ENABLE_TOURIST_TAX;
 
 require_once("includes/fn_module.php");
 $csrf_token = get_token("settings"); ?>
@@ -203,7 +287,7 @@ $csrf_token = get_token("settings"); ?>
 <body>
     <div id="overlay"><div id="loading"></div></div>
     <div id="wrapper">
-        <?php include(SYSBASE."admin/includes/inc_top.php"); ?>
+        <?php include(SYSBASE.ADMIN_FOLDER."/includes/inc_top.php"); ?>
         
         <form id="form" class="form-horizontal" role="form" action="settings.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
@@ -261,6 +345,32 @@ $csrf_token = get_token("settings"); ?>
                                                 </label>
                                                 <div class="col-md-8">
                                                     <input class="form-control" type="text" value="<?php echo $config_tmp['site_title']; ?>" name="site_title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <label class="col-md-2 control-label">
+                                            <?php echo $texts['MAINTENANCE_MODE']; ?> <span class="red">*</span>
+                                        </label>
+                                        <div class="col-md-6">
+                                            <label class="radio-inline">
+                                                <input name="maintenance_mode" type="radio" value="0"<?php if($config_tmp['maintenance_mode'] == 0) echo " checked=\"checked\""; ?>>&nbsp;<?php echo $texts['NO_OPTION']; ?><br>
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input name="maintenance_mode" type="radio" value="1"<?php if($config_tmp['maintenance_mode'] == 1) echo " checked=\"checked\""; ?>>&nbsp;<?php echo $texts['YES_OPTION']; ?><br>
+                                            </label>
+                                            <div class="field-notice" rel="maintenance_mode"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['MAINTENANCE_MSG']; ?>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <textarea class="form-control" name="maintenance_msg"><?php echo $config_tmp['maintenance_msg']; ?></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -325,10 +435,33 @@ $csrf_token = get_token("settings"); ?>
                                                 <label class="col-md-3 control-label">
                                                     <?php echo $texts['TIME_ZONE']; ?> <span class="red">*</span>
                                                 </label>
-                                                <div class="col-md-8">
-                                                    <input class="form-control" type="text" value="<?php echo $config_tmp['time_zone']; ?>" name="time_zone">
-                                                    <div class="field-notice" rel="time_zone"></div>
-                                                </div>
+                                                <?php
+                                                if(version_compare(PHP_VERSION, "5.2.0") == -1){ ?>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="text" value="<?php echo $config_tmp['time_zone']; ?>" name="time_zone">
+                                                        <div class="field-notice" rel="time_zone"></div>
+                                                    </div>
+                                                    <?php
+                                                }else{ ?>
+                                                    <div class="col-md-8">
+                                                        <div class="form-inline">
+                                                            <select name="time_zone" class="form-control">
+                                                                <?php
+                                                                $zones_array = array();
+                                                                $timestamp = time();
+                                                                foreach(timezone_identifiers_list() as $key => $zone){
+                                                                    date_default_timezone_set($zone);
+                                                                    $selected = ($config_tmp['time_zone'] == $zone) ? " selected=\"selected\"" : ""; ?>
+                                                                    <option value="<?php echo $zone; ?>"<?php echo $selected; ?>><?php echo "UTC/GMT ".date("P", $timestamp)." - ".$zone; ?></option>
+                                                                    <?php
+                                                                }
+                                                                date_default_timezone_set(TIME_ZONE); ?>
+                                                            </select>
+                                                            <div class="field-notice" rel="time_zone"></div>
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                } ?>
                                             </div>
                                         </div>
                                     </div>
@@ -377,6 +510,76 @@ $csrf_token = get_token("settings"); ?>
                                                     </div>
                                                     <div class="field-notice" rel="time_format"></div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['ENABLE_COOKIES_NOTICE']; ?> <span class="red">*</span>
+                                                </label>
+                                                <div class="col-md-6">
+                                                    <label class="radio-inline">
+                                                        <input name="enable_cookies_notice" type="radio" value="0"<?php if($config_tmp['enable_cookies_notice'] == 0) echo " checked=\"checked\""; ?>>&nbsp;<?php echo $texts['NO_OPTION']; ?><br>
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                        <input name="enable_cookies_notice" type="radio" value="1"<?php if($config_tmp['enable_cookies_notice'] == 1) echo " checked=\"checked\""; ?>>&nbsp;<?php echo $texts['YES_OPTION']; ?><br>
+                                                    </label>
+                                                    <div class="field-notice" rel="enable_cookies_notice"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['ADMIN_FOLDER']; ?>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="text" value="" name="admin_folder">
+                                                    <div class="field-notice" rel="admin_folder"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="pt5 pb5 bg-info text-info">
+                                                <i class="fa fa-info"></i> <?php echo $texts['ADMIN_FOLDER_NOTICE']." ".$config_tmp['admin_folder']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['ANALYTICS_CODE']; ?>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <textarea class="form-control" name="analytics_code"><?php echo $config_tmp['analytics_code']; ?></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="pt5 pb5 bg-info text-info">
+                                                <i class="fa fa-info"></i> <?php echo $texts['ANALYTICS_CODE_NOTICE']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['GMAPS_API_KEY']; ?>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="text" value="<?php echo $config_tmp['gmaps_api_key']; ?>" name="gmaps_api_key">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="pt5 pb5 bg-info text-info">
+                                                <i class="fa fa-info"></i> <?php echo $texts['GMAPS_API_KEY_NOTICE']; ?>
                                             </div>
                                         </div>
                                     </div>
@@ -705,12 +908,77 @@ $csrf_token = get_token("settings"); ?>
                                                 </label>
                                                 <div class="col-md-8">
                                                     <div class="form-inline">
-                                                        <select class="form-control" name="payment_type">
-                                                            <option value="paypal"<?php if($config_tmp['payment_type'] == "paypal") echo " selected=\"selected\""; ?>>PayPal</option>
-                                                            <option value="check"<?php if($config_tmp['payment_type'] == "check") echo " selected=\"selected\""; ?>>Check</option>
-                                                            <option value="arrival"<?php if($config_tmp['payment_type'] == "arrival") echo " selected=\"selected\""; ?>>On arrival</option>
-                                                        </select>
+                                                        <?php
+                                                        $payment_type = array_map("trim", explode(",", $config_tmp['payment_type'])); ?>
+                                                        <input type="checkbox" name="payment_type[]" value="cards"<?php if(in_array("cards", $payment_type)) echo " checked=\"checked\""; ?>> Credit cards 
+                                                        <input type="checkbox" name="payment_type[]" value="paypal"<?php if(in_array("paypal", $payment_type)) echo " checked=\"checked\""; ?>> PayPal 
+                                                        <input type="checkbox" name="payment_type[]" value="check"<?php if(in_array("check", $payment_type)) echo " checked=\"checked\""; ?>> Check 
+                                                        <input type="checkbox" name="payment_type[]" value="arrival"<?php if(in_array("arrival", $payment_type)) echo " checked=\"checked\""; ?>> On arrival 
                                                         <div class="field-notice" rel="payment_type"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['PAYPAL_EMAIL']; ?>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="text" value="<?php echo $config_tmp['paypal_email']; ?>" name="paypal_email">
+                                                    <div class="field-notice" rel="paypal_email"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['VENDOR_ID']; ?>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="text" value="<?php echo $config_tmp['vendor_id']; ?>" name="vendor_id">
+                                                    <div class="field-notice" rel="vendor_id"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="pt5 pb5 bg-info text-info">
+                                                <i class="fa fa-info"></i> <?php echo $texts['VENDOR_ID_NOTICE']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['SECRET_WORD']; ?>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <input class="form-control" type="text" value="<?php echo $config_tmp['secret_word']; ?>" name="secret_word">
+                                                    <div class="field-notice" rel="secret_word"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['PAYMENT_TEST_MODE']; ?>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <div class="form-inline">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="payment_test_mode" value="1"<?php if($config_tmp['payment_test_mode'] == "1") echo " checked=\"checked\""; ?>> <?php echo $texts['YES_OPTION']; ?><br>
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="payment_test_mode" value="0"<?php if($config_tmp['payment_test_mode'] == "0") echo " checked=\"checked\""; ?>> <?php echo $texts['NO_OPTION']; ?>
+                                                        </label>
+                                                        <div class="field-notice" rel="payment_test_mode"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -753,6 +1021,26 @@ $csrf_token = get_token("settings"); ?>
                                         <div class="col-md-4">
                                             <div class="pt5 pb5 bg-info text-info">
                                                 <i class="fa fa-info"></i> %
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['ENABLE_TOURIST_TAX']; ?> <span class="red">*</span>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <div class="form-inline">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="enable_tourist_tax" value="1"<?php if($config_tmp['enable_tourist_tax'] == "1") echo " checked=\"checked\""; ?>> <?php echo $texts['YES_OPTION']; ?><br>
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="enable_tourist_tax" value="0"<?php if($config_tmp['enable_tourist_tax'] == "0") echo " checked=\"checked\""; ?>> <?php echo $texts['NO_OPTION']; ?>
+                                                        </label>
+                                                        <div class="field-notice" rel="enable_tourist_tax"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -823,6 +1111,31 @@ $csrf_token = get_token("settings"); ?>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row mb10">
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <label class="col-md-3 control-label">
+                                                    <?php echo $texts['ENABLE_BOOKING_REQUESTS']; ?> <span class="red">*</span>
+                                                </label>
+                                                <div class="col-md-8">
+                                                    <div class="form-inline">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="enable_booking_requests" value="1"<?php if($config_tmp['enable_booking_requests'] == "1") echo " checked=\"checked\""; ?>> <?php echo $texts['YES_OPTION']; ?><br>
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="enable_booking_requests" value="0"<?php if($config_tmp['enable_booking_requests'] == "0") echo " checked=\"checked\""; ?>> <?php echo $texts['NO_OPTION']; ?>
+                                                        </label>
+                                                        <div class="field-notice" rel="enable_booking_requests"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="pt5 pb5 bg-info text-info">
+                                                <i class="fa fa-info"></i> <?php echo $texts['ENABLE_BOOKING_REQUESTS_NOTICE']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <?php
                             } ?>
@@ -836,6 +1149,6 @@ $csrf_token = get_token("settings"); ?>
 </body>
 </html>
 <?php
-$_SESSION['msg_error'] = "";
-$_SESSION['msg_success'] = "";
-$_SESSION['msg_notice'] = ""; ?>
+$_SESSION['msg_error'] = array();
+$_SESSION['msg_success'] = array();
+$_SESSION['msg_notice'] = array(); ?>

@@ -1,0 +1,416 @@
+/****************** GENERAL ******************/
+body {
+    color: #333;
+}
+h2, h3 {
+    color: #67ABEA;
+}
+h4, .h4 {
+    color: #555;
+}
+a {
+    color: #67ABEA;
+}
+a:hover {
+    color: #67ABEA;
+}
+a p {
+    color: #333;
+}
+#content {
+    background: #fff;
+}
+/***************** BOOTSTRAP *****************/
+.btn-primary {
+    background: none;
+    border-color: #67ABEA;
+    color: #67ABEA;
+}
+.btn-default {
+    background: none;
+    border-color: #ccc;
+    color: #555;
+}
+.text-primary {
+    color: #67ABEA;
+}
+.btn-primary:hover {
+    background-color: #67ABEA;
+    border-color: #67ABEA;
+    color: #fff;
+}
+.label.label-default {
+    background: #aaa;
+}
+blockquote {
+    color: #555;
+}
+.input-group-addon {
+    background: #fff;
+}
+.form-control,
+.form-control:focus,
+.btn.dropdown-toggle:focus,
+.bootstrap-select .dropdown-toggle:focus {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+    outline: none!important;
+}
+/****************** HEADERS ******************/
+#preHeader {
+    background: #67ABEA;
+    color: #fff;
+}
+#preHeader a {
+    color: #fff;
+}
+#mainHeader {
+    background: none;
+}
+body:not(#page-1) .fixed #mainHeader,
+.fixed #mainHeader {
+    background: #38507E;
+}
+@media (max-width: 767px) {
+    #mainHeader, #mainMenu {
+        background: #38507E;
+    }
+}
+ul.navbar-nav > li.primary > a.firstLevel {
+    color: #fff;
+}
+ul.navbar-nav > li.primary > a.firstLevel.active,
+ul.navbar-nav > li.primary > a.firstLevel:hover,
+ul.navbar-nav > li.primary > a.firstLevel:focus {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    background: none;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background: #fff;
+}
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background: #67ABEA;
+}
+@media(max-width:767px) {
+    ul.navbar-nav > li.primary > a.firstLevel.active,
+    ul.navbar-nav > li.primary > a.firstLevel:hover,
+    ul.navbar-nav > li.primary > a.firstLevel:focus {
+        border-bottom: none;
+    }
+    #mainMenu .navbar-nav li {
+        border-bottom: 1px solid #eee;
+    }
+}
+#mainMenu .navbar-nav ul li a {
+    border-bottom: 1px solid #ddd;
+}
+.navbar-nav ul li a {
+    color: #666;
+}
+.navbar-nav ul li a:hover, .navbar-nav ul li.hover > a {
+    background: #67ABEA;
+    color: #fff;
+}
+@media(min-width:768px) {
+    .navbar-nav ul {
+        background: #fff;
+    }
+}
+#lang-btn {
+    background: transparent;
+    border: 0;
+}
+#lang-btn:hover,
+#lang-btn:focus {
+    color: #ccc;
+}
+.info-header i {
+    background: #fff;
+    color: #67ABEA;
+}
+#searchWrapper {
+    color: #888;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#searchWrapper button:hover {
+    background: #67ABEA;
+}
+.page-header {
+    background-color: rgba(54, 148, 237, 0.3);
+    color: #fff;
+    border: none;
+}
+.page-header a, .page-header h1, .page-header p.main-title {
+    color: #fff;
+}
+.breadcrumb {
+    background: transparent;
+}
+/*************** ROYAL SLIDER ****************/
+#sliderContainer {
+    border-bottom: 8px solid #ccc;
+}
+#full-width-slider, .infoBlock a, .royalSlider .infoBlock h1, .royalSlider .infoBlock h2 {
+    color: #fff;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    -moz-text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    -webkit-text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    -ms-text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    -o-text-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+}
+.photosBy {
+    background: #fff;
+    color: #000;
+} 
+.photosBy a {
+    color: #000;
+}
+/************** BOOKING SEARCH ***************/
+#search-home {
+    background: rgba(255, 82, 79, 0.75);
+}
+#search-page {
+    background: rgba(255, 82, 79, 0.75);
+}
+.booking-search .form-control:focus,
+.booking-search .btn.dropdown-toggle:focus,
+.booking-search .bootstrap-select .dropdown-toggle:focus,
+.booking-search .btn-group.open .dropdown-toggle {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    border-color: #fff;
+    outline: none!important;
+}
+.booking-search .form-control,
+.booking-search .input-group-addon,
+.booking-search .btn {
+    background: none;
+    border-color: #fff;
+    color: #fff;
+}
+.booking-search .input-wrapper {
+    border: 1px solid #fff;
+}
+.booking-search .input-wrapper i.fa {
+    color: #fff;
+    border-right: 1px solid #fff;
+}
+.booking-search .form-control::-webkit-input-placeholder {
+    color: #fff;
+}
+.booking-search .form-control::-moz-placeholder {
+    color: #fff;
+}
+.booking-search .form-control:-ms-input-placeholder {
+    color: #fff;
+}
+.booking-search .form-control:-moz-placeholder {
+    color: #fff;
+}
+.booking-search .btn-primary:hover {
+    background: rgba(224, 112, 0, 0.8);
+}
+.booking-search .alert-danger .form-control:focus,
+.booking-search .alert-danger .btn.dropdown-toggle:focus,
+.booking-search .alert-danger .bootstrap-select .dropdown-toggle:focus,
+.booking-search .alert-danger .btn-group.open .dropdown-toggle,
+.booking-search .alert-danger .btn-group.open .dropdown-toggle,
+.booking-search .alert-danger .input-wrapper,
+.booking-search .alert-danger .datepicker-wrapper i.fa {
+    border-color: #B70000;
+    color: #B70000;
+}
+.booking-search .alert-danger .field-notice {
+    color: #B70000;
+}
+.booking-search .alert-danger .form-control::-webkit-input-placeholder {
+    color: #B70000;
+}
+.booking-search .alert-danger .form-control::-moz-placeholder {
+    color: #B70000;
+}
+.booking-search .alert-danger .form-control:-ms-input-placeholder {
+    color: #B70000;
+}
+.booking-search .alert-danger .form-control:-moz-placeholder {
+    color: #B70000;
+}
+/***************** HOMEPAGE ******************/
+.iconBlocHome i.fa {
+    color: #67ABEA;
+}
+/************ ISOTOPE / PORTFOLIO ************/
+.isotopeWrapper.loaded {
+    background: none;
+}
+.isotopeContent {
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.more-action figcaption p {
+    color: #fff;
+}
+.more-link:hover .more-action {
+    background: rgba(54, 148, 237, 0.3);
+}
+.more-icon i {
+    color: #67ABEA;
+    background: #fff;
+}
+.lazy-more-btn {
+    background: #aaa!important;
+    color: #fff!important;
+}
+.lazy-more-btn:hover {
+    background: #fff!important;
+    color: #333!important;
+}
+/*************** MISCELLANEOUS ***************/
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #67ABEA;
+}
+.hotBox {
+    background: #67ABEA;
+    color: #fff;
+}   
+.hotBox h2,
+.hotBox a {
+    color: #fff;
+}
+#pages-list li a {
+    border: 1px solid #ddd;
+    background-color: #aaa;
+    color: #fff;
+}
+#pages-list li a:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    color: #333;
+}
+/******************* FOOTER ******************/
+#footerRights {
+    background: #000;
+}
+footer {
+    background: #333;
+    color: #fff;
+}
+@media (max-width: 991px) {
+    footer {
+        background: #555;
+    }
+}
+#mainFooter {
+    background: #38507E;
+}
+footer a, footer h3, footer .widget-title {
+    color: #fff;
+}
+footer p.lead {
+    color: #67ABEA;
+}
+#toTop {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+#toTop:hover {
+    background: #67ABEA;
+    color: #fff;
+}
+/*************** MISCELLANEOUS ***************/
+#content h1 {
+    color: #67ABEA;
+}
+aside .widget-title {
+    color: #67ABEA;
+}
+aside h3 {
+    font-size: 16px;
+    color: #555;
+}
+.more-content {
+    background: rgba(50, 50, 50, 0.3);
+    color: #fff;
+}
+.more-content h3 {
+    color: #fff;
+    border: 1px solid #fff;
+}
+.boxed {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+}
+.facility-icon {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    color: #777;
+}
+.facility-icon a {
+    color: #777;
+}
+@media (min-width: 768px) {
+    .booking-result > .sep {
+        border-left: 1px solid #ddd;
+    }
+}
+.booking-result .boxed {
+    background: #fff;
+}
+.room-result .price span,
+.activity-result .price:not(.text-primary) span {
+    color: #90CC90;
+}
+#booking-breadcrumb .breadcrumb-item {
+    background: #e8e8e8;
+}
+#booking-breadcrumb .breadcrumb-item.done {
+    background: #B0D3F2;
+    color: #fff;
+}
+#booking-breadcrumb .breadcrumb-item.active {
+    background: #67ABEA;
+    color: #fff;
+}
+/*********** LOG IN / SIGN UP FORMS **********/
+a.fblogin {
+    background: linear-gradient(#2953ad, #234ca2);
+    color: #fff;
+}
+a.fblogin:hover {
+    color: #fff;
+}
+ul.navbar-nav > li.primary .dropdown > a,
+ul.navbar-nav > li.primary .dropdown {
+    color: #fff;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background: none;
+    border: none;
+}
+/**************** PAYMENT FORM ***************/
+button[name="payment_type"] .fa.fa-paypal {
+    color: #00447E;
+}
+button[name="payment_type"] .fa.fa-credit-card {
+    color: #3787DC;
+}
+button[name="payment_type"] .fa.fa-envelope {
+    color: #B9252B;
+}
+button[name="payment_type"] .fa.fa-building {
+    color: #FF9900;
+}

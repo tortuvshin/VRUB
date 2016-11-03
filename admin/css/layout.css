@@ -57,6 +57,12 @@ body.white {
 	width: 100%;
 	top: 50px;
     z-index: 1;
+    white-space: nowrap;
+}
+@media (max-width: 767px) {
+	.page-header h1 {
+		font-size: 22px;
+	}
 }
 @media (min-width: 768px) {
 	#wrapper {
@@ -238,7 +244,7 @@ ul.alert-dropdown {
 }
 .side-nav>li>ul>li>a {
     display: block;
-    padding: 10px 15px 10px 38px;
+    padding: 5px 15px 5px 24px;
     text-decoration: none;
     color: #ccc;
 }
@@ -293,13 +299,14 @@ th {
 #listing_base {
     background: #f2f2f2;
 }
-#listing_base th {
+.table > thead > tr > th,
+.table-bordered > thead > tr > th {
     background: url("../images/bg-th.png") 50% 50% repeat-x #e6e6e6;
     border-right: 1px solid #fff;
     border-top: 1px solid #fff;
     color: #555;
     font-weight: normal;
-    padding: 0;
+    padding: 0px 8px;
     text-align: center;
     vertical-align: middle;
     height: 34px;
@@ -333,6 +340,61 @@ legend {
 }
 .red{
     color: #ff0000;
+}
+
+.help-block {
+    text-align: left;
+}
+.table > thead > tr > th {
+    vertical-align: middle;
+}
+.form-table {
+    width: auto;
+}
+.form-table td {
+    min-width: 50px;
+}
+th .text-info small {
+    font-weight: normal;
+}
+.form-table td.form-inline .form-control {
+    display: block;
+    width: 100%;
+}
+.form-table td.input-text.numeric {
+    max-width: 90px;
+}
+.form-table td.input-date,
+.form-table td.input-datetime {
+    white-space: nowrap;
+    width: auto;
+    min-width: 295px;
+}
+.form-table td.input-date input.form-control,
+.form-table td.input-datetime input.form-control {
+    display: inline-block;
+    max-width: 110px;
+}
+.form-table select.form-control {
+    padding: 6px 5px;
+}
+.form-table td.input-date select.form-control,
+.form-table td.input-datetime select.form-control {
+    display: inline-block;
+    max-width: 50px;
+}
+.form-table td.has-feedback .form-control-feedback {
+    display: none;
+}
+.form-table td.has-feedback  .form-control {
+    padding-right: initial;
+}
+.input-group .form-control {
+    z-index: 0;
+}
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
 }
 .uploadify {
     margin-left: 10px;
