@@ -11,66 +11,66 @@
 	<list order="id DESC">
         <filter label="Status" name="status">
             <options>
-                <option value="1">Awaiting</option>
-                <option value="2">Cancelled</option>
-                <option value="3">Rejected payment</option>
-                <option value="4">Payed</option>
+                <option value="1">Хүлээгдэж байгаа</option>
+                <option value="2">Цуцлагдсан</option>
+                <option value="3">Төлбөр цуцлагдсан</option>
+                <option value="4">Төлбөр хийгдсэн</option>
             </options>
         </filter>
-		<col label="Room" name="room"/>
-		<col label="Customer" name="lastname firstname"/>
-		<col label="Booking date" name="add_date" type="date"/>
-		<col label="Check in" name="from_date" type="date"/>
-		<col label="Check out" name="to_date" type="date"/>
-		<col label="Nights" name="nights"/>
-		<col label="Adults" name="adults"/>
-		<col label="Children" name="children"/>
-		<col label="Total" name="total" type="price"/>
+		<col label="Өрөө" name="room"/>
+		<col label="Хэрэглэгч" name="lastname firstname"/>
+		<col label="Захиалсан он, сар" name="add_date" type="date"/>
+		<col label="Буудалд бүртгүүлэх" name="from_date" type="date"/>
+		<col label="Буудалаас гарах" name="to_date" type="date"/>
+		<col label="Шөнө" name="nights"/>
+		<col label="Насанд хүрэгч" name="adults"/>
+		<col label="Хүүхэд" name="children"/>
+		<col label="Нийт" name="total" type="price"/>
 	</list>
 	<form>
-        <field multi="0" label="Room" name="id_room" type="select" required="1" unique="0" validation="none">
+        <field multi="0" label="Өрөө" name="id_room" type="select" required="1" unique="0" validation="none">
             <options table="pm_room" fieldlabel="title" fieldvalue="id" order="title"></options>
         </field>
-        <field multi="0" label="Room (full name)" name="room" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Check in" name="from_date" type="date" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Check out" name="to_date" type="date" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Nights" name="nights" type="text" required="1" unique="0" validation="numeric"/>
-        <field multi="0" label="Adults" name="adults" type="text" required="1" unique="0" validation="numeric"/>
-        <field multi="0" label="Children" name="children" type="text" required="0" unique="0" validation="numeric"/>
-        <field multi="0" label="Amount" name="amount" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
-        <field multi="0" label="Tourist tax" name="tourist_tax" type="text" required="1" unique="0" validation="numeric" comment="{currency}"/>
-        <field multi="0" label="Total" name="total" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
-        <field multi="0" label="Down payment" name="down_payment" type="text" required="0" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
-        <field multi="0" label="Services" name="extra_services" type="text" required="0" unique="0" validation="none"/>
-        <field multi="0" label="Firstname" name="firstname" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Lastname" name="lastname" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Email" name="email" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Company" name="company" type="text" required="0" unique="0" validation="none"/>
-        <field multi="0" label="Address" name="address" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Postcode" name="postcode" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="City" name="city" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Phone" name="phone" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Mobile" name="mobile" type="text" required="0" unique="0" validation="none"/>
-        <field multi="0" label="Country" name="country" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Comments" name="comments" type="textarea" editor="0" required="0" unique="0" validation="none"/>
-        <field multi="0" label="Status" name="status" type="select" required="1" unique="0" validation="none">
+        <field multi="0" label="Өрөө(бүтэн нэрээр нь)" name="room" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Буудалд бүртгүүлэх" name="from_date" type="date" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Буудалаас гарах" name="to_date" type="date" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Шөнө" name="nights" type="text" required="1" unique="0" validation="numeric"/>
+        <field multi="0" label="Насанд хүрсэн иргэд" name="adults" type="text" required="1" unique="0" validation="numeric"/>
+        <field multi="0" label="Хүүхэд" name="children" type="text" required="0" unique="0" validation="numeric"/>
+        <field multi="0" label="Нийт" name="amount" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
+        <field multi="0" label="Аялалын нөат" name="tourist_tax" type="text" required="1" unique="0" validation="numeric" comment="{currency}"/>
+        <field multi="0" label="Нийт" name="total" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
+        <field multi="0" label="Бага төлөлт" name="down_payment" type="text" required="0" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
+        <field multi="0" label="Үйлчилгээнүүд" name="extra_services" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Нэр" name="firstname" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Овог" name="lastname" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="И-мэйл" name="email" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Компани" name="company" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Хаяг" name="address" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Пост код" name="postcode" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Хот" name="city" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Утас" name="phone" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Утас" name="mobile" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Хот" name="country" type="text" required="1" unique="0" validation="none"/>
+        <field multi="0" label="Сэтгэгдэл" name="comments" type="textarea" editor="0" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Статус" name="status" type="select" required="1" unique="0" validation="none">
             <options>
-                <option value="1">Awaiting</option>
-                <option value="2">Cancelled</option>
-                <option value="3">Rejected payment</option>
-                <option value="4">Payed</option>
+                <option value="1">Хүлээгдэж байгаа</option>
+                <option value="2">Цуцлагдсан</option>
+                <option value="3">Төлбөр цуцлагдсан</option>
+                <option value="4">Төлбөр төлөгдсөн</option>
             </options>
         </field>
-        <field multi="0" label="Payment method" name="payment_method" type="text" required="0" unique="0" validation="none"/>
-        <field multi="0" label="Transaction ID" name="trans" type="text" required="0" unique="0" validation="none"/>
-        <field multi="0" label="Payment date" name="payment_date" type="datetime" required="0" unique="0" validation="none"/>
-        <table label="Activities" name="booking_activity" fieldref="id_booking">
-            <field multi="0" label="Title" name="title" type="text" required="1" unique="0" validation="none"/>
-            <field multi="0" label="Adults" name="adults" type="text" required="0" unique="0" validation="numeric"/>
-            <field multi="0" label="Children" name="children" type="text" required="0" unique="0" validation="numeric"/>
-            <field multi="0" label="Duration" name="duration" type="text" required="1" unique="0" validation="none"/>
-            <field multi="0" label="Date" name="date" type="datetime" required="1" unique="0" validation="none"/>
-            <field multi="0" label="Amount" name="amount" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
+        <field multi="0" label="Төлбөр төлөх хэлбэр" name="payment_method" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Гүйлгээний дугаар" name="trans" type="text" required="0" unique="0" validation="none"/>
+        <field multi="0" label="Төлбөр төлөх он, сар" name="payment_date" type="datetime" required="0" unique="0" validation="none"/>
+        <table label="Идэвхитэй" name="booking_activity" fieldref="id_booking">
+            <field multi="0" label="Гарчиг" name="title" type="text" required="1" unique="0" validation="none"/>
+            <field multi="0" label="Насанд хүрэгчид" name="adults" type="text" required="0" unique="0" validation="numeric"/>
+            <field multi="0" label="Хүүхэд" name="children" type="text" required="0" unique="0" validation="numeric"/>
+            <field multi="0" label="Үргэлжлэх хугацаа" name="duration" type="text" required="1" unique="0" validation="none"/>
+            <field multi="0" label="Он,сар" name="date" type="datetime" required="1" unique="0" validation="none"/>
+            <field multi="0" label="Нийт" name="amount" type="text" required="1" unique="0" validation="numeric" comment="{currency} (incl. VAT)"/>
         </table>
 	</form>
     <roles>
