@@ -44,7 +44,7 @@
                     } ?>
                 </ul>
             </li>
-            <li><a href="<?php echo DOCBASE; ?>"><i class="fa fa-eye"></i> <?php echo $texts['PREVIEW']; ?></a></li>
+            <li><a href="<?php echo DOCBASE; ?>" target="_blank"><i class="fa fa-eye"></i> <?php echo $texts['PREVIEW']; ?></a></li>
             <?php
             if($_SESSION['user']['type'] == "administrator"){ ?>
                 <li>
