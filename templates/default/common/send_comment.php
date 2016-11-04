@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 
 $msg_error = "";
 $msg_success = "";
@@ -56,12 +56,12 @@ if(isset($_POST['send_comment'])){
     
             $msg_success .= $texts['COMMENT_SUCCESS']."<br>";
     
-            $mailContent = "Name: ".$name."<br> \n\n";
-            $mailContent .= "E-mail: ".$email."<br> \n\n";
-            if($rating > 0) $mailContent .= "Rating: ".$rating."/5<br> \n\n";
-            $mailContent .= "<b>Message:</b><br>".nl2br($msg)." \n\n";
+            $mailContent = "Нэр: ".$name."<br> \n\n";
+            $mailContent .= "И-мэйл: ".$email."<br> \n\n";
+            if($rating > 0) $mailContent .= "Үнэлгээ: ".$rating."/5<br> \n\n";
+            $mailContent .= "<b>Захидал:</b><br>".nl2br($msg)." \n\n";
             
-            if(!sendMail(EMAIL, OWNER, "New comment", $mailContent, $email, $name))
+            if(!sendMail(EMAIL, OWNER, "Шинэ сэтгэгдэл", $mailContent, $email, $name))
                 $msg_error .= $texts['MAIL_DELIVERY_FAILURE']."<br>";
                 
             $email = "";

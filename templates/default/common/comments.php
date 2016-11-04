@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 
 if($allow_comment == 1 && $result_comment !== false && $item_id > 0 && isset($item_type)){ ?>
     

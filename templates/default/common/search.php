@@ -1,5 +1,5 @@
 <?php
-debug_backtrace() || die ("Direct access not permitted");
+debug_backtrace() || die ("Шууд хандах боломжгүй");
 
 if(!isset($max_adults_search) || !isset($max_children_search)){
     $result_max = $db->query("SELECT MAX(max_adults) as max_a, MAX(max_children) as max_c FROM pm_room WHERE checked = 1");
