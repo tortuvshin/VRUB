@@ -20,7 +20,7 @@ body.white {
 }
 #loginWrapper {
     margin-top: 10%;
-    padding: 160px 0 0;
+    padding: 50px 0 0;
     position: relative;
 }
 #loginWrapper .img-responsive {
@@ -164,7 +164,6 @@ h1 {
     float: left;
     position: absolute;
     margin-top: 0;
-    border: 1px solid rgba(0,0,0,.15);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     background-color: #fff;

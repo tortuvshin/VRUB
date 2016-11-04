@@ -348,11 +348,6 @@ label small {
     z-index: 1035;
     padding: 5px 0;
     margin-top: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     max-width: 320px;
     width: auto!important;
@@ -419,11 +414,6 @@ aside h4 {
     padding: 10px;
     display: inline-block;
     text-transform: none;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
 }
 .more-link:hover .more-content h3 {
     font-size: 22px;
@@ -452,11 +442,6 @@ aside h4 {
     padding: 20px;
 }
 .facility-icon {
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
     display: inline-block;
     margin: 2px 2px 2px 0;
     padding: 5px;
@@ -529,11 +514,6 @@ aside h4 {
     vertical-align: middle;
 }
 .checkbox-icon {
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
     border: 2px solid #2ba7c8;
     cursor: pointer;
     font-weight: normal;

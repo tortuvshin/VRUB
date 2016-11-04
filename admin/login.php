@@ -63,8 +63,7 @@ $csrf_token = get_token("login"); ?>
         <form id="form" class="form-horizontal" role="form" action="login.php" method="post">
             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
             <div class="col-sm-3 col-md-4"></div>
-            <div class="col-sm-6 col-md-4" id="loginWrapper">
-                <img src="images/logo-admin.png" class="img-responsive">
+            <div class="col-sm-9 col-md-4" id="loginWrapper">
                 <div id="login">
                     <div class="alert-container">
                         <div class="alert alert-success alert-dismissable"></div>
@@ -126,7 +125,6 @@ $csrf_token = get_token("login"); ?>
                     } ?>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-4"></div>
         </form>
     </div>
 </body>

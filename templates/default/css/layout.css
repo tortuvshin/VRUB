@@ -215,11 +215,8 @@ blockquote p {
 .info-header i {
     padding: 6px 4px;
     margin-right: 2px;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+
+
 }
 #searchWrapper {
     max-width: 320px;
@@ -291,7 +288,6 @@ blockquote p {
     height: 100px;
     width: 100px;
     font-size: 60px;
-    border-radius: 50%;
     display: block;
     text-align: center;
     margin: 0 auto 20px auto;
@@ -333,11 +329,6 @@ blockquote p {
     left: 12px;
     bottom: 12px;
     top: auto;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
     z-index: 25; 
 }
 .fullWidth {
@@ -428,11 +419,6 @@ body[dir="rtl"] .labels {
 .isotopeInner {
     max-width: 100%;
     overflow: hidden;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
 }
 .isotopeWrapper {
     padding: 20px 0;
@@ -451,11 +437,6 @@ body[dir="rtl"] .labels {
 .isotopeItem {
     margin-bottom: 20px;
     visibility: hidden;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
 }
 .isotopeWrapper.loaded .isotopeItem {
     visibility: visible;
@@ -510,11 +491,6 @@ body[dir="rtl"] .labels {
     margin: 0 auto;
     line-height: 50px;
     display: block;
-    border-radius: 40px 40px 0 0;
-    -moz-border-radius: 40px 40px 0 0;
-    -webkit-border-radius: 40px 40px 0 0;
-    -ms-border-radius: 40px 40px 0 0;
-    -o-border-radius: 40px 40px 0 0;
 }
 .more-link:hover .more-action .more-icon {
     bottom: 0;
@@ -545,9 +521,6 @@ body[dir="rtl"] .labels {
     position: relative;
     text-align: center;
     width: 70px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
     border: 1px solid #b2c6cc;
     background: #fbfbfb; /* Old browsers */
     background: -moz-linear-gradient(top, #fbfbfb 0%, #f6f6f6 100%); /* FF3.6+ */
@@ -612,9 +585,6 @@ body[dir="rtl"] .labels {
     text-align: center;
     text-decoration: none;
     width: 70px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px; 
 }
 #pinterest .share {
     background: #BD2126;
@@ -639,11 +609,6 @@ body[dir="rtl"] .labels {
 }
 .hotBox {
     padding: 20px;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
 }   
 .hotBox h2,
 .hotBox a {
@@ -659,11 +624,6 @@ body[dir="rtl"] .labels {
 #pages-list li a {
     padding: 10px 15px;
     display: block;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
 }
 #pages-list li a::before {
     font-family: "FontAwesome";
@@ -676,11 +636,6 @@ ul.nostyle {
 }
 .img-container {
     display: block;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
 }
 .img-container.xl {
     height: 400px;
@@ -730,11 +685,6 @@ ul.nostyle {
     height: 40px;
     padding: 0 5px;
     font-size: 26px;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
 }
 /****************** WIDGETS ******************/
 .widget,
