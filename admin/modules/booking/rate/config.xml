@@ -9,10 +9,10 @@
 		<small maxw="400" maxh="400"/>
 	</medias>
 	<list order="id_room, start_date, type">
-        <filter label="Room" name="id_room">
+        <filter label="Өрөө" name="id_room">
             <options table="pm_room" fieldlabel="id - title | subtitle" fieldvalue="id" order="title"/>
         </filter>
-        <filter label="Package" name="type">
+        <filter label="Багц" name="type">
             <options>
                 <option value="night">Night</option>
                 <option value="2-nights">2 nights</option>
@@ -21,12 +21,12 @@
                 <option value="week-end">Week-end</option>
             </options>
         </filter>
-		<col label="Room" name="id_room" table="pm_room" fieldvalue="title" fieldref="id"/>
-		<col label="Start date" name="start_date" type="date"/>
-		<col label="End date" name="end_date" type="date"/>
-		<col label="Package" name="type"/>
-		<col label="Min stay" name="min_stay"/>
-		<col label="Price" name="price" type="price"/>
+		<col label="Өрөө" name="id_room" table="pm_room" fieldvalue="title" fieldref="id"/>
+		<col label="Орох өдөр" name="start_date" type="date"/>
+		<col label="Гарах өдөр" name="end_date" type="date"/>
+		<col label="Багц" name="type"/>
+		<col label="Хамгийн бага хоноглох өдөр" name="min_stay"/>
+		<col label="Үнэ" name="price" type="price"/>
 	</list>
 	<form>
         <field multi="0" label="Room" name="id_room" type="select" required="1" unique="0" validation="none">
@@ -37,28 +37,28 @@
         <field multi="0" label="Check in day" name="day_start" type="select" required="0" unique="0" validation="none" comment="Optional day for check in">
             <options>
                 <option value="0">-</option>
-                <option value="1">Monday</option>
-                <option value="2">Tuesday</option>
-                <option value="3">Wednesday</option>
-                <option value="4">Thursday</option>
-                <option value="5">Friday</option>
-                <option value="6">Saterday</option>
-                <option value="7">Sunday</option>
+                <option value="1">Даваа</option>
+                <option value="2">Мягмар</option>
+                <option value="3">Лхагва</option>
+                <option value="4">Пүрэв</option>
+                <option value="5">Баасан</option>
+                <option value="6">Бямба</option>
+                <option value="7">Ням</option>
             </options>  
         </field>
         <field multi="0" label="Check out day" name="day_end" type="select" required="0" unique="0" validation="none" comment="Optional day for check out">
             <options>
                 <option value="0">-</option>
-                <option value="1">Monday</option>
-                <option value="2">Tuesday</option>
-                <option value="3">Wednesday</option>
-                <option value="4">Thursday</option>
-                <option value="5">Friday</option>
-                <option value="6">Saterday</option>
-                <option value="7">Sunday</option>
+                <option value="1">Даваа</option>
+                <option value="2">Мягмар</option>
+                <option value="3">Лхагва</option>
+                <option value="4">Пүрэв</option>
+                <option value="5">Баасан</option>
+                <option value="6">Бямба</option>
+                <option value="7">Ням</option>
             </options>  
         </field>
-        <field multi="0" label="Package" name="type" type="select" required="1" unique="0" validation="none">
+        <field multi="0" label="Багц" name="type" type="select" required="1" unique="0" validation="none">
             <options>
                 <option value="night">Night</option>
                 <option value="2-nights">2 nights</option>
