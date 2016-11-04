@@ -36,16 +36,8 @@ if(!isset($to_date)) $to_date = date("j/m/Y", $to_time); ?>
         <?php
     } ?>
     <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="input-wrapper form-inline">
-                <i class="fa fa-map-marker"></i>
-                <div class="input-group">
-                    <input type="text" name="destination_name" class="form-control liveSearch" data-wrapper="result-destinations" data-target="destination_id" data-url="<?php echo getFromTemplate("common/search_destinations.php"); ?>" value="<?php echo $destination_name; ?>" placeholder="<?php echo $texts['DESTINATION']; ?>">
-                    <input type="hidden" name="destination_id" id="destination_id" value="<?php echo $destination_id; ?>">
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
+        
+        <div class="col-md-6 col-sm-6">
             <div class="input-wrapper datepicker-wrapper form-inline">
                 <i class="fa fa-calendar hidden-xs"></i>
                 <div class="input-group from-date">
@@ -86,9 +78,9 @@ if(!isset($to_date)) $to_date = date("j/m/Y", $to_time); ?>
                 </div>
             </div>
         </div>
-        <div class="col-md-1 col-sm-12">
+        <div class="col-md-2 col-sm-12">
             <div class="form-group">
-                <button class="btn btn-block btn-primary" type="submit" name="check_availabilities">GO</button>
+                <button class="btn btn-block btn-primary" type="submit" name="check_availabilities">ШАЛГАХ</button>
             </div>
         </div>
     </div>
