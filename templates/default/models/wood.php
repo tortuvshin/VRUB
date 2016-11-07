@@ -21,10 +21,9 @@ require(getFromTemplate("common/header.php", false)); ?>
     <div id="content" class="pt30 pb20">
         <div class="container" itemprop="text">
           <div id="background">
-            <div id="Background"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Background.png"></div>
             <div id="Layer2"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
-                        <div id="Layer2copy112"><img src="/<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
-            <div id="Layer2copy115"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?><?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
+            <div id="Layer2copy112"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
+            <div id="Layer2copy115"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy116"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy117"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy118"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
@@ -191,7 +190,7 @@ require(getFromTemplate("common/header.php", false)); ?>
             <div id="Layer2copy120_6"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy113_13"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy114_13"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
-            <div id="Layer2copy120_7"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2png"></div>
+            <div id="Layer2copy120_7"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy113_14"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy114_14"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy120_8"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
@@ -827,7 +826,7 @@ require(getFromTemplate("common/header.php", false)); ?>
 
 
             <div id="Layer2copy100_2"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
-            <div id="Layer2copy101_2"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer.2png"></div>
+            <div id="Layer2copy101_2"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
 
 
             <div id="Layer2copy91_3"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
