@@ -52,7 +52,7 @@ header, header * {
 }
 .navbar-brand img {
     margin: 0 auto;
-    max-height: 200px;
+    max-height: 120px;
 }
 @media (max-width: 1199px) {
     .navbar-brand img {
