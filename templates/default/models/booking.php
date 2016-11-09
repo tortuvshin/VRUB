@@ -29,14 +29,6 @@ if(isset($_POST['to_date'])) $to_date = htmlentities($_POST['to_date'], ENT_QUOT
 if(isset($_POST['hotel_id']) && is_numeric($_POST['hotel_id'])) $hotel_id = $_POST['hotel_id'];
 else $hotel_id = 0;
 
-if(isset($_POST['destination_id']) && is_numeric($_POST['destination_id'])){
-    $destination_id = $_POST['destination_id'];
-    $destination_name = db_getFieldValue($db, "pm_destination", "name", $destination_id);
-}else{
-    $destination_id = 0;
-    $destination_name = "";
-}
-
 if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['request']))){
     $num_adults = $_POST['adults'];
     $num_children = $_POST['children'];
@@ -390,7 +382,6 @@ $result_hotel_file = $db->prepare("SELECT * FROM pm_hotel_file WHERE id_item = :
 $result_hotel_file->bindParam(":id_hotel", $id_hotel);
 
 $query_hotel = "SELECT * FROM pm_hotel WHERE checked = 1 AND lang = ".LANG_ID;
-if($destination_id > 0) $query_hotel .= " AND id_destination = ".$destination_id;
 $query_hotel .= " ORDER BY";
 if($hotel_id != 0) $query_hotel .= " CASE WHEN id = ".$hotel_id." THEN 1 ELSE 2 END,";
 if(!empty($res_hotel)) $query_hotel .= " CASE WHEN id IN(".implode(",", array_keys($res_hotel)).") THEN 3 ELSE 4 END,";

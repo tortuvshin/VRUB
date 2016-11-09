@@ -1544,19 +1544,19 @@ require(getFromTemplate("common/header.php", false)); ?>
                                       <div class="form-group">
                                           <label class="col-sm-3 control-label">Нэр:</label>
                                           <div class="col-sm-8">
-                                              <input type="text" class="form-control tree-name" id="name" name="name" value="" placeholder="Модны нэр">
+                                              <input type="text" class="form-control tree-name" id="name" name="name" value="" placeholder="Модны нэр" readonly="true">
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <label  class="col-sm-3 control-label">Нас:</label>
                                           <div class="col-sm-8">
-                                              <input type="text" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас">
+                                              <input type="text" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас" readonly="true">
                                           </div>
                                       </div>                                      
                                       <div class="form-group">
                                           <label  class="col-sm-3 control-label">Төлөв:</label>
                                           <div class="col-sm-8">
-                                              <input type="text" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв">
+                                              <input type="text" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв" readonly="true">
                                           </div>
                                       </div>
                                       <div class="form-group">
@@ -1572,7 +1572,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                         </div>
 
                         <div class="modal-footer">
-                            <button class="treeBooking btn btn-default">Захиалах</button>
+                            <button class="treeBooking btn btn-default" onclick="order()">Захиалах</button>
                             <button class="btn btn-default" data-dismiss="modal">Гарах</button>
                         </div>
                     </div>
@@ -1597,4 +1597,8 @@ $("document").ready(function(){
             $(".tree-owner").val(owner);
   });
 })
+
+function order(){
+
+}
 </script>

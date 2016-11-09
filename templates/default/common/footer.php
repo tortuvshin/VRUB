@@ -5,7 +5,7 @@
     background-image: url("/medias/slide/big/7/6.jpg");
 
     /* Set a specific height */
-    min-height: 500px;
+    min-height: 300px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -17,14 +17,14 @@
 
 }
 .parallax2 {
-   height:auto;
-   font-size:36px;
-   min-height: 500px;
-   background: rgba(56, 80, 126, 0.65);
-       position: absolute;
-text-align: center;
-padding: 50px 30px 50px 80px;
-color: #fff;
+    height:auto;
+    font-size:36px;
+    min-height: 300px;
+    background: rgba(56, 80, 126, 0.65);
+    position: absolute;
+    text-align: center;
+    padding: 50px 30px 50px 80px;
+    color: #fff;
 }
 </style>
 <div  class="parallax2">
