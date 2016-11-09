@@ -1526,6 +1526,67 @@ require(getFromTemplate("common/header.php", false)); ?>
             <div id="Layer2copy94_67"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy95_67"><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
         </div>
+         <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                              <div class="treeImage">
+                                    <img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/tree.jpg">
+                              </div>
+                              <div class="treeInfo">
+                                   <form class="form-horizontal company" role="form" id="comp">
+                                      <div class="form-group">
+                                          <label class="col-sm-3 control-label">Нэр:</label>
+                                          <div class="col-sm-8">
+                                              <input type="text" class="form-control" id="name" name="name" placeholder="Модны нэр">
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label  class="col-sm-3 control-label">Нас:</label>
+                                          <div class="col-sm-8">
+                                              <input type="text" class="form-control" id="age" name="age" placeholder="Нас">
+                                          </div>
+                                      </div>                                      
+                                      <div class="form-group">
+                                          <label  class="col-sm-3 control-label">Төлөв:</label>
+                                          <div class="col-sm-8">
+                                              <input type="text" class="form-control" id="state" name="state" placeholder="Төлөв">
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label  class="col-sm-3 control-label">Эзэмшигч:</label>
+                                          <div class="col-sm-8">
+                                              <input type="text" class="form-control" id="owner" name="owner" placeholder="Эзэмшигч">
+                                          </div>
+                                      </div>
+                                      
+                                  </form>
+                              </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button class="treeBooking btn btn-default">Захиалах</button>
+                            <button class="btn btn-default" data-dismiss="modal">Гарах</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
+<script>
+$("document").ready(function(){
+      $('.tree').click(function() {
+            $("#myModal").modal('show');
+    //document.getElementById("dropdown-content").classList.toggle("show");
+  });
+})
+</script>

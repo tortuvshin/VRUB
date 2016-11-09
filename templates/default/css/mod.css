@@ -13634,3 +13634,35 @@
 	 height: 23px;
 	 z-index:1362;
 } 
+.modal-body{
+	height:550px;
+}
+
+.tree:hover {
+    background-color: green;
+}
+
+.treeImage{
+	float:left;
+}
+.treeInfo{
+	float:right;
+}
+.treeBooking {
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+	color:#fff;
+}
+.treeBooking btn{
+	color:#fff;
+}
+
+.modal-dialog{
+	width: 700px;
+}
+.form-control{
+	border-radius:10px;
+}
+.form-control:hover{
+	cursor: pointer;
+}
