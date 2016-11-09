@@ -72,13 +72,13 @@ if($handle && (!isset($_SESSION['book']['id']) || is_null($_SESSION['book']['id'
     $data['status'] = 1;
     
     switch($payment_type){
-        case "check": $data['payment_method'] = "Check";
+        case "check": $data['payment_method'] = "Дансаар";
         break;
-        case "arrival": $data['payment_method'] = "On arrival";
+        case "arrival": $data['payment_method'] = "Биеэр";
         break;
         case "paypal": $data['payment_method'] = "PayPal";
         break;
-        case "cards": $data['payment_method'] = "Credit card (2Checkout.com)";
+        case "cards": $data['payment_method'] = "Кредит карт (2Checkout.com)";
         break;
     }
     

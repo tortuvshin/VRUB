@@ -1,4 +1,4 @@
-<?php debug_backtrace() || die ("Direct access not permitted"); ?>
+<?php debug_backtrace() || die ("Шууд хандах боломжгүй"); ?>
 <ul class="nostyle">
     <?php
     $result_article = $db->query("

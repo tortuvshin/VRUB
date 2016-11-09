@@ -62,10 +62,10 @@ if(isset($_GET['token']) && isset($_GET['id']) && is_numeric($_GET['id'])){
             $id = $db->lastInsertId();
             
             $mailContent = "
-            <p>Hi,<br>You created a new account.<br>
-            Click on the link bellow to validate your account:<br>
-            <a href=".getUrl()."?token=".$token."&id=".$id.">Validate my new account</a></p>";
-            if(sendMail($email, $name, "Validate your account", $mailContent) !== false)
+            <p>Сайн байна уу,<br>Та шинээр өөрийн бүртгэлээ үүсгэлээ.<br>
+            Доорх холбоос дээр дарж өөрийн бүртгэлийг баталгаажуулна уу:<br>
+            <a href=".getUrl()."?token=".$token."&id=".$id.">Шинэ бүртгэлээ баталгаажуулах</a></p>";
+            if(sendMail($email, $name, "бүртгэлээ баталгаажуулна уу", $mailContent) !== false)
                 $response['success'] = $texts['ACCOUNT_CREATED'];
             else
                 $response['error'] = $texts['ACCOUNT_CREATE_FAILURE'];

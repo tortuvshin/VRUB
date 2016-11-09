@@ -41,11 +41,11 @@ if(isset($_POST['send'])){
         $result_message = db_prepareInsert($db, "pm_message", $data);
         $result_message->execute();
     
-        $mailContent = "<b>Name:</b> ".$name."<br> \n\n";
-        if($address != "") $mailContent .= "<b>Address:</b> ".$address."<br> \n\n";
-        if($phone != "") $mailContent .= "<b>Phone:</b> ".$phone."<br> \n\n";
-        $mailContent .= "<b>E-mail:</b> ".$email."<br> \n\n";
-        $mailContent .= "<b>Message:</b><br>".$msg." \n\n";
+        $mailContent = "<b>Нэр:</b> ".$name."<br> \n\n";
+        if($address != "") $mailContent .= "<b>Хаяг:</b> ".$address."<br> \n\n";
+        if($phone != "") $mailContent .= "<b>Утас:</b> ".$phone."<br> \n\n";
+        $mailContent .= "<b>И-мэйл:</b> ".$email."<br> \n\n";
+        $mailContent .= "<b>Зурвас:</b><br>".$msg." \n\n";
         
         if(!sendMail(EMAIL, OWNER, $subject, $mailContent, $email, $name))
             $msg_error .= $texts['MAIL_DELIVERY_FAILURE'];

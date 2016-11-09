@@ -13,7 +13,7 @@ if(isset($_POST['message_type']) && $_POST['message_type'] == "ORDER_CREATED"){
     $hashInvoice = $insMessage['invoice_id'];
     $StringToHash = strtoupper(md5($hashOrder.$hashSid.$hashInvoice.$hashSecretWord));
 
-    if($StringToHash != $insMessage['md5_hash']) die("Hash Incorrect");
+    if($StringToHash != $insMessage['md5_hash']) die("Хэш код буруу байна");
 
     $payment_amount = $_POST['invoice_list_amount'];
     $payment_currency = $_POST['list_currency'];
@@ -90,8 +90,8 @@ if(isset($_POST['message_type']) && $_POST['message_type'] == "ORDER_CREATED"){
                 if(ENABLE_DOWN_PAYMENT == 1 && $row['down_payment'] > 0)
                     $mailContent .= "<p>".$texts['DOWN_PAYMENT']." : <b>".formatPrice($row['down_payment']*CURRENCY_RATE)." ".$texts['INCL_VAT']."</b></p>";
                 
-                sendMail(EMAIL, OWNER, "Booking notice", $mailContent, $row['email'], $row['firstname']." ".$row['lastname']);
-                sendMail($row['email'], $row['firstname']." ".$row['lastname'], "Booking notice", $mailContent);
+                sendMail(EMAIL, OWNER, "Захиалгын мэдээлэл", $mailContent, $row['email'], $row['firstname']." ".$row['lastname']);
+                sendMail($row['email'], $row['firstname']." ".$row['lastname'], "Захиалгын мэдээлэл", $mailContent);
             }
         }
     }
