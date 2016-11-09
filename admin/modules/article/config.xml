@@ -18,7 +18,7 @@
 	<form>
 		<field multi="1" label="Гарчиг" name="title" type="text" required="1" unique="0" validation="none"/>
 		<field multi="1" label="Дэд гарчиг" name="subtitle" type="text" required="0" unique="0" validation="none"/>
-		<field multi="1" label="Alias" name="alias" type="alias" required="1" unique="1" validation="none" comment="Article URL"/>
+		<field multi="1" label="Alias" name="alias" type="alias" required="1" unique="1" validation="none" comment="Нийтлэлийн URL"/>
 		<field multi="1" label="Текст" name="text" type="textarea" editor="1" required="0" unique="0" validation="none"/>
 		<field multi="1" label="URL" name="url" type="text" required="0" unique="0" validation="none"/>
 		<field multi="0" label="Хуудас" name="id_page" type="select" required="1" unique="0" validation="none">

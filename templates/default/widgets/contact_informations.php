@@ -1,4 +1,4 @@
-<?php debug_backtrace() || die ("Direct access not permitted"); ?>
+<?php debug_backtrace() || die ("Шууд хандах боломжгүй"); ?>
 <div itemscope itemtype="http://schema.org/Corporation">
     <h3 itemprop="name"><?php echo OWNER; ?></h3>
     <address>

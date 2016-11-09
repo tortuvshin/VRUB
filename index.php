@@ -112,7 +112,7 @@ if(MAINTENANCE_MODE == 0 || (isset($_SESSION['user']) && ($_SESSION['user']['typ
 
     require(SYSBASE."templates/".TEMPLATE."/common/footer.php");
 }else{
-    header("HTTP/1.1 503 Service Temporarily Unavailable");
+    header("HTTP/1.1 503 Үйлчилгээ түр засвартай байна");
     if(DOCBASE.REQUEST_URI != DOCBASE) header("Location: ".DOCBASE);
     require(SYSBASE."templates/".TEMPLATE."/maintenance.php");
 }

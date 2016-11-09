@@ -123,8 +123,8 @@ if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['reque
             
             if($_SESSION['book']['comments'] != "") $mailContent .= "<p><b>".$texts['COMMENTS']."</b><br>".nl2br($_SESSION['book']['comments'])."</p>";
             
-            if(sendMail(EMAIL, OWNER, "Booking request", $mailContent, $_SESSION['book']['email'], $_SESSION['book']['firstname']." ".$_SESSION['book']['lastname'])){
-                sendMail($_SESSION['book']['email'], $_SESSION['book']['firstname']." ".$_SESSION['book']['lastname'], "Booking request", $mailContent);
+            if(sendMail(EMAIL, OWNER, "Захиалгын хүсэлт", $mailContent, $_SESSION['book']['email'], $_SESSION['book']['firstname']." ".$_SESSION['book']['lastname'])){
+                sendMail($_SESSION['book']['email'], $_SESSION['book']['firstname']." ".$_SESSION['book']['lastname'], "Захиалгын хүсэлт", $mailContent);
                 $msg_success .= $texts['MAIL_DELIVERY_SUCCESS'];
                 $lastname = "";
                 $firstname = "";

@@ -1,4 +1,4 @@
-<?php debug_backtrace() || die ("Direct access not permitted"); ?>
+<?php debug_backtrace() || die ("Шууд хандах боломжгүй"); ?>
 <div id="searchWrapper" class="pull-left">
     <?php $csrf_token = get_token("search"); ?>
 

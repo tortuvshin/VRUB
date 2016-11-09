@@ -11,12 +11,12 @@ if(isset($_GET['token']) && isset($_GET['id']) && is_numeric($_GET['id'])){
         $row = $result_token->fetch();
         $new_pass = genPass(6);
         $mailContent = "
-        <p>Hi,<br>You requested a new password<br>
-        Bellow, your new connection informations<br>
-        Username: ".$row['login']."<br>
-        Password: <b>".$new_pass."</b><br>
-        You can modify this random password in the settings via the manager.</p>";
-        if(sendMail($row['email'], $row['name'], "Your new password", $mailContent) !== false){
+        <p>Сайн байна уу,<br>Та шинэ нууц үг захиалсан байна<br>
+        Доор таны бүртгэлийн шинэчилсэн мэдээлэл байна<br>
+        Хэрэглэгчийн нэр: ".$row['login']."<br>
+        Нууц үг: <b>".$new_pass."</b><br>
+        Та сайтын хэрэглэгчийн удирдлагын хэсэгт нэвтэрч уг нууц үгээ өөрийн хүссэнээр солих боломтой.</p>";
+        if(sendMail($row['email'], $row['name'], "таны шинэ нууц үг", $mailContent) !== false){
             $db->query("UPDATE pm_user SET token = '', pass = '".md5($new_pass)."' WHERE id = ".$row['id']);
             header("Location: ".DOCBASE.$homepage['alias']);
             exit();
@@ -33,12 +33,12 @@ if(isset($_GET['token']) && isset($_GET['id']) && is_numeric($_GET['id'])){
         $row = $result_user->fetch();
         $token = md5(uniqid($email, true));
         $mailContent = "
-        <p>Hi,<br>You requested a new password<br>
-        Click on the link bellow to generate a new password:<br>
-        <a href=".getUrl()."?token=".$token."&id=".$row['id'].">Generate my new password</a></p>";
-        if(sendMail($email, $row['name'], "New password request", $mailContent) !== false){
+        <p>Сайн байна уу,<br>Та шинэ нууц үг захиалсан байна<br>
+        Доорх холбоос дээр дарж шинэ нууц үг үүсгэнэ үү:<br>
+        <a href=".getUrl()."?token=".$token."&id=".$row['id'].">Шинэ нууц үг үүсгэх</a></p>";
+        if(sendMail($email, $row['name'], "Шинэ нууц үг", $mailContent) !== false){
             $db->query("UPDATE pm_user SET token = '".$token."' WHERE id = ".$row['id']);
-            $response['success'] = "A link has been sent to your e-mail.";
+            $response['success'] = "Таны и-мэйл хаягруу шинэ нууц үгийг илгээлээ.";
         }
     }
     echo json_encode($response);

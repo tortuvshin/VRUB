@@ -40,7 +40,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon"><i class="fa fa-location-arrow"></i></div>
-                            <input id="activmap-location" type="text" class="form-control" name="location" value="" placeholder="Location...">
+                            <input id="activmap-location" type="text" class="form-control" name="location" value="" placeholder="Байрлал...">
                         </div>
                         <p>
                             Radius: 

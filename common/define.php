@@ -10,11 +10,11 @@ if(!defined("ADMIN")) define("ADMIN", false);
 require_once("setenv.php");
 
 $default_lang = 2;
-$default_lang_tag = "fr";
+$default_lang_tag = "mn";
 $lang_alias = "";
-$locale = "fr_FR";
-$default_currency_code = "USD";
-$default_currency_sign = "$";
+$locale = "mn_MN";
+$default_currency_code = "MNT";
+$default_currency_sign = "₮";
 $default_currency_rate = 1;
 $rtl_dir = false;
 $db = false;
@@ -30,7 +30,7 @@ if(is_file(SYSBASE."common/config.php")){
         $db->exec("SET NAMES 'utf8'");
     }catch(PDOException $e){
         if(ADMIN) $_SESSION['msg_error'][] = $texts['DATABASE_ERROR'];
-        else die("Unable to connect to the database. Please contact the webmaster or retry later.");
+        else die("Өгөгдлийн сантай холбогдох боломжгүй байна. Вебмастертай холбогдох эсвэл дараа дахин оролдоно уу.");
     }
 }
 
