@@ -150,7 +150,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                 }
                 $time_left = round(microtime(true)-$start_time, 2); ?>
                 
-                <h2>Results <?php echo ($search_offset+1)." - ".$max." ".$texts['FOR_A_TOTAL_OF']." ".$length; ?> (<?php echo $time_left." ".$texts['SECONDS']; ?>)</h2>
+                <h2>Үр дүн <?php echo ($search_offset+1)." - ".$max." ".$texts['FOR_A_TOTAL_OF']." ".$length; ?> (<?php echo $time_left." ".$texts['SECONDS']; ?>)</h2>
                 <?php echo implode($results); ?>
                 <?php
                 if($search_limit > 0){
