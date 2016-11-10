@@ -9552,10 +9552,10 @@
 	 top: 299px; 
 	 z-index:1362;
 } 
+
 .modal-body{
 	height:550px;
 }
-
 
 .treeImage{
 	float:left;
@@ -9581,9 +9581,14 @@
 .form-control:hover{
 	cursor: pointer;
 }
+.tree{
+	background: url(../images/Layer2.png);
+    background-repeat: no-repeat;
+}
 .tree-Hover{
 	width: 23px;
 	height: 28px;
+	background-size: 23px 28px;
 	cursor: pointer;
 }
 
@@ -9595,7 +9600,7 @@
     border-radius: 6px;
     padding: 8px 0;
     position: absolute;
-    z-index: 10000000;
+    z-index:2000;
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
@@ -9605,6 +9610,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
+    z-index:2000;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
