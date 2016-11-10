@@ -1527,6 +1527,7 @@ require(getFromTemplate("common/header.php", false)); ?>
             <div id="Layer2copy94_67" class="tree" data-name="Хус" data-age="1" data-state="Зарагдаагүй" data-owner=""><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
             <div id="Layer2copy95_67" class="tree" data-name="Хус" data-age="1" data-state="Зарагдаагүй" data-owner=""><img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"></div>
         </div>
+
          <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -1598,13 +1599,15 @@ $("document").ready(function(){
   });
       $('.tree').mouseover(function(){
             $(this).find('img').addClass('tree-Hover');
-
+            var name = $(this).data( "name");
+            var age = $(this).data( "age");
+            var state = $(this).data( "state");
+            var owner = $(this).data( "owner");
+            $(this).append("<span  class='tree-Popup'>"+state+"</span>");
       })
       $('.tree').mouseout(function(){
             $(this).find('img').removeClass('tree-Hover');
-
-
-
+            $(".tree-Popup").remove();
       })
 
 })
