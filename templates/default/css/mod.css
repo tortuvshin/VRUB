@@ -135,7 +135,7 @@
 { 
 	 left: 828px; 
 	 top: 1016px; 
-	 -index:17;
+	z-index:17;
 } 
 
  #Layer2copy224 
@@ -177,7 +177,7 @@
 { 
 	 left: 315px; 
 	 top: 1001px; 
-	 -index:23;
+	z-index:23;
 } 
 
  #Layer2copy230 
@@ -212,28 +212,28 @@
 { 
 	 left: 470px; 
 	 top: 1002px; 
-	 -index:28;
+	z-index:28;
 } 
 
  #Layer2copy235 
 { 
 	 left: 469px; 
 	 top: 1019px; 
-	 -index:29;
+	z-index:29;
 } 
 
  #Layer2copy236 
 { 
 	 left: 469px; 
 	 top: 1035px; 
-	 -index:30;
+	z-index:30;
 } 
 
  #Layer2copy237 
 { 
 	 left: 470px; 
 	 top: 1053px; 
-	 -index:31;
+	z-index:31;
 } 
 
  #Layer2copy238 
@@ -2263,14 +2263,14 @@
 { 
 	 left: 775px; 
 	 top: 1050px; 
-	 -index:321;
+	z-index:321;
 } 
 
  #Layer2copy106_36 
 { 
 	 left: 775px; 
 	 top: 1036px; 
-	 -index:322;
+	z-index:322;
 } 
 
  #Layer2copy104_37 
@@ -2298,7 +2298,7 @@
 { 
 	 left: 774px; 
 	 top: 1000px; 
-	 -index:326;
+	z-index:326;
 } 
 
  #Layer2copy106_38 
@@ -2312,7 +2312,7 @@
 { 
 	 left: 775px; 
 	 top: 1016px; 
-	 -index:328;
+	z-index:328;
 } 
 
  #Layer2copy104_39 
@@ -2375,14 +2375,14 @@
 { 
 	 left: 265px; 
 	 top: 1049px; 
-	 -index:337;
+	z-index:337;
 } 
 
  #Layer2copy106_42 
 { 
 	 left: 265px; 
 	 top: 1035px; 
-	 -index:338;
+	z-index:338;
 } 
 
  #Layer2copy104_43 
@@ -2424,7 +2424,7 @@
 { 
 	 left: 265px; 
 	 top: 1015px; 
-	 -index:344;
+	z-index:344;
 } 
 
  #Layer2copy104_45 
@@ -3467,7 +3467,7 @@
 { 
 	 left: 826px; 
 	 top: 1001px; 
-	 -index:493;
+	z-index:493;
 } 
 
  #Layer2copy106_102 
@@ -3481,35 +3481,35 @@
 { 
 	 left: 826px; 
 	 top: 1044px; 
-	 -index:495;
+	z-index:495;
 } 
 
  #Layer2copy106_103 
 { 
 	 left: 826px; 
 	 top: 1030px; 
-	 -index:496;
+	z-index:496;
 } 
 
  #Layer2copy105_64 
 { 
 	 left: 827px; 
 	 top: 1060px; 
-	 -index:497;
+	z-index:497;
 } 
 
  #Layer2copy104_104 
 { 
 	 left: 826px; 
 	 top: 1095px; 
-	 -index:498;
+	z-index:498;
 } 
 
  #Layer2copy106_104 
 { 
 	 left: 826px; 
 	 top: 1081px; 
-	 -index:499;
+	z-index:499;
 } 
 
  #Layer2copy104_105 
@@ -3656,7 +3656,7 @@
 { 
 	 left: 568px; 
 	 top: 1000px; 
-	 -index:520;
+	z-index:520;
 } 
 
  #Layer2copy106_113 
@@ -3670,21 +3670,21 @@
 { 
 	 left: 569px; 
 	 top: 1016px; 
-	 -index:522;
+	z-index:522;
 } 
 
  #Layer2copy104_114 
 { 
 	 left: 568px; 
 	 top: 1051px; 
-	 -index:523;
+	z-index:523;
 } 
 
  #Layer2copy106_114 
 { 
 	 left: 568px; 
 	 top: 1037px; 
-	 -index:524;
+	z-index:524;
 } 
 
  #Layer2copy104_115 
@@ -4097,21 +4097,21 @@
 { 
 	 left: 212px; 
 	 top: 1101px; 
-	 -index:583;
+	z-index:583;
 } 
 
  #Layer2copy106_135 
 { 
 	 left: 212px; 
 	 top: 1087px; 
-	 -index:584;
+	z-index:584;
 } 
 
  #Layer2copy104_136 
 { 
 	 left: 211px; 
 	 top: 1000px; 
-	 -index:585;
+	z-index:585;
 } 
 
  #Layer2copy106_136 
@@ -4125,49 +4125,49 @@
 { 
 	 left: 212px; 
 	 top: 1016px; 
-	 -index:587;
+	z-index:587;
 } 
 
  #Layer2copy104_137 
 { 
 	 left: 211px; 
 	 top: 1051px; 
-	 -index:588;
+	z-index:588;
 } 
 
  #Layer2copy106_137 
 { 
 	 left: 211px; 
 	 top: 1037px; 
-	 -index:589;
+	z-index:589;
 } 
 
  #Layer2copy105_81 
 { 
 	 left: 212px; 
 	 top: 1067px; 
-	 -index:590;
+	z-index:590;
 } 
 
  #Layer2copy104_138 
 { 
 	 left: 519px; 
 	 top: 1103px; 
-	 -index:591;
+	z-index:591;
 } 
 
  #Layer2copy106_138 
 { 
 	 left: 519px; 
 	 top: 1089px; 
-	 -index:592;
+	z-index:592;
 } 
 
  #Layer2copy104_139 
 { 
 	 left: 518px; 
 	 top: 1002px; 
-	 -index:593;
+	z-index:593;
 } 
 
  #Layer2copy106_139 
@@ -4181,28 +4181,28 @@
 { 
 	 left: 519px; 
 	 top: 1018px; 
-	 -index:595;
+	z-index:595;
 } 
 
  #Layer2copy104_140 
 { 
 	 left: 518px; 
 	 top: 1053px; 
-	 -index:596;
+	z-index:596;
 } 
 
  #Layer2copy106_140 
 { 
 	 left: 518px; 
 	 top: 1039px; 
-	 -index:597;
+	z-index:597;
 } 
 
  #Layer2copy105_83 
 { 
 	 left: 519px; 
 	 top: 1069px; 
-	 -index:598;
+	z-index:598;
 } 
 
  #Layer2copy104_141 
@@ -4650,28 +4650,28 @@
 { 
 	 left: 264px; 
 	 top: 1066px; 
-	 -index:662;
+	z-index:662;
 } 
 
  #Layer2copy40 
 { 
 	 left: 281px; 
 	 top: 1066px; 
-	 -index:663;
+	z-index:663;
 } 
 
  #Layer2copy41 
 { 
 	 left: 298px; 
 	 top: 1066px; 
-	 -index:664;
+	z-index:664;
 } 
 
  #Layer2copy42 
 { 
 	 left: 314px; 
 	 top: 1066px; 
-	 -index:665;
+	z-index:665;
 } 
 
  #Layer2copy43 
@@ -4685,238 +4685,238 @@
 { 
 	 left: 349px; 
 	 top: 1066px; 
-	 -index:667;
+	z-index:667;
 } 
 
  #Layer2copy45 
 { 
 	 left: 366px; 
 	 top: 1067px; 
-	 -index:668;
+	z-index:668;
 } 
 
  #Layer2copy46 
 { 
 	 left: 382px; 
 	 top: 1067px; 
-	 -index:669;
+	z-index:669;
 } 
 
  #Layer2copy47 
 { 
 	 left: 399px; 
 	 top: 1067px; 
-	 -index:670;
+	z-index:670;
 } 
 
  #Layer2copy48 
 { 
 	 left: 416px; 
 	 top: 1067px; 
-	 -index:671;
+	z-index:671;
 } 
 
  #Layer2copy49 
 { 
 	 left: 433px; 
 	 top: 1066px; 
-	 -index:672;
+	z-index:672;
 } 
 
  #Layer2copy50 
 { 
 	 left: 450px; 
 	 top: 1066px; 
-	 -index:673;
+	z-index:673;
 } 
 
  #Layer2copy51 
 { 
 	 left: 467px; 
 	 top: 1066px; 
-	 -index:674;
+	z-index:674;
 } 
 
  #Layer2copy52 
 { 
 	 left: 570px; 
 	 top: 1068px; 
-	 -index:675;
+	z-index:675;
 } 
 
  #Layer2copy53 
 { 
 	 left: 587px; 
 	 top: 1068px; 
-	 -index:676;
+	z-index:676;
 } 
 
  #Layer2copy54 
 { 
 	 left: 604px; 
 	 top: 1068px; 
-	 -index:677;
+	z-index:677;
 } 
 
  #Layer2copy55 
 { 
 	 left: 620px; 
 	 top: 1068px; 
-	 -index:678;
+	z-index:678;
 } 
 
  #Layer2copy56 
 { 
 	 left: 638px; 
 	 top: 1068px; 
-	 -index:679;
+	z-index:679;
 } 
 
  #Layer2copy57 
 { 
 	 left: 655px; 
 	 top: 1068px; 
-	 -index:680;
+	z-index:680;
 } 
 
  #Layer2copy58 
 { 
 	 left: 672px; 
 	 top: 1069px; 
-	 -index:681;
+	z-index:681;
 } 
 
  #Layer2copy59 
 { 
 	 left: 688px; 
 	 top: 1069px; 
-	 -index:682;
+	z-index:682;
 } 
 
  #Layer2copy60 
 { 
 	 left: 705px; 
 	 top: 1069px; 
-	 -index:683;
+	z-index:683;
 } 
 
  #Layer2copy61 
 { 
 	 left: 722px; 
 	 top: 1069px; 
-	 -index:684;
+	z-index:684;
 } 
 
  #Layer2copy62 
 { 
 	 left: 739px; 
 	 top: 1068px; 
-	 -index:685;
+	z-index:685;
 } 
 
  #Layer2copy63 
 { 
 	 left: 756px; 
 	 top: 1068px; 
-	 -index:686;
+	z-index:686;
 } 
 
  #Layer2copy64 
 { 
 	 left: 773px; 
 	 top: 1068px; 
-	 -index:687;
+	z-index:687;
 } 
 
  #Layer2copy65 
 { 
 	 left: 570px; 
 	 top: 1068px; 
-	 -index:688;
+	z-index:688;
 } 
 
  #Layer2copy66 
 { 
 	 left: 587px; 
 	 top: 1068px; 
-	 -index:689;
+	z-index:689;
 } 
 
  #Layer2copy67 
 { 
 	 left: 604px; 
 	 top: 1068px; 
-	 -index:690;
+	z-index:690;
 } 
 
  #Layer2copy68 
 { 
 	 left: 620px; 
 	 top: 1068px; 
-	 -index:691;
+	z-index:691;
 } 
 
  #Layer2copy69 
 { 
 	 left: 638px; 
 	 top: 1068px; 
-	 -index:692;
+	z-index:692;
 } 
 
  #Layer2copy70 
 { 
 	 left: 655px; 
 	 top: 1068px; 
-	 -index:693;
+	z-index:693;
 } 
 
  #Layer2copy71 
 { 
 	 left: 672px; 
 	 top: 1069px; 
-	 -index:694;
+	z-index:694;
 } 
 
  #Layer2copy72 
 { 
 	 left: 688px; 
 	 top: 1069px; 
-	 -index:695;
+	z-index:695;
 } 
 
  #Layer2copy73 
 { 
 	 left: 705px; 
 	 top: 1069px; 
-	 -index:696;
+	z-index:696;
 } 
 
  #Layer2copy74 
 { 
 	 left: 722px; 
 	 top: 1069px; 
-	 -index:697;
+	z-index:697;
 } 
 
  #Layer2copy75 
 { 
 	 left: 739px; 
 	 top: 1068px; 
-	 -index:698;
+	z-index:698;
 } 
 
  #Layer2copy76 
 { 
 	 left: 756px; 
 	 top: 1068px; 
-	 -index:699;
+	z-index:699;
 } 
 
  #Layer2copy77 
 { 
 	 left: 773px; 
 	 top: 1068px; 
-	 -index:700;
+	z-index:700;
 } 
 
  #Layer2copy78 
@@ -5889,182 +5889,182 @@
 { 
 	 left: 265px; 
 	 top: 1117px; 
-	 -index:839;
+	z-index:839;
 } 
 
  #Layer2copy92_10 
 { 
 	 left: 282px; 
 	 top: 1117px; 
-	 -index:840;
+	z-index:840;
 } 
 
  #Layer2copy93_10 
 { 
 	 left: 299px; 
 	 top: 1117px; 
-	 -index:841;
+	z-index:841;
 } 
 
  #Layer2copy94_10 
 { 
 	 left: 315px; 
 	 top: 1117px; 
-	 -index:842;
+	z-index:842;
 } 
 
  #Layer2copy95_10 
 { 
 	 left: 333px; 
 	 top: 1117px; 
-	 -index:843;
+	z-index:843;
 } 
 
  #Layer2copy96_10 
 { 
 	 left: 350px; 
 	 top: 1117px; 
-	 -index:844;
+	z-index:844;
 } 
 
  #Layer2copy97_8 
 { 
 	 left: 367px; 
 	 top: 1118px; 
-	 -index:845;
+	z-index:845;
 } 
 
  #Layer2copy98_8 
 { 
 	 left: 383px; 
 	 top: 1118px; 
-	 -index:846;
+	z-index:846;
 } 
 
  #Layer2copy99_8 
 { 
 	 left: 400px; 
 	 top: 1118px; 
-	 -index:847;
+	z-index:847;
 } 
 
  #Layer2copy100_8 
 { 
 	 left: 417px; 
 	 top: 1118px; 
-	 -index:848;
+	z-index:848;
 } 
 
  #Layer2copy101_8 
 { 
 	 left: 434px; 
 	 top: 1117px; 
-	 -index:849;
+	z-index:849;
 } 
 
  #Layer2copy102_6 
 { 
 	 left: 451px; 
 	 top: 1117px; 
-	 -index:850;
+	z-index:850;
 } 
 
  #Layer2copy103_6 
 { 
 	 left: 468px; 
 	 top: 1117px; 
-	 -index:851;
+	z-index:851;
 } 
 
  #Layer2copy91_11 
 { 
 	 left: 519px; 
 	 top: 1117px; 
-	 -index:852;
+	z-index:852;
 } 
 
  #Layer2copy92_11 
 { 
 	 left: 536px; 
 	 top: 1117px; 
-	 -index:853;
+	z-index:853;
 } 
 
  #Layer2copy93_11 
 { 
 	 left: 553px; 
 	 top: 1117px; 
-	 -index:854;
+	z-index:854;
 } 
 
  #Layer2copy94_11 
 { 
 	 left: 569px; 
 	 top: 1117px; 
-	 -index:855;
+	z-index:855;
 } 
 
  #Layer2copy95_11 
 { 
 	 left: 587px; 
 	 top: 1117px; 
-	 -index:856;
+	z-index:856;
 } 
 
  #Layer2copy96_11 
 { 
 	 left: 604px; 
 	 top: 1117px; 
-	 -index:857;
+	z-index:857;
 } 
 
  #Layer2copy97_9 
 { 
 	 left: 621px; 
 	 top: 1118px; 
-	 -index:858;
+	z-index:858;
 } 
 
  #Layer2copy98_9 
 { 
 	 left: 637px; 
 	 top: 1118px; 
-	 -index:859;
+	z-index:859;
 } 
 
  #Layer2copy99_9 
 { 
 	 left: 654px; 
 	 top: 1118px; 
-	 -index:860;
+	z-index:860;
 } 
 
  #Layer2copy100_9 
 { 
 	 left: 671px; 
 	 top: 1118px; 
-	 -index:861;
+	z-index:861;
 } 
 
  #Layer2copy101_9 
 { 
 	 left: 688px; 
 	 top: 1117px; 
-	 -index:862;
+	z-index:862;
 } 
 
  #Layer2copy102_7 
 { 
 	 left: 705px; 
 	 top: 1117px; 
-	 -index:863;
+	z-index:863;
 } 
 
  #Layer2copy103_7 
 { 
 	 left: 722px; 
 	 top: 1117px; 
-	 -index:864;
+	z-index:864;
 } 
 
  #Layer2copy91_12 
@@ -9032,70 +9032,70 @@
 { 
 	 left: 315px; 
 	 top: 1015px; 
-	 -index:1288;
+	z-index:1288;
 } 
 
  #Layer2copy92_57 
 { 
 	 left: 332px; 
 	 top: 1015px; 
-	 -index:1289;
+	z-index:1289;
 } 
 
  #Layer2copy93_57 
 { 
 	 left: 349px; 
 	 top: 1015px; 
-	 -index:1290;
+	z-index:1290;
 } 
 
  #Layer2copy94_57 
 { 
 	 left: 365px; 
 	 top: 1015px; 
-	 -index:1291;
+	z-index:1291;
 } 
 
  #Layer2copy95_57 
 { 
 	 left: 383px; 
 	 top: 1015px; 
-	 -index:1292;
+	z-index:1292;
 } 
 
  #Layer2copy96_57 
 { 
 	 left: 400px; 
 	 top: 1015px; 
-	 -index:1293;
+	z-index:1293;
 } 
 
  #Layer2copy97_55 
 { 
 	 left: 417px; 
 	 top: 1016px; 
-	 -index:1294;
+	z-index:1294;
 } 
 
  #Layer2copy91_57 
 { 
 	 left: 214px; 
 	 top: 1118px; 
-	 -index:1295;
+	z-index:1295;
 } 
 
  #Layer2copy92_58 
 { 
 	 left: 231px; 
 	 top: 1118px; 
-	 -index:1296;
+	z-index:1296;
 } 
 
  #Layer2copy93_58 
 { 
 	 left: 248px; 
 	 top: 1118px; 
-	 -index:1297;
+	z-index:1297;
 } 
 
  #Layer2copy91_58 
@@ -9200,140 +9200,140 @@
 { 
 	 left: 739px; 
 	 top: 1116px; 
-	 -index:1312;
+	z-index:1312;
 } 
 
  #Layer2copy92_61 
 { 
 	 left: 756px; 
 	 top: 1116px; 
-	 -index:1313;
+	z-index:1313;
 } 
 
  #Layer2copy93_61 
 { 
 	 left: 773px; 
 	 top: 1116px; 
-	 -index:1314;
+	z-index:1314;
 } 
 
  #Layer2copy94_60 
 { 
 	 left: 789px; 
 	 top: 1116px; 
-	 -index:1315;
+	z-index:1315;
 } 
 
  #Layer2copy95_60 
 { 
 	 left: 807px; 
 	 top: 1116px; 
-	 -index:1316;
+	z-index:1316;
 } 
 
  #Layer2copy96_60 
 { 
 	 left: 824px; 
 	 top: 1116px; 
-	 -index:1317;
+	z-index:1317;
 } 
 
  #Layer2copy91_61 
 { 
 	 left: 619px; 
 	 top: 1015px; 
-	 -index:1318;
+	z-index:1318;
 } 
 
  #Layer2copy92_62 
 { 
 	 left: 636px; 
 	 top: 1015px; 
-	 -index:1319;
+	z-index:1319;
 } 
 
  #Layer2copy93_62 
 { 
 	 left: 653px; 
 	 top: 1015px; 
-	 -index:1320;
+	z-index:1320;
 } 
 
  #Layer2copy94_61 
 { 
 	 left: 669px; 
 	 top: 1015px; 
-	 -index:1321;
+	z-index:1321;
 } 
 
  #Layer2copy95_61 
 { 
 	 left: 687px; 
 	 top: 1015px; 
-	 -index:1322;
+	z-index:1322;
 } 
 
  #Layer2copy96_61 
 { 
 	 left: 704px; 
 	 top: 1015px; 
-	 -index:1323;
+	z-index:1323;
 } 
 
  #Layer2copy97_58 
 { 
 	 left: 721px; 
 	 top: 1016px; 
-	 -index:1324;
+	z-index:1324;
 } 
 
  #Layer2copy91_62 
 { 
 	 left: 619px; 
 	 top: 1015px; 
-	 -index:1325;
+	z-index:1325;
 } 
 
  #Layer2copy92_63 
 { 
 	 left: 636px; 
 	 top: 1015px; 
-	 -index:1326;
+	z-index:1326;
 } 
 
  #Layer2copy93_63 
 { 
 	 left: 653px; 
 	 top: 1015px; 
-	 -index:1327;
+	z-index:1327;
 } 
 
  #Layer2copy94_62 
 { 
 	 left: 669px; 
 	 top: 1015px; 
-	 -index:1328;
+	z-index:1328;
 } 
 
  #Layer2copy95_62 
 { 
 	 left: 687px; 
 	 top: 1015px; 
-	 -index:1329;
+	z-index:1329;
 } 
 
  #Layer2copy96_62 
 { 
 	 left: 704px; 
 	 top: 1015px; 
-	 -index:1330;
+	z-index:1330;
 } 
 
  #Layer2copy97_59 
 { 
 	 left: 721px; 
 	 top: 1016px; 
-	 -index:1331;
+	z-index:1331;
 } 
 
  #Layer2copy91_63 
