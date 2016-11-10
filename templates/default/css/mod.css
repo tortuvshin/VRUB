@@ -9556,9 +9556,6 @@
 	height:550px;
 }
 
-.tree:hover {
-    background-color: green;
-}
 
 .treeImage{
 	float:left;
@@ -9582,5 +9579,10 @@
 	border-radius:10px;
 }
 .form-control:hover{
+	cursor: pointer;
+}
+.tree-Hover{
+	width: 23px;
+	height: 28px;
 	cursor: pointer;
 }
