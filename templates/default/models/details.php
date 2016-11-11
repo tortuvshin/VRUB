@@ -12,13 +12,7 @@ $id = 0;
 $lastname = "";
 $firstname = "";
 $email = "";
-$address = "";
-$postcode = "";
-$city = "";
-$company = "";
-$country = "";
 $mobile = "";
-$phone = "";
 $comments = "";
 
 if(isset($_SESSION['user'])){
@@ -28,26 +22,16 @@ if(isset($_SESSION['user'])){
         
         $lastname = $row['name'];
         $email = $row['email'];
-        $address = $row['address'];
-        $postcode = $row['postcode'];
-        $city = $row['city'];
         $company = $row['company'];
-        $country = $row['country'];
         $mobile = $row['mobile'];
-        $phone = $row['phone'];
     }
 }
 
 if(isset($_SESSION['book']['lastname'])) $lastname = $_SESSION['book']['lastname'];
 if(isset($_SESSION['book']['firstname'])) $firstname = $_SESSION['book']['firstname'];
 if(isset($_SESSION['book']['email'])) $email = $_SESSION['book']['email'];
-if(isset($_SESSION['book']['address'])) $address = $_SESSION['book']['address'];
-if(isset($_SESSION['book']['postcode'])) $postcode = $_SESSION['book']['postcode'];
 if(isset($_SESSION['book']['city'])) $city = $_SESSION['book']['city'];
-if(isset($_SESSION['book']['company'])) $company = $_SESSION['book']['company'];
-if(isset($_SESSION['book']['country'])) $country = $_SESSION['book']['country'];
 if(isset($_SESSION['book']['mobile'])) $mobile = $_SESSION['book']['mobile'];
-if(isset($_SESSION['book']['phone'])) $phone = $_SESSION['book']['phone'];
 if(isset($_SESSION['book']['comments'])) $comments = $_SESSION['book']['comments'];
 
 if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['request']))){
@@ -55,21 +39,11 @@ if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['reque
     $lastname = $_POST['lastname'];
     $firstname = $_POST['firstname'];
     $email = $_POST['email'];
-    $address = $_POST['address'];
-    $postcode = $_POST['postcode'];
-    $city = $_POST['city'];
-    $company = $_POST['company'];
-    $country = $_POST['country'];
     $mobile = $_POST['mobile'];
-    $phone = $_POST['phone'];
     $comments = $_POST['comments'];
     
     if($lastname == "") $field_notice['lastname'] = $texts['REQUIRED_FIELD'];
     if($firstname == "") $field_notice['firstname'] = $texts['REQUIRED_FIELD'];
-    if($address == "") $field_notice['address'] = $texts['REQUIRED_FIELD'];
-    if($postcode == "") $field_notice['postcode'] = $texts['REQUIRED_FIELD'];
-    if($city == "") $field_notice['city'] = $texts['REQUIRED_FIELD'];
-    if($country == "" || $country == "0") $field_notice['country'] = $texts['REQUIRED_FIELD'];
     if($phone == "" || preg_match("/([0-9\-\s\+\(\)\.]+)/i", $phone) !== 1) $field_notice['phone'] = $texts['REQUIRED_FIELD'];
     if($email == "" || !preg_match("/^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$/i", $email)) $field_notice['email'] = $texts['INVALID_EMAIL'];
     
@@ -78,13 +52,7 @@ if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['reque
         $_SESSION['book']['lastname'] = $lastname;
         $_SESSION['book']['firstname'] = $firstname;
         $_SESSION['book']['email'] = $email;
-        $_SESSION['book']['company'] = $company;
-        $_SESSION['book']['address'] = $address;
-        $_SESSION['book']['postcode'] = $postcode;
-        $_SESSION['book']['city'] = $city;
         $_SESSION['book']['phone'] = $phone;
-        $_SESSION['book']['mobile'] = $mobile;
-        $_SESSION['book']['country'] = $country;
         $_SESSION['book']['comments'] = $comments;
         
         if(isset($_SESSION['book']['id'])) unset($_SESSION['book']['id']);
@@ -97,11 +65,8 @@ if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['reque
             $mailContent = "
             <p><strong>".$texts['BILLING_ADDRESS']."</strong><br>
             ".$_SESSION['book']['firstname']." ".$_SESSION['book']['lastname']."<br>";
-            if($_SESSION['book']['company'] != "") $mailContent .= $texts['COMPANY']." : ".$_SESSION['book']['company']."<br>";
-            $mailContent .= nl2br($_SESSION['book']['address'])."<br>
-            ".$_SESSION['book']['postcode']." ".$_SESSION['book']['city']."<br>
-            ".$texts['PHONE']." : ".$_SESSION['book']['phone']."<br>";
-            if($_SESSION['book']['mobile'] != "") $mailContent .= $texts['MOBILE']." : ".$_SESSION['book']['mobile']."<br>";
+            
+            if($_SESSION['book']['phone'] != "") $mailContent .= $texts['PHONE']." : ".$_SESSION['book']['phone']."<br>";
             $mailContent .= $texts['EMAIL']." : ".$_SESSION['book']['email']."</p>
             
             <p>".$texts['HOTEL']." : <strong>".$_SESSION['book']['hotel']."</strong><br>
@@ -129,12 +94,6 @@ if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['reque
                 $lastname = "";
                 $firstname = "";
                 $email = "";
-                $address = "";
-                $postcode = "";
-                $city = "";
-                $company = "";
-                $country = "";
-                $mobile = "";
                 $phone = "";
                 $comments = "";
             }else
@@ -231,65 +190,10 @@ require(getFromTemplate("common/header.php", false)); ?>
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <label class="col-lg-3 control-label"><?php echo $texts['COMPANY']; ?></label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="company" value="<?php echo $company; ?>"/>
-                                    <div class="field-notice" rel="company"></div>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="col-lg-3 control-label"><?php echo $texts['ADDRESS']; ?> *</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="address" value="<?php echo $address; ?>"/>
-                                    <div class="field-notice" rel="address"></div>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="col-lg-3 control-label"><?php echo $texts['POSTCODE']; ?> *</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="postcode" value="<?php echo $postcode; ?>"/>
-                                    <div class="field-notice" rel="postcode"></div>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="col-lg-3 control-label"><?php echo $texts['CITY']; ?> *</label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="city" value="<?php echo $city; ?>"/>
-                                    <div class="field-notice" rel="city"></div>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="col-lg-3 control-label"><?php echo $texts['COUNTRY']; ?> *</label>
-                                <div class="col-lg-9">
-                                    <select class="form-control" name="country">
-                                        <option value="0">-</option>
-                                        <?php
-                                        $result_country = $db->query("SELECT * FROM pm_country");
-                                        if($result_country !== false){
-                                            foreach($result_country as $i => $row){
-                                                $id_country = $row['id'];
-                                                $country_name = $row['name'];
-                                                $selected = ($country == $country_name) ? " selected=\"selected\"" : "";
-                                                
-                                                echo "<option value=\"".$country_name."\"".$selected.">".$country_name."</option>";
-                                            }
-                                        } ?>
-                                    </select>
-                                    <div class="field-notice" rel="country"></div>
-                                </div>
-                            </div>
-                            <div class="row form-group">
                                 <label class="col-lg-3 control-label"><?php echo $texts['PHONE']; ?> *</label>
                                 <div class="col-lg-9">
                                     <input type="text" class="form-control" name="phone" value="<?php echo $phone; ?>"/>
                                     <div class="field-notice" rel="phone"></div>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="col-lg-3 control-label"><?php echo $texts['MOBILE']; ?></label>
-                                <div class="col-lg-9">
-                                    <input type="text" class="form-control" name="mobile" value="<?php echo $mobile; ?>"/>
-                                    <div class="field-notice" rel="mobile"></div>
                                 </div>
                             </div>
                         </fieldset>
