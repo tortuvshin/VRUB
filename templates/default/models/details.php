@@ -12,7 +12,7 @@ $id = 0;
 $lastname = "";
 $firstname = "";
 $email = "";
-$mobile = "";
+$phone = "";
 $comments = "";
 
 if(isset($_SESSION['user'])){
@@ -39,7 +39,7 @@ if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['reque
     $lastname = $_POST['lastname'];
     $firstname = $_POST['firstname'];
     $email = $_POST['email'];
-    $mobile = $_POST['mobile'];
+    $phone = $_POST['phone'];
     $comments = $_POST['comments'];
     
     if($lastname == "") $field_notice['lastname'] = $texts['REQUIRED_FIELD'];
