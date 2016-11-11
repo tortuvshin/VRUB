@@ -17,9 +17,44 @@ require(getFromTemplate("common/header.php", false)); ?>
 <section id="page">
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
-    
+    <section   >
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+            <style>
+            .parallaxWood2 {
+                  font-size:20px;
+                  min-height: 200px;
+                  text-align: center;
+                  padding: 80px 30px 0px 80px;
+                  color: black;
+                  width: 80%;
+                  margin-left: 10%;                  
+                  font-family: 'Droid Serif', serif;
+                  text-align: justify;
+                  }
+            .parallaxWood2 h1{
+                  padding-bottom: 2%;
+                  font-size: 30px; 
+                  text-align: center;                  
+                  font-family: 'Droid Serif', serif;
+                  padding-bottom: 2%;
+            }
+            </style>
+            <div  class="parallaxWood2"> 
+            <h1>Тара код цэцэрлэгт хүрээлэн</h1>
+                                    <p>  Тара код цэцэрлэгт хүрээлэн 1296 модоор бүтнэ
+                                    500 жилийн настай 
+                                    Лого дүрсний дагуу бүтээсэн
+                                    Голоор нь хүн явах гудамжтай байна.
+                                    Жирэмсэн эмэгтэй голоор явж гарахад элдэв зовлонгүй амар мэнд төрдөг домогтой дарь-эхийн түлхүүр юм. 
+                                    1294 модыг бүгдийг нь эзэнтэй болгож 1 модонд 100$ оор 500 жил гэрээ хийж өглөгийн эзний нэрийг 500 жилийн турш модны дэргэдэх пайз дээр байршуулна.
+                                    <p>                           
+            </div>
+      </section>
     <div id="content" class="pt30 pb20">
         <div class="container" itemprop="text">
+        <div>
+              
+        </div>
           <div id="background">
            
             <div id="Layer2" class="tree" data-name="Хус" data-age="1" data-state="Зарагдаагүй" data-owner="" data-name="Хус" data-age="1" data-state="Зарагдаагүй" data-owner=""></div>
