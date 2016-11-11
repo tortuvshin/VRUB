@@ -23,7 +23,7 @@ if(isset($_SESSION['user'])){
         $lastname = $row['name'];
         $email = $row['email'];
         $company = $row['company'];
-        $mobile = $row['mobile'];
+        $phone = $row['phone'];
     }
 }
 
@@ -31,7 +31,7 @@ if(isset($_SESSION['book']['lastname'])) $lastname = $_SESSION['book']['lastname
 if(isset($_SESSION['book']['firstname'])) $firstname = $_SESSION['book']['firstname'];
 if(isset($_SESSION['book']['email'])) $email = $_SESSION['book']['email'];
 if(isset($_SESSION['book']['city'])) $city = $_SESSION['book']['city'];
-if(isset($_SESSION['book']['mobile'])) $mobile = $_SESSION['book']['mobile'];
+if(isset($_SESSION['book']['phone'])) $phone = $_SESSION['book']['phone'];
 if(isset($_SESSION['book']['comments'])) $comments = $_SESSION['book']['comments'];
 
 if(isset($_POST['book']) || (ENABLE_BOOKING_REQUESTS == 1 && isset($_POST['request']))){

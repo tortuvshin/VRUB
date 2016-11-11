@@ -45,13 +45,7 @@
         <field multi="0" label="Нэр" name="firstname" type="text" required="1" unique="0" validation="none"/>
         <field multi="0" label="Овог" name="lastname" type="text" required="1" unique="0" validation="none"/>
         <field multi="0" label="И-мэйл" name="email" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Компани" name="company" type="text" required="0" unique="0" validation="none"/>
-        <field multi="0" label="Хаяг" name="address" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Пост код" name="postcode" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Хот" name="city" type="text" required="1" unique="0" validation="none"/>
         <field multi="0" label="Утас" name="phone" type="text" required="1" unique="0" validation="none"/>
-        <field multi="0" label="Утас" name="mobile" type="text" required="0" unique="0" validation="none"/>
-        <field multi="0" label="Хот" name="country" type="text" required="1" unique="0" validation="none"/>
         <field multi="0" label="Сэтгэгдэл" name="comments" type="textarea" editor="0" required="0" unique="0" validation="none"/>
         <field multi="0" label="Статус" name="status" type="select" required="1" unique="0" validation="none">
             <options>
