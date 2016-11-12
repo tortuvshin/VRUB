@@ -14,7 +14,7 @@
 	 width: 1170px;
 	 height: 1170px; 
 	 overflow: hidden;
-	 z-index:0;
+	z-index:1;
 	} 
 
  #Background 
@@ -23,112 +23,112 @@
 	 top: 0px; 
 	 width: 1170px;
 	 height: 1170px;
-	 z-index:1;
+	z-index:1;
 } 
 
  #Layer2 
 { 
 	 left: 315px; 
 	 top: 1px; 
-	 z-index:2;
+	
 } 
 
  #Layer2copy112 
 { 
 	 left: 314px; 
 	 top: 218px; 
-	 z-index:3;
+	
 } 
 
  #Layer2copy115 
 { 
 	 left: 368px; 
 	 top: 232px; 
-	 z-index:4;
+	
 } 
 
  #Layer2copy116 
 { 
 	 left: 368px; 
 	 top: 249px; 
-	 z-index:5;
+	
 } 
 
  #Layer2copy117 
 { 
 	 left: 417px; 
 	 top: 249px; 
-	 z-index:6;
+	
 } 
 
  #Layer2copy118 
 { 
 	 left: 417px; 
 	 top: 270px; 
-	 z-index:7;
+	
 } 
 
  #Layer2copy119 
 { 
 	 left: 417px; 
 	 top: 284px; 
-	 z-index:8;
+	
 } 
 
  #Layer2copy121 
 { 
 	 left: 417px; 
 	 top: 284px; 
-	 z-index:9;
+	
 } 
 
  #Layer2copy217 
 { 
 	 left: 1131px; 
 	 top: 763px; 
-	 z-index:10;
+	
 } 
 
  #Layer2copy218 
 { 
 	 left: 1081px; 
 	 top: 811px; 
-	 z-index:11;
+	
 } 
 
  #Layer2copy219 
 { 
 	 left: 1081px; 
 	 top: 830px; 
-	 z-index:12;
+	
 } 
 
  #Layer2copy220 
 { 
 	 left: 1082px; 
 	 top: 844px; 
-	 z-index:13;
+	
 } 
 
  #Layer2copy221 
 { 
 	 left: 723px; 
 	 top: 832px; 
-	 z-index:14;
+	
 } 
 
  #Layer2copy222 
 { 
 	 left: 723px; 
 	 top: 847px; 
-	 z-index:15;
+	
 } 
 
  #Layer2copy223 
 { 
 	 left: 722px; 
 	 top: 867px; 
-	 z-index:16;
+	
 } 
 
  #Layer2copy241 
@@ -142,35 +142,35 @@
 { 
 	 left: 519px; 
 	 top: 935px; 
-	 z-index:18;
+	
 } 
 
  #Layer2copy225 
 { 
 	 left: 519px; 
 	 top: 953px; 
-	 z-index:19;
+	
 } 
 
  #Layer2copy226 
 { 
 	 left: 519px; 
 	 top: 972px; 
-	 z-index:20;
+	
 } 
 
  #Layer2copy227 
 { 
 	 left: 315px; 
 	 top: 968px; 
-	 z-index:21;
+	
 } 
 
  #Layer2copy228 
 { 
 	 left: 314px; 
 	 top: 985px; 
-	 z-index:22;
+	
 } 
 
  #Layer2copy229 
@@ -184,28 +184,28 @@
 { 
 	 left: 265px; 
 	 top: 880px; 
-	 z-index:24;
+	
 } 
 
  #Layer2copy231 
 { 
 	 left: 265px; 
 	 top: 895px; 
-	 z-index:25;
+	
 } 
 
  #Layer2copy232 
 { 
 	 left: 265px; 
 	 top: 916px; 
-	 z-index:26;
+	
 } 
 
  #Layer2copy233 
 { 
 	 left: 470px; 
 	 top: 986px; 
-	 z-index:27;
+	
 } 
 
  #Layer2copy234 
@@ -240,2023 +240,2023 @@
 { 
 	 left: 777px; 
 	 top: 882px; 
-	 z-index:32;
+	
 } 
 
  #Layer2copy239 
 { 
 	 left: 777px; 
 	 top: 896px; 
-	 z-index:33;
+	
 } 
 
  #Layer2copy240 
 { 
 	 left: 777px; 
 	 top: 919px; 
-	 z-index:34;
+	
 } 
 
  #Layer2copy148 
 { 
 	 left: 212px; 
 	 top: 455px; 
-	 z-index:35;
+	
 } 
 
  #Layer2copy149 
 { 
 	 left: 213px; 
 	 top: 472px; 
-	 z-index:36;
+	
 } 
 
  #Layer2copy150 
 { 
 	 left: 212px; 
 	 top: 488px; 
-	 z-index:37;
+	
 } 
 
  #Layer2copy143 
 { 
 	 left: 926px; 
 	 top: 282px; 
-	 z-index:38;
+	
 } 
 
  #Layer2copy144 
 { 
 	 left: 878px; 
 	 top: 250px; 
-	 z-index:39;
+	
 } 
 
  #Layer2copy145 
 { 
 	 left: 878px; 
 	 top: 234px; 
-	 z-index:40;
+	
 } 
 
  #Layer2copy146 
 { 
 	 left: 878px; 
 	 top: 219px; 
-	 z-index:41;
+	
 } 
 
  #Layer2copy147 
 { 
 	 left: 878px; 
 	 top: 203px; 
-	 z-index:42;
+	
 } 
 
  #Layer2copy141 
 { 
 	 left: 213px; 
 	 top: 966px; 
-	 z-index:43;
+	
 } 
 
  #Layer2copy129 
 { 
 	 left: 315px; 
 	 top: 352px; 
-	 z-index:44;
+	
 } 
 
  #Layer2copy130 
 { 
 	 left: 315px; 
 	 top: 398px; 
-	 z-index:45;
+	
 } 
 
  #Layer2copy131 
 { 
 	 left: 163px; 
 	 top: 421px; 
-	 z-index:46;
+	
 } 
 
  #Layer2copy133 
 { 
 	 left: 265px; 
 	 top: 417px; 
-	 z-index:47;
+	
 } 
 
  #Layer2copy135 
 { 
 	 left: 368px; 
 	 top: 417px; 
-	 z-index:48;
+	
 } 
 
  #Layer2copy136 
 { 
 	 left: 368px; 
 	 top: 436px; 
-	 z-index:49;
+	
 } 
 
  #Layer2copy142 
 { 
 	 left: 368px; 
 	 top: 436px; 
-	 z-index:50;
+	
 } 
 
  #Layer2copy137 
 { 
 	 left: 471px; 
 	 top: 428px; 
-	 z-index:51;
+	
 } 
 
  #Layer2copy138 
 { 
 	 left: 573px; 
 	 top: 320px; 
-	 z-index:52;
+	
 } 
 
  #Layer2copy139 
 { 
 	 left: 573px; 
 	 top: 334px; 
-	 z-index:53;
+	
 } 
 
  #Layer2copy134 
 { 
 	 left: 266px; 
 	 top: 434px; 
-	 z-index:54;
+	
 } 
 
  #Layer2copy132 
 { 
 	 left: 163px; 
 	 top: 440px; 
-	 z-index:55;
+	
 } 
 
  #Layer2copy151 
 { 
 	 left: 519px; 
 	 top: 625px; 
-	 z-index:56;
+	
 } 
 
  #Layer2copy152 
 { 
 	 left: 519px; 
 	 top: 640px; 
-	 z-index:57;
+	
 } 
 
  #Layer2copy153 
 { 
 	 left: 519px; 
 	 top: 659px; 
-	 z-index:58;
+	
 } 
 
  #Layer2copy154 
 { 
 	 left: 520px; 
 	 top: 674px; 
-	 z-index:59;
+	
 } 
 
  #Layer2copy155 
 { 
 	 left: 519px; 
 	 top: 691px; 
-	 z-index:60;
+	
 } 
 
  #Layer2copy156 
 { 
 	 left: 519px; 
 	 top: 729px; 
-	 z-index:61;
+	
 } 
 
  #Layer2copy157 
 { 
 	 left: 520px; 
 	 top: 745px; 
-	 z-index:62;
+	
 } 
 
  #Layer2copy158 
 { 
 	 left: 520px; 
 	 top: 761px; 
-	 z-index:63;
+	
 } 
 
  #Layer2copy159 
 { 
 	 left: 570px; 
 	 top: 780px; 
-	 z-index:64;
+	
 } 
 
  #Layer2copy160 
 { 
 	 left: 569px; 
 	 top: 797px; 
-	 z-index:65;
+	
 } 
 
  #Layer2copy161 
 { 
 	 left: 569px; 
 	 top: 812px; 
-	 z-index:66;
+	
 } 
 
  #Layer2copy162 
 { 
 	 left: 567px; 
 	 top: 830px; 
-	 z-index:67;
+	
 } 
 
  #Layer2copy163 
 { 
 	 left: 568px; 
 	 top: 849px; 
-	 z-index:68;
+	
 } 
 
  #Layer2copy164 
 { 
 	 left: 674px; 
 	 top: 677px; 
-	 z-index:69;
+	
 } 
 
  #Layer2copy165 
 { 
 	 left: 675px; 
 	 top: 694px; 
-	 z-index:70;
+	
 } 
 
  #Layer2copy166 
 { 
 	 left: 674px; 
 	 top: 709px; 
-	 z-index:71;
+	
 } 
 
  #Layer2copy167 
 { 
 	 left: 674px; 
 	 top: 726px; 
-	 z-index:72;
+	
 } 
 
  #Layer2copy168 
 { 
 	 left: 676px; 
 	 top: 743px; 
-	 z-index:73;
+	
 } 
 
  #Layer2copy169 
 { 
 	 left: 676px; 
 	 top: 743px; 
-	 z-index:74;
+	
 } 
 
  #Layer2copy170 
 { 
 	 left: 674px; 
 	 top: 476px; 
-	 z-index:75;
+	
 } 
 
  #Layer2copy171 
 { 
 	 left: 674px; 
 	 top: 490px; 
-	 z-index:76;
+	
 } 
 
  #Layer2copy172 
 { 
 	 left: 674px; 
 	 top: 506px; 
-	 z-index:77;
+	
 } 
 
  #Layer2copy173 
 { 
 	 left: 675px; 
 	 top: 521px; 
-	 z-index:78;
+	
 } 
 
  #Layer2copy174 
 { 
 	 left: 674px; 
 	 top: 539px; 
-	 z-index:79;
+	
 } 
 
  #Layer2copy175 
 { 
 	 left: 775px; 
 	 top: 475px; 
-	 z-index:80;
+	
 } 
 
  #Layer2copy176 
 { 
 	 left: 776px; 
 	 top: 488px; 
-	 z-index:81;
+	
 } 
 
  #Layer2copy180 
 { 
 	 left: 775px; 
 	 top: 371px; 
-	 z-index:82;
+	
 } 
 
  #Layer2copy181 
 { 
 	 left: 776px; 
 	 top: 387px; 
-	 z-index:83;
+	
 } 
 
  #Layer2copy182 
 { 
 	 left: 775px; 
 	 top: 403px; 
-	 z-index:84;
+	
 } 
 
  #Layer2copy183 
 { 
 	 left: 776px; 
 	 top: 420px; 
-	 z-index:85;
+	
 } 
 
  #Layer2copy184 
 { 
 	 left: 775px; 
 	 top: 437px; 
-	 z-index:86;
+	
 } 
 
  #Layer2copy185 
 { 
 	 left: 877px; 
 	 top: 474px; 
-	 z-index:87;
+	
 } 
 
  #Layer2copy186 
 { 
 	 left: 878px; 
 	 top: 488px; 
-	 z-index:88;
+	
 } 
 
  #Layer2copy187 
 { 
 	 left: 878px; 
 	 top: 503px; 
-	 z-index:89;
+	
 } 
 
  #Layer2copy188 
 { 
 	 left: 877px; 
 	 top: 520px; 
-	 z-index:90;
+	
 } 
 
  #Layer2copy189 
 { 
 	 left: 878px; 
 	 top: 539px; 
-	 z-index:91;
+	
 } 
 
  #Layer2copy190 
 { 
 	 left: 927px; 
 	 top: 520px; 
-	 z-index:92;
+	
 } 
 
  #Layer2copy191 
 { 
 	 left: 927px; 
 	 top: 536px; 
-	 z-index:93;
+	
 } 
 
  #Layer2copy192 
 { 
 	 left: 926px; 
 	 top: 552px; 
-	 z-index:94;
+	
 } 
 
  #Layer2copy193 
 { 
 	 left: 927px; 
 	 top: 568px; 
-	 z-index:95;
+	
 } 
 
  #Layer2copy194 
 { 
 	 left: 926px; 
 	 top: 586px; 
-	 z-index:96;
+	
 } 
 
  #Layer2copy195 
 { 
 	 left: 980px; 
 	 top: 475px; 
-	 z-index:97;
+	
 } 
 
  #Layer2copy196 
 { 
 	 left: 980px; 
 	 top: 491px; 
-	 z-index:98;
+	
 } 
 
  #Layer2copy197 
 { 
 	 left: 980px; 
 	 top: 507px; 
-	 z-index:99;
+	
 } 
 
  #Layer2copy198 
 { 
 	 left: 981px; 
 	 top: 523px; 
-	 z-index:100;
+	
 } 
 
  #Layer2copy199 
 { 
 	 left: 980px; 
 	 top: 539px; 
-	 z-index:101;
+	
 } 
 
  #Layer2copy200 
 { 
 	 left: 1082px; 
 	 top: 372px; 
-	 z-index:102;
+	
 } 
 
  #Layer2copy201 
 { 
 	 left: 1082px; 
 	 top: 385px; 
-	 z-index:103;
+	
 } 
 
  #Layer2copy202 
 { 
 	 left: 1083px; 
 	 top: 400px; 
-	 z-index:104;
+	
 } 
 
  #Layer2copy203 
 { 
 	 left: 1083px; 
 	 top: 418px; 
-	 z-index:105;
+	
 } 
 
  #Layer2copy204 
 { 
 	 left: 1083px; 
 	 top: 433px; 
-	 z-index:106;
+	
 } 
 
  #Layer2copy205 
 { 
 	 left: 1083px; 
 	 top: 448px; 
-	 z-index:107;
+	
 } 
 
  #Layer2copy206 
 { 
 	 left: 1083px; 
 	 top: 467px; 
-	 z-index:108;
+	
 } 
 
  #Layer2copy207 
 { 
 	 left: 1082px; 
 	 top: 482px; 
-	 z-index:109;
+	
 } 
 
  #Layer2copy208 
 { 
 	 left: 1082px; 
 	 top: 499px; 
-	 z-index:110;
+	
 } 
 
  #Layer2copy209 
 { 
 	 left: 1083px; 
 	 top: 516px; 
-	 z-index:111;
+	
 } 
 
  #Layer2copy210 
 { 
 	 left: 1082px; 
 	 top: 536px; 
-	 z-index:112;
+	
 } 
 
  #Layer2copy211 
 { 
 	 left: 1130px; 
 	 top: 590px; 
-	 z-index:113;
+	
 } 
 
  #Layer2copy212 
 { 
 	 left: 722px; 
 	 top: 524px; 
-	 z-index:114;
+	
 } 
 
  #Layer2copy213 
 { 
 	 left: 723px; 
 	 top: 554px; 
-	 z-index:115;
+	
 } 
 
  #Layer2copy216 
 { 
 	 left: 724px; 
 	 top: 539px; 
-	 z-index:116;
+	
 } 
 
  #Layer2copy214 
 { 
 	 left: 724px; 
 	 top: 572px; 
-	 z-index:117;
+	
 } 
 
  #Layer2copy215 
 { 
 	 left: 724px; 
 	 top: 590px; 
-	 z-index:118;
+	
 } 
 
  #Layer2copy177 
 { 
 	 left: 777px; 
 	 top: 508px; 
-	 z-index:119;
+	
 } 
 
  #Layer2copy178 
 { 
 	 left: 776px; 
 	 top: 525px; 
-	 z-index:120;
+	
 } 
 
  #Layer2copy179 
 { 
 	 left: 776px; 
 	 top: 541px; 
-	 z-index:121;
+	
 } 
 
  #Layer2copy123 
 { 
 	 left: 110px; 
 	 top: 680px; 
-	 z-index:122;
+	
 } 
 
  #Layer2copy125 
 { 
 	 left: 314px; 
 	 top: 677px; 
-	 z-index:123;
+	
 } 
 
  #Layer2copy126 
 { 
 	 left: 314px; 
 	 top: 692px; 
-	 z-index:124;
+	
 } 
 
  #Layer2copy127 
 { 
 	 left: 163px; 
 	 top: 607px; 
-	 z-index:125;
+	
 } 
 
  #Layer2copy124 
 { 
 	 left: 110px; 
 	 top: 695px; 
-	 z-index:126;
+	
 } 
 
  #Layer2copy128 
 { 
 	 left: 265px; 
 	 top: 608px; 
-	 z-index:127;
+	
 } 
 
  #Layer2copy122 
 { 
 	 left: 110px; 
 	 top: 402px; 
-	 z-index:128;
+	
 } 
 
  #Layer2copy113 
 { 
 	 left: 314px; 
 	 top: 233px; 
-	 z-index:129;
+	
 } 
 
  #Layer2copy114 
 { 
 	 left: 315px; 
 	 top: 249px; 
-	 z-index:130;
+	
 } 
 
  #Layer2copy113_0 
 { 
 	 left: 314px; 
 	 top: 322px; 
-	 z-index:131;
+	
 } 
 
  #Layer2copy114_0 
 { 
 	 left: 315px; 
 	 top: 338px; 
-	 z-index:132;
+	
 } 
 
  #Layer2copy113_1 
 { 
 	 left: 315px; 
 	 top: 367px; 
-	 z-index:133;
+	
 } 
 
  #Layer2copy114_1 
 { 
 	 left: 316px; 
 	 top: 383px; 
-	 z-index:134;
+	
 } 
 
  #Layer2copy113_2 
 { 
 	 left: 469px; 
 	 top: 166px; 
-	 z-index:135;
+	
 } 
 
  #Layer2copy114_2 
 { 
 	 left: 470px; 
 	 top: 182px; 
-	 z-index:136;
+	
 } 
 
  #Layer2copy113_3 
 { 
 	 left: 571px; 
 	 top: 65px; 
-	  z-index:137;
+	
 } 
 
  #Layer2copy114_3 
 { 
 	 left: 572px; 
 	 top: 81px; 
-	  z-index:138;
+	
 } 
 
  #Layer2copy120 
 { 
 	 left: 469px; 
 	 top: 234px; 
-	 z-index:139;
+	
 } 
 
  #Layer2copy113_4 
 { 
 	 left: 468px; 
 	 top: 198px; 
-	 z-index:140;
+	
 } 
 
  #Layer2copy114_4 
 { 
 	 left: 469px; 
 	 top: 214px; 
-	 z-index:141;
+	
 } 
 
  #Layer2copy120_0 
 { 
 	 left: 573px; 
 	 top: 131px; 
-	 z-index:142;
+	
 } 
 
  #Layer2copy113_5 
 { 
 	 left: 572px; 
 	 top: 95px; 
-	  z-index:143;
+	
 } 
 
  #Layer2copy114_5 
 { 
 	 left: 573px; 
 	 top: 111px; 
-	 z-index:144;
+	
 } 
 
  #Layer2copy113_6 
 { 
 	 left: 672px; 
 	 top: 62px; 
-	  z-index:145;
+	
 } 
 
  #Layer2copy114_6 
 { 
 	 left: 673px; 
 	 top: 78px; 
-	  z-index:146;
+	
 } 
 
  #Layer2copy120_1 
 { 
 	 left: 674px; 
 	 top: 128px; 
-	 z-index:147;
+	
 } 
 
  #Layer2copy113_7 
 { 
 	 left: 673px; 
 	 top: 92px; 
-	  z-index:148;
+	
 } 
 
  #Layer2copy114_7 
 { 
 	 left: 674px; 
 	 top: 108px; 
-	 z-index:149;
+	
 } 
 
  #Layer2copy113_8 
 { 
 	 left: 109px; 
 	 top: 322px; 
-	 z-index:150;
+	
 } 
 
  #Layer2copy114_8 
 { 
 	 left: 110px; 
 	 top: 338px; 
-	 z-index:151;
+	
 } 
 
  #Layer2copy120_2 
 { 
 	 left: 111px; 
 	 top: 388px; 
-	 z-index:152;
+	
 } 
 
  #Layer2copy113_9 
 { 
 	 left: 110px; 
 	 top: 352px; 
-	 z-index:153;
+	
 } 
 
  #Layer2copy114_9 
 { 
 	 left: 111px; 
 	 top: 368px; 
-	 z-index:154;
+	
 } 
 
  #Layer2copy120_3 
 { 
 	 left: 62px; 
 	 top: 440px; 
-	 z-index:155;
+	
 } 
 
  #Layer2copy113_10 
 { 
 	 left: 61px; 
 	 top: 404px; 
-	 z-index:156;
+	
 } 
 
  #Layer2copy114_10 
 { 
 	 left: 62px; 
 	 top: 420px; 
-	 z-index:157;
+	
 } 
 
  #Layer2copy120_4 
 { 
 	 left: 163px; 
 	 top: 402px; 
-	 z-index:158;
+	
 } 
 
  #Layer2copy113_11 
 { 
 	 left: 162px; 
 	 top: 366px; 
-	 z-index:159;
+	
 } 
 
  #Layer2copy114_11 
 { 
 	 left: 163px; 
 	 top: 382px; 
-	 z-index:160;
+	
 } 
 
  #Layer2copy120_5 
 { 
 	 left: 265px; 
 	 top: 403px; 
-	 z-index:161;
+	
 } 
 
  #Layer2copy113_12 
 { 
 	 left: 264px; 
 	 top: 367px; 
-	 z-index:162;
+	
 } 
 
  #Layer2copy114_12 
 { 
 	 left: 265px; 
 	 top: 383px; 
-	 z-index:163;
+	
 } 
 
  #Layer2copy120_6 
 { 
 	 left: 368px; 
 	 top: 403px; 
-	 z-index:164;
+	
 } 
 
  #Layer2copy113_13 
 { 
 	 left: 367px; 
 	 top: 367px; 
-	 z-index:165;
+	
 } 
 
  #Layer2copy114_13 
 { 
 	 left: 368px; 
 	 top: 383px; 
-	 z-index:166;
+	
 } 
 
  #Layer2copy120_7 
 { 
 	 left: 470px; 
 	 top: 404px; 
-	 z-index:167;
+	
 } 
 
  #Layer2copy113_14 
 { 
 	 left: 469px; 
 	 top: 368px; 
-	 z-index:168;
+	
 } 
 
  #Layer2copy114_14 
 { 
 	 left: 470px; 
 	 top: 384px; 
-	 z-index:169;
+	
 } 
 
  #Layer2copy120_8 
 { 
 	 left: 572px; 
 	 top: 302px; 
-	 z-index:170;
+	
 } 
 
  #Layer2copy113_15 
 { 
 	 left: 571px; 
 	 top: 266px; 
-	 z-index:171;
+	
 } 
 
  #Layer2copy114_15 
 { 
 	 left: 572px; 
 	 top: 282px; 
-	 z-index:172;
+	
 } 
 
  #Layer2copy120_9 
 { 
 	 left: 622px; 
 	 top: 185px; 
-	 z-index:173;
+	
 } 
 
  #Layer2copy113_16 
 { 
 	 left: 621px; 
 	 top: 149px; 
-	 z-index:174;
+	
 } 
 
  #Layer2copy114_16 
 { 
 	 left: 622px; 
 	 top: 165px; 
-	 z-index:175;
+	
 } 
 
  #Layer2copy120_10 
 { 
 	 left: 624px; 
 	 top: 388px; 
-	 z-index:176;
+	
 } 
 
  #Layer2copy113_17 
 { 
 	 left: 623px; 
 	 top: 352px; 
-	 z-index:177;
+	
 } 
 
  #Layer2copy114_17 
 { 
 	 left: 624px; 
 	 top: 368px; 
-	 z-index:178;
+	
 } 
 
  #Layer2copy120_11 
 { 
 	 left: 824px; 
 	 top: 287px; 
-	 z-index:179;
+	
 } 
 
  #Layer2copy113_18 
 { 
 	 left: 823px; 
 	 top: 251px; 
-	 z-index:180;
+	
 } 
 
  #Layer2copy114_18 
 { 
 	 left: 824px; 
 	 top: 267px; 
-	 z-index:181;
+	
 } 
 
  #Layer2copy120_12 
 { 
 	 left: 824px; 
 	 top: 287px; 
-	 z-index:182;
+	
 } 
 
  #Layer2copy113_19 
 { 
 	 left: 823px; 
 	 top: 251px; 
-	 z-index:183;
+	
 } 
 
  #Layer2copy114_19 
 { 
 	 left: 824px; 
 	 top: 267px; 
-	 z-index:184;
+	
 } 
 
  #Layer2copy120_13 
 { 
 	 left: 417px; 
 	 top: 490px; 
-	 z-index:185;
+	
 } 
 
  #Layer2copy113_20 
 { 
 	 left: 416px; 
 	 top: 454px; 
-	 z-index:186;
+	
 } 
 
  #Layer2copy114_20 
 { 
 	 left: 417px; 
 	 top: 470px; 
-	 z-index:187;
+	
 } 
 
  #Layer2copy113_21 
 { 
 	 left: 314px; 
 	 top: 268px; 
-	 z-index:188;
+	
 } 
 
  #Layer2copy114_21 
 { 
 	 left: 315px; 
 	 top: 284px; 
-	 z-index:189;
+	
 } 
 
  #Layer2copy113_22 
 { 
 	 left: 314px; 
 	 top: 268px; 
-	 z-index:190;
+	
 } 
 
  #Layer2copy114_22 
 { 
 	 left: 315px; 
 	 top: 284px; 
-	 z-index:191;
+	
 } 
 
  #Layer2copy113_23 
 { 
 	 left: 212px; 
 	 top: 420px; 
-	 z-index:192;
+	
 } 
 
  #Layer2copy114_23 
 { 
 	 left: 213px; 
 	 top: 436px; 
-	 z-index:193;
+	
 } 
 
  #Layer2copy113_24 
 { 
 	 left: 416px; 
 	 top: 421px; 
-	 z-index:194;
+	
 } 
 
  #Layer2copy114_24 
 { 
 	 left: 417px; 
 	 top: 437px; 
-	 z-index:195;
+	
 } 
 
  #Layer2copy113_25 
 { 
 	 left: 212px; 
 	 top: 529px; 
-	 z-index:196;
+	
 } 
 
  #Layer2copy114_25 
 { 
 	 left: 213px; 
 	 top: 545px; 
-	 z-index:197;
+	
 } 
 
  #Layer2copy113_26 
 { 
 	 left: 212px; 
 	 top: 558px; 
-	 z-index:198;
+	
 } 
 
  #Layer2copy114_26 
 { 
 	 left: 213px; 
 	 top: 574px; 
-	 z-index:199;
+	
 } 
 
  #Layer2copy113_27 
 { 
 	 left: 212px; 
 	 top: 591px; 
-	 z-index:200;
+	
 } 
 
  #Layer2copy114_27 
 { 
 	 left: 213px; 
 	 top: 607px; 
-	 z-index:201;
+	
 } 
 
  #Layer2copy113_28 
 { 
 	 left: 266px; 
 	 top: 628px; 
-	 z-index:202;
+	
 } 
 
  #Layer2copy114_28 
 { 
 	 left: 267px; 
 	 top: 644px; 
-	 z-index:203;
+	
 } 
 
  #Layer2copy113_29 
 { 
 	 left: 264px; 
 	 top: 575px; 
-	 z-index:204;
+	
 } 
 
  #Layer2copy114_29 
 { 
 	 left: 265px; 
 	 top: 591px; 
-	 z-index:205;
+	
 } 
 
  #Layer2copy113_30 
 { 
 	 left: 163px; 
 	 top: 577px; 
-	 z-index:206;
+	
 } 
 
  #Layer2copy114_30 
 { 
 	 left: 164px; 
 	 top: 593px; 
-	 z-index:207;
+	
 } 
 
  #Layer2copy113_31 
 { 
 	 left: 163px; 
 	 top: 627px; 
-	 z-index:208;
+	
 } 
 
  #Layer2copy114_31 
 { 
 	 left: 164px; 
 	 top: 643px; 
-	 z-index:209;
+	
 } 
 
  #Layer2copy113_32 
 { 
 	 left: 368px; 
 	 top: 199px; 
-	 z-index:210;
+	
 } 
 
  #Layer2copy114_32 
 { 
 	 left: 369px; 
 	 top: 215px; 
-	 z-index:211;
+	
 } 
 
  #Layer2copy108 
 { 
 	 left: 9px; 
 	 top: 488px; 
-	 z-index:212;
+	
 } 
 
  #Layer2copy110 
 { 
 	 left: 62px; 
 	 top: 590px; 
-	 z-index:213;
+	
 } 
 
  #Layer2copy109 
 { 
 	 left: 61px; 
 	 top: 575px; 
-	 z-index:214;
+	
 } 
 
  #Layer2copy111 
 { 
 	 left: 61px; 
 	 top: 607px; 
-	 z-index:215;
+	
 } 
 
  #Layer2copy110_0 
 { 
 	 left: 111px; 
 	 top: 644px; 
-	 z-index:216;
+	
 } 
 
  #Layer2copy109_0 
 { 
 	 left: 110px; 
 	 top: 629px; 
-	 z-index:217;
+	
 } 
 
  #Layer2copy111_0 
 { 
 	 left: 110px; 
 	 top: 661px; 
-	 z-index:218;
+	
 } 
 
  #Layer2copy110_1 
 { 
 	 left: 315px; 
 	 top: 644px; 
-	 z-index:219;
+	
 } 
 
  #Layer2copy109_1 
 { 
 	 left: 314px; 
 	 top: 629px; 
-	 z-index:220;
+	
 } 
 
  #Layer2copy111_1 
 { 
 	 left: 314px; 
 	 top: 661px; 
-	 z-index:221;
+	
 } 
 
  #Layer2copy104 
 { 
 	 left: 314px; 
 	 top: 31px; 
-	  z-index:222;
+	
 } 
 
  #Layer2copy106 
 { 
 	 left: 314px; 
 	 top: 17px; 
-	  z-index:223;
+	
 } 
 
  #Layer2copy105 
 { 
 	 left: 315px; 
 	 top: 47px; 
-	  z-index:224;
+	
 } 
 
  #Layer2copy104_0 
 { 
 	 left: 315px; 
 	 top: 182px; 
-	 z-index:225;
+	
 } 
 
  #Layer2copy106_0 
 { 
 	 left: 315px; 
 	 top: 168px; 
-	 z-index:226;
+	
 } 
 
  #Layer2copy104_1 
 { 
 	 left: 314px; 
 	 top: 81px; 
-	  z-index:227;
+	
 } 
 
  #Layer2copy106_1 
 { 
 	 left: 314px; 
 	 top: 67px; 
-	  z-index:228;
+	
 } 
 
  #Layer2copy105_0 
 { 
 	 left: 315px; 
 	 top: 97px; 
-	  z-index:229;
+	
 } 
 
  #Layer2copy104_2 
 { 
 	 left: 314px; 
 	 top: 132px; 
-	 z-index:230;
+	
 } 
 
  #Layer2copy106_2 
 { 
 	 left: 314px; 
 	 top: 118px; 
-	 z-index:231;
+	
 } 
 
  #Layer2copy105_1 
 { 
 	 left: 315px; 
 	 top: 148px; 
-	 z-index:232;
+	
 } 
 
  #Layer2copy104_3 
 { 
 	 left: 9px; 
 	 top: 335px; 
-	 z-index:233;
+	
 } 
 
  #Layer2copy106_3 
 { 
 	 left: 9px; 
 	 top: 321px; 
-	 z-index:234;
+	
 } 
 
  #Layer2copy104_4 
 { 
 	 left: 8px; 
 	 top: 234px; 
-	 z-index:235;
+	
 } 
 
  #Layer2copy106_4 
 { 
 	 left: 8px; 
 	 top: 220px; 
-	 z-index:236;
+	
 } 
 
  #Layer2copy105_2 
 { 
 	 left: 9px; 
 	 top: 250px; 
-	 z-index:237;
+	
 } 
 
  #Layer2copy104_5 
 { 
 	 left: 8px; 
 	 top: 285px; 
-	 z-index:238;
+	
 } 
 
  #Layer2copy106_5 
 { 
 	 left: 8px; 
 	 top: 271px; 
-	 z-index:239;
+	
 } 
 
  #Layer2copy105_3 
 { 
 	 left: 9px; 
 	 top: 301px; 
-	 z-index:240;
+	
 } 
 
  #Layer2copy104_6 
 { 
 	 left: 9px; 
 	 top: 469px; 
-	 z-index:241;
+	
 } 
 
  #Layer2copy106_6 
 { 
 	 left: 9px; 
 	 top: 455px; 
-	 z-index:242;
+	
 } 
 
  #Layer2copy104_7 
 { 
 	 left: 8px; 
 	 top: 368px; 
-	 z-index:243;
+	
 } 
 
  #Layer2copy106_7 
 { 
 	 left: 8px; 
 	 top: 354px; 
-	 z-index:244;
+	
 } 
 
  #Layer2copy105_4 
 { 
 	 left: 9px; 
 	 top: 384px; 
-	 z-index:245;
+	
 } 
 
  #Layer2copy104_8 
 { 
 	 left: 8px; 
 	 top: 419px; 
-	 z-index:246;
+	
 } 
 
  #Layer2copy106_8 
 { 
 	 left: 8px; 
 	 top: 405px; 
-	 z-index:247;
+	
 } 
 
  #Layer2copy105_5 
 { 
 	 left: 9px; 
 	 top: 435px; 
-	 z-index:248;
+	
 } 
 
  #Layer2copy104_9 
 { 
 	 left: 927px; 
 	 top: 132px; 
-	 z-index:249;
+	
 } 
 
  #Layer2copy106_9 
 { 
 	 left: 927px; 
 	 top: 118px; 
-	 z-index:250;
+	
 } 
 
  #Layer2copy104_10 
 { 
 	 left: 926px; 
 	 top: 31px; 
-	  z-index:251;
+	
 } 
 
  #Layer2copy106_10 
 { 
 	 left: 926px; 
 	 top: 17px; 
-	  z-index:252;
+	
 } 
 
  #Layer2copy105_6 
 { 
 	 left: 927px; 
 	 top: 47px; 
-	  z-index:253;
+	
 } 
 
  #Layer2copy104_11 
 { 
 	 left: 926px; 
 	 top: 82px; 
-	  z-index:254;
+	
 } 
 
  #Layer2copy106_11 
 { 
 	 left: 926px; 
 	 top: 68px; 
-	  z-index:255;
+	
 } 
 
  #Layer2copy105_7 
 { 
 	 left: 927px; 
 	 top: 98px; 
-	  z-index:256;
+	
 } 
 
  #Layer2copy104_12 
 { 
 	 left: 878px; 
 	 top: 181px; 
-	 z-index:257;
+	
 } 
 
  #Layer2copy106_12 
 { 
 	 left: 878px; 
 	 top: 167px; 
-	 z-index:258;
+	
 } 
 
  #Layer2copy104_13 
 { 
 	 left: 877px; 
 	 top: 80px; 
-	  z-index:259;
+	
 } 
 
  #Layer2copy106_13 
 { 
 	 left: 877px; 
 	 top: 66px; 
-	  z-index:260;
+	
 } 
 
  #Layer2copy105_8 
 { 
 	 left: 878px; 
 	 top: 96px; 
-	  z-index:261;
+	
 } 
 
  #Layer2copy104_14 
 { 
 	 left: 877px; 
 	 top: 131px; 
-	 z-index:262;
+	
 } 
 
  #Layer2copy106_14 
 { 
 	 left: 877px; 
 	 top: 117px; 
-	 z-index:263;
+	
 } 
 
  #Layer2copy105_9 
 { 
 	 left: 878px; 
 	 top: 147px; 
-	 z-index:264;
+	
 } 
 
  #Layer2copy104_15 
 { 
 	 left: 878px; 
 	 top: 181px; 
-	 z-index:265;
+	
 } 
 
  #Layer2copy106_15 
 { 
 	 left: 878px; 
 	 top: 167px; 
-	 z-index:266;
+	
 } 
 
  #Layer2copy104_16 
 { 
 	 left: 877px; 
 	 top: 80px; 
-	  z-index:267;
+	
 } 
 
  #Layer2copy106_16 
 { 
 	 left: 877px; 
 	 top: 66px; 
-	  z-index:268;
+	
 } 
 
  #Layer2copy105_10 
 { 
 	 left: 878px; 
 	 top: 96px; 
-	  z-index:269;
+	
 } 
 
  #Layer2copy104_17 
 { 
 	 left: 877px; 
 	 top: 131px; 
-	 z-index:270;
+	
 } 
 
  #Layer2copy106_17 
 { 
 	 left: 877px; 
 	 top: 117px; 
-	 z-index:271;
+	
 } 
 
  #Layer2copy105_11 
 { 
 	 left: 878px; 
 	 top: 147px; 
-	 z-index:272;
+	
 } 
 
  #Layer2copy104_18 
 { 
 	 left: 825px; 
 	 top: 232px; 
-	 z-index:273;
+	
 } 
 
  #Layer2copy106_18 
 { 
 	 left: 825px; 
 	 top: 218px; 
-	 z-index:274;
+	
 } 
 
  #Layer2copy104_19 
 { 
 	 left: 824px; 
 	 top: 131px; 
-	 z-index:275;
+	
 } 
 
  #Layer2copy106_19 
 { 
 	 left: 824px; 
 	 top: 117px; 
-	 z-index:276;
+	
 } 
 
  #Layer2copy105_12 
 { 
 	 left: 825px; 
 	 top: 147px; 
-	 z-index:277;
+	
 } 
 
  #Layer2copy104_20 
 { 
 	 left: 824px; 
 	 top: 182px; 
-	 z-index:278;
+	
 } 
 
  #Layer2copy106_20 
 { 
 	 left: 824px; 
 	 top: 168px; 
-	 z-index:279;
+	
 } 
 
  #Layer2copy105_13 
 { 
 	 left: 825px; 
 	 top: 198px; 
-	 z-index:280;
+	
 } 
 
  #Layer2copy104_21 
 { 
 	 left: 1132px; 
 	 top: 436px; 
-	 z-index:281;
+	
 } 
 
  #Layer2copy106_21 
 { 
 	 left: 1132px; 
 	 top: 422px; 
-	 z-index:282;
+	
 } 
 
  #Layer2copy104_22 
 { 
 	 left: 1131px; 
 	 top: 335px; 
-	 z-index:283;
+	
 } 
 
  #Layer2copy106_22 
 { 
 	 left: 1131px; 
 	 top: 321px; 
-	 z-index:284;
+	
 } 
 
  #Layer2copy105_14 
 { 
 	 left: 1132px; 
 	 top: 351px; 
-	 z-index:285;
+	
 } 
 
  #Layer2copy104_23 
 { 
 	 left: 1131px; 
 	 top: 386px; 
-	 z-index:286;
+	
 } 
 
  #Layer2copy106_23 
 { 
 	 left: 1131px; 
 	 top: 372px; 
-	 z-index:287;
+	
 } 
 
  #Layer2copy105_15 
 { 
 	 left: 1132px; 
 	 top: 402px; 
-	 z-index:288;
+	
 } 
 
  #Layer2copy104_24 
 { 
 	 left: 1133px; 
 	 top: 572px; 
-	 z-index:289;
+	
 } 
 
  #Layer2copy106_24 
 { 
 	 left: 1133px; 
 	 top: 558px; 
-	 z-index:290;
+	
 } 
 
  #Layer2copy104_25 
 { 
 	 left: 1132px; 
 	 top: 471px; 
-	 z-index:291;
+	
 } 
 
  #Layer2copy106_25 
 { 
 	 left: 1132px; 
 	 top: 457px; 
-	 z-index:292;
+	
 } 
 
  #Layer2copy105_16 
 { 
 	 left: 1133px; 
 	 top: 487px; 
-	 z-index:293;
+	
 } 
 
  #Layer2copy104_26 
 { 
 	 left: 1132px; 
 	 top: 522px; 
-	 z-index:294;
+	
 } 
 
  #Layer2copy106_26 
 { 
 	 left: 1132px; 
 	 top: 508px; 
-	 z-index:295;
+	
 } 
 
  #Layer2copy105_17 
 { 
 	 left: 1133px; 
 	 top: 538px; 
-	 z-index:296;
+	
 } 
 
  #Layer2copy104_27 
 { 
 	 left: 1132px; 
 	 top: 743px; 
-	 z-index:297;
+	
 } 
 
  #Layer2copy106_27 
 { 
 	 left: 1132px; 
 	 top: 729px; 
-	 z-index:298;
+	
 } 
 
  #Layer2copy104_28 
 { 
 	 left: 1131px; 
 	 top: 642px; 
-	 z-index:299;
+	
 } 
 
  #Layer2copy106_28 
 { 
 	 left: 1131px; 
 	 top: 628px; 
-	 z-index:300;
+	
 } 
 
  #Layer2copy105_18 
 { 
 	 left: 1132px; 
 	 top: 658px; 
-	 z-index:301;
+	
 } 
 
  #Layer2copy104_29 
 { 
 	 left: 1131px; 
 	 top: 693px; 
-	 z-index:302;
+	
 } 
 
  #Layer2copy106_29 
 { 
 	 left: 1131px; 
 	 top: 679px; 
-	 z-index:303;
+	
 } 
 
  #Layer2copy105_19 
 { 
 	 left: 1132px; 
 	 top: 709px; 
-	 z-index:304;
+	
 } 
 
  #Layer2copy104_30 
 { 
 	 left: 1131px; 
 	 top: 895px; 
-	 z-index:305;
+	
 } 
 
  #Layer2copy106_30 
 { 
 	 left: 1131px; 
 	 top: 881px; 
-	 z-index:306;
+	
 } 
 
  #Layer2copy104_31 
 { 
 	 left: 1130px; 
 	 top: 794px; 
-	 z-index:307;
+	
 } 
 
  #Layer2copy106_31 
 { 
 	 left: 1130px; 
 	 top: 780px; 
-	 z-index:308;
+	
 } 
 
  #Layer2copy105_20 
 { 
 	 left: 1131px; 
 	 top: 810px; 
-	 z-index:309;
+	
 } 
 
  #Layer2copy104_32 
 { 
 	 left: 1130px; 
 	 top: 845px; 
-	 z-index:310;
+	
 } 
 
  #Layer2copy106_32 
 { 
 	 left: 1130px; 
 	 top: 831px; 
-	 z-index:311;
+	
 } 
 
  #Layer2copy105_21 
 { 
 	 left: 1131px; 
 	 top: 861px; 
-	 z-index:312;
+	
 } 
 
  #Layer2copy104_33 
 { 
 	 left: 1083px; 
 	 top: 796px; 
-	 z-index:313;
+	
 } 
 
  #Layer2copy106_33 
 { 
 	 left: 1083px; 
 	 top: 782px; 
-	 z-index:314;
+	
 } 
 
  #Layer2copy104_34 
 { 
 	 left: 1082px; 
 	 top: 695px; 
-	 z-index:315;
+	
 } 
 
  #Layer2copy106_34 
 { 
 	 left: 1082px; 
 	 top: 681px; 
-	 z-index:316;
+	
 } 
 
  #Layer2copy105_22 
 { 
 	 left: 1083px; 
 	 top: 711px; 
-	 z-index:317;
+	
 } 
 
  #Layer2copy104_35 
 { 
 	 left: 1082px; 
 	 top: 746px; 
-	 z-index:318;
+	
 } 
 
  #Layer2copy106_35 
 { 
 	 left: 1082px; 
 	 top: 732px; 
-	 z-index:319;
+	
 } 
 
  #Layer2copy105_23 
 { 
 	 left: 1083px; 
 	 top: 762px; 
-	 z-index:320;
+	
 } 
 
  #Layer2copy104_36 
@@ -2277,21 +2277,21 @@
 { 
 	 left: 774px; 
 	 top: 949px; 
-	 z-index:323;
+	
 } 
 
  #Layer2copy106_37 
 { 
 	 left: 774px; 
 	 top: 935px; 
-	 z-index:324;
+	
 } 
 
  #Layer2copy105_24 
 { 
 	 left: 775px; 
 	 top: 965px; 
-	 z-index:325;
+	
 } 
 
  #Layer2copy104_38 
@@ -2305,7 +2305,7 @@
 { 
 	 left: 774px; 
 	 top: 986px; 
-	 z-index:327;
+	
 } 
 
  #Layer2copy105_25 
@@ -2319,56 +2319,56 @@
 { 
 	 left: 722px; 
 	 top: 999px; 
-	 z-index:329;
+	
 } 
 
  #Layer2copy106_39 
 { 
 	 left: 722px; 
 	 top: 985px; 
-	 z-index:330;
+	
 } 
 
  #Layer2copy104_40 
 { 
 	 left: 721px; 
 	 top: 898px; 
-	 z-index:331;
+	
 } 
 
  #Layer2copy106_40 
 { 
 	 left: 721px; 
 	 top: 884px; 
-	 z-index:332;
+	
 } 
 
  #Layer2copy105_26 
 { 
 	 left: 722px; 
 	 top: 914px; 
-	 z-index:333;
+	
 } 
 
  #Layer2copy104_41 
 { 
 	 left: 721px; 
 	 top: 949px; 
-	 z-index:334;
+	
 } 
 
  #Layer2copy106_41 
 { 
 	 left: 721px; 
 	 top: 935px; 
-	 z-index:335;
+	
 } 
 
  #Layer2copy105_27 
 { 
 	 left: 722px; 
 	 top: 965px; 
-	 z-index:336;
+	
 } 
 
  #Layer2copy104_42 
@@ -2389,35 +2389,35 @@
 { 
 	 left: 264px; 
 	 top: 948px; 
-	 z-index:339;
+	
 } 
 
  #Layer2copy106_43 
 { 
 	 left: 264px; 
 	 top: 934px; 
-	 z-index:340;
+	
 } 
 
  #Layer2copy105_28 
 { 
 	 left: 265px; 
 	 top: 964px; 
-	 z-index:341;
+	
 } 
 
  #Layer2copy104_44 
 { 
 	 left: 264px; 
 	 top: 999px; 
-	 z-index:342;
+	
 } 
 
  #Layer2copy106_44 
 { 
 	 left: 264px; 
 	 top: 985px; 
-	 z-index:343;
+	
 } 
 
  #Layer2copy105_29 
@@ -2431,1036 +2431,1036 @@
 { 
 	 left: 621px; 
 	 top: 129px; 
-	 z-index:345;
+	
 } 
 
  #Layer2copy106_45 
 { 
 	 left: 621px; 
 	 top: 115px; 
-	 z-index:346;
+	
 } 
 
  #Layer2copy104_46 
 { 
 	 left: 620px; 
 	 top: 28px; 
-	  z-index:347;
+	
 } 
 
  #Layer2copy106_46 
 { 
 	 left: 620px; 
 	 top: 14px; 
-	  z-index:348;
+	
 } 
 
  #Layer2copy105_30 
 { 
 	 left: 621px; 
 	 top: 44px; 
-	  z-index:349;
+	
 } 
 
  #Layer2copy104_47 
 { 
 	 left: 620px; 
 	 top: 79px; 
-	  z-index:350;
+	
 } 
 
  #Layer2copy106_47 
 { 
 	 left: 620px; 
 	 top: 65px; 
-	  z-index:351;
+	
 } 
 
  #Layer2copy105_31 
 { 
 	 left: 621px; 
 	 top: 95px; 
-	  z-index:352;
+	
 } 
 
  #Layer2copy104_48 
 { 
 	 left: 416px; 
 	 top: 231px; 
-	 z-index:353;
+	
 } 
 
  #Layer2copy106_48 
 { 
 	 left: 416px; 
 	 top: 217px; 
-	 z-index:354;
+	
 } 
 
  #Layer2copy104_49 
 { 
 	 left: 415px; 
 	 top: 130px; 
-	 z-index:355;
+	
 } 
 
  #Layer2copy106_49 
 { 
 	 left: 415px; 
 	 top: 116px; 
-	 z-index:356;
+	
 } 
 
  #Layer2copy105_32 
 { 
 	 left: 416px; 
 	 top: 146px; 
-	 z-index:357;
+	
 } 
 
  #Layer2copy104_50 
 { 
 	 left: 415px; 
 	 top: 181px; 
-	 z-index:358;
+	
 } 
 
  #Layer2copy106_50 
 { 
 	 left: 415px; 
 	 top: 167px; 
-	 z-index:359;
+	
 } 
 
  #Layer2copy105_33 
 { 
 	 left: 416px; 
 	 top: 197px; 
-	 z-index:360;
+	
 } 
 
  #Layer2copy104_51 
 { 
 	 left: 367px; 
 	 top: 180px; 
-	 z-index:361;
+	
 } 
 
  #Layer2copy106_51 
 { 
 	 left: 367px; 
 	 top: 166px; 
-	 z-index:362;
+	
 } 
 
  #Layer2copy104_52 
 { 
 	 left: 366px; 
 	 top: 79px; 
-	  z-index:363;
+	
 } 
 
  #Layer2copy106_52 
 { 
 	 left: 366px; 
 	 top: 65px; 
-	  z-index:364;
+	
 } 
 
  #Layer2copy105_34 
 { 
 	 left: 367px; 
 	 top: 95px; 
-	  z-index:365;
+	
 } 
 
  #Layer2copy104_53 
 { 
 	 left: 366px; 
 	 top: 130px; 
-	 z-index:366;
+	
 } 
 
  #Layer2copy106_53 
 { 
 	 left: 366px; 
 	 top: 116px; 
-	 z-index:367;
+	
 } 
 
  #Layer2copy105_35 
 { 
 	 left: 367px; 
 	 top: 146px; 
-	 z-index:368;
+	
 } 
 
  #Layer2copy104_54 
 { 
 	 left: 621px; 
 	 top: 334px; 
-	 z-index:369;
+	
 } 
 
  #Layer2copy106_54 
 { 
 	 left: 621px; 
 	 top: 320px; 
-	 z-index:370;
+	
 } 
 
  #Layer2copy104_55 
 { 
 	 left: 620px; 
 	 top: 233px; 
-	 z-index:371;
+	
 } 
 
  #Layer2copy106_55 
 { 
 	 left: 620px; 
 	 top: 219px; 
-	 z-index:372;
+	
 } 
 
  #Layer2copy105_36 
 { 
 	 left: 621px; 
 	 top: 249px; 
-	 z-index:373;
+	
 } 
 
  #Layer2copy104_56 
 { 
 	 left: 620px; 
 	 top: 284px; 
-	 z-index:374;
+	
 } 
 
  #Layer2copy106_56 
 { 
 	 left: 620px; 
 	 top: 270px; 
-	 z-index:375;
+	
 } 
 
  #Layer2copy105_37 
 { 
 	 left: 621px; 
 	 top: 300px; 
-	 z-index:376;
+	
 } 
 
  #Layer2copy104_57 
 { 
 	 left: 61px; 
 	 top: 385px; 
-	 z-index:377;
+	
 } 
 
  #Layer2copy106_57 
 { 
 	 left: 61px; 
 	 top: 371px; 
-	 z-index:378;
+	
 } 
 
  #Layer2copy104_58 
 { 
 	 left: 60px; 
 	 top: 284px; 
-	 z-index:379;
+	
 } 
 
  #Layer2copy106_58 
 { 
 	 left: 60px; 
 	 top: 270px; 
-	 z-index:380;
+	
 } 
 
  #Layer2copy105_38 
 { 
 	 left: 61px; 
 	 top: 300px; 
-	 z-index:381;
+	
 } 
 
  #Layer2copy104_59 
 { 
 	 left: 60px; 
 	 top: 335px; 
-	 z-index:382;
+	
 } 
 
  #Layer2copy106_59 
 { 
 	 left: 60px; 
 	 top: 321px; 
-	 z-index:383;
+	
 } 
 
  #Layer2copy105_39 
 { 
 	 left: 61px; 
 	 top: 351px; 
-	 z-index:384;
+	
 } 
 
  #Layer2copy104_60 
 { 
 	 left: 927px; 
 	 top: 263px; 
-	 z-index:385;
+	
 } 
 
  #Layer2copy106_60 
 { 
 	 left: 927px; 
 	 top: 249px; 
-	 z-index:386;
+	
 } 
 
  #Layer2copy104_61 
 { 
 	 left: 926px; 
 	 top: 162px; 
-	 z-index:387;
+	
 } 
 
  #Layer2copy106_61 
 { 
 	 left: 926px; 
 	 top: 148px; 
-	 z-index:388;
+	
 } 
 
  #Layer2copy105_40 
 { 
 	 left: 927px; 
 	 top: 178px; 
-	 z-index:389;
+	
 } 
 
  #Layer2copy104_62 
 { 
 	 left: 926px; 
 	 top: 213px; 
-	 z-index:390;
+	
 } 
 
  #Layer2copy106_62 
 { 
 	 left: 926px; 
 	 top: 199px; 
-	 z-index:391;
+	
 } 
 
  #Layer2copy105_41 
 { 
 	 left: 927px; 
 	 top: 229px; 
-	 z-index:392;
+	
 } 
 
  #Layer2copy104_63 
 { 
 	 left: 9px; 
 	 top: 641px; 
-	 z-index:393;
+	
 } 
 
  #Layer2copy106_63 
 { 
 	 left: 9px; 
 	 top: 627px; 
-	 z-index:394;
+	
 } 
 
  #Layer2copy104_64 
 { 
 	 left: 8px; 
 	 top: 540px; 
-	 z-index:395;
+	
 } 
 
  #Layer2copy106_64 
 { 
 	 left: 8px; 
 	 top: 526px; 
-	 z-index:396;
+	
 } 
 
  #Layer2copy105_42 
 { 
 	 left: 9px; 
 	 top: 556px; 
-	 z-index:397;
+	
 } 
 
  #Layer2copy104_65 
 { 
 	 left: 8px; 
 	 top: 591px; 
-	 z-index:398;
+	
 } 
 
  #Layer2copy106_65 
 { 
 	 left: 8px; 
 	 top: 577px; 
-	 z-index:399;
+	
 } 
 
  #Layer2copy105_43 
 { 
 	 left: 9px; 
 	 top: 607px; 
-	 z-index:400;
+	
 } 
 
  #Layer2copy104_66 
 { 
 	 left: 9px; 
 	 top: 774px; 
-	 z-index:401;
+	
 } 
 
  #Layer2copy106_66 
 { 
 	 left: 9px; 
 	 top: 760px; 
-	 z-index:402;
+	
 } 
 
  #Layer2copy104_67 
 { 
 	 left: 8px; 
 	 top: 673px; 
-	 z-index:403;
+	
 } 
 
  #Layer2copy106_67 
 { 
 	 left: 8px; 
 	 top: 659px; 
-	 z-index:404;
+	
 } 
 
  #Layer2copy105_44 
 { 
 	 left: 9px; 
 	 top: 689px; 
-	 z-index:405;
+	
 } 
 
  #Layer2copy104_68 
 { 
 	 left: 8px; 
 	 top: 724px; 
-	 z-index:406;
+	
 } 
 
  #Layer2copy106_68 
 { 
 	 left: 8px; 
 	 top: 710px; 
-	 z-index:407;
+	
 } 
 
  #Layer2copy105_45 
 { 
 	 left: 9px; 
 	 top: 740px; 
-	 z-index:408;
+	
 } 
 
  #Layer2copy104_69 
 { 
 	 left: 316px; 
 	 top: 949px; 
-	 z-index:409;
+	
 } 
 
  #Layer2copy106_69 
 { 
 	 left: 316px; 
 	 top: 935px; 
-	 z-index:410;
+	
 } 
 
  #Layer2copy104_70 
 { 
 	 left: 315px; 
 	 top: 848px; 
-	 z-index:411;
+	
 } 
 
  #Layer2copy106_70 
 { 
 	 left: 315px; 
 	 top: 834px; 
-	 z-index:412;
+	
 } 
 
  #Layer2copy105_46 
 { 
 	 left: 316px; 
 	 top: 864px; 
-	 z-index:413;
+	
 } 
 
  #Layer2copy104_71 
 { 
 	 left: 315px; 
 	 top: 899px; 
-	 z-index:414;
+	
 } 
 
  #Layer2copy106_71 
 { 
 	 left: 315px; 
 	 top: 885px; 
-	 z-index:415;
+	
 } 
 
  #Layer2copy105_47 
 { 
 	 left: 316px; 
 	 top: 915px; 
-	 z-index:416;
+	
 } 
 
  #Layer2copy104_72 
 { 
 	 left: 214px; 
 	 top: 945px; 
-	 z-index:417;
+	
 } 
 
  #Layer2copy106_72 
 { 
 	 left: 214px; 
 	 top: 931px; 
-	 z-index:418;
+	
 } 
 
  #Layer2copy104_73 
 { 
 	 left: 213px; 
 	 top: 844px; 
-	 z-index:419;
+	
 } 
 
  #Layer2copy106_73 
 { 
 	 left: 213px; 
 	 top: 830px; 
-	 z-index:420;
+	
 } 
 
  #Layer2copy105_48 
 { 
 	 left: 214px; 
 	 top: 860px; 
-	 z-index:421;
+	
 } 
 
  #Layer2copy104_74 
 { 
 	 left: 213px; 
 	 top: 895px; 
-	 z-index:422;
+	
 } 
 
  #Layer2copy106_74 
 { 
 	 left: 213px; 
 	 top: 881px; 
-	 z-index:423;
+	
 } 
 
  #Layer2copy105_49 
 { 
 	 left: 214px; 
 	 top: 911px; 
-	 z-index:424;
+	
 } 
 
  #Layer2copy104_75 
 { 
 	 left: 315px; 
 	 top: 743px; 
-	 z-index:425;
+	
 } 
 
  #Layer2copy106_75 
 { 
 	 left: 315px; 
 	 top: 729px; 
-	 z-index:426;
+	
 } 
 
  #Layer2copy105_50 
 { 
 	 left: 316px; 
 	 top: 759px; 
-	 z-index:427;
+	
 } 
 
  #Layer2copy104_76 
 { 
 	 left: 315px; 
 	 top: 794px; 
-	 z-index:428;
+	
 } 
 
  #Layer2copy106_76 
 { 
 	 left: 315px; 
 	 top: 780px; 
-	 z-index:429;
+	
 } 
 
  #Layer2copy104_77 
 { 
 	 left: 368px; 
 	 top: 693px; 
-	 z-index:430;
+	
 } 
 
  #Layer2copy106_77 
 { 
 	 left: 368px; 
 	 top: 679px; 
-	 z-index:431;
+	
 } 
 
  #Layer2copy105_51 
 { 
 	 left: 369px; 
 	 top: 709px; 
-	 z-index:432;
+	
 } 
 
  #Layer2copy104_78 
 { 
 	 left: 368px; 
 	 top: 744px; 
-	 z-index:433;
+	
 } 
 
  #Layer2copy106_78 
 { 
 	 left: 368px; 
 	 top: 730px; 
-	 z-index:434;
+	
 } 
 
  #Layer2copy104_79 
 { 
 	 left: 366px; 
 	 top: 593px; 
-	 z-index:435;
+	
 } 
 
  #Layer2copy106_79 
 { 
 	 left: 366px; 
 	 top: 579px; 
-	 z-index:436;
+	
 } 
 
  #Layer2copy105_52 
 { 
 	 left: 367px; 
 	 top: 609px; 
-	 z-index:437;
+	
 } 
 
  #Layer2copy104_80 
 { 
 	 left: 366px; 
 	 top: 644px; 
-	 z-index:438;
+	
 } 
 
  #Layer2copy106_80 
 { 
 	 left: 366px; 
 	 top: 630px; 
-	 z-index:439;
+	
 } 
 
  #Layer2copy104_81 
 { 
 	 left: 366px; 
 	 top: 593px; 
-	 z-index:440;
+	
 } 
 
  #Layer2copy106_81 
 { 
 	 left: 366px; 
 	 top: 579px; 
-	 z-index:441;
+	
 } 
 
  #Layer2copy105_53 
 { 
 	 left: 367px; 
 	 top: 609px; 
-	 z-index:442;
+	
 } 
 
  #Layer2copy104_82 
 { 
 	 left: 366px; 
 	 top: 644px; 
-	 z-index:443;
+	
 } 
 
  #Layer2copy106_82 
 { 
 	 left: 366px; 
 	 top: 630px; 
-	 z-index:444;
+	
 } 
 
  #Layer2copy104_83 
 { 
 	 left: 468px; 
 	 top: 590px; 
-	 z-index:445;
+	
 } 
 
  #Layer2copy106_83 
 { 
 	 left: 468px; 
 	 top: 576px; 
-	 z-index:446;
+	
 } 
 
  #Layer2copy105_54 
 { 
 	 left: 469px; 
 	 top: 606px; 
-	 z-index:447;
+	
 } 
 
  #Layer2copy104_84 
 { 
 	 left: 468px; 
 	 top: 641px; 
-	 z-index:448;
+	
 } 
 
  #Layer2copy106_84 
 { 
 	 left: 468px; 
 	 top: 627px; 
-	 z-index:449;
+	
 } 
 
  #Layer2copy104_85 
 { 
 	 left: 571px; 
 	 top: 593px; 
-	 z-index:450;
+	
 } 
 
  #Layer2copy106_85 
 { 
 	 left: 571px; 
 	 top: 579px; 
-	 z-index:451;
+	
 } 
 
  #Layer2copy105_55 
 { 
 	 left: 572px; 
 	 top: 609px; 
-	 z-index:452;
+	
 } 
 
  #Layer2copy104_86 
 { 
 	 left: 571px; 
 	 top: 644px; 
-	 z-index:453;
+	
 } 
 
  #Layer2copy106_86 
 { 
 	 left: 571px; 
 	 top: 630px; 
-	 z-index:454;
+	
 } 
 
  #Layer2copy104_87 
 { 
 	 left: 572px; 
 	 top: 491px; 
-	 z-index:455;
+	
 } 
 
  #Layer2copy106_87 
 { 
 	 left: 572px; 
 	 top: 477px; 
-	 z-index:456;
+	
 } 
 
  #Layer2copy105_56 
 { 
 	 left: 573px; 
 	 top: 507px; 
-	 z-index:457;
+	
 } 
 
  #Layer2copy104_88 
 { 
 	 left: 572px; 
 	 top: 542px; 
-	 z-index:458;
+	
 } 
 
  #Layer2copy106_88 
 { 
 	 left: 572px; 
 	 top: 528px; 
-	 z-index:459;
+	
 } 
 
  #Layer2copy104_89 
 { 
 	 left: 673px; 
 	 top: 283px; 
-	 z-index:460;
+	
 } 
 
  #Layer2copy106_89 
 { 
 	 left: 673px; 
 	 top: 269px; 
-	 z-index:461;
+	
 } 
 
  #Layer2copy105_57 
 { 
 	 left: 674px; 
 	 top: 299px; 
-	 z-index:462;
+	
 } 
 
  #Layer2copy104_90 
 { 
 	 left: 673px; 
 	 top: 334px; 
-	 z-index:463;
+	
 } 
 
  #Layer2copy106_90 
 { 
 	 left: 673px; 
 	 top: 320px; 
-	 z-index:464;
+	
 } 
 
  #Layer2copy104_91 
 { 
 	 left: 776px; 
 	 top: 185px; 
-	 z-index:465;
+	
 } 
 
  #Layer2copy106_91 
 { 
 	 left: 776px; 
 	 top: 171px; 
-	 z-index:466;
+	
 } 
 
  #Layer2copy105_58 
 { 
 	 left: 777px; 
 	 top: 201px; 
-	 z-index:467;
+	
 } 
 
  #Layer2copy104_92 
 { 
 	 left: 776px; 
 	 top: 236px; 
-	 z-index:468;
+	
 } 
 
  #Layer2copy106_92 
 { 
 	 left: 776px; 
 	 top: 222px; 
-	 z-index:469;
+	
 } 
 
  #Layer2copy104_93 
 { 
 	 left: 825px; 
 	 top: 334px; 
-	 z-index:470;
+	
 } 
 
  #Layer2copy106_93 
 { 
 	 left: 825px; 
 	 top: 320px; 
-	 z-index:471;
+	
 } 
 
  #Layer2copy105_59 
 { 
 	 left: 826px; 
 	 top: 350px; 
-	 z-index:472;
+	
 } 
 
  #Layer2copy104_94 
 { 
 	 left: 825px; 
 	 top: 385px; 
-	 z-index:473;
+	
 } 
 
  #Layer2copy106_94 
 { 
 	 left: 825px; 
 	 top: 371px; 
-	 z-index:474;
+	
 } 
 
  #Layer2copy104_95 
 { 
 	 left: 825px; 
 	 top: 334px; 
-	 z-index:475;
+	
 } 
 
  #Layer2copy106_95 
 { 
 	 left: 825px; 
 	 top: 320px; 
-	 z-index:476;
+	
 } 
 
  #Layer2copy105_60 
 { 
 	 left: 826px; 
 	 top: 350px; 
-	 z-index:477;
+	
 } 
 
  #Layer2copy104_96 
 { 
 	 left: 825px; 
 	 top: 385px; 
-	 z-index:478;
+	
 } 
 
  #Layer2copy106_96 
 { 
 	 left: 825px; 
 	 top: 371px; 
-	 z-index:479;
+	
 } 
 
  #Layer2copy104_97 
 { 
 	 left: 980px; 
 	 top: 693px; 
-	 z-index:480;
+	
 } 
 
  #Layer2copy106_97 
 { 
 	 left: 980px; 
 	 top: 679px; 
-	 z-index:481;
+	
 } 
 
  #Layer2copy105_61 
 { 
 	 left: 981px; 
 	 top: 709px; 
-	 z-index:482;
+	
 } 
 
  #Layer2copy104_98 
 { 
 	 left: 980px; 
 	 top: 744px; 
-	 z-index:483;
+	
 } 
 
  #Layer2copy106_98 
 { 
 	 left: 980px; 
 	 top: 730px; 
-	 z-index:484;
+	
 } 
 
  #Layer2copy104_99 
 { 
 	 left: 826px; 
 	 top: 845px; 
-	 z-index:485;
+	
 } 
 
  #Layer2copy106_99 
 { 
 	 left: 826px; 
 	 top: 831px; 
-	 z-index:486;
+	
 } 
 
  #Layer2copy105_62 
 { 
 	 left: 827px; 
 	 top: 861px; 
-	 z-index:487;
+	
 } 
 
  #Layer2copy104_100 
 { 
 	 left: 826px; 
 	 top: 896px; 
-	 z-index:488;
+	
 } 
 
  #Layer2copy106_100 
 { 
 	 left: 826px; 
 	 top: 882px; 
-	 z-index:489;
+	
 } 
 
  #Layer2copy104_101 
 { 
 	 left: 826px; 
 	 top: 950px; 
-	 z-index:490;
+	
 } 
 
  #Layer2copy106_101 
 { 
 	 left: 826px; 
 	 top: 936px; 
-	 z-index:491;
+	
 } 
 
  #Layer2copy105_63 
 { 
 	 left: 827px; 
 	 top: 966px; 
-	 z-index:492;
+	
 } 
 
  #Layer2copy104_102 
@@ -3474,7 +3474,7 @@
 { 
 	 left: 826px; 
 	 top: 987px; 
-	 z-index:494;
+	
 } 
 
  #Layer2copy104_103 
@@ -3516,140 +3516,140 @@
 { 
 	 left: 775px; 
 	 top: 691px; 
-	 z-index:500;
+	
 } 
 
  #Layer2copy106_105 
 { 
 	 left: 775px; 
 	 top: 677px; 
-	 z-index:501;
+	
 } 
 
  #Layer2copy105_65 
 { 
 	 left: 776px; 
 	 top: 707px; 
-	 z-index:502;
+	
 } 
 
  #Layer2copy104_106 
 { 
 	 left: 775px; 
 	 top: 742px; 
-	 z-index:503;
+	
 } 
 
  #Layer2copy106_106 
 { 
 	 left: 775px; 
 	 top: 728px; 
-	 z-index:504;
+	
 } 
 
  #Layer2copy104_107 
 { 
 	 left: 879px; 
 	 top: 691px; 
-	 z-index:505;
+	
 } 
 
  #Layer2copy106_107 
 { 
 	 left: 879px; 
 	 top: 677px; 
-	 z-index:506;
+	
 } 
 
  #Layer2copy105_66 
 { 
 	 left: 880px; 
 	 top: 707px; 
-	 z-index:507;
+	
 } 
 
  #Layer2copy104_108 
 { 
 	 left: 879px; 
 	 top: 742px; 
-	 z-index:508;
+	
 } 
 
  #Layer2copy106_108 
 { 
 	 left: 879px; 
 	 top: 728px; 
-	 z-index:509;
+	
 } 
 
  #Layer2copy104_109 
 { 
 	 left: 367px; 
 	 top: 898px; 
-	 z-index:510;
+	
 } 
 
  #Layer2copy106_109 
 { 
 	 left: 367px; 
 	 top: 884px; 
-	 z-index:511;
+	
 } 
 
  #Layer2copy105_67 
 { 
 	 left: 368px; 
 	 top: 914px; 
-	 z-index:512;
+	
 } 
 
  #Layer2copy104_110 
 { 
 	 left: 367px; 
 	 top: 949px; 
-	 z-index:513;
+	
 } 
 
  #Layer2copy106_110 
 { 
 	 left: 367px; 
 	 top: 935px; 
-	 z-index:514;
+	
 } 
 
  #Layer2copy104_111 
 { 
 	 left: 470px; 
 	 top: 797px; 
-	 z-index:515;
+	
 } 
 
  #Layer2copy106_111 
 { 
 	 left: 470px; 
 	 top: 783px; 
-	 z-index:516;
+	
 } 
 
  #Layer2copy105_68 
 { 
 	 left: 471px; 
 	 top: 813px; 
-	 z-index:517;
+	
 } 
 
  #Layer2copy104_112 
 { 
 	 left: 470px; 
 	 top: 848px; 
-	 z-index:518;
+	
 } 
 
  #Layer2copy106_112 
 { 
 	 left: 470px; 
 	 top: 834px; 
-	 z-index:519;
+	
 } 
 
  #Layer2copy104_113 
@@ -3663,7 +3663,7 @@
 { 
 	 left: 568px; 
 	 top: 986px; 
-	 z-index:521;
+	
 } 
 
  #Layer2copy105_69 
@@ -3691,406 +3691,406 @@
 { 
 	 left: 674px; 
 	 top: 898px; 
-	 z-index:525;
+	
 } 
 
  #Layer2copy106_115 
 { 
 	 left: 674px; 
 	 top: 884px; 
-	 z-index:526;
+	
 } 
 
  #Layer2copy105_70 
 { 
 	 left: 675px; 
 	 top: 914px; 
-	 z-index:527;
+	
 } 
 
  #Layer2copy104_116 
 { 
 	 left: 674px; 
 	 top: 949px; 
-	 z-index:528;
+	
 } 
 
  #Layer2copy106_116 
 { 
 	 left: 674px; 
 	 top: 935px; 
-	 z-index:529;
+	
 } 
 
  #Layer2copy140 
 { 
 	 left: 1029px; 
 	 top: 503px; 
-	 z-index:530;
+	
 } 
 
  #Layer2copy104_117 
 { 
 	 left: 1030px; 
 	 top: 437px; 
-	 z-index:531;
+	
 } 
 
  #Layer2copy106_117 
 { 
 	 left: 1030px; 
 	 top: 423px; 
-	 z-index:532;
+	
 } 
 
  #Layer2copy105_71 
 { 
 	 left: 1031px; 
 	 top: 453px; 
-	 z-index:533;
+	
 } 
 
  #Layer2copy104_118 
 { 
 	 left: 1030px; 
 	 top: 488px; 
-	 z-index:534;
+	
 } 
 
  #Layer2copy106_118 
 { 
 	 left: 1030px; 
 	 top: 474px; 
-	 z-index:535;
+	
 } 
 
  #Layer2copy140_0 
 { 
 	 left: 825px; 
 	 top: 504px; 
-	 z-index:536;
+	
 } 
 
  #Layer2copy104_119 
 { 
 	 left: 826px; 
 	 top: 438px; 
-	 z-index:537;
+	
 } 
 
  #Layer2copy106_119 
 { 
 	 left: 826px; 
 	 top: 424px; 
-	 z-index:538;
+	
 } 
 
  #Layer2copy105_72 
 { 
 	 left: 827px; 
 	 top: 454px; 
-	 z-index:539;
+	
 } 
 
  #Layer2copy104_120 
 { 
 	 left: 826px; 
 	 top: 489px; 
-	 z-index:540;
+	
 } 
 
  #Layer2copy106_120 
 { 
 	 left: 826px; 
 	 top: 475px; 
-	 z-index:541;
+	
 } 
 
  #Layer2copy104_121 
 { 
 	 left: 827px; 
 	 top: 742px; 
-	 z-index:542;
+	
 } 
 
  #Layer2copy106_121 
 { 
 	 left: 827px; 
 	 top: 728px; 
-	 z-index:543;
+	
 } 
 
  #Layer2copy105_73 
 { 
 	 left: 828px; 
 	 top: 758px; 
-	 z-index:544;
+	
 } 
 
  #Layer2copy104_122 
 { 
 	 left: 827px; 
 	 top: 793px; 
-	 z-index:545;
+	
 } 
 
  #Layer2copy106_122 
 { 
 	 left: 827px; 
 	 top: 779px; 
-	 z-index:546;
+	
 } 
 
  #Layer2copy140_1 
 { 
 	 left: 620px; 
 	 top: 502px; 
-	 z-index:547;
+	
 } 
 
  #Layer2copy104_123 
 { 
 	 left: 621px; 
 	 top: 436px; 
-	 z-index:548;
+	
 } 
 
  #Layer2copy106_123 
 { 
 	 left: 621px; 
 	 top: 422px; 
-	 z-index:549;
+	
 } 
 
  #Layer2copy105_74 
 { 
 	 left: 622px; 
 	 top: 452px; 
-	 z-index:550;
+	
 } 
 
  #Layer2copy104_124 
 { 
 	 left: 621px; 
 	 top: 487px; 
-	 z-index:551;
+	
 } 
 
  #Layer2copy106_124 
 { 
 	 left: 621px; 
 	 top: 473px; 
-	 z-index:552;
+	
 } 
 
  #Layer2copy140_2 
 { 
 	 left: 927px; 
 	 top: 705px; 
-	 z-index:553;
+	
 } 
 
  #Layer2copy104_125 
 { 
 	 left: 928px; 
 	 top: 639px; 
-	 z-index:554;
+	
 } 
 
  #Layer2copy106_125 
 { 
 	 left: 928px; 
 	 top: 625px; 
-	 z-index:555;
+	
 } 
 
  #Layer2copy105_75 
 { 
 	 left: 929px; 
 	 top: 655px; 
-	 z-index:556;
+	
 } 
 
  #Layer2copy104_126 
 { 
 	 left: 928px; 
 	 top: 690px; 
-	 z-index:557;
+	
 } 
 
  #Layer2copy106_126 
 { 
 	 left: 928px; 
 	 top: 676px; 
-	 z-index:558;
+	
 } 
 
  #Layer2copy140_3 
 { 
 	 left: 1029px; 
 	 top: 791px; 
-	 z-index:559;
+	
 } 
 
  #Layer2copy104_127 
 { 
 	 left: 1030px; 
 	 top: 725px; 
-	 z-index:560;
+	
 } 
 
  #Layer2copy106_127 
 { 
 	 left: 1030px; 
 	 top: 711px; 
-	 z-index:561;
+	
 } 
 
  #Layer2copy105_76 
 { 
 	 left: 1031px; 
 	 top: 741px; 
-	 z-index:562;
+	
 } 
 
  #Layer2copy104_128 
 { 
 	 left: 1030px; 
 	 top: 776px; 
-	 z-index:563;
+	
 } 
 
  #Layer2copy106_128 
 { 
 	 left: 1030px; 
 	 top: 762px; 
-	 z-index:564;
+	
 } 
 
  #Layer2copy140_4 
 { 
 	 left: 721px; 
 	 top: 706px; 
-	 z-index:565;
+	
 } 
 
  #Layer2copy104_129 
 { 
 	 left: 722px; 
 	 top: 640px; 
-	 z-index:566;
+	
 } 
 
  #Layer2copy106_129 
 { 
 	 left: 722px; 
 	 top: 626px; 
-	 z-index:567;
+	
 } 
 
  #Layer2copy105_77 
 { 
 	 left: 723px; 
 	 top: 656px; 
-	 z-index:568;
+	
 } 
 
  #Layer2copy104_130 
 { 
 	 left: 722px; 
 	 top: 691px; 
-	 z-index:569;
+	
 } 
 
  #Layer2copy106_130 
 { 
 	 left: 722px; 
 	 top: 677px; 
-	 z-index:570;
+	
 } 
 
  #Layer2copy140_5 
 { 
 	 left: 417px; 
 	 top: 606px; 
-	 z-index:571;
+	
 } 
 
  #Layer2copy104_131 
 { 
 	 left: 418px; 
 	 top: 540px; 
-	 z-index:572;
+	
 } 
 
  #Layer2copy106_131 
 { 
 	 left: 418px; 
 	 top: 526px; 
-	 z-index:573;
+	
 } 
 
  #Layer2copy105_78 
 { 
 	 left: 419px; 
 	 top: 556px; 
-	 z-index:574;
+	
 } 
 
  #Layer2copy104_132 
 { 
 	 left: 418px; 
 	 top: 591px; 
-	 z-index:575;
+	
 } 
 
  #Layer2copy106_132 
 { 
 	 left: 418px; 
 	 top: 577px; 
-	 z-index:576;
+	
 } 
 
  #Layer2copy140_6 
 { 
 	 left: 417px; 
 	 top: 606px; 
-	 z-index:577;
+	
 } 
 
  #Layer2copy104_133 
 { 
 	 left: 418px; 
 	 top: 540px; 
-	 z-index:578;
+	
 } 
 
  #Layer2copy106_133 
 { 
 	 left: 418px; 
 	 top: 526px; 
-	 z-index:579;
+	
 } 
 
  #Layer2copy105_79 
 { 
 	 left: 419px; 
 	 top: 556px; 
-	 z-index:580;
+	
 } 
 
  #Layer2copy104_134 
 { 
 	 left: 418px; 
 	 top: 591px; 
-	 z-index:581;
+	
 } 
 
  #Layer2copy106_134 
 { 
 	 left: 418px; 
 	 top: 577px; 
-	 z-index:582;
+	
 } 
 
  #Layer2copy104_135 
@@ -4118,7 +4118,7 @@
 { 
 	 left: 211px; 
 	 top: 986px; 
-	 z-index:586;
+	
 } 
 
  #Layer2copy105_80 
@@ -4174,7 +4174,7 @@
 { 
 	 left: 518px; 
 	 top: 988px; 
-	 z-index:594;
+	
 } 
 
  #Layer2copy105_82 
@@ -4209,441 +4209,441 @@
 { 
 	 left: 520px; 
 	 top: 898px; 
-	 z-index:599;
+	
 } 
 
  #Layer2copy106_141 
 { 
 	 left: 520px; 
 	 top: 884px; 
-	 z-index:600;
+	
 } 
 
  #Layer2copy104_142 
 { 
 	 left: 519px; 
 	 top: 797px; 
-	 z-index:601;
+	
 } 
 
  #Layer2copy106_142 
 { 
 	 left: 519px; 
 	 top: 783px; 
-	 z-index:602;
+	
 } 
 
  #Layer2copy105_84 
 { 
 	 left: 520px; 
 	 top: 813px; 
-	 z-index:603;
+	
 } 
 
  #Layer2copy104_143 
 { 
 	 left: 519px; 
 	 top: 848px; 
-	 z-index:604;
+	
 } 
 
  #Layer2copy106_143 
 { 
 	 left: 519px; 
 	 top: 834px; 
-	 z-index:605;
+	
 } 
 
  #Layer2copy105_85 
 { 
 	 left: 520px; 
 	 top: 864px; 
-	 z-index:606;
+	
 } 
 
  #Layer2copy104_144 
 { 
 	 left: 61px; 
 	 top: 744px; 
-	 z-index:607;
+	
 } 
 
  #Layer2copy106_144 
 { 
 	 left: 61px; 
 	 top: 730px; 
-	 z-index:608;
+	
 } 
 
  #Layer2copy104_145 
 { 
 	 left: 60px; 
 	 top: 643px; 
-	 z-index:609;
+	
 } 
 
  #Layer2copy106_145 
 { 
 	 left: 60px; 
 	 top: 629px; 
-	 z-index:610;
+	
 } 
 
  #Layer2copy105_86 
 { 
 	 left: 61px; 
 	 top: 659px; 
-	 z-index:611;
+	
 } 
 
  #Layer2copy104_146 
 { 
 	 left: 60px; 
 	 top: 694px; 
-	 z-index:612;
+	
 } 
 
  #Layer2copy106_146 
 { 
 	 left: 60px; 
 	 top: 680px; 
-	 z-index:613;
+	
 } 
 
  #Layer2copy105_87 
 { 
 	 left: 61px; 
 	 top: 710px; 
-	 z-index:614;
+	
 } 
 
  #Layer2copy104_147 
 { 
 	 left: 61px; 
 	 top: 744px; 
-	 z-index:615;
+	
 } 
 
  #Layer2copy106_147 
 { 
 	 left: 61px; 
 	 top: 730px; 
-	 z-index:616;
+	
 } 
 
  #Layer2copy104_148 
 { 
 	 left: 60px; 
 	 top: 643px; 
-	 z-index:617;
+	
 } 
 
  #Layer2copy106_148 
 { 
 	 left: 60px; 
 	 top: 629px; 
-	 z-index:618;
+	
 } 
 
  #Layer2copy105_88 
 { 
 	 left: 61px; 
 	 top: 659px; 
-	 z-index:619;
+	
 } 
 
  #Layer2copy104_149 
 { 
 	 left: 60px; 
 	 top: 694px; 
-	 z-index:620;
+	
 } 
 
  #Layer2copy106_149 
 { 
 	 left: 60px; 
 	 top: 680px; 
-	 z-index:621;
+	
 } 
 
  #Layer2copy105_89 
 { 
 	 left: 61px; 
 	 top: 710px; 
-	 z-index:622;
+	
 } 
 
  #Layer2copy 
 { 
 	 left: 332px; 
 	 top: 1px; 
-	 	 z-index:623;
+	 	
 } 
 
  #Layer2copy107 
 { 
 	 left: 8px; 
 	 top: 792px; 
-	 z-index:624;
+	
 } 
 
  #Layer2copy2 
 { 
 	 left: 349px; 
 	 top: 1px; 
-	 	 z-index:625;
+	 	
 } 
 
  #Layer2copy3 
 { 
 	 left: 365px; 
 	 top: 1px; 
-	 	 z-index:626;
+	 	
 } 
 
  #Layer2copy4 
 { 
 	 left: 383px; 
 	 top: 1px; 
-	 	 z-index:627;
+	 	
 } 
 
  #Layer2copy5 
 { 
 	 left: 400px; 
 	 top: 1px; 
-	 	 z-index:628;
+	 	
 } 
 
  #Layer2copy6 
 { 
 	 left: 417px; 
 	 top: 2px; 
-	 	 z-index:629;
+	 	
 } 
 
  #Layer2copy7 
 { 
 	 left: 433px; 
 	 top: 2px; 
-	 	 z-index:630;
+	 	
 } 
 
  #Layer2copy8 
 { 
 	 left: 450px; 
 	 top: 2px; 
-	 	 z-index:631;
+	 	
 } 
 
  #Layer2copy9 
 { 
 	 left: 467px; 
 	 top: 2px; 
-	 	 z-index:632;
+	 	
 } 
 
  #Layer2copy10 
 { 
 	 left: 484px; 
 	 top: 1px; 
-	 	 z-index:633;
+	 	
 } 
 
  #Layer2copy11 
 { 
 	 left: 501px; 
 	 top: 1px; 
-	 	 z-index:634;
+	 	
 } 
 
  #Layer2copy12 
 { 
 	 left: 518px; 
 	 top: 1px; 
-	 	 z-index:635;
+	 	
 } 
 
  #Layer2copy13 
 { 
 	 left: 366px; 
 	 top: 45px; 
-	  z-index:636;
+	
 } 
 
  #Layer2copy14 
 { 
 	 left: 383px; 
 	 top: 45px; 
-	  z-index:637;
+	
 } 
 
  #Layer2copy15 
 { 
 	 left: 400px; 
 	 top: 45px; 
-	  z-index:638;
+	
 } 
 
  #Layer2copy16 
 { 
 	 left: 416px; 
 	 top: 45px; 
-	  z-index:639;
+	
 } 
 
  #Layer2copy17 
 { 
 	 left: 434px; 
 	 top: 45px; 
-	  z-index:640;
+	
 } 
 
  #Layer2copy18 
 { 
 	 left: 451px; 
 	 top: 45px; 
-	  z-index:641;
+	
 } 
 
  #Layer2copy19 
 { 
 	 left: 468px; 
 	 top: 46px; 
-	  z-index:642;
+	
 } 
 
  #Layer2copy20 
 { 
 	 left: 484px; 
 	 top: 46px; 
-	  z-index:643;
+	
 } 
 
  #Layer2copy21 
 { 
 	 left: 501px; 
 	 top: 46px; 
-	  z-index:644;
+	
 } 
 
  #Layer2copy22 
 { 
 	 left: 518px; 
 	 top: 46px; 
-	  z-index:645;
+	
 } 
 
  #Layer2copy23 
 { 
 	 left: 535px; 
 	 top: 45px; 
-	  z-index:646;
+	
 } 
 
  #Layer2copy24 
 { 
 	 left: 552px; 
 	 top: 45px; 
-	  z-index:647;
+	
 } 
 
  #Layer2copy25 
 { 
 	 left: 569px; 
 	 top: 45px; 
-	  z-index:648;
+	
 } 
 
  #Layer2copy26 
 { 
 	 left: 673px; 
 	 top: 42px; 
-	  z-index:649;
+	
 } 
 
  #Layer2copy27 
 { 
 	 left: 690px; 
 	 top: 42px; 
-	  z-index:650;
+	
 } 
 
  #Layer2copy28 
 { 
 	 left: 707px; 
 	 top: 42px; 
-	  z-index:651;
+	
 } 
 
  #Layer2copy29 
 { 
 	 left: 723px; 
 	 top: 42px; 
-	  z-index:652;
+	
 } 
 
  #Layer2copy30 
 { 
 	 left: 741px; 
 	 top: 42px; 
-	  z-index:653;
+	
 } 
 
  #Layer2copy31 
 { 
 	 left: 758px; 
 	 top: 42px; 
-	  z-index:654;
+	
 } 
 
  #Layer2copy32 
 { 
 	 left: 775px; 
 	 top: 43px; 
-	  z-index:655;
+	
 } 
 
  #Layer2copy33 
 { 
 	 left: 791px; 
 	 top: 43px; 
-	  z-index:656;
+	
 } 
 
  #Layer2copy34 
 { 
 	 left: 808px; 
 	 top: 43px; 
-	  z-index:657;
+	
 } 
 
  #Layer2copy35 
 { 
 	 left: 825px; 
 	 top: 43px; 
-	  z-index:658;
+	
 } 
 
  #Layer2copy36 
 { 
 	 left: 842px; 
 	 top: 42px; 
-	  z-index:659;
+	
 } 
 
  #Layer2copy37 
 { 
 	 left: 859px; 
 	 top: 42px; 
-	  z-index:660;
+	
 } 
 
  #Layer2copy38 
 { 
 	 left: 876px; 
 	 top: 42px; 
-	  z-index:661;
+	
 } 
 
  #Layer2copy39 
@@ -4678,7 +4678,7 @@
 { 
 	 left: 332px; 
 	 top: 1066px; 
-	 z-index:666;
+	
 } 
 
  #Layer2copy44 
@@ -4923,966 +4923,966 @@
 { 
 	 left: 61px; 
 	 top: 761px; 
-	 z-index:701;
+	
 } 
 
  #Layer2copy79 
 { 
 	 left: 78px; 
 	 top: 761px; 
-	 z-index:702;
+	
 } 
 
  #Layer2copy80 
 { 
 	 left: 95px; 
 	 top: 761px; 
-	 z-index:703;
+	
 } 
 
  #Layer2copy81 
 { 
 	 left: 111px; 
 	 top: 761px; 
-	 z-index:704;
+	
 } 
 
  #Layer2copy82 
 { 
 	 left: 129px; 
 	 top: 761px; 
-	 z-index:705;
+	
 } 
 
  #Layer2copy83 
 { 
 	 left: 146px; 
 	 top: 761px; 
-	 z-index:706;
+	
 } 
 
  #Layer2copy84 
 { 
 	 left: 163px; 
 	 top: 762px; 
-	 z-index:707;
+	
 } 
 
  #Layer2copy85 
 { 
 	 left: 179px; 
 	 top: 762px; 
-	 z-index:708;
+	
 } 
 
  #Layer2copy86 
 { 
 	 left: 196px; 
 	 top: 762px; 
-	 z-index:709;
+	
 } 
 
  #Layer2copy87 
 { 
 	 left: 213px; 
 	 top: 762px; 
-	 z-index:710;
+	
 } 
 
  #Layer2copy88 
 { 
 	 left: 230px; 
 	 top: 761px; 
-	 z-index:711;
+	
 } 
 
  #Layer2copy89 
 { 
 	 left: 247px; 
 	 top: 761px; 
-	 z-index:712;
+	
 } 
 
  #Layer2copy90 
 { 
 	 left: 264px; 
 	 top: 761px; 
-	 z-index:713;
+	
 } 
 
  #Layer2copy91 
 { 
 	 left: 60px; 
 	 top: 249px; 
-	 z-index:714;
+	
 } 
 
  #Layer2copy92 
 { 
 	 left: 77px; 
 	 top: 249px; 
-	 z-index:715;
+	
 } 
 
  #Layer2copy93 
 { 
 	 left: 94px; 
 	 top: 249px; 
-	 z-index:716;
+	
 } 
 
  #Layer2copy94 
 { 
 	 left: 110px; 
 	 top: 249px; 
-	 z-index:717;
+	
 } 
 
  #Layer2copy95 
 { 
 	 left: 128px; 
 	 top: 249px; 
-	 z-index:718;
+	
 } 
 
  #Layer2copy96 
 { 
 	 left: 145px; 
 	 top: 249px; 
-	 z-index:719;
+	
 } 
 
  #Layer2copy97 
 { 
 	 left: 162px; 
 	 top: 250px; 
-	 z-index:720;
+	
 } 
 
  #Layer2copy98 
 { 
 	 left: 178px; 
 	 top: 250px; 
-	 z-index:721;
+	
 } 
 
  #Layer2copy99 
 { 
 	 left: 195px; 
 	 top: 250px; 
-	 z-index:722;
+	
 } 
 
  #Layer2copy100 
 { 
 	 left: 212px; 
 	 top: 250px; 
-	 z-index:723;
+	
 } 
 
  #Layer2copy101 
 { 
 	 left: 229px; 
 	 top: 249px; 
-	 z-index:724;
+	
 } 
 
  #Layer2copy102 
 { 
 	 left: 246px; 
 	 top: 249px; 
-	 z-index:725;
+	
 } 
 
  #Layer2copy103 
 { 
 	 left: 263px; 
 	 top: 249px; 
-	 z-index:726;
+	
 } 
 
  #Layer2copy91_0 
 { 
 	 left: 536px; 
 	 top: 2px; 
-	 	 z-index:727;
+	 	
 } 
 
  #Layer2copy92_0 
 { 
 	 left: 553px; 
 	 top: 2px; 
-	 	 z-index:728;
+	 	
 } 
 
  #Layer2copy93_0 
 { 
 	 left: 570px; 
 	 top: 2px; 
-	 	 z-index:729;
+	 	
 } 
 
  #Layer2copy94_0 
 { 
 	 left: 586px; 
 	 top: 2px; 
-	 	 z-index:730;
+	 	
 } 
 
  #Layer2copy95_0 
 { 
 	 left: 604px; 
 	 top: 2px; 
-	 	 z-index:731;
+	 	
 } 
 
  #Layer2copy96_0 
 { 
 	 left: 621px; 
 	 top: 2px; 
-	 	 z-index:732;
+	 	
 } 
 
  #Layer2copy97_0 
 { 
 	 left: 638px; 
 	 top: 3px; 
-	 	 z-index:733;
+	 	
 } 
 
  #Layer2copy98_0 
 { 
 	 left: 654px; 
 	 top: 3px; 
-	 	 z-index:734;
+	 	
 } 
 
  #Layer2copy99_0 
 { 
 	 left: 671px; 
 	 top: 3px; 
-	 	 z-index:735;
+	 	
 } 
 
  #Layer2copy100_0 
 { 
 	 left: 688px; 
 	 top: 3px; 
-	 	 z-index:736;
+	 	
 } 
 
  #Layer2copy101_0 
 { 
 	 left: 705px; 
 	 top: 2px; 
-	 	 z-index:737;
+	 	
 } 
 
  #Layer2copy102_0 
 { 
 	 left: 722px; 
 	 top: 2px; 
-	 	 z-index:738;
+	 	
 } 
 
  #Layer2copy103_0 
 { 
 	 left: 739px; 
 	 top: 2px; 
-	 	 z-index:739;
+	 	
 } 
 
  #Layer2copy91_1 
 { 
 	 left: 756px; 
 	 top: 2px; 
-	 	 z-index:740;
+	 	
 } 
 
  #Layer2copy92_1 
 { 
 	 left: 773px; 
 	 top: 2px; 
-	 	 z-index:741;
+	 	
 } 
 
  #Layer2copy93_1 
 { 
 	 left: 790px; 
 	 top: 2px; 
-	 	 z-index:742;
+	 	
 } 
 
  #Layer2copy94_1 
 { 
 	 left: 806px; 
 	 top: 2px; 
-	 	 z-index:743;
+	 	
 } 
 
  #Layer2copy95_1 
 { 
 	 left: 824px; 
 	 top: 2px; 
-	 	 z-index:744;
+	 	
 } 
 
  #Layer2copy96_1 
 { 
 	 left: 841px; 
 	 top: 2px; 
-	 	 z-index:745;
+	 	
 } 
 
  #Layer2copy97_1 
 { 
 	 left: 858px; 
 	 top: 3px; 
-	 	 z-index:746;
+	 	
 } 
 
  #Layer2copy98_1 
 { 
 	 left: 874px; 
 	 top: 3px; 
-	 	 z-index:747;
+	 	
 } 
 
  #Layer2copy99_1 
 { 
 	 left: 891px; 
 	 top: 3px; 
-	 	 z-index:748;
+	 	
 } 
 
  #Layer2copy100_1 
 { 
 	 left: 908px; 
 	 top: 3px; 
-	 	 z-index:749;
+	 	
 } 
 
  #Layer2copy101_1 
 { 
 	 left: 925px; 
 	 top: 2px; 
-	 	 z-index:750;
+	 	
 } 
 
  #Layer2copy91_2 
 { 
 	 left: 756px; 
 	 top: 2px; 
-	 	 z-index:751;
+	 	
 } 
 
  #Layer2copy92_2 
 { 
 	 left: 773px; 
 	 top: 2px; 
-	 	 z-index:752;
+	 	
 } 
 
  #Layer2copy93_2 
 { 
 	 left: 790px; 
 	 top: 2px; 
-	 	 z-index:753;
+	 	
 } 
 
  #Layer2copy94_2 
 { 
 	 left: 806px; 
 	 top: 2px; 
-	 	 z-index:754;
+	 	
 } 
 
  #Layer2copy95_2 
 { 
 	 left: 824px; 
 	 top: 2px; 
-	 	 z-index:755;
+	 	
 } 
 
  #Layer2copy96_2 
 { 
 	 left: 841px; 
 	 top: 2px; 
-	 	 z-index:756;
+	 	
 } 
 
  #Layer2copy97_2 
 { 
 	 left: 858px; 
 	 top: 3px; 
-	 	 z-index:757;
+	 	
 } 
 
  #Layer2copy98_2 
 { 
 	 left: 874px; 
 	 top: 3px; 
-	 	 z-index:758;
+	 	
 } 
 
  #Layer2copy99_2 
 { 
 	 left: 891px; 
 	 top: 3px; 
-	 	 z-index:759;
+	 	
 } 
 
  #Layer2copy100_2 
 { 
 	 left: 908px; 
 	 top: 3px; 
-	 	 z-index:760;
+	 	
 } 
 
  #Layer2copy101_2 
 { 
 	 left: 925px; 
 	 top: 2px; 
-	 	 z-index:761;
+	 	
 } 
 
  #Layer2copy91_3 
 { 
 	 left: 826px; 
 	 top: 402px; 
-	 z-index:762;
+	
 } 
 
  #Layer2copy92_3 
 { 
 	 left: 843px; 
 	 top: 402px; 
-	 z-index:763;
+	
 } 
 
  #Layer2copy93_3 
 { 
 	 left: 860px; 
 	 top: 402px; 
-	 z-index:764;
+	
 } 
 
  #Layer2copy94_3 
 { 
 	 left: 876px; 
 	 top: 402px; 
-	 z-index:765;
+	
 } 
 
  #Layer2copy95_3 
 { 
 	 left: 894px; 
 	 top: 402px; 
-	 z-index:766;
+	
 } 
 
  #Layer2copy96_3 
 { 
 	 left: 911px; 
 	 top: 402px; 
-	 z-index:767;
+	
 } 
 
  #Layer2copy97_3 
 { 
 	 left: 928px; 
 	 top: 403px; 
-	 z-index:768;
+	
 } 
 
  #Layer2copy98_3 
 { 
 	 left: 944px; 
 	 top: 403px; 
-	 z-index:769;
+	
 } 
 
  #Layer2copy99_3 
 { 
 	 left: 961px; 
 	 top: 403px; 
-	 z-index:770;
+	
 } 
 
  #Layer2copy100_3 
 { 
 	 left: 978px; 
 	 top: 403px; 
-	 z-index:771;
+	
 } 
 
  #Layer2copy101_3 
 { 
 	 left: 995px; 
 	 top: 402px; 
-	 z-index:772;
+	
 } 
 
  #Layer2copy102_1 
 { 
 	 left: 1012px; 
 	 top: 402px; 
-	 z-index:773;
+	
 } 
 
  #Layer2copy103_1 
 { 
 	 left: 1029px; 
 	 top: 402px; 
-	 z-index:774;
+	
 } 
 
  #Layer2copy91_4 
 { 
 	 left: 878px; 
 	 top: 352px; 
-	 z-index:775;
+	
 } 
 
  #Layer2copy92_4 
 { 
 	 left: 895px; 
 	 top: 352px; 
-	 z-index:776;
+	
 } 
 
  #Layer2copy93_4 
 { 
 	 left: 912px; 
 	 top: 352px; 
-	 z-index:777;
+	
 } 
 
  #Layer2copy94_4 
 { 
 	 left: 928px; 
 	 top: 352px; 
-	 z-index:778;
+	
 } 
 
  #Layer2copy95_4 
 { 
 	 left: 946px; 
 	 top: 352px; 
-	 z-index:779;
+	
 } 
 
  #Layer2copy96_4 
 { 
 	 left: 963px; 
 	 top: 352px; 
-	 z-index:780;
+	
 } 
 
  #Layer2copy97_4 
 { 
 	 left: 980px; 
 	 top: 353px; 
-	 z-index:781;
+	
 } 
 
  #Layer2copy98_4 
 { 
 	 left: 996px; 
 	 top: 353px; 
-	 z-index:782;
+	
 } 
 
  #Layer2copy99_4 
 { 
 	 left: 1013px; 
 	 top: 353px; 
-	 z-index:783;
+	
 } 
 
  #Layer2copy100_4 
 { 
 	 left: 1030px; 
 	 top: 353px; 
-	 z-index:784;
+	
 } 
 
  #Layer2copy101_4 
 { 
 	 left: 1047px; 
 	 top: 352px; 
-	 z-index:785;
+	
 } 
 
  #Layer2copy102_2 
 { 
 	 left: 1064px; 
 	 top: 352px; 
-	 z-index:786;
+	
 } 
 
  #Layer2copy103_2 
 { 
 	 left: 1081px; 
 	 top: 352px; 
-	 z-index:787;
+	
 } 
 
  #Layer2copy91_5 
 { 
 	 left: 111px; 
 	 top: 197px; 
-	 z-index:788;
+	
 } 
 
  #Layer2copy92_5 
 { 
 	 left: 128px; 
 	 top: 197px; 
-	 z-index:789;
+	
 } 
 
  #Layer2copy93_5 
 { 
 	 left: 145px; 
 	 top: 197px; 
-	 z-index:790;
+	
 } 
 
  #Layer2copy94_5 
 { 
 	 left: 161px; 
 	 top: 197px; 
-	 z-index:791;
+	
 } 
 
  #Layer2copy95_5 
 { 
 	 left: 179px; 
 	 top: 197px; 
-	 z-index:792;
+	
 } 
 
  #Layer2copy96_5 
 { 
 	 left: 196px; 
 	 top: 197px; 
-	 z-index:793;
+	
 } 
 
  #Layer2copy97_5 
 { 
 	 left: 213px; 
 	 top: 198px; 
-	 z-index:794;
+	
 } 
 
  #Layer2copy98_5 
 { 
 	 left: 229px; 
 	 top: 198px; 
-	 z-index:795;
+	
 } 
 
  #Layer2copy99_5 
 { 
 	 left: 246px; 
 	 top: 198px; 
-	 z-index:796;
+	
 } 
 
  #Layer2copy100_5 
 { 
 	 left: 263px; 
 	 top: 198px; 
-	 z-index:797;
+	
 } 
 
  #Layer2copy101_5 
 { 
 	 left: 280px; 
 	 top: 197px; 
-	 z-index:798;
+	
 } 
 
  #Layer2copy102_3 
 { 
 	 left: 297px; 
 	 top: 197px; 
-	 z-index:799;
+	
 } 
 
  #Layer2copy103_3 
 { 
 	 left: 314px; 
 	 top: 197px; 
-	 z-index:800;
+	
 } 
 
  #Layer2copy91_6 
 { 
 	 left: 9px; 
 	 top: 197px; 
-	 z-index:801;
+	
 } 
 
  #Layer2copy92_6 
 { 
 	 left: 26px; 
 	 top: 197px; 
-	 z-index:802;
+	
 } 
 
  #Layer2copy93_6 
 { 
 	 left: 43px; 
 	 top: 197px; 
-	 z-index:803;
+	
 } 
 
  #Layer2copy94_6 
 { 
 	 left: 59px; 
 	 top: 197px; 
-	 z-index:804;
+	
 } 
 
  #Layer2copy95_6 
 { 
 	 left: 77px; 
 	 top: 197px; 
-	 z-index:805;
+	
 } 
 
  #Layer2copy96_6 
 { 
 	 left: 94px; 
 	 top: 197px; 
-	 z-index:806;
+	
 } 
 
  #Layer2copy91_7 
 { 
 	 left: 9px; 
 	 top: 197px; 
-	 z-index:807;
+	
 } 
 
  #Layer2copy92_7 
 { 
 	 left: 26px; 
 	 top: 197px; 
-	 z-index:808;
+	
 } 
 
  #Layer2copy93_7 
 { 
 	 left: 43px; 
 	 top: 197px; 
-	 z-index:809;
+	
 } 
 
  #Layer2copy94_7 
 { 
 	 left: 59px; 
 	 top: 197px; 
-	 z-index:810;
+	
 } 
 
  #Layer2copy95_7 
 { 
 	 left: 77px; 
 	 top: 197px; 
-	 z-index:811;
+	
 } 
 
  #Layer2copy96_7 
 { 
 	 left: 94px; 
 	 top: 197px; 
-	 z-index:812;
+	
 } 
 
  #Layer2copy91_8 
 { 
 	 left: 521px; 
 	 top: 198px; 
-	 z-index:813;
+	
 } 
 
  #Layer2copy92_8 
 { 
 	 left: 538px; 
 	 top: 198px; 
-	 z-index:814;
+	
 } 
 
  #Layer2copy93_8 
 { 
 	 left: 555px; 
 	 top: 198px; 
-	 z-index:815;
+	
 } 
 
  #Layer2copy94_8 
 { 
 	 left: 571px; 
 	 top: 198px; 
-	 z-index:816;
+	
 } 
 
  #Layer2copy95_8 
 { 
 	 left: 589px; 
 	 top: 198px; 
-	 z-index:817;
+	
 } 
 
  #Layer2copy96_8 
 { 
 	 left: 606px; 
 	 top: 198px; 
-	 z-index:818;
+	
 } 
 
  #Layer2copy97_6 
 { 
 	 left: 623px; 
 	 top: 199px; 
-	 z-index:819;
+	
 } 
 
  #Layer2copy98_6 
 { 
 	 left: 639px; 
 	 top: 199px; 
-	 z-index:820;
+	
 } 
 
  #Layer2copy99_6 
 { 
 	 left: 656px; 
 	 top: 199px; 
-	 z-index:821;
+	
 } 
 
  #Layer2copy100_6 
 { 
 	 left: 673px; 
 	 top: 199px; 
-	 z-index:822;
+	
 } 
 
  #Layer2copy101_6 
 { 
 	 left: 690px; 
 	 top: 198px; 
-	 z-index:823;
+	
 } 
 
  #Layer2copy102_4 
 { 
 	 left: 707px; 
 	 top: 198px; 
-	 z-index:824;
+	
 } 
 
  #Layer2copy103_4 
 { 
 	 left: 724px; 
 	 top: 198px; 
-	 z-index:825;
+	
 } 
 
  #Layer2copy91_9 
 { 
 	 left: 417px; 
 	 top: 707px; 
-	 z-index:826;
+	
 } 
 
  #Layer2copy92_9 
 { 
 	 left: 434px; 
 	 top: 707px; 
-	 z-index:827;
+	
 } 
 
  #Layer2copy93_9 
 { 
 	 left: 451px; 
 	 top: 707px; 
-	 z-index:828;
+	
 } 
 
  #Layer2copy94_9 
 { 
 	 left: 467px; 
 	 top: 707px; 
-	 z-index:829;
+	
 } 
 
  #Layer2copy95_9 
 { 
 	 left: 485px; 
 	 top: 707px; 
-	 z-index:830;
+	
 } 
 
  #Layer2copy96_9 
 { 
 	 left: 502px; 
 	 top: 707px; 
-	 z-index:831;
+	
 } 
 
  #Layer2copy97_7 
 { 
 	 left: 519px; 
 	 top: 708px; 
-	 z-index:832;
+	
 } 
 
  #Layer2copy98_7 
 { 
 	 left: 535px; 
 	 top: 708px; 
-	 z-index:833;
+	
 } 
 
  #Layer2copy99_7 
 { 
 	 left: 552px; 
 	 top: 708px; 
-	 z-index:834;
+	
 } 
 
  #Layer2copy100_7 
 { 
 	 left: 569px; 
 	 top: 708px; 
-	 z-index:835;
+	
 } 
 
  #Layer2copy101_7 
 { 
 	 left: 586px; 
 	 top: 707px; 
-	 z-index:836;
+	
 } 
 
  #Layer2copy102_5 
 { 
 	 left: 603px; 
 	 top: 707px; 
-	 z-index:837;
+	
 } 
 
  #Layer2copy103_5 
 { 
 	 left: 620px; 
 	 top: 707px; 
-	 z-index:838;
+	
 } 
 
  #Layer2copy91_10 
@@ -6071,2961 +6071,2961 @@
 { 
 	 left: 825px; 
 	 top: 912px; 
-	 z-index:865;
+	
 } 
 
  #Layer2copy92_12 
 { 
 	 left: 842px; 
 	 top: 912px; 
-	 z-index:866;
+	
 } 
 
  #Layer2copy93_12 
 { 
 	 left: 859px; 
 	 top: 912px; 
-	 z-index:867;
+	
 } 
 
  #Layer2copy94_12 
 { 
 	 left: 875px; 
 	 top: 912px; 
-	 z-index:868;
+	
 } 
 
  #Layer2copy95_12 
 { 
 	 left: 893px; 
 	 top: 912px; 
-	 z-index:869;
+	
 } 
 
  #Layer2copy96_12 
 { 
 	 left: 910px; 
 	 top: 912px; 
-	 z-index:870;
+	
 } 
 
  #Layer2copy97_10 
 { 
 	 left: 927px; 
 	 top: 913px; 
-	 z-index:871;
+	
 } 
 
  #Layer2copy98_10 
 { 
 	 left: 943px; 
 	 top: 913px; 
-	 z-index:872;
+	
 } 
 
  #Layer2copy99_10 
 { 
 	 left: 960px; 
 	 top: 913px; 
-	 z-index:873;
+	
 } 
 
  #Layer2copy100_10 
 { 
 	 left: 977px; 
 	 top: 913px; 
-	 z-index:874;
+	
 } 
 
  #Layer2copy101_10 
 { 
 	 left: 994px; 
 	 top: 912px; 
-	 z-index:875;
+	
 } 
 
  #Layer2copy102_8 
 { 
 	 left: 1011px; 
 	 top: 912px; 
-	 z-index:876;
+	
 } 
 
  #Layer2copy103_8 
 { 
 	 left: 1028px; 
 	 top: 912px; 
-	 z-index:877;
+	
 } 
 
  #Layer2copy91_13 
 { 
 	 left: 945px; 
 	 top: 606px; 
-	 z-index:878;
+	
 } 
 
  #Layer2copy92_13 
 { 
 	 left: 962px; 
 	 top: 606px; 
-	 z-index:879;
+	
 } 
 
  #Layer2copy93_13 
 { 
 	 left: 979px; 
 	 top: 606px; 
-	 z-index:880;
+	
 } 
 
  #Layer2copy94_13 
 { 
 	 left: 995px; 
 	 top: 606px; 
-	 z-index:881;
+	
 } 
 
  #Layer2copy95_13 
 { 
 	 left: 1013px; 
 	 top: 606px; 
-	 z-index:882;
+	
 } 
 
  #Layer2copy96_13 
 { 
 	 left: 1030px; 
 	 top: 606px; 
-	 z-index:883;
+	
 } 
 
  #Layer2copy97_11 
 { 
 	 left: 1047px; 
 	 top: 607px; 
-	 z-index:884;
+	
 } 
 
  #Layer2copy98_11 
 { 
 	 left: 1063px; 
 	 top: 607px; 
-	 z-index:885;
+	
 } 
 
  #Layer2copy99_11 
 { 
 	 left: 1080px; 
 	 top: 607px; 
-	 z-index:886;
+	
 } 
 
  #Layer2copy100_11 
 { 
 	 left: 1097px; 
 	 top: 607px; 
-	 z-index:887;
+	
 } 
 
  #Layer2copy101_11 
 { 
 	 left: 1114px; 
 	 top: 606px; 
-	 z-index:888;
+	
 } 
 
  #Layer2copy102_9 
 { 
 	 left: 1131px; 
 	 top: 606px; 
-	 z-index:889;
+	
 } 
 
  #Layer2copy91_14 
 { 
 	 left: 621px; 
 	 top: 812px; 
-	 z-index:890;
+	
 } 
 
  #Layer2copy92_14 
 { 
 	 left: 638px; 
 	 top: 812px; 
-	 z-index:891;
+	
 } 
 
  #Layer2copy93_14 
 { 
 	 left: 655px; 
 	 top: 812px; 
-	 z-index:892;
+	
 } 
 
  #Layer2copy94_14 
 { 
 	 left: 671px; 
 	 top: 812px; 
-	 z-index:893;
+	
 } 
 
  #Layer2copy95_14 
 { 
 	 left: 689px; 
 	 top: 812px; 
-	 z-index:894;
+	
 } 
 
  #Layer2copy96_14 
 { 
 	 left: 706px; 
 	 top: 812px; 
-	 z-index:895;
+	
 } 
 
  #Layer2copy97_12 
 { 
 	 left: 723px; 
 	 top: 813px; 
-	 z-index:896;
+	
 } 
 
  #Layer2copy98_12 
 { 
 	 left: 739px; 
 	 top: 813px; 
-	 z-index:897;
+	
 } 
 
  #Layer2copy99_12 
 { 
 	 left: 756px; 
 	 top: 813px; 
-	 z-index:898;
+	
 } 
 
  #Layer2copy100_12 
 { 
 	 left: 773px; 
 	 top: 813px; 
-	 z-index:899;
+	
 } 
 
  #Layer2copy101_12 
 { 
 	 left: 790px; 
 	 top: 812px; 
-	 z-index:900;
+	
 } 
 
  #Layer2copy102_10 
 { 
 	 left: 807px; 
 	 top: 812px; 
-	 z-index:901;
+	
 } 
 
  #Layer2copy91_15 
 { 
 	 left: 723px; 
 	 top: 301px; 
-	 z-index:902;
+	
 } 
 
  #Layer2copy92_15 
 { 
 	 left: 740px; 
 	 top: 301px; 
-	 z-index:903;
+	
 } 
 
  #Layer2copy93_15 
 { 
 	 left: 757px; 
 	 top: 301px; 
-	 z-index:904;
+	
 } 
 
  #Layer2copy94_15 
 { 
 	 left: 773px; 
 	 top: 301px; 
-	 z-index:905;
+	
 } 
 
  #Layer2copy95_15 
 { 
 	 left: 791px; 
 	 top: 301px; 
-	 z-index:906;
+	
 } 
 
  #Layer2copy96_15 
 { 
 	 left: 808px; 
 	 top: 301px; 
-	 z-index:907;
+	
 } 
 
  #Layer2copy97_13 
 { 
 	 left: 825px; 
 	 top: 302px; 
-	 z-index:908;
+	
 } 
 
  #Layer2copy98_13 
 { 
 	 left: 841px; 
 	 top: 302px; 
-	 z-index:909;
+	
 } 
 
  #Layer2copy99_13 
 { 
 	 left: 858px; 
 	 top: 302px; 
-	 z-index:910;
+	
 } 
 
  #Layer2copy100_13 
 { 
 	 left: 875px; 
 	 top: 302px; 
-	 z-index:911;
+	
 } 
 
  #Layer2copy101_13 
 { 
 	 left: 892px; 
 	 top: 301px; 
-	 z-index:912;
+	
 } 
 
  #Layer2copy102_11 
 { 
 	 left: 909px; 
 	 top: 301px; 
-	 z-index:913;
+	
 } 
 
  #Layer2copy91_16 
 { 
 	 left: 10px; 
 	 top: 507px; 
-	 z-index:914;
+	
 } 
 
  #Layer2copy92_16 
 { 
 	 left: 27px; 
 	 top: 507px; 
-	 z-index:915;
+	
 } 
 
  #Layer2copy93_16 
 { 
 	 left: 44px; 
 	 top: 507px; 
-	 z-index:916;
+	
 } 
 
  #Layer2copy94_16 
 { 
 	 left: 60px; 
 	 top: 507px; 
-	 z-index:917;
+	
 } 
 
  #Layer2copy95_16 
 { 
 	 left: 78px; 
 	 top: 507px; 
-	 z-index:918;
+	
 } 
 
  #Layer2copy96_16 
 { 
 	 left: 95px; 
 	 top: 507px; 
-	 z-index:919;
+	
 } 
 
  #Layer2copy97_14 
 { 
 	 left: 112px; 
 	 top: 508px; 
-	 z-index:920;
+	
 } 
 
  #Layer2copy98_14 
 { 
 	 left: 128px; 
 	 top: 508px; 
-	 z-index:921;
+	
 } 
 
  #Layer2copy99_14 
 { 
 	 left: 145px; 
 	 top: 508px; 
-	 z-index:922;
+	
 } 
 
  #Layer2copy100_14 
 { 
 	 left: 162px; 
 	 top: 508px; 
-	 z-index:923;
+	
 } 
 
  #Layer2copy101_14 
 { 
 	 left: 179px; 
 	 top: 507px; 
-	 z-index:924;
+	
 } 
 
  #Layer2copy102_12 
 { 
 	 left: 196px; 
 	 top: 507px; 
-	 z-index:925;
+	
 } 
 
  #Layer2copy91_17 
 { 
 	 left: 520px; 
 	 top: 401px; 
-	 z-index:926;
+	
 } 
 
  #Layer2copy92_17 
 { 
 	 left: 537px; 
 	 top: 401px; 
-	 z-index:927;
+	
 } 
 
  #Layer2copy93_17 
 { 
 	 left: 554px; 
 	 top: 401px; 
-	 z-index:928;
+	
 } 
 
  #Layer2copy94_17 
 { 
 	 left: 570px; 
 	 top: 401px; 
-	 z-index:929;
+	
 } 
 
  #Layer2copy95_17 
 { 
 	 left: 588px; 
 	 top: 401px; 
-	 z-index:930;
+	
 } 
 
  #Layer2copy96_17 
 { 
 	 left: 605px; 
 	 top: 401px; 
-	 z-index:931;
+	
 } 
 
  #Layer2copy97_15 
 { 
 	 left: 622px; 
 	 top: 402px; 
-	 z-index:932;
+	
 } 
 
  #Layer2copy98_15 
 { 
 	 left: 638px; 
 	 top: 402px; 
-	 z-index:933;
+	
 } 
 
  #Layer2copy99_15 
 { 
 	 left: 655px; 
 	 top: 402px; 
-	 z-index:934;
+	
 } 
 
  #Layer2copy100_15 
 { 
 	 left: 672px; 
 	 top: 402px; 
-	 z-index:935;
+	
 } 
 
  #Layer2copy101_15 
 { 
 	 left: 689px; 
 	 top: 401px; 
-	 z-index:936;
+	
 } 
 
  #Layer2copy102_13 
 { 
 	 left: 706px; 
 	 top: 401px; 
-	 z-index:937;
+	
 } 
 
  #Layer2copy103_9 
 { 
 	 left: 723px; 
 	 top: 401px; 
-	 z-index:938;
+	
 } 
 
  #Layer2copy91_18 
 { 
 	 left: 573px; 
 	 top: 761px; 
-	 z-index:939;
+	
 } 
 
  #Layer2copy92_18 
 { 
 	 left: 590px; 
 	 top: 761px; 
-	 z-index:940;
+	
 } 
 
  #Layer2copy93_18 
 { 
 	 left: 607px; 
 	 top: 761px; 
-	 z-index:941;
+	
 } 
 
  #Layer2copy94_18 
 { 
 	 left: 623px; 
 	 top: 761px; 
-	 z-index:942;
+	
 } 
 
  #Layer2copy95_18 
 { 
 	 left: 641px; 
 	 top: 761px; 
-	 z-index:943;
+	
 } 
 
  #Layer2copy96_18 
 { 
 	 left: 658px; 
 	 top: 761px; 
-	 z-index:944;
+	
 } 
 
  #Layer2copy97_16 
 { 
 	 left: 675px; 
 	 top: 762px; 
-	 z-index:945;
+	
 } 
 
  #Layer2copy98_16 
 { 
 	 left: 691px; 
 	 top: 762px; 
-	 z-index:946;
+	
 } 
 
  #Layer2copy99_16 
 { 
 	 left: 708px; 
 	 top: 762px; 
-	 z-index:947;
+	
 } 
 
  #Layer2copy100_16 
 { 
 	 left: 725px; 
 	 top: 762px; 
-	 z-index:948;
+	
 } 
 
  #Layer2copy101_16 
 { 
 	 left: 742px; 
 	 top: 761px; 
-	 z-index:949;
+	
 } 
 
  #Layer2copy102_14 
 { 
 	 left: 759px; 
 	 top: 761px; 
-	 z-index:950;
+	
 } 
 
  #Layer2copy103_10 
 { 
 	 left: 776px; 
 	 top: 761px; 
-	 z-index:951;
+	
 } 
 
  #Layer2copy91_19 
 { 
 	 left: 824px; 
 	 top: 811px; 
-	 z-index:952;
+	
 } 
 
  #Layer2copy92_19 
 { 
 	 left: 841px; 
 	 top: 811px; 
-	 z-index:953;
+	
 } 
 
  #Layer2copy93_19 
 { 
 	 left: 858px; 
 	 top: 811px; 
-	 z-index:954;
+	
 } 
 
  #Layer2copy94_19 
 { 
 	 left: 874px; 
 	 top: 811px; 
-	 z-index:955;
+	
 } 
 
  #Layer2copy95_19 
 { 
 	 left: 892px; 
 	 top: 811px; 
-	 z-index:956;
+	
 } 
 
  #Layer2copy96_19 
 { 
 	 left: 909px; 
 	 top: 811px; 
-	 z-index:957;
+	
 } 
 
  #Layer2copy97_17 
 { 
 	 left: 926px; 
 	 top: 812px; 
-	 z-index:958;
+	
 } 
 
  #Layer2copy98_17 
 { 
 	 left: 942px; 
 	 top: 812px; 
-	 z-index:959;
+	
 } 
 
  #Layer2copy99_17 
 { 
 	 left: 959px; 
 	 top: 812px; 
-	 z-index:960;
+	
 } 
 
  #Layer2copy100_17 
 { 
 	 left: 976px; 
 	 top: 812px; 
-	 z-index:961;
+	
 } 
 
  #Layer2copy101_17 
 { 
 	 left: 993px; 
 	 top: 811px; 
-	 z-index:962;
+	
 } 
 
  #Layer2copy102_15 
 { 
 	 left: 1010px; 
 	 top: 811px; 
-	 z-index:963;
+	
 } 
 
  #Layer2copy103_11 
 { 
 	 left: 1027px; 
 	 top: 811px; 
-	 z-index:964;
+	
 } 
 
  #Layer2copy91_20 
 { 
 	 left: 877px; 
 	 top: 861px; 
-	 z-index:965;
+	
 } 
 
  #Layer2copy92_20 
 { 
 	 left: 894px; 
 	 top: 861px; 
-	 z-index:966;
+	
 } 
 
  #Layer2copy93_20 
 { 
 	 left: 911px; 
 	 top: 861px; 
-	 z-index:967;
+	
 } 
 
  #Layer2copy94_20 
 { 
 	 left: 927px; 
 	 top: 861px; 
-	 z-index:968;
+	
 } 
 
  #Layer2copy95_20 
 { 
 	 left: 945px; 
 	 top: 861px; 
-	 z-index:969;
+	
 } 
 
  #Layer2copy96_20 
 { 
 	 left: 962px; 
 	 top: 861px; 
-	 z-index:970;
+	
 } 
 
  #Layer2copy97_18 
 { 
 	 left: 979px; 
 	 top: 862px; 
-	 z-index:971;
+	
 } 
 
  #Layer2copy98_18 
 { 
 	 left: 995px; 
 	 top: 862px; 
-	 z-index:972;
+	
 } 
 
  #Layer2copy99_18 
 { 
 	 left: 1012px; 
 	 top: 862px; 
-	 z-index:973;
+	
 } 
 
  #Layer2copy100_18 
 { 
 	 left: 1029px; 
 	 top: 862px; 
-	 z-index:974;
+	
 } 
 
  #Layer2copy101_18 
 { 
 	 left: 1046px; 
 	 top: 861px; 
-	 z-index:975;
+	
 } 
 
  #Layer2copy102_16 
 { 
 	 left: 1063px; 
 	 top: 861px; 
-	 z-index:976;
+	
 } 
 
  #Layer2copy103_12 
 { 
 	 left: 1080px; 
 	 top: 861px; 
-	 z-index:977;
+	
 } 
 
  #Layer2copy91_21 
 { 
 	 left: 725px; 
 	 top: 606px; 
-	 z-index:978;
+	
 } 
 
  #Layer2copy92_21 
 { 
 	 left: 742px; 
 	 top: 606px; 
-	 z-index:979;
+	
 } 
 
  #Layer2copy93_21 
 { 
 	 left: 759px; 
 	 top: 606px; 
-	 z-index:980;
+	
 } 
 
  #Layer2copy94_21 
 { 
 	 left: 775px; 
 	 top: 606px; 
-	 z-index:981;
+	
 } 
 
  #Layer2copy95_21 
 { 
 	 left: 793px; 
 	 top: 606px; 
-	 z-index:982;
+	
 } 
 
  #Layer2copy96_21 
 { 
 	 left: 810px; 
 	 top: 606px; 
-	 z-index:983;
+	
 } 
 
  #Layer2copy97_19 
 { 
 	 left: 827px; 
 	 top: 607px; 
-	 z-index:984;
+	
 } 
 
  #Layer2copy98_19 
 { 
 	 left: 843px; 
 	 top: 607px; 
-	 z-index:985;
+	
 } 
 
  #Layer2copy99_19 
 { 
 	 left: 860px; 
 	 top: 607px; 
-	 z-index:986;
+	
 } 
 
  #Layer2copy100_19 
 { 
 	 left: 877px; 
 	 top: 607px; 
-	 z-index:987;
+	
 } 
 
  #Layer2copy101_19 
 { 
 	 left: 894px; 
 	 top: 606px; 
-	 z-index:988;
+	
 } 
 
  #Layer2copy102_17 
 { 
 	 left: 911px; 
 	 top: 606px; 
-	 z-index:989;
+	
 } 
 
  #Layer2copy103_13 
 { 
 	 left: 928px; 
 	 top: 606px; 
-	 z-index:990;
+	
 } 
 
  #Layer2copy91_22 
 { 
 	 left: 469px; 
 	 top: 556px; 
-	 z-index:991;
+	
 } 
 
  #Layer2copy92_22 
 { 
 	 left: 486px; 
 	 top: 556px; 
-	 z-index:992;
+	
 } 
 
  #Layer2copy93_22 
 { 
 	 left: 503px; 
 	 top: 556px; 
-	 z-index:993;
+	
 } 
 
  #Layer2copy94_22 
 { 
 	 left: 519px; 
 	 top: 556px; 
-	 z-index:994;
+	
 } 
 
  #Layer2copy95_22 
 { 
 	 left: 537px; 
 	 top: 556px; 
-	 z-index:995;
+	
 } 
 
  #Layer2copy96_22 
 { 
 	 left: 554px; 
 	 top: 556px; 
-	 z-index:996;
+	
 } 
 
  #Layer2copy97_20 
 { 
 	 left: 571px; 
 	 top: 557px; 
-	 z-index:997;
+	
 } 
 
  #Layer2copy98_20 
 { 
 	 left: 587px; 
 	 top: 557px; 
-	 z-index:998;
+	
 } 
 
  #Layer2copy99_20 
 { 
 	 left: 604px; 
 	 top: 557px; 
-	 z-index:999;
+	
 } 
 
  #Layer2copy100_20 
 { 
 	 left: 621px; 
 	 top: 557px; 
-	 z-index:1000;
+	
 } 
 
  #Layer2copy101_20 
 { 
 	 left: 638px; 
 	 top: 556px; 
-	 z-index:1001;
+	
 } 
 
  #Layer2copy102_18 
 { 
 	 left: 655px; 
 	 top: 556px; 
-	 z-index:1002;
+	
 } 
 
  #Layer2copy103_14 
 { 
 	 left: 672px; 
 	 top: 556px; 
-	 z-index:1003;
+	
 } 
 
  #Layer2copy91_23 
 { 
 	 left: 111px; 
 	 top: 709px; 
-	 z-index:1004;
+	
 } 
 
  #Layer2copy92_23 
 { 
 	 left: 128px; 
 	 top: 709px; 
-	 z-index:1005;
+	
 } 
 
  #Layer2copy93_23 
 { 
 	 left: 145px; 
 	 top: 709px; 
-	 z-index:1006;
+	
 } 
 
  #Layer2copy94_23 
 { 
 	 left: 161px; 
 	 top: 709px; 
-	 z-index:1007;
+	
 } 
 
  #Layer2copy95_23 
 { 
 	 left: 179px; 
 	 top: 709px; 
-	 z-index:1008;
+	
 } 
 
  #Layer2copy96_23 
 { 
 	 left: 196px; 
 	 top: 709px; 
-	 z-index:1009;
+	
 } 
 
  #Layer2copy97_21 
 { 
 	 left: 213px; 
 	 top: 710px; 
-	 z-index:1010;
+	
 } 
 
  #Layer2copy98_21 
 { 
 	 left: 229px; 
 	 top: 710px; 
-	 z-index:1011;
+	
 } 
 
  #Layer2copy99_21 
 { 
 	 left: 246px; 
 	 top: 710px; 
-	 z-index:1012;
+	
 } 
 
  #Layer2copy100_21 
 { 
 	 left: 263px; 
 	 top: 710px; 
-	 z-index:1013;
+	
 } 
 
  #Layer2copy101_21 
 { 
 	 left: 280px; 
 	 top: 709px; 
-	 z-index:1014;
+	
 } 
 
  #Layer2copy102_19 
 { 
 	 left: 297px; 
 	 top: 709px; 
-	 z-index:1015;
+	
 } 
 
  #Layer2copy103_15 
 { 
 	 left: 314px; 
 	 top: 709px; 
-	 z-index:1016;
+	
 } 
 
  #Layer2copy91_24 
 { 
 	 left: 112px; 
 	 top: 299px; 
-	 z-index:1017;
+	
 } 
 
  #Layer2copy92_24 
 { 
 	 left: 129px; 
 	 top: 299px; 
-	 z-index:1018;
+	
 } 
 
  #Layer2copy93_24 
 { 
 	 left: 146px; 
 	 top: 299px; 
-	 z-index:1019;
+	
 } 
 
  #Layer2copy94_24 
 { 
 	 left: 162px; 
 	 top: 299px; 
-	 z-index:1020;
+	
 } 
 
  #Layer2copy95_24 
 { 
 	 left: 180px; 
 	 top: 299px; 
-	 z-index:1021;
+	
 } 
 
  #Layer2copy96_24 
 { 
 	 left: 197px; 
 	 top: 299px; 
-	 z-index:1022;
+	
 } 
 
  #Layer2copy97_22 
 { 
 	 left: 214px; 
 	 top: 300px; 
-	 z-index:1023;
+	
 } 
 
  #Layer2copy98_22 
 { 
 	 left: 230px; 
 	 top: 300px; 
-	 z-index:1024;
+	
 } 
 
  #Layer2copy99_22 
 { 
 	 left: 247px; 
 	 top: 300px; 
-	 z-index:1025;
+	
 } 
 
  #Layer2copy100_22 
 { 
 	 left: 264px; 
 	 top: 300px; 
-	 z-index:1026;
+	
 } 
 
  #Layer2copy101_22 
 { 
 	 left: 281px; 
 	 top: 299px; 
-	 z-index:1027;
+	
 } 
 
  #Layer2copy102_20 
 { 
 	 left: 298px; 
 	 top: 299px; 
-	 z-index:1028;
+	
 } 
 
  #Layer2copy103_16 
 { 
 	 left: 315px; 
 	 top: 299px; 
-	 z-index:1029;
+	
 } 
 
  #Layer2copy91_25 
 { 
 	 left: 368px; 
 	 top: 352px; 
-	 z-index:1030;
+	
 } 
 
  #Layer2copy92_25 
 { 
 	 left: 385px; 
 	 top: 352px; 
-	 z-index:1031;
+	
 } 
 
  #Layer2copy93_25 
 { 
 	 left: 402px; 
 	 top: 352px; 
-	 z-index:1032;
+	
 } 
 
  #Layer2copy94_25 
 { 
 	 left: 418px; 
 	 top: 352px; 
-	 z-index:1033;
+	
 } 
 
  #Layer2copy95_25 
 { 
 	 left: 436px; 
 	 top: 352px; 
-	 z-index:1034;
+	
 } 
 
  #Layer2copy96_25 
 { 
 	 left: 453px; 
 	 top: 352px; 
-	 z-index:1035;
+	
 } 
 
  #Layer2copy97_23 
 { 
 	 left: 470px; 
 	 top: 353px; 
-	 z-index:1036;
+	
 } 
 
  #Layer2copy98_23 
 { 
 	 left: 486px; 
 	 top: 353px; 
-	 z-index:1037;
+	
 } 
 
  #Layer2copy99_23 
 { 
 	 left: 503px; 
 	 top: 353px; 
-	 z-index:1038;
+	
 } 
 
  #Layer2copy100_23 
 { 
 	 left: 520px; 
 	 top: 353px; 
-	 z-index:1039;
+	
 } 
 
  #Layer2copy101_23 
 { 
 	 left: 537px; 
 	 top: 352px; 
-	 z-index:1040;
+	
 } 
 
  #Layer2copy102_21 
 { 
 	 left: 554px; 
 	 top: 352px; 
-	 z-index:1041;
+	
 } 
 
  #Layer2copy103_17 
 { 
 	 left: 571px; 
 	 top: 352px; 
-	 z-index:1042;
+	
 } 
 
  #Layer2copy91_26 
 { 
 	 left: 928px; 
 	 top: 301px; 
-	 z-index:1043;
+	
 } 
 
  #Layer2copy92_26 
 { 
 	 left: 945px; 
 	 top: 301px; 
-	 z-index:1044;
+	
 } 
 
  #Layer2copy93_26 
 { 
 	 left: 962px; 
 	 top: 301px; 
-	 z-index:1045;
+	
 } 
 
  #Layer2copy94_26 
 { 
 	 left: 978px; 
 	 top: 301px; 
-	 z-index:1046;
+	
 } 
 
  #Layer2copy95_26 
 { 
 	 left: 996px; 
 	 top: 301px; 
-	 z-index:1047;
+	
 } 
 
  #Layer2copy96_26 
 { 
 	 left: 1013px; 
 	 top: 301px; 
-	 z-index:1048;
+	
 } 
 
  #Layer2copy97_24 
 { 
 	 left: 1030px; 
 	 top: 302px; 
-	 z-index:1049;
+	
 } 
 
  #Layer2copy98_24 
 { 
 	 left: 1046px; 
 	 top: 302px; 
-	 z-index:1050;
+	
 } 
 
  #Layer2copy99_24 
 { 
 	 left: 1063px; 
 	 top: 302px; 
-	 z-index:1051;
+	
 } 
 
  #Layer2copy100_24 
 { 
 	 left: 1080px; 
 	 top: 302px; 
-	 z-index:1052;
+	
 } 
 
  #Layer2copy101_24 
 { 
 	 left: 1097px; 
 	 top: 301px; 
-	 z-index:1053;
+	
 } 
 
  #Layer2copy102_22 
 { 
 	 left: 1114px; 
 	 top: 301px; 
-	 z-index:1054;
+	
 } 
 
  #Layer2copy103_18 
 { 
 	 left: 1131px; 
 	 top: 301px; 
-	 z-index:1055;
+	
 } 
 
  #Layer2copy91_27 
 { 
 	 left: 213px; 
 	 top: 506px; 
-	 z-index:1056;
+	
 } 
 
  #Layer2copy92_27 
 { 
 	 left: 230px; 
 	 top: 506px; 
-	 z-index:1057;
+	
 } 
 
  #Layer2copy93_27 
 { 
 	 left: 247px; 
 	 top: 506px; 
-	 z-index:1058;
+	
 } 
 
  #Layer2copy94_27 
 { 
 	 left: 263px; 
 	 top: 506px; 
-	 z-index:1059;
+	
 } 
 
  #Layer2copy95_27 
 { 
 	 left: 281px; 
 	 top: 506px; 
-	 z-index:1060;
+	
 } 
 
  #Layer2copy96_27 
 { 
 	 left: 298px; 
 	 top: 506px; 
-	 z-index:1061;
+	
 } 
 
  #Layer2copy97_25 
 { 
 	 left: 315px; 
 	 top: 507px; 
-	 z-index:1062;
+	
 } 
 
  #Layer2copy98_25 
 { 
 	 left: 331px; 
 	 top: 507px; 
-	 z-index:1063;
+	
 } 
 
  #Layer2copy99_25 
 { 
 	 left: 348px; 
 	 top: 507px; 
-	 z-index:1064;
+	
 } 
 
  #Layer2copy100_25 
 { 
 	 left: 365px; 
 	 top: 507px; 
-	 z-index:1065;
+	
 } 
 
  #Layer2copy101_25 
 { 
 	 left: 382px; 
 	 top: 506px; 
-	 z-index:1066;
+	
 } 
 
  #Layer2copy102_23 
 { 
 	 left: 399px; 
 	 top: 506px; 
-	 z-index:1067;
+	
 } 
 
  #Layer2copy103_19 
 { 
 	 left: 416px; 
 	 top: 506px; 
-	 z-index:1068;
+	
 } 
 
  #Layer2copy91_28 
 { 
 	 left: 418px; 
 	 top: 911px; 
-	 z-index:1069;
+	
 } 
 
  #Layer2copy92_28 
 { 
 	 left: 435px; 
 	 top: 911px; 
-	 z-index:1070;
+	
 } 
 
  #Layer2copy93_28 
 { 
 	 left: 452px; 
 	 top: 911px; 
-	 z-index:1071;
+	
 } 
 
  #Layer2copy94_28 
 { 
 	 left: 468px; 
 	 top: 911px; 
-	 z-index:1072;
+	
 } 
 
  #Layer2copy95_28 
 { 
 	 left: 486px; 
 	 top: 911px; 
-	 z-index:1073;
+	
 } 
 
  #Layer2copy96_28 
 { 
 	 left: 503px; 
 	 top: 911px; 
-	 z-index:1074;
+	
 } 
 
  #Layer2copy97_26 
 { 
 	 left: 520px; 
 	 top: 912px; 
-	 z-index:1075;
+	
 } 
 
  #Layer2copy98_26 
 { 
 	 left: 536px; 
 	 top: 912px; 
-	 z-index:1076;
+	
 } 
 
  #Layer2copy99_26 
 { 
 	 left: 553px; 
 	 top: 912px; 
-	 z-index:1077;
+	
 } 
 
  #Layer2copy100_26 
 { 
 	 left: 570px; 
 	 top: 912px; 
-	 z-index:1078;
+	
 } 
 
  #Layer2copy101_26 
 { 
 	 left: 587px; 
 	 top: 911px; 
-	 z-index:1079;
+	
 } 
 
  #Layer2copy102_24 
 { 
 	 left: 604px; 
 	 top: 911px; 
-	 z-index:1080;
+	
 } 
 
  #Layer2copy103_20 
 { 
 	 left: 621px; 
 	 top: 911px; 
-	 z-index:1081;
+	
 } 
 
  #Layer2copy91_29 
 { 
 	 left: 10px; 
 	 top: 810px; 
-	 z-index:1082;
+	
 } 
 
  #Layer2copy92_29 
 { 
 	 left: 27px; 
 	 top: 810px; 
-	 z-index:1083;
+	
 } 
 
  #Layer2copy93_29 
 { 
 	 left: 44px; 
 	 top: 810px; 
-	 z-index:1084;
+	
 } 
 
  #Layer2copy94_29 
 { 
 	 left: 60px; 
 	 top: 810px; 
-	 z-index:1085;
+	
 } 
 
  #Layer2copy95_29 
 { 
 	 left: 78px; 
 	 top: 810px; 
-	 z-index:1086;
+	
 } 
 
  #Layer2copy96_29 
 { 
 	 left: 95px; 
 	 top: 810px; 
-	 z-index:1087;
+	
 } 
 
  #Layer2copy97_27 
 { 
 	 left: 112px; 
 	 top: 811px; 
-	 z-index:1088;
+	
 } 
 
  #Layer2copy98_27 
 { 
 	 left: 128px; 
 	 top: 811px; 
-	 z-index:1089;
+	
 } 
 
  #Layer2copy99_27 
 { 
 	 left: 145px; 
 	 top: 811px; 
-	 z-index:1090;
+	
 } 
 
  #Layer2copy100_27 
 { 
 	 left: 162px; 
 	 top: 811px; 
-	 z-index:1091;
+	
 } 
 
  #Layer2copy101_27 
 { 
 	 left: 179px; 
 	 top: 810px; 
-	 z-index:1092;
+	
 } 
 
  #Layer2copy102_25 
 { 
 	 left: 196px; 
 	 top: 810px; 
-	 z-index:1093;
+	
 } 
 
  #Layer2copy103_21 
 { 
 	 left: 213px; 
 	 top: 810px; 
-	 z-index:1094;
+	
 } 
 
  #Layer2copy91_30 
 { 
 	 left: 230px; 
 	 top: 809px; 
-	 z-index:1095;
+	
 } 
 
  #Layer2copy92_30 
 { 
 	 left: 247px; 
 	 top: 809px; 
-	 z-index:1096;
+	
 } 
 
  #Layer2copy93_30 
 { 
 	 left: 264px; 
 	 top: 809px; 
-	 z-index:1097;
+	
 } 
 
  #Layer2copy94_30 
 { 
 	 left: 280px; 
 	 top: 809px; 
-	 z-index:1098;
+	
 } 
 
  #Layer2copy95_30 
 { 
 	 left: 298px; 
 	 top: 809px; 
-	 z-index:1099;
+	
 } 
 
  #Layer2copy96_30 
 { 
 	 left: 315px; 
 	 top: 809px; 
-	 z-index:1100;
+	
 } 
 
  #Layer2copy97_28 
 { 
 	 left: 332px; 
 	 top: 810px; 
-	 z-index:1101;
+	
 } 
 
  #Layer2copy98_28 
 { 
 	 left: 348px; 
 	 top: 810px; 
-	 z-index:1102;
+	
 } 
 
  #Layer2copy99_28 
 { 
 	 left: 365px; 
 	 top: 810px; 
-	 z-index:1103;
+	
 } 
 
  #Layer2copy100_28 
 { 
 	 left: 382px; 
 	 top: 810px; 
-	 z-index:1104;
+	
 } 
 
  #Layer2copy101_28 
 { 
 	 left: 399px; 
 	 top: 809px; 
-	 z-index:1105;
+	
 } 
 
  #Layer2copy102_26 
 { 
 	 left: 416px; 
 	 top: 809px; 
-	 z-index:1106;
+	
 } 
 
  #Layer2copy91_31 
 { 
 	 left: 162px; 
 	 top: 352px; 
-	 z-index:1107;
+	
 } 
 
  #Layer2copy92_31 
 { 
 	 left: 179px; 
 	 top: 352px; 
-	 z-index:1108;
+	
 } 
 
  #Layer2copy93_31 
 { 
 	 left: 196px; 
 	 top: 352px; 
-	 z-index:1109;
+	
 } 
 
  #Layer2copy94_31 
 { 
 	 left: 212px; 
 	 top: 352px; 
-	 z-index:1110;
+	
 } 
 
  #Layer2copy95_31 
 { 
 	 left: 230px; 
 	 top: 352px; 
-	 z-index:1111;
+	
 } 
 
  #Layer2copy96_31 
 { 
 	 left: 247px; 
 	 top: 352px; 
-	 z-index:1112;
+	
 } 
 
  #Layer2copy97_29 
 { 
 	 left: 264px; 
 	 top: 353px; 
-	 z-index:1113;
+	
 } 
 
  #Layer2copy91_32 
 { 
 	 left: 60px; 
 	 top: 456px; 
-	 z-index:1114;
+	
 } 
 
  #Layer2copy92_32 
 { 
 	 left: 77px; 
 	 top: 456px; 
-	 z-index:1115;
+	
 } 
 
  #Layer2copy93_32 
 { 
 	 left: 94px; 
 	 top: 456px; 
-	 z-index:1116;
+	
 } 
 
  #Layer2copy94_32 
 { 
 	 left: 110px; 
 	 top: 456px; 
-	 z-index:1117;
+	
 } 
 
  #Layer2copy95_32 
 { 
 	 left: 128px; 
 	 top: 456px; 
-	 z-index:1118;
+	
 } 
 
  #Layer2copy96_32 
 { 
 	 left: 145px; 
 	 top: 456px; 
-	 z-index:1119;
+	
 } 
 
  #Layer2copy97_30 
 { 
 	 left: 162px; 
 	 top: 457px; 
-	 z-index:1120;
+	
 } 
 
  #Layer2copy91_33 
 { 
 	 left: 265px; 
 	 top: 455px; 
-	 z-index:1121;
+	
 } 
 
  #Layer2copy92_33 
 { 
 	 left: 282px; 
 	 top: 455px; 
-	 z-index:1122;
+	
 } 
 
  #Layer2copy93_33 
 { 
 	 left: 299px; 
 	 top: 455px; 
-	 z-index:1123;
+	
 } 
 
  #Layer2copy94_33 
 { 
 	 left: 315px; 
 	 top: 455px; 
-	 z-index:1124;
+	
 } 
 
  #Layer2copy95_33 
 { 
 	 left: 333px; 
 	 top: 455px; 
-	 z-index:1125;
+	
 } 
 
  #Layer2copy96_33 
 { 
 	 left: 350px; 
 	 top: 455px; 
-	 z-index:1126;
+	
 } 
 
  #Layer2copy97_31 
 { 
 	 left: 367px; 
 	 top: 456px; 
-	 z-index:1127;
+	
 } 
 
  #Layer2copy91_34 
 { 
 	 left: 416px; 
 	 top: 95px; 
-	  z-index:1128;
+	
 } 
 
  #Layer2copy92_34 
 { 
 	 left: 433px; 
 	 top: 95px; 
-	  z-index:1129;
+	
 } 
 
  #Layer2copy93_34 
 { 
 	 left: 450px; 
 	 top: 95px; 
-	  z-index:1130;
+	
 } 
 
  #Layer2copy94_34 
 { 
 	 left: 466px; 
 	 top: 95px; 
-	  z-index:1131;
+	
 } 
 
  #Layer2copy95_34 
 { 
 	 left: 484px; 
 	 top: 95px; 
-	  z-index:1132;
+	
 } 
 
  #Layer2copy96_34 
 { 
 	 left: 501px; 
 	 top: 95px; 
-	  z-index:1133;
+	
 } 
 
  #Layer2copy97_32 
 { 
 	 left: 518px; 
 	 top: 96px; 
-	  z-index:1134;
+	
 } 
 
  #Layer2copy91_35 
 { 
 	 left: 723px; 
 	 top: 97px; 
-	  z-index:1135;
+	
 } 
 
  #Layer2copy92_35 
 { 
 	 left: 740px; 
 	 top: 97px; 
-	  z-index:1136;
+	
 } 
 
  #Layer2copy93_35 
 { 
 	 left: 757px; 
 	 top: 97px; 
-	  z-index:1137;
+	
 } 
 
  #Layer2copy94_35 
 { 
 	 left: 773px; 
 	 top: 97px; 
-	  z-index:1138;
+	
 } 
 
  #Layer2copy95_35 
 { 
 	 left: 791px; 
 	 top: 97px; 
-	  z-index:1139;
+	
 } 
 
  #Layer2copy96_35 
 { 
 	 left: 808px; 
 	 top: 97px; 
-	  z-index:1140;
+	
 } 
 
  #Layer2copy97_33 
 { 
 	 left: 825px; 
 	 top: 98px; 
-	  z-index:1141;
+	
 } 
 
  #Layer2copy91_36 
 { 
 	 left: 673px; 
 	 top: 251px; 
-	 z-index:1142;
+	
 } 
 
  #Layer2copy92_36 
 { 
 	 left: 690px; 
 	 top: 251px; 
-	 z-index:1143;
+	
 } 
 
  #Layer2copy93_36 
 { 
 	 left: 707px; 
 	 top: 251px; 
-	 z-index:1144;
+	
 } 
 
  #Layer2copy94_36 
 { 
 	 left: 723px; 
 	 top: 251px; 
-	 z-index:1145;
+	
 } 
 
  #Layer2copy95_36 
 { 
 	 left: 741px; 
 	 top: 251px; 
-	 z-index:1146;
+	
 } 
 
  #Layer2copy96_36 
 { 
 	 left: 758px; 
 	 top: 251px; 
-	 z-index:1147;
+	
 } 
 
  #Layer2copy97_34 
 { 
 	 left: 775px; 
 	 top: 252px; 
-	 z-index:1148;
+	
 } 
 
  #Layer2copy91_37 
 { 
 	 left: 470px; 
 	 top: 148px; 
-	 z-index:1149;
+	
 } 
 
  #Layer2copy92_37 
 { 
 	 left: 487px; 
 	 top: 148px; 
-	 z-index:1150;
+	
 } 
 
  #Layer2copy93_37 
 { 
 	 left: 504px; 
 	 top: 148px; 
-	 z-index:1151;
+	
 } 
 
  #Layer2copy94_37 
 { 
 	 left: 520px; 
 	 top: 148px; 
-	 z-index:1152;
+	
 } 
 
  #Layer2copy95_37 
 { 
 	 left: 538px; 
 	 top: 148px; 
-	 z-index:1153;
+	
 } 
 
  #Layer2copy96_37 
 { 
 	 left: 555px; 
 	 top: 148px; 
-	 z-index:1154;
+	
 } 
 
  #Layer2copy97_35 
 { 
 	 left: 572px; 
 	 top: 149px; 
-	 z-index:1155;
+	
 } 
 
  #Layer2copy91_38 
 { 
 	 left: 673px; 
 	 top: 146px; 
-	 z-index:1156;
+	
 } 
 
  #Layer2copy92_38 
 { 
 	 left: 690px; 
 	 top: 146px; 
-	 z-index:1157;
+	
 } 
 
  #Layer2copy93_38 
 { 
 	 left: 707px; 
 	 top: 146px; 
-	 z-index:1158;
+	
 } 
 
  #Layer2copy94_38 
 { 
 	 left: 723px; 
 	 top: 146px; 
-	 z-index:1159;
+	
 } 
 
  #Layer2copy95_38 
 { 
 	 left: 741px; 
 	 top: 146px; 
-	 z-index:1160;
+	
 } 
 
  #Layer2copy96_38 
 { 
 	 left: 758px; 
 	 top: 146px; 
-	 z-index:1161;
+	
 } 
 
  #Layer2copy97_36 
 { 
 	 left: 775px; 
 	 top: 147px; 
-	 z-index:1162;
+	
 } 
 
  #Layer2copy91_39 
 { 
 	 left: 470px; 
 	 top: 251px; 
-	 z-index:1163;
+	
 } 
 
  #Layer2copy92_39 
 { 
 	 left: 487px; 
 	 top: 251px; 
-	 z-index:1164;
+	
 } 
 
  #Layer2copy93_39 
 { 
 	 left: 504px; 
 	 top: 251px; 
-	 z-index:1165;
+	
 } 
 
  #Layer2copy94_39 
 { 
 	 left: 520px; 
 	 top: 251px; 
-	 z-index:1166;
+	
 } 
 
  #Layer2copy95_39 
 { 
 	 left: 538px; 
 	 top: 251px; 
-	 z-index:1167;
+	
 } 
 
  #Layer2copy96_39 
 { 
 	 left: 555px; 
 	 top: 251px; 
-	 z-index:1168;
+	
 } 
 
  #Layer2copy97_37 
 { 
 	 left: 572px; 
 	 top: 252px; 
-	 z-index:1169;
+	
 } 
 
  #Layer2copy91_40 
 { 
 	 left: 415px; 
 	 top: 300px; 
-	 z-index:1170;
+	
 } 
 
  #Layer2copy92_40 
 { 
 	 left: 432px; 
 	 top: 300px; 
-	 z-index:1171;
+	
 } 
 
  #Layer2copy93_40 
 { 
 	 left: 449px; 
 	 top: 300px; 
-	 z-index:1172;
+	
 } 
 
  #Layer2copy94_40 
 { 
 	 left: 465px; 
 	 top: 300px; 
-	 z-index:1173;
+	
 } 
 
  #Layer2copy95_40 
 { 
 	 left: 483px; 
 	 top: 300px; 
-	 z-index:1174;
+	
 } 
 
  #Layer2copy96_40 
 { 
 	 left: 500px; 
 	 top: 300px; 
-	 z-index:1175;
+	
 } 
 
  #Layer2copy97_38 
 { 
 	 left: 517px; 
 	 top: 301px; 
-	 z-index:1176;
+	
 } 
 
  #Layer2copy91_41 
 { 
 	 left: 673px; 
 	 top: 353px; 
-	 z-index:1177;
+	
 } 
 
  #Layer2copy92_41 
 { 
 	 left: 690px; 
 	 top: 353px; 
-	 z-index:1178;
+	
 } 
 
  #Layer2copy93_41 
 { 
 	 left: 707px; 
 	 top: 353px; 
-	 z-index:1179;
+	
 } 
 
  #Layer2copy94_41 
 { 
 	 left: 723px; 
 	 top: 353px; 
-	 z-index:1180;
+	
 } 
 
  #Layer2copy95_41 
 { 
 	 left: 741px; 
 	 top: 353px; 
-	 z-index:1181;
+	
 } 
 
  #Layer2copy96_41 
 { 
 	 left: 758px; 
 	 top: 353px; 
-	 z-index:1182;
+	
 } 
 
  #Layer2copy97_39 
 { 
 	 left: 775px; 
 	 top: 354px; 
-	 z-index:1183;
+	
 } 
 
  #Layer2copy91_42 
 { 
 	 left: 470px; 
 	 top: 453px; 
-	 z-index:1184;
+	
 } 
 
  #Layer2copy92_42 
 { 
 	 left: 487px; 
 	 top: 453px; 
-	 z-index:1185;
+	
 } 
 
  #Layer2copy93_42 
 { 
 	 left: 504px; 
 	 top: 453px; 
-	 z-index:1186;
+	
 } 
 
  #Layer2copy94_42 
 { 
 	 left: 520px; 
 	 top: 453px; 
-	 z-index:1187;
+	
 } 
 
  #Layer2copy95_42 
 { 
 	 left: 538px; 
 	 top: 453px; 
-	 z-index:1188;
+	
 } 
 
  #Layer2copy96_42 
 { 
 	 left: 555px; 
 	 top: 453px; 
-	 z-index:1189;
+	
 } 
 
  #Layer2copy97_40 
 { 
 	 left: 572px; 
 	 top: 454px; 
-	 z-index:1190;
+	
 } 
 
  #Layer2copy91_43 
 { 
 	 left: 672px; 
 	 top: 454px; 
-	 z-index:1191;
+	
 } 
 
  #Layer2copy92_43 
 { 
 	 left: 689px; 
 	 top: 454px; 
-	 z-index:1192;
+	
 } 
 
  #Layer2copy93_43 
 { 
 	 left: 706px; 
 	 top: 454px; 
-	 z-index:1193;
+	
 } 
 
  #Layer2copy94_43 
 { 
 	 left: 722px; 
 	 top: 454px; 
-	 z-index:1194;
+	
 } 
 
  #Layer2copy95_43 
 { 
 	 left: 740px; 
 	 top: 454px; 
-	 z-index:1195;
+	
 } 
 
  #Layer2copy96_43 
 { 
 	 left: 757px; 
 	 top: 454px; 
-	 z-index:1196;
+	
 } 
 
  #Layer2copy97_41 
 { 
 	 left: 774px; 
 	 top: 455px; 
-	 z-index:1197;
+	
 } 
 
  #Layer2copy91_44 
 { 
 	 left: 876px; 
 	 top: 455px; 
-	 z-index:1198;
+	
 } 
 
  #Layer2copy92_44 
 { 
 	 left: 893px; 
 	 top: 455px; 
-	 z-index:1199;
+	
 } 
 
  #Layer2copy93_44 
 { 
 	 left: 910px; 
 	 top: 455px; 
-	 z-index:1200;
+	
 } 
 
  #Layer2copy94_44 
 { 
 	 left: 926px; 
 	 top: 455px; 
-	 z-index:1201;
+	
 } 
 
  #Layer2copy95_44 
 { 
 	 left: 944px; 
 	 top: 455px; 
-	 z-index:1202;
+	
 } 
 
  #Layer2copy96_44 
 { 
 	 left: 961px; 
 	 top: 455px; 
-	 z-index:1203;
+	
 } 
 
  #Layer2copy97_42 
 { 
 	 left: 978px; 
 	 top: 456px; 
-	 z-index:1204;
+	
 } 
 
  #Layer2copy91_45 
 { 
 	 left: 981px; 
 	 top: 660px; 
-	 z-index:1205;
+	
 } 
 
  #Layer2copy92_45 
 { 
 	 left: 998px; 
 	 top: 660px; 
-	 z-index:1206;
+	
 } 
 
  #Layer2copy93_45 
 { 
 	 left: 1015px; 
 	 top: 660px; 
-	 z-index:1207;
+	
 } 
 
  #Layer2copy94_45 
 { 
 	 left: 1031px; 
 	 top: 660px; 
-	 z-index:1208;
+	
 } 
 
  #Layer2copy95_45 
 { 
 	 left: 1049px; 
 	 top: 660px; 
-	 z-index:1209;
+	
 } 
 
  #Layer2copy96_45 
 { 
 	 left: 1066px; 
 	 top: 660px; 
-	 z-index:1210;
+	
 } 
 
  #Layer2copy97_43 
 { 
 	 left: 1083px; 
 	 top: 661px; 
-	 z-index:1211;
+	
 } 
 
  #Layer2copy91_46 
 { 
 	 left: 777px; 
 	 top: 658px; 
-	 z-index:1212;
+	
 } 
 
  #Layer2copy92_46 
 { 
 	 left: 794px; 
 	 top: 658px; 
-	 z-index:1213;
+	
 } 
 
  #Layer2copy93_46 
 { 
 	 left: 811px; 
 	 top: 658px; 
-	 z-index:1214;
+	
 } 
 
  #Layer2copy94_46 
 { 
 	 left: 827px; 
 	 top: 658px; 
-	 z-index:1215;
+	
 } 
 
  #Layer2copy95_46 
 { 
 	 left: 845px; 
 	 top: 658px; 
-	 z-index:1216;
+	
 } 
 
  #Layer2copy96_46 
 { 
 	 left: 862px; 
 	 top: 658px; 
-	 z-index:1217;
+	
 } 
 
  #Layer2copy97_44 
 { 
 	 left: 879px; 
 	 top: 659px; 
-	 z-index:1218;
+	
 } 
 
  #Layer2copy91_47 
 { 
 	 left: 571px; 
 	 top: 659px; 
-	 z-index:1219;
+	
 } 
 
  #Layer2copy92_47 
 { 
 	 left: 588px; 
 	 top: 659px; 
-	 z-index:1220;
+	
 } 
 
  #Layer2copy93_47 
 { 
 	 left: 605px; 
 	 top: 659px; 
-	 z-index:1221;
+	
 } 
 
  #Layer2copy94_47 
 { 
 	 left: 621px; 
 	 top: 659px; 
-	 z-index:1222;
+	
 } 
 
  #Layer2copy95_47 
 { 
 	 left: 639px; 
 	 top: 659px; 
-	 z-index:1223;
+	
 } 
 
  #Layer2copy96_47 
 { 
 	 left: 656px; 
 	 top: 659px; 
-	 z-index:1224;
+	
 } 
 
  #Layer2copy97_45 
 { 
 	 left: 673px; 
 	 top: 660px; 
-	 z-index:1225;
+	
 } 
 
  #Layer2copy92_48 
 { 
 	 left: 622px; 
 	 top: 604px; 
-	 z-index:1226;
+	
 } 
 
  #Layer2copy93_48 
 { 
 	 left: 639px; 
 	 top: 604px; 
-	 z-index:1227;
+	
 } 
 
  #Layer2copy94_48 
 { 
 	 left: 655px; 
 	 top: 604px; 
-	 z-index:1228;
+	
 } 
 
  #Layer2copy95_48 
 { 
 	 left: 673px; 
 	 top: 604px; 
-	 z-index:1229;
+	
 } 
 
  #Layer2copy96_48 
 { 
 	 left: 690px; 
 	 top: 604px; 
-	 z-index:1230;
+	
 } 
 
  #Layer2copy97_46 
 { 
 	 left: 707px; 
 	 top: 605px; 
-	 z-index:1231;
+	
 } 
 
  #Layer2copy91_48 
 { 
 	 left: 776px; 
 	 top: 557px; 
-	 z-index:1232;
+	
 } 
 
  #Layer2copy92_49 
 { 
 	 left: 793px; 
 	 top: 557px; 
-	 z-index:1233;
+	
 } 
 
  #Layer2copy93_49 
 { 
 	 left: 810px; 
 	 top: 557px; 
-	 z-index:1234;
+	
 } 
 
  #Layer2copy94_49 
 { 
 	 left: 826px; 
 	 top: 557px; 
-	 z-index:1235;
+	
 } 
 
  #Layer2copy95_49 
 { 
 	 left: 844px; 
 	 top: 557px; 
-	 z-index:1236;
+	
 } 
 
  #Layer2copy96_49 
 { 
 	 left: 861px; 
 	 top: 557px; 
-	 z-index:1237;
+	
 } 
 
  #Layer2copy97_47 
 { 
 	 left: 878px; 
 	 top: 558px; 
-	 z-index:1238;
+	
 } 
 
  #Layer2copy91_49 
 { 
 	 left: 981px; 
 	 top: 555px; 
-	 z-index:1239;
+	
 } 
 
  #Layer2copy92_50 
 { 
 	 left: 998px; 
 	 top: 555px; 
-	 z-index:1240;
+	
 } 
 
  #Layer2copy93_50 
 { 
 	 left: 1015px; 
 	 top: 555px; 
-	 z-index:1241;
+	
 } 
 
  #Layer2copy94_50 
 { 
 	 left: 1031px; 
 	 top: 555px; 
-	 z-index:1242;
+	
 } 
 
  #Layer2copy95_50 
 { 
 	 left: 1049px; 
 	 top: 555px; 
-	 z-index:1243;
+	
 } 
 
  #Layer2copy96_50 
 { 
 	 left: 1066px; 
 	 top: 555px; 
-	 z-index:1244;
+	
 } 
 
  #Layer2copy97_48 
 { 
 	 left: 1083px; 
 	 top: 556px; 
-	 z-index:1245;
+	
 } 
 
  #Layer2copy91_50 
 { 
 	 left: 367px; 
 	 top: 659px; 
-	 z-index:1246;
+	
 } 
 
  #Layer2copy92_51 
 { 
 	 left: 384px; 
 	 top: 659px; 
-	 z-index:1247;
+	
 } 
 
  #Layer2copy93_51 
 { 
 	 left: 401px; 
 	 top: 659px; 
-	 z-index:1248;
+	
 } 
 
  #Layer2copy94_51 
 { 
 	 left: 417px; 
 	 top: 659px; 
-	 z-index:1249;
+	
 } 
 
  #Layer2copy95_51 
 { 
 	 left: 435px; 
 	 top: 659px; 
-	 z-index:1250;
+	
 } 
 
  #Layer2copy96_51 
 { 
 	 left: 452px; 
 	 top: 659px; 
-	 z-index:1251;
+	
 } 
 
  #Layer2copy97_49 
 { 
 	 left: 469px; 
 	 top: 660px; 
-	 z-index:1252;
+	
 } 
 
  #Layer2copy91_51 
 { 
 	 left: 266px; 
 	 top: 556px; 
-	 z-index:1253;
+	
 } 
 
  #Layer2copy92_52 
 { 
 	 left: 283px; 
 	 top: 556px; 
-	 z-index:1254;
+	
 } 
 
  #Layer2copy93_52 
 { 
 	 left: 300px; 
 	 top: 556px; 
-	 z-index:1255;
+	
 } 
 
  #Layer2copy94_52 
 { 
 	 left: 316px; 
 	 top: 556px; 
-	 z-index:1256;
+	
 } 
 
  #Layer2copy95_52 
 { 
 	 left: 334px; 
 	 top: 556px; 
-	 z-index:1257;
+	
 } 
 
  #Layer2copy96_52 
 { 
 	 left: 351px; 
 	 top: 556px; 
-	 z-index:1258;
+	
 } 
 
  #Layer2copy97_50 
 { 
 	 left: 368px; 
 	 top: 557px; 
-	 z-index:1259;
+	
 } 
 
  #Layer2copy91_52 
 { 
 	 left: 162px; 
 	 top: 660px; 
-	 z-index:1260;
+	
 } 
 
  #Layer2copy92_53 
 { 
 	 left: 179px; 
 	 top: 660px; 
-	 z-index:1261;
+	
 } 
 
  #Layer2copy93_53 
 { 
 	 left: 196px; 
 	 top: 660px; 
-	 z-index:1262;
+	
 } 
 
  #Layer2copy94_53 
 { 
 	 left: 212px; 
 	 top: 660px; 
-	 z-index:1263;
+	
 } 
 
  #Layer2copy95_53 
 { 
 	 left: 230px; 
 	 top: 660px; 
-	 z-index:1264;
+	
 } 
 
  #Layer2copy96_53 
 { 
 	 left: 247px; 
 	 top: 660px; 
-	 z-index:1265;
+	
 } 
 
  #Layer2copy97_51 
 { 
 	 left: 264px; 
 	 top: 661px; 
-	 z-index:1266;
+	
 } 
 
  #Layer2copy91_53 
 { 
 	 left: 61px; 
 	 top: 557px; 
-	 z-index:1267;
+	
 } 
 
  #Layer2copy92_54 
 { 
 	 left: 78px; 
 	 top: 557px; 
-	 z-index:1268;
+	
 } 
 
  #Layer2copy93_54 
 { 
 	 left: 95px; 
 	 top: 557px; 
-	 z-index:1269;
+	
 } 
 
  #Layer2copy94_54 
 { 
 	 left: 111px; 
 	 top: 557px; 
-	 z-index:1270;
+	
 } 
 
  #Layer2copy95_54 
 { 
 	 left: 129px; 
 	 top: 557px; 
-	 z-index:1271;
+	
 } 
 
  #Layer2copy96_54 
 { 
 	 left: 146px; 
 	 top: 557px; 
-	 z-index:1272;
+	
 } 
 
  #Layer2copy97_52 
 { 
 	 left: 163px; 
 	 top: 558px; 
-	 z-index:1273;
+	
 } 
 
  #Layer2copy91_54 
 { 
 	 left: 367px; 
 	 top: 863px; 
-	 z-index:1274;
+	
 } 
 
  #Layer2copy92_55 
 { 
 	 left: 384px; 
 	 top: 863px; 
-	 z-index:1275;
+	
 } 
 
  #Layer2copy93_55 
 { 
 	 left: 401px; 
 	 top: 863px; 
-	 z-index:1276;
+	
 } 
 
  #Layer2copy94_55 
 { 
 	 left: 417px; 
 	 top: 863px; 
-	 z-index:1277;
+	
 } 
 
  #Layer2copy95_55 
 { 
 	 left: 435px; 
 	 top: 863px; 
-	 z-index:1278;
+	
 } 
 
  #Layer2copy96_55 
 { 
 	 left: 452px; 
 	 top: 863px; 
-	 z-index:1279;
+	
 } 
 
  #Layer2copy97_53 
 { 
 	 left: 469px; 
 	 top: 864px; 
-	 z-index:1280;
+	
 } 
 
  #Layer2copy91_55 
 { 
 	 left: 568px; 
 	 top: 863px; 
-	 z-index:1281;
+	
 } 
 
  #Layer2copy92_56 
 { 
 	 left: 585px; 
 	 top: 863px; 
-	 z-index:1282;
+	
 } 
 
  #Layer2copy93_56 
 { 
 	 left: 602px; 
 	 top: 863px; 
-	 z-index:1283;
+	
 } 
 
  #Layer2copy94_56 
 { 
 	 left: 618px; 
 	 top: 863px; 
-	 z-index:1284;
+	
 } 
 
  #Layer2copy95_56 
 { 
 	 left: 636px; 
 	 top: 863px; 
-	 z-index:1285;
+	
 } 
 
  #Layer2copy96_56 
 { 
 	 left: 653px; 
 	 top: 863px; 
-	 z-index:1286;
+	
 } 
 
  #Layer2copy97_54 
 { 
 	 left: 670px; 
 	 top: 864px; 
-	 z-index:1287;
+	
 } 
 
  #Layer2copy91_56 
@@ -9102,98 +9102,98 @@
 { 
 	 left: 367px; 
 	 top: 966px; 
-	 z-index:1298;
+	
 } 
 
  #Layer2copy92_59 
 { 
 	 left: 384px; 
 	 top: 966px; 
-	 z-index:1299;
+	
 } 
 
  #Layer2copy93_59 
 { 
 	 left: 401px; 
 	 top: 966px; 
-	 z-index:1300;
+	
 } 
 
  #Layer2copy94_58 
 { 
 	 left: 417px; 
 	 top: 966px; 
-	 z-index:1301;
+	
 } 
 
  #Layer2copy95_58 
 { 
 	 left: 435px; 
 	 top: 966px; 
-	 z-index:1302;
+	
 } 
 
  #Layer2copy96_58 
 { 
 	 left: 452px; 
 	 top: 966px; 
-	 z-index:1303;
+	
 } 
 
  #Layer2copy97_56 
 { 
 	 left: 469px; 
 	 top: 967px; 
-	 z-index:1304;
+	
 } 
 
  #Layer2copy91_59 
 { 
 	 left: 569px; 
 	 top: 964px; 
-	 z-index:1305;
+	
 } 
 
  #Layer2copy92_60 
 { 
 	 left: 586px; 
 	 top: 964px; 
-	 z-index:1306;
+	
 } 
 
  #Layer2copy93_60 
 { 
 	 left: 603px; 
 	 top: 964px; 
-	 z-index:1307;
+	
 } 
 
  #Layer2copy94_59 
 { 
 	 left: 619px; 
 	 top: 964px; 
-	 z-index:1308;
+	
 } 
 
  #Layer2copy95_59 
 { 
 	 left: 637px; 
 	 top: 964px; 
-	 z-index:1309;
+	
 } 
 
  #Layer2copy96_59 
 { 
 	 left: 654px; 
 	 top: 964px; 
-	 z-index:1310;
+	
 } 
 
  #Layer2copy97_57 
 { 
 	 left: 671px; 
 	 top: 965px; 
-	 z-index:1311;
+	
 } 
 
  #Layer2copy91_60 
@@ -9340,227 +9340,232 @@
 { 
 	 left: 879px; 
 	 top: 760px; 
-	 z-index:1332;
+	
 } 
 
  #Layer2copy92_64 
 { 
 	 left: 896px; 
 	 top: 760px; 
-	 z-index:1333;
+	
 } 
 
  #Layer2copy93_64 
 { 
 	 left: 913px; 
 	 top: 760px; 
-	 z-index:1334;
+	
 } 
 
  #Layer2copy94_63 
 { 
 	 left: 929px; 
 	 top: 760px; 
-	 z-index:1335;
+	
 } 
 
  #Layer2copy95_63 
 { 
 	 left: 947px; 
 	 top: 760px; 
-	 z-index:1336;
+	
 } 
 
  #Layer2copy96_63 
 { 
 	 left: 964px; 
 	 top: 760px; 
-	 z-index:1337;
+	
 } 
 
  #Layer2copy97_60 
 { 
 	 left: 981px; 
 	 top: 761px; 
-	 z-index:1338;
+	
 } 
 
  #Layer2copy91_64 
 { 
 	 left: 1045px; 
 	 top: 912px; 
-	 z-index:1339;
+	
 } 
 
  #Layer2copy92_65 
 { 
 	 left: 1062px; 
 	 top: 912px; 
-	 z-index:1340;
+	
 } 
 
  #Layer2copy93_65 
 { 
 	 left: 1079px; 
 	 top: 912px; 
-	 z-index:1341;
+	
 } 
 
  #Layer2copy94_64 
 { 
 	 left: 1095px; 
 	 top: 912px; 
-	 z-index:1342;
+	
 } 
 
  #Layer2copy95_64 
 { 
 	 left: 1113px; 
 	 top: 912px; 
-	 z-index:1343;
+	
 } 
 
  #Layer2copy96_64 
 { 
 	 left: 1130px; 
 	 top: 912px; 
-	 z-index:1344;
+	
 } 
 
  #Layer2copy91_65 
 { 
 	 left: 368px; 
 	 top: 762px; 
-	 z-index:1345;
+	
 } 
 
  #Layer2copy92_66 
 { 
 	 left: 385px; 
 	 top: 762px; 
-	 z-index:1346;
+	
 } 
 
  #Layer2copy93_66 
 { 
 	 left: 402px; 
 	 top: 762px; 
-	 z-index:1347;
+	
 } 
 
  #Layer2copy94_65 
 { 
 	 left: 418px; 
 	 top: 762px; 
-	 z-index:1348;
+	
 } 
 
  #Layer2copy95_65 
 { 
 	 left: 436px; 
 	 top: 762px; 
-	 z-index:1349;
+	
 } 
 
  #Layer2copy96_65 
 { 
 	 left: 453px; 
 	 top: 762px; 
-	 z-index:1350;
+	
 } 
 
  #Layer2copy97_61 
 { 
 	 left: 470px; 
 	 top: 763px; 
-	 z-index:1351;
+	
 } 
 
  #Layer2copy91_66 
 { 
 	 left: 435px; 
 	 top: 504px; 
-	 z-index:1352;
+	
 } 
 
  #Layer2copy92_67 
 { 
 	 left: 452px; 
 	 top: 504px; 
-	 z-index:1353;
+	
 } 
 
  #Layer2copy93_67 
 { 
 	 left: 469px; 
 	 top: 504px; 
-	 z-index:1354;
+	
 } 
 
  #Layer2copy94_66 
 { 
 	 left: 485px; 
 	 top: 504px; 
-	 z-index:1355;
+	
 } 
 
  #Layer2copy95_66 
 { 
 	 left: 503px; 
 	 top: 504px; 
-	 z-index:1356;
+	
 } 
 
  #Layer2copy96_66 
 { 
 	 left: 520px; 
 	 top: 504px; 
-	 z-index:1357;
+	
 } 
 
  #Layer2copy91_67 
 { 
 	 left: 332px; 
 	 top: 299px; 
-	 z-index:1358;
+	
 } 
 
  #Layer2copy92_68 
 { 
 	 left: 349px; 
 	 top: 299px; 
-	 z-index:1359;
+	
 } 
 
  #Layer2copy93_68 
 { 
 	 left: 366px; 
 	 top: 299px; 
-	 z-index:1360;
+	
 } 
 
  #Layer2copy94_67 
 { 
 	 left: 382px; 
 	 top: 299px; 
-	 z-index:1361;
+	
 } 
 
  #Layer2copy95_67 
 { 
 	 left: 400px; 
 	 top: 299px; 
-	 z-index:1362;
+	
 } 
 
 .modal-body{
-	height:550px;
+	height:350px;
 }
 
 .treeImage{
 	float:left;
+	width: 50%;
+}
+.treeImage img{
+	width: 90%;
 }
 .treeInfo{
+	width: 50%;
 	float:right;
 }
 .treeBooking {
@@ -9586,9 +9591,9 @@
     background-repeat: no-repeat;
 }
 .tree-Hover{
-	width: 23px;
-	height: 28px;
-	background-size: 23px 28px;
+	width: 20px;
+	height: 24px;
+	background-size: 20px 24px;
 	cursor: pointer;
 }
 
@@ -9600,7 +9605,7 @@
     border-radius: 6px;
     padding: 8px 0;
     position: absolute;
-    z-index:2000;
+    z-index:10;
     bottom: 125%;
     left: 50%;
     margin-left: -80px;
@@ -9610,9 +9615,13 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    z-index:2000;
+    z-index:10;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
+}
+.Sold{
+	background: url(../images/Layer2Red.png);
+	background-size: 19px 24px;
 }
