@@ -98,8 +98,7 @@ $num_nights = ceil($period/86400);
 
 if(count($field_notice) == 0){
 
-    if($num_nights <= 0) $msg_error .= $texts['NO_AVAILABILITY'];
-    else{
+    if($num_nights <= 0) {
         $days = array();
         $booked = array();
 
@@ -418,6 +417,7 @@ $javascripts[] = DOCBASE."js/plugins/live-search/jquery.liveSearch.js";
 require(getFromTemplate("common/header.php", false)); ?>
 
 <section id="page">
+
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
     
@@ -683,21 +683,10 @@ require(getFromTemplate("common/header.php", false)); ?>
                                                     <div class="mb10 text-muted"><?php echo $texts['PRICE']." / ".$type; ?></div>
                                                     <?php echo $texts['CAPACITY']; ?> : <i class="fa fa-male"></i>x<?php echo $max_people; ?>
                                                     <p class="lead pt10">
-                                                        <?php
-                                                        if(!isset($res_hotel[$id_hotel][$id_room]) || (isset($res_hotel[$id_hotel][$id_room]) && isset($res_hotel[$id_hotel][$id_room]['error']) && !isset($res_hotel[$id_hotel][$id_room]['notice']))){ ?>
-                                                            <button class="btn btn-danger btn-block" disabled="disabled"><i class="fa fa-warning"></i> <?php echo $texts['NO_AVAILABILITY']; ?></small></button>
-                                                            <?php
-                                                            if(ENABLE_BOOKING_REQUESTS == 1){ ?>
-                                                                <button name="request" class="btn btn-default btn-block"><i class="fa fa-comment"></i> <?php echo $texts['MAKE_A_REQUEST']; ?></small></button>
-                                                                <?php
-                                                            }
-                                                        }elseif(isset($res_hotel[$id_hotel][$id_room]) && isset($res_hotel[$id_hotel][$id_room]['error']) && isset($res_hotel[$id_hotel][$id_room]['notice'])){ ?>
-                                                            <button class="btn btn-danger btn-block" disabled="disabled"><i class="fa fa-warning"></i> <small><?php echo $res_hotel[$id_hotel][$id_room]['notice']; ?></small></button>
-                                                            <?php
-                                                        }elseif(isset($res_hotel[$id_hotel][$id_room]) && !isset($res_hotel[$id_hotel][$id_room]['error'])){ ?>
+                                                 
+                                                       
                                                             <button name="book" class="btn btn-success btn-lg btn-block"><i class="fa fa-hand-o-right"></i> <?php echo $texts['BOOK'] ?></button>
-                                                            <?php
-                                                        } ?>
+                                                           
                                                         <span class="clearfix"></span>
                                                         <a class="btn btn-primary mt10 btn-block popup-modal btn-sm" href="#room-<?php echo $id_room; ?>">
                                                             <i class="fa fa-plus-circle"></i>
@@ -789,9 +778,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-3 col-md-4 col-sm-5 sep">
-                                                    <div class="hb-calendar" data-cur_month="<?php echo date("n", $from_time); ?>" data-cur_year="<?php echo date("Y", $from_time); ?>" data-custom_var="room=<?php echo $id_room; ?>" data-day_loader="<?php echo getFromTemplate("common/get_days.php"); ?>"></div>
-                                                </div>
+                                             
                                             </div>
                                             <hr>
                                         </form>
