@@ -34,28 +34,54 @@
     <section id="mainFooter">
         <div class="container" id="footer">
             <div class="row">
-                <?php displayWidgets("footer", $page_id); ?>
 
-                    <a class="twitter-timeline"
-                  href="https://twitter.com/TwitterDev"
-                  data-width="300"
-                  data-height="250"
-                  data-chrome="nofooter noborders">
-                Tweets by @TwitterDev
-                </a>
-                <div class="fb-page" 
-                        data-href="https://www.facebook.com/tagtaasolution.mn/" 
-                        data-tabs="timeline" 
-                        data-height="250px" 
-                        data-small-header="true" 
-                        data-adapt-container-width="true" 
-                        data-hide-cover="false" 
-                        data-show-facepile="true">
-                        <blockquote cite="https://www.facebook.com/tagtaasolution.mn/" 
-                        class="fb-xfbml-parse-ignore">
-                        <a href="https://www.facebook.com/tagtaasolution.mn/">I am programmer</a>
-                        </blockquote>
+                <div class="widget-footer">
+                    
+                    <div id="widget-1" class="widget">
+                            <div class="widget-title">Бидний тухай</div>
+                            <div class="widget-content">
+                                    <p style="text-align: justify;">Манай зочид буудал нь 3 одны зэрэглэлтэй ба энгийн болон хагас люкс, люкс 180 өрөөнд 330 хүн хүлээн авах хүчин чадалтай. Хотын төвд хэрнээ дуу чимээнээс алс, өндөрлөг хэсэгт мод бутаар хүрээлүүлэн, намуухан орчинд байрлах манай буудлаас Улаанбаатар хот болон үзэсгэлэнт Богд уул, хүрээлэн буй орчин сэтгэл татам харагддаг нь бидний нэг давуу тал юм.&nbsp;</p>
+                            </div>
+                    </div>
+                    <div class="widget"> 
+                    <div class="widget-title">Жиргээ</div>
+                        <div class="widget-content">
+                              <a class="twitter-timeline"
+                              href="https://twitter.com/TwitterDev"
+                              data-width="300"
+                              data-height="250"
+                              data-chrome="nofooter noborders">
+                            Tweets by @TwitterDev
+                            </a>     
+                        </div>
+                      
+                    </div>
+                      
+                    <div class="widget"> 
+                    <div class="widget-title">Facebook</div>
+                        <div class="widget-content">
+                                
+                        
+                        <div class="fb-page" 
+                                data-href="https://www.facebook.com/tagtaasolution.mn/" 
+                                data-tabs="timeline" 
+                                data-height="250px" 
+                                data-small-header="true" 
+                                data-adapt-container-width="true" 
+                                data-hide-cover="false" 
+                                data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/tagtaasolution.mn/" 
+                                class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/tagtaasolution.mn/">I am programmer</a>
+                                </blockquote>
+
+                                
+                        </div>   
+                        </div>
+                      
+                    </div>
                 </div>
+                
             </div>
         </div>
     </section>
