@@ -17,8 +17,7 @@ require(getFromTemplate("common/header.php", false)); ?>
 <section id="page">
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
-    <section   >
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+    <section>
             <style>
             .parallaxWood2 {
                   font-size:20px;
@@ -28,14 +27,14 @@ require(getFromTemplate("common/header.php", false)); ?>
                   color: black;
                   width: 80%;
                   margin-left: 10%;                  
-                  font-family: 'Droid Serif', serif;
+                  font-family: 'Roboto', sans-serif;
                   text-align: justify;
                   }
             .parallaxWood2 h1{
                   padding-bottom: 2%;
                   font-size: 30px; 
                   text-align: center;                  
-                  font-family: 'Droid Serif', serif;
+                  font-family: 'Roboto', sans-serif;
                   padding-bottom: 2%;
             }
             </style>

@@ -35,6 +35,27 @@
         <div class="container" id="footer">
             <div class="row">
                 <?php displayWidgets("footer", $page_id); ?>
+
+                    <a class="twitter-timeline"
+                  href="https://twitter.com/TwitterDev"
+                  data-width="300"
+                  data-height="250"
+                  data-chrome="nofooter noborders">
+                Tweets by @TwitterDev
+                </a>
+                <div class="fb-page" 
+                        data-href="https://www.facebook.com/tagtaasolution.mn/" 
+                        data-tabs="timeline" 
+                        data-height="250px" 
+                        data-small-header="true" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/tagtaasolution.mn/" 
+                        class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/tagtaasolution.mn/">I am programmer</a>
+                        </blockquote>
+                </div>
             </div>
         </div>
     </section>
@@ -63,6 +84,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </footer>
 <a href="#" id="toTop"><i class="fa-angle-up"></i></a>
