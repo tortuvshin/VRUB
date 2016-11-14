@@ -445,6 +445,10 @@ body[dir="rtl"] .labels {
     position: relative;
     display: block;
 }
+
+.more-link .img-responsive {
+    height: 200px;
+}
 .more-action {
     position: absolute;
     top:0;
