@@ -197,23 +197,23 @@ window.twttr = (function(d, s, id) {
             <div id="mainMenu" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="primary nav-1">
-                        <a class="dropdown-toggle disabled firstLevel" href="/" title="Нүүр">Нүүр</a>
+                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>" title="Нүүр">Нүүр</a>
                     </li>
 
                     <li class="primary nav-2">
-                        <a class="dropdown-toggle disabled firstLevel" href="/about-us" title="Бидний тухай">Бидний тухай</a>
+                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>about-us" title="Бидний тухай">Бидний тухай</a>
                     </li>
                     <li class="primary nav-3">
-                        <a class="dropdown-toggle disabled firstLevel" href="/hotels/taracode-hotel" title="Зочид буудал">Зочид буудал</a>
+                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>hotels/taracode-hotel" title="Зочид буудал">Зочид буудал</a>
                     </li>
                     <li class="primary nav-4">
-                        <a class="dropdown-toggle disabled firstLevel" href="/hotels/tourist-camp" title="Амралтын газар">Амралтын газар</a>
+                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>hotels/tourist-camp" title="Амралтын газар">Амралтын газар</a>
                     </li>
                     <li class="primary nav-5">
-                        <a class="dropdown-toggle disabled firstLevel" href="/sale" title="Мод захиалах">Мод захиалах</a>
+                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>sale" title="Мод захиалах">Мод захиалах</a>
                     </li>
                     <li class="primary nav-6">
-                        <a class="dropdown-toggle disabled firstLevel" href="/contact" title="Холбоо барих">Холбоо барих</a>
+                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>contact" title="Холбоо барих">Холбоо барих</a>
                     </li>
 
 
