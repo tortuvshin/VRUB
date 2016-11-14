@@ -47,11 +47,11 @@
                     <div class="widget-title">Жиргээ</div>
                         <div class="widget-content">
                               <a class="twitter-timeline"
-                              href="https://twitter.com/TwitterDev"
+                              href="https://twitter.com/Ra_Brand"
                               data-width="300"
                               data-height="250"
                               data-chrome="nofooter noborders">
-                            Tweets by @TwitterDev
+                            Tweets by @Tara Code
                             </a>     
                         </div>
                       
@@ -63,7 +63,7 @@
                                 
                         
                         <div class="fb-page" 
-                                data-href="https://www.facebook.com/tagtaasolution.mn/" 
+                                data-href="https://www.facebook.com/Taracode-1678800019078314/?fref=ts" 
                                 data-tabs="timeline" 
                                 data-height="250px" 
                                 data-small-header="true" 
@@ -72,7 +72,7 @@
                                 data-show-facepile="true">
                                 <blockquote cite="https://www.facebook.com/tagtaasolution.mn/" 
                                 class="fb-xfbml-parse-ignore">
-                                <a href="https://www.facebook.com/tagtaasolution.mn/">I am programmer</a>
+                                <a href="https://www.facebook.com/Taracode-1678800019078314/?fref=ts">I am programmer</a>
                                 </blockquote>
 
                                 
