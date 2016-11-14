@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2016 at 08:05 AM
+-- Generation Time: Nov 14, 2016 at 06:39 AM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -222,7 +222,15 @@ CREATE TABLE IF NOT EXISTS `pm_booking` (
   `payment_date` int(11) DEFAULT NULL,
   `payment_method` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pm_booking`
+--
+
+INSERT INTO `pm_booking` (`id`, `id_room`, `room`, `add_date`, `edit_date`, `from_date`, `to_date`, `nights`, `adults`, `children`, `amount`, `tourist_tax`, `total`, `down_payment`, `extra_services`, `firstname`, `lastname`, `email`, `phone`, `comments`, `status`, `trans`, `payment_date`, `payment_method`) VALUES
+(1, 2, 'Төрөө', 1478705897, 1478705897, 1478707200, 1478707200, 1, 1, 0, 1, 1, 1, 0, '', 'Mfjfj', 'Mfmaskf', 'mfkasm@mka.mk', '90909999', '', 1, '', 1478829600, ''),
+(2, 2, 'dnjasndajsd', 1478859396, 1478859396, 1477929600, 1479830400, 1, 1, 0, 1, 1, 1, 0, '', 'Mfjfj', 'Mfmaskf', 'mfkasm@mka.mk', '90909999', '', 1, '', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -577,10 +585,10 @@ CREATE TABLE IF NOT EXISTS `pm_hotel` (
 INSERT INTO `pm_hotel` (`id`, `lang`, `id_user`, `title`, `subtitle`, `alias`, `address`, `lat`, `lng`, `email`, `phone`, `web`, `descr`, `facilities`, `id_destination`, `home`, `checked`, `rank`) VALUES
 (1, 1, 1, 'Зочид буудал', 'Зочид буудал', 'taracode-hotel', 'Ulaanbaatar, Mongolia', 4.455734, 73.718185, 'contact@taracode.mn', '+976 99999999', '', '<p>Манай зочид буудал нь 3 одны зэрэглэлтэй ба энгийн болон хагас люкс, люкс 180 өрөөнд 330 хүн хүлээн авах хүчин чадалтай. Хотын төвд хэрнээ дуу чимээнээс алс, өндөрлөг хэсэгт мод бутаар хүрээлүүлэн, намуухан орчинд байрлах манай буудлаас Улаанбаатар хот болон үзэсгэлэнт Богд уул, хүрээлэн буй орчин сэтгэл татам харагддаг нь бидний нэг давуу тал юм. Буудлаас та ихэнх шаардлагатай газар руугаа зорчиход тун тохиромжтой: Тухайлбал замын ачаалал бага үед Чингис Хаан Олон Улсын нисэх буудал машинаар ердөө л 20 минут, Төмөр замын буудал аравхан  минут л явах бөгөөд хотын төв хэсэг Сүхбаатарын талбай, бизнес, худалдааны төвүүд, театр, музей, галларейнүүд ердөө л 20минут алхах зайд байрлалтай.</p>\r\n\r\n<p>Манайх Европ, Монгол, Хятад, Япон ресторанууддаа нэгдүгээр зэргийн тогоочийн хийсэн амт чанартай зоогоор зочиддоо үйлчилдэг. Мөн манайд ачаалал ихтэй ажилладаг хүний алжаал ядаргааг тун сайн тайлах Япон хэв маягийн саун, массаж, гоо сайхны салон болон Караоке баар ажиллаж байна.</p>\r\n', '32,1,20,26,17,37,27,5,25,11,38', 1, 1, 1, 1),
 (1, 2, 1, 'Royal Hotel', 'Luxury hotel overlooking the sea', 'royal-hotel', 'Ulaanbaatar, Mongolia', 4.455734, 73.718185, 'contact@taracode.mn', '+976 99999999', '', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquet felis massa, sed condimentum ligula feugiat et. Etiam facilisis euismod dignissim. Vivamus facilisis lorem ut purus pellentesque, nec sollicitudin lorem suscipit. Fusce sed enim ultricies, venenatis nunc ut, pharetra nunc. Quisque sollicitudin egestas varius. Nulla aliquet magna sapien, id malesuada felis lobortis id. Vivamus vulputate sed enim sit amet eleifend. Vivamus sit amet felis id urna vulputate maximus. Nullam fringilla sed turpis non volutpat. Cras ultrices diam velit, ac volutpat odio semper at. Sed pulvinar turpis imperdiet sapien hendrerit pulvinar.</p>\r\n', '32,1,20,26,17,37,27,5,25,11,38', 1, 1, 1, 1),
-(2, 1, 1, 'Амралтын газар', 'Амралтын газар', 'tourist-camp', 'Ulaanbaatar, Mongolia', 98, 98, 'contact@taracode.mn', '+976 88888888', '', '', '', NULL, 1, 1, 2),
-(2, 2, 1, '', '', '', 'Ulaanbaatar, Mongolia', 98, 98, 'contact@taracode.mn', '+976 88888888', '', '', '', NULL, 1, 1, 2),
-(3, 1, 1, 'Мод захиалах', 'Мод захиалах', 'wood-sale', 'Ulaanbaatar, Mongolia', 98, 98, '', '', '', '', '', NULL, 1, 1, 3),
-(3, 2, 1, '', '', '', 'Ulaanbaatar, Mongolia', 98, 98, '', '', '', '', '', NULL, 1, 1, 3);
+(2, 1, 1, 'Амралтын газар', 'Амралтын газар', 'tourist-camp', 'Ulaanbaatar, Mongolia', 98, 98, 'contact@taracode.mn', '+976 88888888', '', '', '', 1, 1, 1, 2),
+(2, 2, 1, '', '', '', 'Ulaanbaatar, Mongolia', 98, 98, 'contact@taracode.mn', '+976 88888888', '', '', '', 1, 1, 1, 2),
+(3, 1, 1, 'Мод захиалах', 'Мод захиалах', 'wood-sale', 'Ulaanbaatar, Mongolia', 98, 98, '', '', '', '', '', 1, 1, 1, 3),
+(3, 2, 1, '', '', '', 'Ulaanbaatar, Mongolia', 98, 98, '', '', '', '', '', 1, 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -611,10 +619,10 @@ CREATE TABLE IF NOT EXISTS `pm_hotel_file` (
 INSERT INTO `pm_hotel_file` (`id`, `lang`, `id_item`, `home`, `checked`, `rank`, `file`, `label`, `type`) VALUES
 (1, 1, 1, 0, 1, 1, '5555048217-1389b680d6-o.jpg', '', 'image'),
 (1, 2, 1, 0, 1, 1, '5555048217-1389b680d6-o.jpg', '', 'image'),
-(2, 1, 2, NULL, 1, 2, '6.jpg', NULL, 'image'),
-(2, 2, 2, NULL, 1, 2, '6.jpg', NULL, 'image'),
-(3, 1, 3, NULL, 1, 3, '9.jpg', NULL, 'image'),
-(3, 2, 3, NULL, 1, 3, '9.jpg', NULL, 'image');
+(2, 1, 2, NULL, 1, 2, '6.jpg', '', 'image'),
+(2, 2, 2, NULL, 1, 2, '6.jpg', '', 'image'),
+(3, 1, 3, NULL, 1, 3, '9.jpg', '', 'image'),
+(3, 2, 3, NULL, 1, 3, '9.jpg', '', 'image');
 
 -- --------------------------------------------------------
 
@@ -803,8 +811,8 @@ INSERT INTO `pm_page` (`id`, `lang`, `name`, `title`, `subtitle`, `title_tag`, `
 (5, 2, 'About us', 'About us', '', 'About us', 'about-us', '', 'index,follow', '', '', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla vel est at rhoncus. Cras porttitor ligula vel magna vehicula accumsan. Mauris eget elit et sem commodo interdum. Aenean dolor sem, tincidunt ac neque tempus, hendrerit blandit lacus. Vivamus placerat nulla in mi tristique, fringilla fermentum nisl vehicula. Nullam quis eros non magna tincidunt interdum ac eu eros. Morbi malesuada pulvinar ultrices. Etiam bibendum efficitur risus, sit amet venenatis urna ullamcorper non. Proin fermentum malesuada tortor, vitae mattis sem scelerisque in. Curabitur rutrum leo at mi efficitur suscipit. Vivamus tristique lorem eros, sit amet malesuada augue sodales sed.</p>\r\n', '<p>Etiam bibendum efficitur risus, sit amet venenatis urna ullamcorper non. Proin fermentum malesuada tortor, vitae mattis sem scelerisque in. Curabitur rutrum leo at mi efficitur.</p>\r\n', NULL, 'page', 'article', 1, 0, 0, 1, 2, 1478177832, 1478289576, 0, 0, 0),
 (6, 1, 'Хайх', 'Хайх', '', 'Хайх', 'search', '', 'noindex,nofollow', '', '', '', '', NULL, 'search', '', 0, 0, 0, 1, 14, 1478177832, 1478289687, 0, 0, 1),
 (6, 2, 'Search', 'Search', '', 'Search', 'search', '', 'noindex,nofollow', '', '', '', '', NULL, 'search', '', 0, 0, 0, 1, 14, 1478177832, 1478289687, 0, 0, 1),
-(7, 1, 'Амралтын газар', 'Амралтын газар', '', 'Амралтын газар', 'hotels-taracode-hotel-tourist-camp', '', 'index,follow', '', '', '', '', NULL, 'page', 'gallery', 1, 0, 0, 1, 5, 1478177832, 1478291886, 0, 0, 0),
-(7, 2, 'Tourist camp', 'Tourist camp', '', 'Tourist camp', 'hotels-taracode-hotel-tourist-camp', '', 'index,follow', '', '', '', '', NULL, 'page', 'gallery', 1, 0, 0, 1, 5, 1478177832, 1478291886, 0, 0, 0),
+(7, 1, 'Амралтын газар', 'Амралтын газар', '', 'Амралтын газар', 'hotels-tourist-camp', '', 'index,follow', '', '', '', '', NULL, 'hotel', 'hotel', 1, 0, 0, 1, 5, 1478177832, 1479053017, 1, 0, 0),
+(7, 2, 'Tourist camp', 'Tourist camp', '', 'Tourist camp', 'hotels-tourist-camp', '', 'index,follow', '', '', '', '', NULL, 'hotel', 'hotel', 1, 0, 0, 1, 5, 1478177832, 1479053017, 1, 0, 0),
 (8, 1, '404', 'Алдаа 404 : Хуудас олдонгүй !', '', '404 хуудас олдонгүй', '404', '', 'noindex,nofollow', '', '', '<p>''Серверт таны хандсан URL хаяг алга байна.<br />\r\nЭнэ хуудас анхнаасаа байгаагүй, хаяг нь солигдсон эсвэл түр зуур хандах боломжгүй байна.</p>\r\n\r\n<p>Доорх зааврыг дагана уу :</p>\r\n\r\n<ul>\r\n  <li>Таны интернэт хөтөчийн хандах хэсэгт буй URL хаяг зөв бичигдсэн эсэхийг шалгана уу.</li>\r\n  <li>Хэрвээ та энэ хуудасруу сайтын холбоос линкээр дамжиж орсон эсвэл энэ алдаа нь серверийн алдаатай үйлдэл гэж үзэж байвал сайтын администраторт хандаж мэдэгдэнэ үү.</li>\r\n</ul>\r\n', '', NULL, '404', '', 0, 0, 0, 1, 15, 1478177832, 1478289667, 0, 0, 1),
 (8, 2, '404', '404 Error: Page not found!', '', '404 Not Found', '404', '', 'noindex,nofollow', '', '', '<p>The wanted URL was not found on this server.<br />\r\nThe page you wish to display does not exist, or is temporarily unavailable.</p>\r\n\r\n<p>Thank you for trying the following actions :</p>\r\n\r\n<ul>\r\n  <li>Be sure the URL in the address bar of your browser is correctly spelt and formated.</li>\r\n  <li>If you reached this page by clicking a link or if you think that it is about an error of the server, contact the administrator to alert him.</li>\r\n</ul>\r\n', '', NULL, '404', '', 0, 0, 0, 1, 15, 1478177832, 1478289667, 0, 0, 1),
 (9, 1, 'Зочид буудал', 'Зочид буудал', '', 'Зочид буудал', 'hotels', '', 'index,follow', '', '', '', '', NULL, 'hotels', 'hotel', 1, 0, 0, 1, 3, 1478177832, 1478291968, 0, 0, 1),
@@ -821,10 +829,10 @@ INSERT INTO `pm_page` (`id`, `lang`, `name`, `title`, `subtitle`, `title_tag`, `
 (14, 2, 'Account', 'Account', '', 'Account', 'account', '', 'noindex,nofollow', '', '', '', '', NULL, 'account', '', 0, 0, 0, 1, 16, 1478177832, 1478289633, 0, 0, 1),
 (15, 1, 'Үйл ажиллагаа', 'Үйл ажиллагаа', '', 'Үйл ажиллагаа', 'booking-activities', '', 'noindex,nofollow', '', '', '', '', 10, 'booking-activities', '', 1, 0, 0, 1, 7, 1478177832, 1478289888, 0, 0, 1),
 (15, 2, 'Activities', 'Activities', '', 'Activities', 'booking-activities', '', 'noindex,nofollow', '', '', '', '', 10, 'booking-activities', '', 1, 0, 0, 1, 7, 1478177832, 1478289888, 0, 0, 1),
-(16, 1, 'Үйл ажиллагаа', 'Үйл ажиллагаа', '', 'Үйл ажиллагаа', 'activities', '', 'noindex,nofollow', '', '', '', '', NULL, 'activities', 'activity', 0, 1, 0, 1, 4, 1478177832, 1478494887, 0, 0, 1),
-(16, 2, 'Activities', 'Activities', '', 'Activities', 'activities', '', 'noindex,nofollow', '', '', '', '', NULL, 'activities', 'activity', 0, 1, 0, 1, 4, 1478177832, 1478494887, 0, 0, 1),
-(17, 1, 'Мод зарах', 'Мод зарах', 'Мод зарах', 'Мод зарах', 'sale', '', 'index,follow', NULL, 'Мод зарах', '', '', NULL, 'wood', 'wood', 1, 1, 0, 1, 17, 1478489653, 1478495597, 0, NULL, NULL),
-(17, 2, 'Sale', 'Sale', 'Sale', 'Sale', 'sale', '', 'index,follow', NULL, '', '', '', NULL, 'wood', 'wood', 1, 1, 0, 1, 17, 1478489653, 1478495597, 0, NULL, NULL);
+(16, 1, 'Үйл ажиллагаа', 'Үйл ажиллагаа', '', 'Үйл ажиллагаа', 'activities', '', 'noindex,nofollow', '', '', '', '', NULL, 'activities', 'activity', 0, 0, 0, 1, 4, 1478177832, 1479062878, 0, 0, 1),
+(16, 2, 'Activities', 'Activities', '', 'Activities', 'activities', '', 'noindex,nofollow', '', '', '', '', NULL, 'activities', 'activity', 0, 0, 0, 1, 4, 1478177832, 1479062878, 0, 0, 1),
+(17, 1, 'Мод зарах', 'Мод зарах', 'Мод зарах', 'Мод зарах', 'sale', '', 'index,follow', NULL, 'Мод зарах', '', '', NULL, 'wood', 'wood', 1, 0, 0, 1, 17, 1478489653, 1479062892, 0, NULL, NULL),
+(17, 2, 'Sale', 'Sale', 'Sale', 'Sale', 'sale', '', 'index,follow', NULL, '', '', '', NULL, 'wood', 'wood', 1, 0, 0, 1, 17, 1478489653, 1479062892, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -914,10 +922,10 @@ CREATE TABLE IF NOT EXISTS `pm_room` (
 --
 
 INSERT INTO `pm_room` (`id`, `lang`, `id_hotel`, `id_user`, `max_children`, `max_adults`, `max_people`, `min_people`, `title`, `subtitle`, `alias`, `descr`, `facilities`, `stock`, `price`, `home`, `checked`, `rank`, `start_lock`, `end_lock`) VALUES
-(1, 1, 1, 1, 1, 2, 2, 1, 'Хоёр хүний өрөө', 'Хоёр хүний өрөө', 'chambre-double-deluxe', '<p>Буудлаас та ихэнх шаардлагатай газар руугаа зорчиход тун тохиромжтой: Тухайлбал замын ачаалал бага үед Чингис Хаан Олон Улсын нисэх буудал машинаар ердөө л 20 минут, Төмөр замын буудал аравхан  минут л явах бөгөөд хотын төв хэсэг Сүхбаатарын талбай, бизнес, худалдааны төвүүд, театр, музей, галларейнүүд ердөө л 20минут алхах зайд байрлалтай.</p>\r\n', '32,1,29,21,28,24,17,27,23,18,5,25,11,13', 1, 150000, 0, 1, 1, 1477958400, 1477958400),
-(1, 2, 1, 1, 1, 2, 2, 1, 'Deluxe Double Bedroom', 'Breakfast included', 'deluxe-double-bedroom', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut eleifend diam. Etiam molestie quam at nunc tempus, ac porttitor ante rutrum. Donec ipsum orci, molestie sit amet nibh a, accumsan varius nisl. Suspendisse blandit efficitur interdum. Nulla auctor tortor eu volutpat imperdiet. Nam at tempus sapien, sit amet porttitor neque. Nam lacinia ex libero, vel egestas ante vehicula nec.</p>\r\n\r\n<p>Sed sed dignissim est. Donec egestas nisl eu congue rhoncus. Nulla finibus malesuada mauris, et pellentesque diam scelerisque non. Duis auctor dapibus augue sed malesuada. Nam placerat at libero quis aliquam. Phasellus quam orci, dapibus sit amet finibus a, convallis volutpat arcu. Nullam condimentum quam id urna scelerisque varius. Duis a metus metus.</p>\r\n', '32,1,29,21,28,24,17,27,23,18,5,25,11,13', 1, 150000, 0, 1, 1, 1477958400, 1477958400),
-(2, 1, 1, 1, 1, 1, 1, 1, 'Нэг хүний люкс өрөө', 'Нэг хүний люкс өрөө', 'one-lux', '', '33,32,1', 1, 100000, 1, 1, 2, NULL, NULL),
-(2, 2, 1, 1, 1, 1, 1, 1, '', '', '', '', '33,32,1', 1, 100000, 1, 1, 2, NULL, NULL);
+(1, 1, 1, 1, 1, 2, 2, 1, 'Хоёр хүний өрөө', 'Хоёр хүний өрөө', 'chambre-double-deluxe', '<p>Буудлаас та ихэнх шаардлагатай газар руугаа зорчиход тун тохиромжтой: Тухайлбал замын ачаалал бага үед Чингис Хаан Олон Улсын нисэх буудал машинаар ердөө л 20 минут, Төмөр замын буудал аравхан  минут л явах бөгөөд хотын төв хэсэг Сүхбаатарын талбай, бизнес, худалдааны төвүүд, театр, музей, галларейнүүд ердөө л 20минут алхах зайд байрлалтай.</p>\r\n', '32,1,29,21,28,24,17,27,23,18,5,25,11,13', 1, 150000, 0, 1, 1, 1288540800, 1606665600),
+(1, 2, 1, 1, 1, 2, 2, 1, 'Deluxe Double Bedroom', 'Breakfast included', 'deluxe-double-bedroom', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut eleifend diam. Etiam molestie quam at nunc tempus, ac porttitor ante rutrum. Donec ipsum orci, molestie sit amet nibh a, accumsan varius nisl. Suspendisse blandit efficitur interdum. Nulla auctor tortor eu volutpat imperdiet. Nam at tempus sapien, sit amet porttitor neque. Nam lacinia ex libero, vel egestas ante vehicula nec.</p>\r\n\r\n<p>Sed sed dignissim est. Donec egestas nisl eu congue rhoncus. Nulla finibus malesuada mauris, et pellentesque diam scelerisque non. Duis auctor dapibus augue sed malesuada. Nam placerat at libero quis aliquam. Phasellus quam orci, dapibus sit amet finibus a, convallis volutpat arcu. Nullam condimentum quam id urna scelerisque varius. Duis a metus metus.</p>\r\n', '32,1,29,21,28,24,17,27,23,18,5,25,11,13', 1, 150000, 0, 1, 1, 1288540800, 1606665600),
+(2, 1, 1, 1, 1, 1, 1, 1, 'Нэг хүний люкс өрөө', 'Нэг хүний люкс өрөө', 'one-lux', '', '33,32,1', 1, 100000, 1, 1, 2, 1478620800, 1483113600),
+(2, 2, 1, 1, 1, 1, 1, 1, '', '', '', '', '33,32,1', 1, 100000, 1, 1, 2, 1478620800, 1483113600);
 
 -- --------------------------------------------------------
 
@@ -1039,17 +1047,17 @@ CREATE TABLE IF NOT EXISTS `pm_slide_file` (
   PRIMARY KEY (`id`,`lang`),
   KEY `slide_file_fkey` (`id_item`,`lang`),
   KEY `slide_file_lang_fkey` (`lang`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `pm_slide_file`
 --
 
 INSERT INTO `pm_slide_file` (`id`, `lang`, `id_item`, `home`, `checked`, `rank`, `file`, `label`, `type`) VALUES
-(7, 1, 4, NULL, 1, 1, '6.jpg', '', 'image'),
-(7, 2, 4, NULL, 1, 1, '6.jpg', '', 'image'),
 (9, 1, 6, NULL, 1, 2, '4.jpg', '', 'image'),
-(9, 2, 6, NULL, 1, 2, '4.jpg', '', 'image');
+(9, 2, 6, NULL, 1, 2, '4.jpg', '', 'image'),
+(10, 1, 4, NULL, 1, 3, 'content-nuur.jpg', NULL, 'image'),
+(10, 2, 4, NULL, 1, 3, 'content-nuur.jpg', NULL, 'image');
 
 -- --------------------------------------------------------
 
@@ -1423,7 +1431,7 @@ CREATE TABLE IF NOT EXISTS `pm_widget` (
   `rank` int(11) DEFAULT '0',
   PRIMARY KEY (`id`,`lang`),
   KEY `widget_lang_fkey` (`lang`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `pm_widget`
@@ -1431,13 +1439,7 @@ CREATE TABLE IF NOT EXISTS `pm_widget` (
 
 INSERT INTO `pm_widget` (`id`, `lang`, `title`, `showtitle`, `pos`, `allpages`, `pages`, `type`, `content`, `class`, `checked`, `rank`) VALUES
 (1, 1, 'Бидний тухай', 1, 'footer', 1, '', '', '<p style="text-align: justify;">Манай зочид буудал нь 3 одны зэрэглэлтэй ба энгийн болон хагас люкс, люкс 180 өрөөнд 330 хүн хүлээн авах хүчин чадалтай. Хотын төвд хэрнээ дуу чимээнээс алс, өндөрлөг хэсэгт мод бутаар хүрээлүүлэн, намуухан орчинд байрлах манай буудлаас Улаанбаатар хот болон үзэсгэлэнт Богд уул, хүрээлэн буй орчин сэтгэл татам харагддаг нь бидний нэг давуу тал юм. </p>\r\n', '', 1, 1),
-(1, 2, 'About us', 1, 'footer', 1, '', '', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget auctor ipsum. Mauris pharetra neque a mauris commodo, at aliquam leo malesuada. Maecenas eget elit eu ligula rhoncus dapibus at non erat. In sed velit eget eros gravida consectetur varius imperdiet lectus.</p>\r\n', '', 1, 1),
-(3, 1, 'Сүүлийн нийтлэлүүд', 1, 'footer', 1, '', 'latest_articles', '', '', 1, 2),
-(3, 2, 'Latest articles', 1, 'footer', 1, '', 'latest_articles', '', '', 1, 2),
-(4, 1, 'Бидэнтэй холбогдох', 0, 'footer', 1, '', 'contact_informations', '', '', 1, 3),
-(4, 2, 'Contact us', 0, 'footer', 1, '', 'contact_informations', '', '', 1, 3),
-(5, 1, 'Footer form', 0, 'footer', 1, '', 'footer_form', '', 'footer-form mt10', 2, 4),
-(5, 2, 'Footer form', 0, 'footer', 1, '', 'footer_form', '', 'footer-form mt10', 2, 4);
+(1, 2, 'About us', 1, 'footer', 1, '', '', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget auctor ipsum. Mauris pharetra neque a mauris commodo, at aliquam leo malesuada. Maecenas eget elit eu ligula rhoncus dapibus at non erat. In sed velit eget eros gravida consectetur varius imperdiet lectus.</p>\r\n', '', 1, 1);
 
 --
 -- Constraints for dumped tables
