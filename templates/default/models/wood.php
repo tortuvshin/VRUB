@@ -53,6 +53,11 @@ require(getFromTemplate("common/header.php", false)); ?>
         <div class="container" itemprop="text">
         
           <div id="background">
+            <div id="treeState">
+                  <img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/Layer2.png"> Зарагдаагүй <br>
+                  <img src="<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/soldTree.png"> Зарагдсан 
+                  
+            </div>
            
             <div id="Layer2" class="tree" data-name="Нарс" data-age="3" data-state="Зарагдаагүй" data-owner=""></div>
             <div id="Layer2copy112" class="tree" data-name="Нарс" data-age="3" data-state="Зарагдаагүй" data-owner=""></div>

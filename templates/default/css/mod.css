@@ -9622,6 +9622,10 @@
     border-color: #555 transparent transparent transparent;
 }
 .Sold{
-	background: url(../images/Layer2Red.png);
+	background: url(../images/soldTree.png);
 	background-size: 19px 24px;
+}
+.treeState{
+
+    font-family: 'Roboto', sans-serif;
 }
