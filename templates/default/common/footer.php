@@ -44,11 +44,11 @@
                             </div>
                     </div>
                     <div class="widget"> 
-                    <div class="widget-title">Жиргээ</div>
+                    <div class="widget-title">Twitter</div>
                         <div class="widget-content">
                               <a class="twitter-timeline"
                               href="https://twitter.com/Ra_Brand"
-                              data-width="300"
+                              data-width="100%"
                               data-height="250"
                               data-chrome="nofooter noborders">
                             Tweets by @Tara Code
@@ -70,9 +70,9 @@
                                 data-adapt-container-width="true" 
                                 data-hide-cover="false" 
                                 data-show-facepile="true">
-                                <blockquote cite="https://www.facebook.com/tagtaasolution.mn/" 
+                                <blockquote cite="https://www.facebook.com/Taracode-1678800019078314/" 
                                 class="fb-xfbml-parse-ignore">
-                                <a href="https://www.facebook.com/Taracode-1678800019078314/?fref=ts">I am programmer</a>
+                                <a href="https://www.facebook.com/Taracode-1678800019078314/?fref=ts">Taracode.mn</a>
                                 </blockquote>
 
                                 
