@@ -9553,6 +9553,76 @@
 	
 } 
 
+#Layer2copy400
+{ 
+	left: 110px;
+	top: 612px;
+	
+} 
+#Layer2copy401
+{ 
+	left: 314px;
+	top: 612px;
+	
+} 
+#Layer2copy402
+{ 
+	left: 519px;
+	top: 608px;
+	
+} 
+
+#Layer2copy403
+{ 
+	left: 212px;
+	top: 403px;
+	
+} 
+#Layer2copy404
+{ 
+	left: 416px;
+	top: 403px;
+	
+} 
+#Layer2copy405
+{ 
+	left: 722px;
+	top: 507px;	
+} 
+#Layer2copy406
+{ 
+	left: 927px;
+	top: 503px;
+} 
+#Layer2copy407
+{ 
+	left: 827px;
+	top: 711px;
+	
+} 
+#Layer2copy408
+{ 
+	left: 265px;
+	top: 863px;
+	
+} 
+#Layer2copy409
+{ 
+	left: 777px;
+	top: 865px;
+	
+} 
+#Layer2copy410
+{ 
+	left: 827px;
+	top: 711px;
+	
+} 
+td, th {
+    padding: 0;
+    padding-left: 10px;
+}
+
 .modal-body{
 	height:350px;
 }
@@ -9586,9 +9656,23 @@
 .form-control:hover{
 	cursor: pointer;
 }
-.tree{
-	background: url(../images/Layer2.png);
+
+.treeGoltBor{
+	background: url(../images/goltbor.png);
+	background-repeat: no-repeat;
+
+}
+.treeNars{
+	background: url(../images/nars.png);
     background-repeat: no-repeat;
+}
+.soldGoltBor{
+	background: url(../images/soldGoltBor.png);
+	background-size: 18px 23px;
+}
+.soldNars{
+	background: url(../images/soldNars.png);
+	background-size: 19px 23px;
 }
 .tree-Hover{
 	width: 20px;
@@ -9621,10 +9705,7 @@
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
-.Sold{
-	background: url(../images/soldTree.png);
-	background-size: 19px 24px;
-}
+
 .treeState{
 
     font-family: 'Roboto', sans-serif;
