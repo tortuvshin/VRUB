@@ -1486,6 +1486,12 @@ require(getFromTemplate("common/header.php", false)); ?>
                                               <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Эзэмшигч" value="" readonly="true">
                                           </div>
                                       </div>
+                                      <div class="form-group">
+                                          <label  class="col-sm-3 control-label">Дансны дугаар:</label>
+                                          <div class="col-sm-8">
+                                              <input type="text" class="form-control  accountid" id="accountid" name="accountId" placeholder="50xxxxxxxxxxx" value="" readonly="true">
+                                          </div>
+                                      </div>
                                       
                                   </form>
                               </div>
