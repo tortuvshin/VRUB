@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="Мод" name="tree" multi="0" library="0" dashboard="0" icon="user" ranking="0" home="0" main="0" validation="1" dates="1" release="0" index="31">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="0" resizing="1">
+		<big maxw="1920" maxh="1440"/>
+		<medium maxw="600" maxh="600"/>
+		<small maxw="400" maxh="400"/>
+	</medias>
+	<list order="id">
+		<col label="Нэр" name="name" type="none"/>
+		<col label="Нас" name="age" type="none"/>
+		<col label="Төлөв" name="status" type="none"/>
+		<col label="Эзэмшигч" name="owner" type="none"/>
+		<col label="Тайлбар" name="description" type="none"/>
+	</list>
+	<form>
+		<field multi="0" label="Нэр" name="name" type="text" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Нас" name="age" type="text" required="1" unique="1" validation="none"/>
+		<field multi="0" label="Төлөв" name="status" type="text" required="1" unique="1" validation="none"/>
+			<options>
+                <option value="saled">Зарагдсан</option>
+                <option value="sale">Зарагдаагүй</option>
+            </options>
+		</field>
+		<field multi="0" label="Эзэмшигч" name="owner" type="text" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Тайлбар" name="description" type="text" required="1" unique="0" validation="none"/>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="all"/>
+        <user type="editor" permissions="no_access"/>
+    </roles>
+</module>
