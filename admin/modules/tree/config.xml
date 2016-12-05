@@ -8,7 +8,7 @@
 		<medium maxw="600" maxh="600"/>
 		<small maxw="400" maxh="400"/>
 	</medias>
-	<list order="rank">
+	<list order="id">
 		<col label="Код" name="code" type="none"/>
 		<col label="Нэр" name="name" type="none"/>
 		<col label="Нас" name="age" type="none"/>
