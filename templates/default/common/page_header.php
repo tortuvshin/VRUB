@@ -2,23 +2,20 @@
 <header class="page-header">
     <div class="container">
         <div class="row">
-            <div class="col-sm-7">
-                <?php
+              <?php
                 if($article_id == 0){
                     $page_title = $page['title'];
                     $page_subtitle = $page['subtitle'];
                     $page_name = $page['name']; ?>
                     
-                    <h1 itemprop="name"><?php echo $page['title']; ?></h1>
                     <?php
                 }else{
                     $page_name = $page_title; ?>
                     
-                    <p itemprop="name" class="h1"><?php echo $page['title']; ?></p>
                     <?php
                 }
                 if($page_subtitle != "") echo "<p>".$page_subtitle."</p>"; ?>
-            </div>
+           
             <div class="col-sm-<?php echo (RTL_DIR) ? 12 : 5; ?> hidden-xs">
                 <div itemprop="breadcrumb" class="breadcrumb clearfix">
                     

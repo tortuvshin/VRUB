@@ -210,9 +210,12 @@ window.twttr = (function(d, s, id) {
                         <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>hotels/tourist-camp" title="Амралтын газар">Амралтын газар</a>
                     </li>
                     <li class="primary nav-5">
-                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>sale" title="Мод захиалах">Мод захиалах</a>
+                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>activities" title="Event">Event</a>
                     </li>
                     <li class="primary nav-6">
+                        <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>sale" title="Мод захиалах">Мод захиалах</a>
+                    </li>
+                    <li class="primary nav-7">
                         <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>contact" title="Холбоо барих">Холбоо барих</a>
                     </li>
 

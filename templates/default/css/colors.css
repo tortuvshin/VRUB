@@ -154,6 +154,7 @@ ul.navbar-nav > li.primary > a.firstLevel:focus {
 }
 .breadcrumb {
     background: transparent;
+    float: left;
 }
 /*************** ROYAL SLIDER ****************/
 #sliderContainer {
