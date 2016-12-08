@@ -73,6 +73,8 @@ require(getFromTemplate("common/header.php", false)); ?>
                   </table>
                   
             </div>
+            
+
            
             <div id="Layer2" class="tree" data-name="Нарс" data-age="3" data-state="Зарагдаагүй" data-owner=""></div>
             <div id="Layer2copy112" class="tree" data-name="Голт бор" data-age="3" data-state="Зарагдаагүй" data-owner=""></div>
@@ -1457,6 +1459,15 @@ require(getFromTemplate("common/header.php", false)); ?>
                         </div>
 
                         <div class="modal-body">
+
+
+                                <?php
+                                    $results = "";
+                                    
+                                    $result = $db->query("SELECT * FROM pm_tree");
+                                    
+
+                                ?>
                               <div class="treeImage">
                                    <img id="treePic">
                               </div>
@@ -1510,6 +1521,7 @@ require(getFromTemplate("common/header.php", false)); ?>
         </div>
     </div>
 </section>
+
 <script>
 $("document").ready(function(){
       
@@ -1566,6 +1578,7 @@ $("document").ready(function(){
             $(".tree-age").val(age);
             $(".tree-state").val(state);
             $(".tree-owner").val(owner);
+
             
       });
 
@@ -1579,10 +1592,6 @@ $("document").ready(function(){
             $(this).removeClass('tree-Hover');
             $(".tree-Popup").remove();
       })
-
-
-      
-
 })
 
 function order(){
