@@ -116,6 +116,37 @@ function db_prepareUpdate($db, $table, $data)
     }
     return $result;
 }
+
+
+
+function db_prepareUpdateCode($db, $table, $data)
+{
+    $result = $db->query("SELECT * FROM ".$table." LIMIT 1");
+    $list_cols = db_list_columns($db, $table);
+    $count_cols = 0;
+    $nb_cols = 0;
+    foreach($list_cols as $column)
+        if(array_key_exists($column, $data)) $nb_cols++;
+    $query = "UPDATE ".$table." SET ";
+    foreach($list_cols as $i => $column){
+        if(array_key_exists($column, $data)){
+            $query .= $column." = :".$column;
+            if($count_cols < $nb_cols-1) $query .= ", ";
+            $count_cols++;
+        }
+    }
+    $query .= " WHERE code = ".$data['code'];
+    if(isset($data['lang']) && db_column_exists($db, $table, "lang")) $query .= " AND lang = '".$data['lang']."'";
+    $result = $db->prepare($query);
+    foreach($list_cols as $i => $column){
+        if(array_key_exists($column, $data)){
+            $col_type = db_column_type($db, $table, $column);
+            $value = (is_null($data[$column]) || (preg_match("/.*(char|text).*/i", $col_type) !== 1 && $data[$column] == "")) ? null : $data[$column];
+            $result->bindValue(":".$column, $value);
+        }
+    }
+    return $result;
+}
 /***********************************************************************
  * db_table_exists() checks if a table exists in the database
  *

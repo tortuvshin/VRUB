@@ -10,13 +10,146 @@ $javascripts[] = DOCBASE."js/plugins/lazyloader/lazyloader.js";
 $stylesheets[] = array("file" => DOCBASE."js/plugins/star-rating/css/star-rating.min.css", "media" => "all");
 $javascripts[] = DOCBASE."js/plugins/star-rating/js/star-rating.min.js";
 
+$msg_error = "";
+$msg_success = "";
+$field_notice = array();
 
-require(getFromTemplate("common/header.php", false)); ?>
+if(isset($_POST['save'])){
+    
+    $code = $_POST['code'];
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $owner = $_POST['owner'];
+    // $description = $_POST['description'];
+    
+    if($code == "") $field_notice['code'] = $texts['REQUIRED_FIELD'];
+    if($name == "") $field_notice['name'] = $texts['REQUIRED_FIELD'];
+    if($age == "") $field_notice['age'] = $texts['REQUIRED_FIELD'];
+    if($owner == "") $field_notice['owner'] = $texts['REQUIRED_FIELD'];
+    // if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
+    
+    if(count($field_notice) == 0){
+
+        $data = array();
+        $data['code'] = $code;
+        $data['name'] = $name;
+        $data['age'] = $age;
+        $data['owner'] = $owner;
+        // $data['description'] = $description;
+    
+        $result_tree = db_prepareUpdateCode($db, "pm_tree", $data);
+        if($result_tree->execute() !== false){
+            
+            
+            $msg_success .= $texts['ACCOUNT_EDIT_SUCCESS'];
+        }else
+            $msg_error .= $texts['ACCOUNT_EDIT_FAILURE'];
+    }else
+        $msg_error .= $texts['FORM_ERRORS'];
+    
+}
+
+require(getFromTemplate("common/header.php", false));
+
+          
+// if(isset($_POST["submit"])){
+// $db->query("UPDATE `pm_tree`   
+//   SET `code` = '".$_POST["code"]."', 
+//     `name` = '".$_POST["name"]."',
+//     `age` = '".$_POST["age"]."',
+//     `status` = '".$_POST["state"]."',
+//     `owner` = '".$_POST["name"]."', 
+//     `description` = '".$_POST["accountId"]."' 
+//   WHERE `code` = '".$_POST["code"]."'");
+  
+//   echo "complete";
+// } else {
+//   echo "error";
+// }
+
+
+?>
 
 
 <section id="page">
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
+  
+  
+  
+         <div class="modal fade" id="myModal" role="dialog">
+
+
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        
+                        <div class="alert alert-success" style="display:none;"></div>
+                        <div class="alert alert-danger" style="display:none;"></div>
+                        <form class="form-horizontal company" action="<?php echo DOCBASE.$page['alias']; ?>" method="POST" role="form" id="comp">
+                                        
+                          <div class="modal-body">
+                                <div class="treeImage">
+                                     <img id="treePic">
+                                </div>
+                                <div class="treeInfo">
+                                     <div class="form-group">
+                                            <label class="col-sm-3 control-label">Код:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control tree-code" id="name" name="code" value="" placeholder="Модны код"  >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">Нэр:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control tree-name" id="name" name="name" value="" placeholder="Модны нэр"  >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="col-sm-3 control-label">Нас:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас" >
+                                            </div>
+                                        </div>                                      
+                                        <div class="form-group">
+                                            <label  class="col-sm-3 control-label">Төлөв:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="col-sm-3 control-label">Эзэмшигч:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Эзэмшигч" value="" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="col-sm-3 control-label">Тайлбар:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control  accountid" id="description" name="description" placeholder="50xxxxxxxxxxx" value="" >
+                                            </div>
+                                        </div>
+                                        <input type="hidden" class="form-control  accountid" id="accountid" name="accountId" placeholder="50xxxxxxxxxxx" value="" >
+                                    
+                                </div>
+  
+                          </div>
+                          
+                          <div class="modal-footer">
+                              <button type="submit" class="treeBooking btn btn-default" name="save" id="order">Захиалах</button>
+                              <button class="btn btn-default" data-dismiss="modal">Гарах</button>
+                          </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     <section>
             <style>
             .parallaxWood2 {
@@ -1449,80 +1582,15 @@ require(getFromTemplate("common/header.php", false)); ?>
             <div id="Layer2copy410" class="tree" data-name="Нарс" data-age="3" data-state="Зарагдаагүй" data-owner=""></div>
      
         </div>
-
-         <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <div class="modal-body">
-
-
-                                <?php
-                                    $results = "";
-                                    
-                                    $result = $db->query("SELECT * FROM pm_tree");
-                                    
-
-                                ?>
-                              <div class="treeImage">
-                                   <img id="treePic">
-                              </div>
-                              <div class="treeInfo">
-                                   <form class="form-horizontal company" role="form" id="comp">
-                                      <div class="form-group">
-                                          <label class="col-sm-3 control-label">Нэр:</label>
-                                          <div class="col-sm-8">
-                                              <input type="text" class="form-control tree-name" id="name" name="name" value="" placeholder="Модны нэр"  readonly="true">
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label  class="col-sm-3 control-label">Нас:</label>
-                                          <div class="col-sm-8">
-                                              <input type="text" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас" readonly="true">
-                                          </div>
-                                      </div>                                      
-                                      <div class="form-group">
-                                          <label  class="col-sm-3 control-label">Төлөв:</label>
-                                          <div class="col-sm-8">
-                                              <input type="text" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв" readonly="true">
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label  class="col-sm-3 control-label">Эзэмшигч:</label>
-                                          <div class="col-sm-8">
-                                              <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Эзэмшигч" value="" readonly="true">
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label  class="col-sm-3 control-label">Дансны дугаар:</label>
-                                          <div class="col-sm-8">
-                                              <input type="text" class="form-control  accountid" id="accountid" name="accountId" placeholder="50xxxxxxxxxxx" value="" readonly="true">
-                                          </div>
-                                      </div>
-                                      
-                                  </form>
-                              </div>
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <button class="treeBooking btn btn-default" id="order">Захиалах</button>
-                            <button class="btn btn-default" data-dismiss="modal">Гарах</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
+    
     </div>
 </section>
 
+
+
 <script>
+
+
 $("document").ready(function(){
       
       $('.tree').each(function(){
@@ -1559,7 +1627,8 @@ $("document").ready(function(){
       
       $('.tree').click(function() {
 
-            var name = $(this).data( "name");
+            var code = $(this).data("name");
+            var name = $(this).data("name");
             var age = $(this).data( "age");
             var state = $(this).data( "state");
             var owner = $(this).data( "owner");
@@ -1574,6 +1643,7 @@ $("document").ready(function(){
 
             $("#myModal").modal('show');          
 
+            $(".tree-code").val(code);
             $(".tree-name").val(name);
             $(".tree-age").val(age);
             $(".tree-state").val(state);
