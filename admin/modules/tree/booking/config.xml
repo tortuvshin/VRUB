@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module title="Мод захиалга" name="tree_booking" multi="0" library="0" dashboard="0" icon="tree" ranking="0" home="0" main="0" validation="0" dates="0" release="0" index="42">
+	<!-- resizing
+	[0] 1 single image
+	[1] 1x big, 1x medium, 1x small -->
+	<medias max="0" resizing="0">
+		<big maxw="1920" maxh="1440"/>
+		<medium maxw="600" maxh="600"/>
+		<small maxw="400" maxh="400"/>
+	</medias>
+	<list order="id">
+		<col label="Код" name="code" type="none"/>
+		<col label="Нэр" name="name" type="none"/>
+		<col label="Нас" name="age" type="none"/>
+		<col label="Статус" name="status" type="none"/>
+		<col label="Эзэн" name="owner" type="none"/>
+		<col label="Тайлбар" name="description" type="none"/>
+	</list>
+	<form>
+		<field multi="0" label="Код" name="code" type="text" required="1" unique="1" validation="none"/>
+		<field multi="0" label="Нэр" name="name" type="text" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Нас" name="age" type="text" required="1" unique="0" validation="none"/>
+		<field multi="0" label="Статус" name="status" type="select" required="1" unique="0" validation="none">
+			<options>
+                <option value="зарагдсан">Зарагдсан</option>
+                <option value="зарагдаагүй">Зарагдаагүй</option>
+            </options>
+		</field>
+		<field multi="0" label="Эзэн" name="owner" type="text" required="0" unique="0" validation="none"/>
+		<field multi="0" label="Тайлбар" name="description" type="textarea" required="0" unique="0" validation="none"/>
+	</form>
+    <roles>
+        <user type="administrator" permissions="all"/>
+        <user type="manager" permissions="all"/>
+        <user type="editor" permissions="all"/>
+    </roles>
+</module>
