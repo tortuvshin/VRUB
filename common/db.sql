@@ -2830,6 +2830,24 @@ INSERT INTO `pm_tree` (`code`, `name`, `age`, `status`, `owner`, `description`) 
             ('Layer2copy409', 'Нарс', '3', 'Зарагдаагүй', '', ''),
             ('Layer2copy410', 'Нарс', '3', 'Зарагдаагүй', '', '');
      
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pm_tree`
+--
+
+DROP TABLE IF EXISTS `pm_tree_booking`;
+CREATE TABLE IF NOT EXISTS `pm_tree_booking` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(25) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `age` int(5) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1377 DEFAULT CHARSET=utf8;
+
 --
 -- Constraints for table `pm_activity`
 --
