@@ -20,13 +20,14 @@ if(isset($_POST['save'])){
     $name = $_POST['name'];
     $age = $_POST['age'];
     $owner = $_POST['owner'];
-    // $description = $_POST['description'];
+    $state = $_POST['state'];
+    $description = $_POST['description'];
     
     if($code == "") $field_notice['code'] = $texts['REQUIRED_FIELD'];
     if($name == "") $field_notice['name'] = $texts['REQUIRED_FIELD'];
     if($age == "") $field_notice['age'] = $texts['REQUIRED_FIELD'];
     if($owner == "") $field_notice['owner'] = $texts['REQUIRED_FIELD'];
-    // if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
+    if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
     
     if(count($field_notice) == 0){
 
@@ -34,10 +35,11 @@ if(isset($_POST['save'])){
         $data['code'] = $code;
         $data['name'] = $name;
         $data['age'] = $age;
+        $data['status'] = $state;
         $data['owner'] = $owner;
-        // $data['description'] = $description;
+        $data['description'] = $description;
     
-        $result_tree = db_prepareUpdateCode($db, "pm_tree", $data);
+        $result_tree = db_prepareInsert($db, "pm_tree_booking", $data);
         if($result_tree->execute() !== false){
             
             
