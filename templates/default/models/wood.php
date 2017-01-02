@@ -135,6 +135,12 @@ require(getFromTemplate("common/header.php", false));
                                             </div>
                                         </div>
                                         <input type="hidden" class="form-control  accountid" id="accountid" name="accountId" placeholder="50xxxxxxxxxxx" value="" >
+                                        Мод ивээн тэтгэх заавар:
+Khard llc
+457052038
+Swift code: TDBMMNUB
+100$ шилжүүлж гүйлгээний утга дээр ивээн тэтгэх модны кодыг бичнэ үү.
+Trade Development bank of Mongolia
                                     
                                 </div>
   
