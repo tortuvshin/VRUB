@@ -168,7 +168,7 @@ $(document).ready(function(){
      * FACEBOOK LOGIN
      * =================================================================
      */
-    /*function fblogout(){    
+    function fblogout(){    
         FB.logout(function(){   
             window.location.reload();
         });    
@@ -211,7 +211,7 @@ $(document).ready(function(){
     $('a.fblogin').click(function(e){
         e.defaultPrevented;
         fblogin();
-    });*/
+    });
     
     /* =================================================================
      * SIGN UP/LOG IN FORM
