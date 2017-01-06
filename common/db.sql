@@ -2776,24 +2776,6 @@ INSERT INTO `pm_tree` (`id`, `code`, `name`, `age`, `status`, `owner`, `descript
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pm_tree_booking`
---
-
-DROP TABLE IF EXISTS `pm_tree_booking`;
-CREATE TABLE IF NOT EXISTS `pm_tree_booking` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(25) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `age` int(5) NOT NULL,
-  `status` varchar(255) NOT NULL,
-  `owner` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1377 DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `pm_user`
 --
 
@@ -2826,6 +2808,23 @@ CREATE TABLE IF NOT EXISTS `pm_user` (
 
 INSERT INTO pm_user (id, name, email, login, pass, type, add_date, edit_date, checked, fb_id, address, postcode, city, company, country, mobile, phone, token) VALUES
 (1, 'Administrator', 'USER_EMAIL', 'USER_LOGIN', 'USER_PASS', 'administrator', INSTALL_DATE, INSTALL_DATE, 1, '', '', '', '', '', '', '', '', '');
+
+
+--
+-- Table structure for table `pm_wd`
+--
+
+DROP TABLE IF EXISTS `pm_wd`;
+CREATE TABLE IF NOT EXISTS `pm_wd` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(25) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `age` int(5) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `owner` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
