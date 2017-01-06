@@ -1635,7 +1635,7 @@ $("document").ready(function(){
       
       $('.tree').click(function() {
 
-            var code = $(this).data("code");
+            var code = $(this).data("name");
             var name = $(this).data("name");
             var age = $(this).data( "age");
             var state = $(this).data( "state");
