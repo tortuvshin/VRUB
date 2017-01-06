@@ -94,6 +94,12 @@ require(getFromTemplate("common/header.php", false));
                         <form class="form-horizontal company" action="<?php echo DOCBASE.$page['alias']; ?>" method="POST" role="form" id="comp">
                                         
                           <div class="modal-body">
+                            <label  class="col-sm-12 control-label" style="margin-bottom: 20px"> Мод ивээн тэтгэх заавар:
+Khard llc
+457052038
+Swift code: TDBMMNUB
+100$ шилжүүлж гүйлгээний утга дээр ивээн тэтгэх модны кодыг бичнэ үү.
+Trade Development bank of Mongolia</label>
                                 <div class="treeImage">
                                      <img id="treePic">
                                 </div>
@@ -135,12 +141,8 @@ require(getFromTemplate("common/header.php", false));
                                             </div>
                                         </div>
                                         <input type="hidden" class="form-control  accountid" id="accountid" name="accountId" placeholder="50xxxxxxxxxxx" value="" >
-                                        Мод ивээн тэтгэх заавар:
-Khard llc
-457052038
-Swift code: TDBMMNUB
-100$ шилжүүлж гүйлгээний утга дээр ивээн тэтгэх модны кодыг бичнэ үү.
-Trade Development bank of Mongolia
+                                     
+
                                     
                                 </div>
   
@@ -1635,7 +1637,7 @@ $("document").ready(function(){
       
       $('.tree').click(function() {
 
-            var code = $(this).data("name");
+            var code = $(this).data("code");
             var name = $(this).data("name");
             var age = $(this).data( "age");
             var state = $(this).data( "state");
