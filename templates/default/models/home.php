@@ -102,7 +102,7 @@ if($result_slide !== false){
                     $hotel_alias = $row['title'];
                     $hotel_subtitle = $row['subtitle'];
                     
-                    $hotel_alias = DOCBASE.$pages[9]['alias']."/".text_format($row['alias']); ?>
+                    $hotel_alias = DOCBASE.text_format($row['alias']); ?>
                     
                     <article class="col-sm-4 mb20" itemscope itemtype="http://schema.org/LodgingBusiness">
                         <a itemprop="url" href="<?php echo $hotel_alias; ?>" class="moreLink">
