@@ -1,0 +1,82 @@
+<IfModule mod_deflate.c>
+    <IfModule mod_filter.c>
+        SetOutputFilter DEFLATE
+        AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript application/x-httpd-php
+    </ifModule>
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+    <IfModule mod_setenvif.c>
+        SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
+    </ifModule>
+</ifModule>
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 7200 seconds"
+    <FilesMatch "\.(ico|icon|jpg|jpeg|png|gif|js|css|swf)$">
+        ExpiresDefault "access plus 2592000 seconds"
+    </FilesMatch>
+    ExpiresByType text/html "access plus 7200 seconds"
+    ExpiresByType application/xhtml+xml "access plus 7200 seconds"
+</IfModule>
+<IfModule mod_headers.c>
+    Header append Vary User-Agent env=!dont-vary
+    Header set X-UA-Compatible "IE=Edge"
+    <FilesMatch "\.(js|css|gif|png|jpe?g|pdf|xml|oga|ogg|m4a|ogv|mp3|mp4|m4v|webm|svg|svgz|eot|ttf|otf|woff|ico|webp|appcache|manifest|htc|crx|xpi|safariextz|vcf)$" >
+        Header unset X-UA-Compatible
+    </FilesMatch>
+    Header append Vary User-Agent
+    <FilesMatch "\.(ttf|otf|eot|woff|font.css)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+    <FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+    <FilesMatch "\.(js)$">
+        Header set Cache-Control "max-age=2592000, private"
+    </FilesMatch>
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=7200, public"
+    </FilesMatch>
+    # Disable caching for scripts and other dynamic files
+    <FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+        Header unset Cache-Control
+    </FilesMatch>
+    Header unset ETag
+</IfModule>
+
+FileETag none
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+    RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+    RewriteRule .* – [F,L]
+    RewriteCond %{QUERY_STRING} (\"|%22).*(<|>|%3) [NC,OR]
+    RewriteCond %{QUERY_STRING} (javascript:).*(\;) [NC,OR]
+    RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3) [NC,OR]
+    RewriteCond %{QUERY_STRING} (\;|\'|\"|%22).*(union|select|insert|drop|update|md5|benchmark|or|and|if) [NC,OR]
+    RewriteCond %{QUERY_STRING} (base64_encode|localhost|mosconfig) [NC,OR]
+    RewriteCond %{QUERY_STRING} (boot\.ini|echo.*kae|etc/passwd) [NC,OR]
+    RewriteCond %{QUERY_STRING} (GLOBALS|REQUEST)(=|\[|%) [NC]
+    RewriteRule .* - [E=BadQueryString,F]
+
+    RewriteRule ^ - [E=BASE:/] [L]
+    
+    RewriteCond %{HTTP_HOST} ^[^.]+\.[^.]+$
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTPS}:s on:(s) 
+    RewriteRule ^(.*)$ http%1://www.%{HTTP_HOST}/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_URI} /admin/
+    RewriteRule .* - [S=2]
+
+    RewriteRule ^(.*)index\.php$ %{ENV:BASE}$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([a-zA-Z0-9!-/]*)$ %{ENV:BASE} [L]
+</IfModule>
