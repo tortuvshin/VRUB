@@ -2,9 +2,9 @@
 define("SITE_TITLE", "Taracode");
 define("TIME_ZONE", "Asia/Ulaanbaatar");
 define("DATE_FORMAT", "%F");
-define("TIME_FORMAT", "%I:%M %P");
+define("TIME_FORMAT", "%l:%M%P");
 define("CURRENCY_ENABLED", "1");
-define("LANG_ENABLED", "0");
+define("LANG_ENABLED", "1");
 define("ENABLE_COOKIES_NOTICE", "1");
 define("MAINTENANCE_MODE", "0");
 define("MAINTENANCE_MSG", "<h1><i class=\"fa fa-rocket\"></i> Тун удахгүй...</h1><p>Сайт засвартай байна.</p>");
