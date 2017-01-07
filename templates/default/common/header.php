@@ -325,7 +325,7 @@ window.twttr = (function(d, s, id) {
                 </ul>
                 <div id="user-popup" class="white-popup-block mfp-hide">
                     <div class="fluid-container">
-                        <!--<div class="row">
+                        <div class="row">
                             <div class="col-xs-12 mb20 text-center">
                                 <a class="btn fblogin" href="#"><i class="fa fa-facebook"></i> <?php echo $texts['LOG_IN_WITH_FACEBOOK']; ?></a>
                             </div>
@@ -334,7 +334,7 @@ window.twttr = (function(d, s, id) {
                             <div class="col-xs-12 mb20 text-center">
                                 - <?php echo $texts['OR']; ?> -
                             </div>
-                        </div>-->
+                        </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="login-form">
