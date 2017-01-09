@@ -24,6 +24,7 @@
 			<options>
                 <option value="зарагдсан">Зарагдсан</option>
                 <option value="зарагдаагүй">Зарагдаагүй</option>
+                <option value="хүлээгдсэн">Хүлээгдэж байгаа</option>
             </options>
 		</field>
 		<field multi="0" label="Эзэн" name="owner" type="text" required="0" unique="0" validation="none"/>
