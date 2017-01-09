@@ -17,44 +17,39 @@ $field_notice = array();
 
 if(isset($_POST['save'])){
             
-    $treesCodes = $_POST['code'];
-    $result_tree = $db->query("SELECT * FROM pm_tree WHERE code = ".$treesCodes);
-    if($result_tree !== false && $db->last_row_count() == 1){
+    $code = $_POST['code'];
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $owner = $_POST['owner'];
+    $state = $_POST['state'];
+    $description = $_POST['description'];
+    
+    if($code == "") $field_notice['code'] = $texts['REQUIRED_FIELD'];
+    if($name == "") $field_notice['name'] = $texts['REQUIRED_FIELD'];
+    if($age == "") $field_notice['age'] = $texts['REQUIRED_FIELD'];
+    if($owner == "") $field_notice['owner'] = $texts['REQUIRED_FIELD'];
+    if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
+    
+    if(count($field_notice) == 0){
 
-        $row = $result_tree->fetch();
-
-        $name = $_POST['name'];
-        $age = $_POST['age'];
-        $owner = $_POST['owner'];
-        $state = $_POST['state'];
-        $description = $_POST['description'];
-        
-        if($treesCodes == "") $field_notice['code'] = $texts['REQUIRED_FIELD'];
-        if($name == "") $field_notice['name'] = $texts['REQUIRED_FIELD'];
-        if($age == "") $field_notice['age'] = $texts['REQUIRED_FIELD'];
-        if($owner == "") $field_notice['owner'] = $texts['REQUIRED_FIELD'];
-        if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
-        
-        if(count($field_notice) == 0){
-
-            $data = array();
-            $data['code'] = $treesCodes;
-            $data['name'] = $name;
-            $data['age'] = $age;
-            $data['status'] = $state;
-            $data['owner'] = $owner;
-            $data['description'] = $description;
-        
-            $result_tree = db_prepareUpdate($db, "pm_tree", $data);
-            if($result_tree->execute() !== false){
-                
-                $msg_success .= $texts['ACCOUNT_EDIT_SUCCESS'];
-            }else
-                $msg_error .= $texts['ACCOUNT_EDIT_FAILURE'];
+        $data = array();
+        $data['code'] = $code;
+        $data['name'] = $name;
+        $data['age'] = $age;
+        $data['status'] = $state;
+        $data['owner'] = $owner;
+        $data['description'] = $description;
+    
+        $result_tree = db_prepareUpdateCode($db, "pm_tree", $data);
+        if($result_tree->execute() !== false){
+            
+            $msg_success .= $texts['ACCOUNT_EDIT_SUCCESS'];
         }else
-            $msg_error .= $texts['FORM_ERRORS'];
+            $msg_error .= $texts['ACCOUNT_EDIT_FAILURE'];
+    }else
+        $msg_error .= $texts['FORM_ERRORS'];
         
-    }
+    
 
 }
 
@@ -128,7 +123,7 @@ Trade Development bank of Mongolia</label>
                                         <div class="form-group">
                                             <label  class="col-sm-3 control-label">Тайлбар:</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control  tree-description" id="description" name="description" placeholder="" value="" >
+                                                <input type="text" class="form-control  accountid" id="description" name="description" placeholder="" value="" >
                                             </div>
                                         </div>
                                        
@@ -1632,7 +1627,6 @@ Trade Development bank of Mongolia</label>
                         var age = "<?php echo $tree_age ?>";
                         var status = "<?php echo $tree_status ?>";
                         var owner = "<?php echo $tree_owner ?>";
-                        var description = "<?php echo $tree_description ?>";
 
                         if(name=="Голт бор") {                
                              $('#treePic').attr('src', '<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/goltborlarge.jpg');
@@ -1649,7 +1643,6 @@ Trade Development bank of Mongolia</label>
                         $(".tree-age").val(age);
                         $(".tree-state").val(status);
                         $(".tree-owner").val(owner);
-                        $(".tree-description").val(description);
 
                     }
                 });
@@ -1661,6 +1654,9 @@ Trade Development bank of Mongolia</label>
 
 <script>
 
+function tree(){
+
+}
 
 $("document").ready(function(){
       
