@@ -510,7 +510,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                                         }
                                     } ?>
                                     <span class="facility-icon">
-                                        <a href="<?php echo DOCBASE.$sys_pages['hotels']['alias']."/".text_format($hotel_alias); ?>" title="<?php echo $texts['READMORE']; ?>" class="tips">...</a>
+                                        <a href="<?php echo DOCBASE.LANG_ALIAS.text_format($hotel_alias); ?>" title="<?php echo $texts['READMORE']; ?>" class="tips">...</a>
                                     </span>
                                     <?php
                                 } ?>
@@ -546,7 +546,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                                     <?php
                                 }
                             } ?>
-                            <a class="btn btn-primary mt10 btn-block" href="<?php echo DOCBASE.$sys_pages['hotels']['alias']."/".text_format($hotel_alias); ?>">
+                            <a class="btn btn-primary mt10 btn-block" href="<?php echo DOCBASE.LANG_ALIAS.text_format($hotel_alias); ?>">
                                 <i class="fa fa-plus-circle"></i>
                                 <?php echo $texts['READMORE']; ?>
                             </a>
