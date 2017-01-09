@@ -14,41 +14,48 @@ $msg_error = "";
 $msg_success = "";
 $field_notice = array();
 
-if(isset($_POST['save'])){
-    
-    $code = $_POST['code'];
-    $name = $_POST['name'];
-    $age = $_POST['age'];
-    $owner = $_POST['owner'];
-    $state = $_POST['state'];
-    $description = $_POST['description'];
-    
-    if($code == "") $field_notice['code'] = $texts['REQUIRED_FIELD'];
-    if($name == "") $field_notice['name'] = $texts['REQUIRED_FIELD'];
-    if($age == "") $field_notice['age'] = $texts['REQUIRED_FIELD'];
-    if($owner == "") $field_notice['owner'] = $texts['REQUIRED_FIELD'];
-    if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
-    
-    if(count($field_notice) == 0){
 
-        $data = array();
-        $data['code'] = $code;
-        $data['name'] = $name;
-        $data['age'] = $age;
-        $data['status'] = $state;
-        $data['owner'] = $owner;
-        $data['description'] = $description;
-    
-        $result_tree = db_prepareInsert($db, "pm_wd", $data);
-        if($result_tree->execute() !== false){
+if(isset($_POST['save'])){
             
-            
-            $msg_success .= $texts['ACCOUNT_EDIT_SUCCESS'];
+    $treesCodes = $_POST['code'];
+    $result_tree = $db->query("SELECT * FROM pm_tree WHERE code = ".$treesCodes);
+    if($result_tree !== false && $db->last_row_count() == 1){
+
+        $row = $result_tree->fetch();
+
+        $name = $_POST['name'];
+        $age = $_POST['age'];
+        $owner = $_POST['owner'];
+        $state = $_POST['state'];
+        $description = $_POST['description'];
+        
+        if($treesCodes == "") $field_notice['code'] = $texts['REQUIRED_FIELD'];
+        if($name == "") $field_notice['name'] = $texts['REQUIRED_FIELD'];
+        if($age == "") $field_notice['age'] = $texts['REQUIRED_FIELD'];
+        if($owner == "") $field_notice['owner'] = $texts['REQUIRED_FIELD'];
+        if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
+        
+        if(count($field_notice) == 0){
+
+            $data = array();
+            $data['code'] = $treesCodes;
+            $data['name'] = $name;
+            $data['age'] = $age;
+            $data['status'] = $state;
+            $data['owner'] = $owner;
+            $data['description'] = $description;
+        
+            $result_tree = db_prepareUpdate($db, "pm_tree", $data);
+            if($result_tree->execute() !== false){
+                
+                $msg_success .= $texts['ACCOUNT_EDIT_SUCCESS'];
+            }else
+                $msg_error .= $texts['ACCOUNT_EDIT_FAILURE'];
         }else
-            $msg_error .= $texts['ACCOUNT_EDIT_FAILURE'];
-    }else
-        $msg_error .= $texts['FORM_ERRORS'];
-    
+            $msg_error .= $texts['FORM_ERRORS'];
+        
+    }
+
 }
 
 require(getFromTemplate("common/header.php", false));
@@ -121,7 +128,7 @@ Trade Development bank of Mongolia</label>
                                         <div class="form-group">
                                             <label  class="col-sm-3 control-label">Тайлбар:</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control  accountid" id="description" name="description" placeholder="" value="" >
+                                                <input type="text" class="form-control  tree-description" id="description" name="description" placeholder="" value="" >
                                             </div>
                                         </div>
                                        
@@ -1592,28 +1599,61 @@ Trade Development bank of Mongolia</label>
             ?>
             <script type="text/javascript">
                       
-            $('.tree').each(function(){
-                var code = $(this).data("code")
-                
-                var code = $(this).data("code");
+                $('.tree').each(function(){
+                    
+                    var code = $(this).data("code");
 
-                var ccode = "<?php echo $tree_code ?>";
-                if(code == ccode)
-                {
-                    var status = "<?php echo $tree_status ?>";
-                    var name = "<?php echo $tree_name ?>";
-                    if(status=="зарагдсан"){
-                          $(this).addClass('soldGoltBor');
-                    }   
+                    var ccode = "<?php echo $tree_code ?>";
+                    if(code == ccode)
+                    {
+                        var status = "<?php echo $tree_status ?>";
+                        var name = "<?php echo $tree_name ?>";
+                        if(status=="зарагдсан"){
+                              $(this).addClass('soldGoltBor');
+                        }   
 
-                    if(name =="Нарс"){
-                        $(this).addClass('treeNars');
-                    } else if (name == "Голт бор") {
-                        $(this).addClass('treeGoltBor');
+                        if(name =="Нарс"){
+                            $(this).addClass('treeNars');
+                        } else if (name == "Голт бор") {
+                            $(this).addClass('treeGoltBor');
+                        }
                     }
-                }
 
-            });
+                });
+
+                $('.tree').click(function() {
+
+                    var code = $(this).data("code");
+
+                    ccode = "<?php echo $tree_code ?>";
+                    if(code == ccode)
+                    {
+                        var name = "<?php echo $tree_name ?>";
+                        var age = "<?php echo $tree_age ?>";
+                        var status = "<?php echo $tree_status ?>";
+                        var owner = "<?php echo $tree_owner ?>";
+                        var description = "<?php echo $tree_description ?>";
+
+                        if(name=="Голт бор") {                
+                             $('#treePic').attr('src', '<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/goltborlarge.jpg');
+                        } 
+                        if(name=="Нарс") {                
+                             $('#treePic').attr('src', '<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/treeLarge.jpg');
+                        }
+
+
+                        $("#myModal").modal('show');          
+
+                        $(".tree-code").val(code);
+                        $(".tree-name").val(name);
+                        $(".tree-age").val(age);
+                        $(".tree-state").val(status);
+                        $(".tree-owner").val(owner);
+                        $(".tree-description").val(description);
+
+                    }
+                });
+
             </script>
         <?php }
     } ?>
@@ -1636,43 +1676,11 @@ $("document").ready(function(){
             } 
       });
 
-      $('.tree').click(function() {
-
-            var code = $(this).data("code");
-
-            ccode = "<?php echo $tree_code ?>";
-            if(code == ccode)
-            {
-                alert(""+code+", "+ccode);
-            }
-            var name = "<?php echo $tree_name ?>";
-            var age = $(this).data( "age");
-            var state = $(this).data( "state");
-            var owner = $(this).data( "owner");
-
-            if(name=="Голт бор") {                
-                 $('#treePic').attr('src', '<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/goltborlarge.jpg');
-            } 
-            if(name=="Нарс") {                
-                 $('#treePic').attr('src', '<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/treeLarge.jpg');
-            }
-
-
-            $("#myModal").modal('show');          
-
-            $(".tree-code").val(code);
-            $(".tree-name").val(name);
-            $(".tree-age").val(age);
-            $(".tree-state").val(state);
-            $(".tree-owner").val(owner);
-
-            
-      });
 
       $('.tree').mouseover(function(){
             $(this).addClass('tree-Hover');
             var status = "<?php echo $tree_status ?>";;
-            $(this).append("<span  class='tree-Popup'>"+status+"</span>");
+            $(this).append("<span class='tree-Popup'>"+status+"</span>");
       })
 
       $('.tree').mouseout(function(){
