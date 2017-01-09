@@ -1578,43 +1578,45 @@ Trade Development bank of Mongolia</label>
 </section>
 
 <div>
-      <?php
-        $result_tree = $db->query("SELECT * FROM pm_tree",PDO::FETCH_ASSOC);
-        if($result_tree !== false && $db->last_row_count() > 0){
-            foreach($result_tree as $i => $row){
-                $tree_id     = $row['id'];
-                $tree_code   = $row['code'];
-                $tree_name   = $row['name'];
-                $tree_age    = $row['age'];
-                $tree_status = $row['status'];
-                $tree_owner   = $row['owner'];
-                $tree_description   = $row['description'];
-                ?>
-                <script type="text/javascript">
-                          
-                $('.tree').each(function(){
-                    var code = $(this).data("code")
-                    
-                    var code = $(this).data("code");
+    <?php
+    $result_tree = $db->query("SELECT * FROM pm_tree",PDO::FETCH_ASSOC);
+    if($result_tree !== false && $db->last_row_count() > 0){
+        foreach($result_tree as $i => $row){
+            $tree_id     = $row['id'];
+            $tree_code   = $row['code'];
+            $tree_name   = $row['name'];
+            $tree_age    = $row['age'];
+            $tree_status = $row['status'];
+            $tree_owner   = $row['owner'];
+            $tree_description   = $row['description'];
+            ?>
+            <script type="text/javascript">
+                      
+            $('.tree').each(function(){
+                var code = $(this).data("code")
+                
+                var code = $(this).data("code");
 
-                    var ccode = "<?php echo $tree_code ?>";
-                    if(code == ccode)
-                    {
-                        var status = "<?php echo $tree_status ?>";
+                var ccode = "<?php echo $tree_code ?>";
+                if(code == ccode)
+                {
+                    var status = "<?php echo $tree_status ?>";
+                    var name = "<?php echo $tree_name ?>";
+                    if(status=="зарагдсан"){
+                          $(this).addClass('soldGoltBor');
+                    }   
 
-                        if(status=="зарагдсан"){
-                              $(this).addClass('soldGoltBor');
-                        }   
-
-                        if(status=="зарагдсан"){
-                              $(this).addClass('soldNars');
-                        }
+                    if(name =="Нарс"){
+                        $(this).addClass('treeNars');
+                    } else if (name == "Голт бор") {
+                        $(this).addClass('treeGoltBor');
                     }
+                }
 
-                });
-                </script>
-            <?php }
-        } ?>
+            });
+            </script>
+        <?php }
+    } ?>
   </div>
 
 <script>
@@ -1632,19 +1634,18 @@ $("document").ready(function(){
                   $(this).addClass('treeGoltBor');
 
             } 
-  
       });
 
       $('.tree').click(function() {
 
             var code = $(this).data("code");
-            
+
             ccode = "<?php echo $tree_code ?>";
             if(code == ccode)
             {
                 alert(""+code+", "+ccode);
             }
-            var name = $(this).data("name");
+            var name = "<?php echo $tree_name ?>";
             var age = $(this).data( "age");
             var state = $(this).data( "state");
             var owner = $(this).data( "owner");
@@ -1670,8 +1671,8 @@ $("document").ready(function(){
 
       $('.tree').mouseover(function(){
             $(this).addClass('tree-Hover');
-            var state = $(this).data( "state");
-            $(this).append("<span  class='tree-Popup'>"+state+"</span>");
+            var status = "<?php echo $tree_status ?>";;
+            $(this).append("<span  class='tree-Popup'>"+status+"</span>");
       })
 
       $('.tree').mouseout(function(){
@@ -1679,12 +1680,5 @@ $("document").ready(function(){
             $(".tree-Popup").remove();
       })
 
-
-            var aname = "<?php echo $tree_name ?>";
-            // alert(aname);
 })
-
-function order(){
-
-}
 </script>
