@@ -215,11 +215,6 @@ if($result_slide !== false){
                 }
             } ?>
         </div>
-
-
-
-
-
     </div>
 </section>
 

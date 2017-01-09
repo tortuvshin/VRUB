@@ -54,22 +54,6 @@ if(isset($_POST['save'])){
 require(getFromTemplate("common/header.php", false));
 
           
-// if(isset($_POST["submit"])){
-// $db->query("UPDATE `pm_tree`   
-//   SET `code` = '".$_POST["code"]."', 
-//     `name` = '".$_POST["name"]."',
-//     `age` = '".$_POST["age"]."',
-//     `status` = '".$_POST["state"]."',
-//     `owner` = '".$_POST["name"]."', 
-//     `description` = '".$_POST["accountId"]."' 
-//   WHERE `code` = '".$_POST["code"]."'");
-  
-//   echo "complete";
-// } else {
-//   echo "error";
-// }
-
-
 ?>
 
 
@@ -1596,7 +1580,22 @@ Trade Development bank of Mongolia</label>
     </div>
 </section>
 
-
+<div>
+      <?php
+        $result_tree = $db->query("SELECT * FROM pm_tree",PDO::FETCH_ASSOC);
+        if($result_tree !== false && $db->last_row_count() > 0){
+            foreach($result_tree as $i => $row){
+                $tree_id     = $row['id'];
+                $tree_code   = $row['code'];
+                $tree_name   = $row['name'];
+                $tree_age    = $row['age'];
+                $tree_status = $row['status'];
+                $tree_owner   = $row['owner'];
+                $tree_description   = $row['description'];
+                echo "string: ".$tree_name;
+            }
+        } ?>
+  </div>
 
 <script>
 
@@ -1604,6 +1603,7 @@ Trade Development bank of Mongolia</label>
 $("document").ready(function(){
       
       $('.tree').each(function(){
+            var code = $(this).data("code")
             var name = $(this).data("name");
             if(name=="Нарс"){
                   $(this).addClass('treeNars');
@@ -1612,8 +1612,17 @@ $("document").ready(function(){
                   $(this).addClass('treeGoltBor');
 
             } 
-      });
+             var aname = "<?php echo $tree_name ?>";
+            // var code = $(this).data("code");
 
+        ccode = "<?php echo $tree_code ?>";
+        if(code == ccode)
+        {
+            alert(""+code+", "+ccode);
+        }
+
+            console.log(aname);
+      });
        
 
       $('.treeGoltBor').each(function(){
@@ -1632,12 +1641,15 @@ $("document").ready(function(){
             }   
       });
 
-
-
-      
       $('.tree').click(function() {
 
             var code = $(this).data("code");
+
+            ccode = "<?php echo $tree_code ?>";
+            if(code == ccode)
+            {
+                alert(""+code+", "+ccode);
+            }
             var name = $(this).data("name");
             var age = $(this).data( "age");
             var state = $(this).data( "state");
@@ -1672,6 +1684,10 @@ $("document").ready(function(){
             $(this).removeClass('tree-Hover');
             $(".tree-Popup").remove();
       })
+
+
+            var aname = "<?php echo $tree_name ?>";
+            alert(aname);
 })
 
 function order(){
