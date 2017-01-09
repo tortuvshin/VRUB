@@ -1592,8 +1592,31 @@ Trade Development bank of Mongolia</label>
                 $tree_status = $row['status'];
                 $tree_owner   = $row['owner'];
                 $tree_description   = $row['description'];
-                echo "string: ".$tree_name;
-            }
+                ?>
+                <script type="text/javascript">
+                          
+                $('.tree').each(function(){
+                    var code = $(this).data("code")
+                    
+                    var code = $(this).data("code");
+
+                    var ccode = "<?php echo $tree_code ?>";
+                    if(code == ccode)
+                    {
+                        var status = "<?php echo $tree_status ?>";
+
+                        if(status=="зарагдсан"){
+                              $(this).addClass('soldGoltBor');
+                        }   
+
+                        if(status=="зарагдсан"){
+                              $(this).addClass('soldNars');
+                        }
+                    }
+
+                });
+                </script>
+            <?php }
         } ?>
   </div>
 
@@ -1615,30 +1638,13 @@ $("document").ready(function(){
              var aname = "<?php echo $tree_name ?>";
             // var code = $(this).data("code");
 
-        ccode = "<?php echo $tree_code ?>";
-        if(code == ccode)
-        {
-            alert(""+code+", "+ccode);
-        }
+            ccode = "<?php echo $tree_code ?>";
+            if(code == ccode)
+            {
+                // alert(""+code+", "+ccode);
+            }
 
             console.log(aname);
-      });
-       
-
-      $('.treeGoltBor').each(function(){
-            var states = $(this).data("state");
-
-            if(states=="Зарагдсан"){
-                  $(this).addClass('soldGoltBor');
-            }   
-      });
-
-      $('.treeNars').each(function(){
-            var states = $(this).data("state");
-
-            if(states=="Зарагдсан"){
-                  $(this).addClass('soldNars');
-            }   
       });
 
       $('.tree').click(function() {
@@ -1687,7 +1693,7 @@ $("document").ready(function(){
 
 
             var aname = "<?php echo $tree_name ?>";
-            alert(aname);
+            // alert(aname);
 })
 
 function order(){
