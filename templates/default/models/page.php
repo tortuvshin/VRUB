@@ -48,6 +48,11 @@ require(getFromTemplate("common/header.php", false)); ?>
                 $lz_limit = 9;
                 $lz_pages = 0;
                 $num_records = 0;
+
+                $sale_alias = DOCBASE.LANG_ALIAS."sale";
+                $saleimgpath = DOCBASE."medias/tree/9.jpg";
+                
+
                 $result = $db->query("SELECT count(*) FROM pm_hotel WHERE checked = 1 AND lang = ".LANG_ID);
                 if($result !== false){
                     $num_records = $result->fetchColumn(0);
@@ -56,6 +61,7 @@ require(getFromTemplate("common/header.php", false)); ?>
                 if($num_records > 0){ ?>
                     <div class="isotopeWrapper clearfix isotope lazy-wrapper" data-loader="<?php echo getFromTemplate("common/get_hotels.php"); ?>" data-mode="click" data-limit="<?php echo $lz_limit; ?>" data-pages="<?php echo $lz_pages; ?>" data-is_isotope="true" data-variables="page_id=<?php echo $page_id; ?>&page_alias=<?php echo DOCBASE.LANG_ALIAS; ?>">
                         <?php include(getFromTemplate("common/get_hotels.php", true)); ?>
+
                     </div>
                     <?php
                 } ?>

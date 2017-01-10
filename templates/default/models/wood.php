@@ -14,9 +14,8 @@ $msg_error = "";
 $msg_success = "";
 $field_notice = array();
 
-
 if(isset($_POST['save'])){
-            
+    
     $code = $_POST['code'];
     $name = $_POST['name'];
     $age = $_POST['age'];
@@ -31,7 +30,6 @@ if(isset($_POST['save'])){
     if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
     
     if(count($field_notice) == 0){
-
         $data = array();
         $data['code'] = $code;
         $data['name'] = $name;
@@ -40,17 +38,16 @@ if(isset($_POST['save'])){
         $data['owner'] = $owner;
         $data['description'] = $description;
     
-        $result_tree = db_prepareUpdateCode($db, "pm_tree", $data);
+        $result_tree = db_prepareInsert($db, "pm_wd", $data);
         if($result_tree->execute() !== false){
+            
             
             $msg_success .= $texts['ACCOUNT_EDIT_SUCCESS'];
         }else
             $msg_error .= $texts['ACCOUNT_EDIT_FAILURE'];
     }else
         $msg_error .= $texts['FORM_ERRORS'];
-        
     
-
 }
 
 require(getFromTemplate("common/header.php", false));
@@ -166,12 +163,8 @@ Trade Development bank of Mongolia</label>
             </style>
             <div  class="parallaxWood2"> 
             <h1>Тара код цэцэрлэгт хүрээлэн</h1>
-                                    <p>  Тара код цэцэрлэгт хүрээлэн 1296 модоор бүтнэ
-                                    500 жилийн настай 
-                                    Лого дүрсний дагуу бүтээсэн
-                                    Голоор нь хүн явах гудамжтай байна.
-                                    Жирэмсэн эмэгтэй голоор явж гарахад элдэв зовлонгүй амар мэнд төрдөг домогтой дарь-эхийн түлхүүр юм. 
-                                    1294 модыг бүгдийг нь эзэнтэй болгож 1 модонд 100$ оор 500 жил гэрээ хийж өглөгийн эзний нэрийг 500 жилийн турш модны дэргэдэх пайз дээр байршуулна.
+                                    <p>Тара код бол 1294 модноос бүтэх байнгын арчилгаатай 500 жилийн настай цэцэрлэгт хүрээлэн юм. Энэхүү цэцэрлэгт хүрээлэн нь энэ орчлонд морилон ирэгсэдийг даатгадаг Дарь-Эхийн түлхүүр хэмээх домогт дүрсний дагуу голоор нь яваад гарч ирэхэд 2.4км зам туулахаар бүтээгдсэн.
+Та хүссэн модоо сонгон авч ивээн тэтгэх боломжтой бөгөөд таны нэр модны дэргэдэх пайз дээр 500 жилийн турш байрших болно.
                                     <p>                           
             </div>
       </section>
