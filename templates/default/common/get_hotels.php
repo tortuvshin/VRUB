@@ -55,8 +55,10 @@ if(isset($db) && $db !== false){
         $hotel_subtitle = $row['subtitle'];
         $hotel_alias = $row['alias'];
         
-        $hotel_alias = DOCBASE.LANG_ALIAS.text_format($hotel_alias);
+        // $hotel_alias = DOCBASE.$page_alias."/".text_format($hotel_alias);
         
+        $hotel_alias = DOCBASE.$pages[9]['alias']."/".text_format($row['alias']); 
+
         $html .= "
         <article class=\"col-sm-4 isotopeItem\" itemscope itemtype=\"http://schema.org/LodgingBusiness\">
             <div class=\"isotopeInner\">

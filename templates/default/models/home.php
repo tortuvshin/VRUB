@@ -102,7 +102,9 @@ if($result_slide !== false){
                     $hotel_alias = $row['title'];
                     $hotel_subtitle = $row['subtitle'];
                     
-                    $hotel_alias = DOCBASE.LANG_ALIAS.text_format($row['alias']); ?>
+                    $sale_alias = DOCBASE.LANG_ALIAS."sale";
+                    
+                    $hotel_alias = DOCBASE.$pages[9]['alias']."/".text_format($row['alias']); ?>
                     
                     <article class="col-sm-4 mb20" itemscope itemtype="http://schema.org/LodgingBusiness">
                         <a itemprop="url" href="<?php echo $hotel_alias; ?>" class="moreLink">
@@ -117,6 +119,7 @@ if($result_slide !== false){
                                 $realpath = SYSBASE."medias/hotel/small/".$file_id."/".$filename;
                                 $thumbpath = DOCBASE."medias/hotel/small/".$file_id."/".$filename;
                                 $zoompath = DOCBASE."medias/hotel/big/".$file_id."/".$filename;
+                                $saleimgpath = DOCBASE."medias/tree/9.jpg";
                                 
                                 if(is_file($realpath)){ ?>
                                     <figure class="more-link">
@@ -138,8 +141,26 @@ if($result_slide !== false){
                         </a> 
                     </article>
                     <?php
-                }
-            } ?>
+                } ?>
+
+                <article class="col-sm-4 mb20" itemscope itemtype="http://schema.org/LodgingBusiness">
+                    <a itemprop="url" href="<?php echo $sale_alias; ?>" class="moreLink">         
+                        <figure class="more-link">
+                            <div class="img-container md">
+                                <img alt="Мод захиалах" src="<?php echo $saleimgpath; ?>">
+                            </div>
+                            <div class="more-content">
+                                <h3 itemprop="name">Мод захиалах</h3>
+                            </div>
+                            <div class="more-action">
+                                <div class="more-icon">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </div>
+                        </figure>
+                    </a> 
+                </article>
+            <?php } ?>
         </div>
         <div class="row">
             <?php
