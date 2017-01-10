@@ -219,7 +219,7 @@ window.twttr = (function(d, s, id) {
                         <a class="dropdown-toggle disabled firstLevel" href="<?php echo DOCBASE.LANG_ALIAS; ?>contact" title="Холбоо барих">Холбоо барих</a>
                     </li>
 
-                    <?php
+                    <<!-- ?php
                         function subMenu($subpages)
                         {
                             global $parents;
@@ -259,7 +259,7 @@ window.twttr = (function(d, s, id) {
                                     <?php
                                 }
                             }
-                    } ?>
+                    } ?> -->
                     <li class="primary">
                         <?php
                         if(isset($_SESSION['user'])){ ?>
