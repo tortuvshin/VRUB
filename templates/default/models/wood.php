@@ -204,8 +204,26 @@ Trade Development bank of Mongolia</label>
                         $tree_status = $row['status'];
                         $tree_owner   = $row['owner'];
                         $tree_description   = $row['description'];
+
+                        if ($tree_name == "Нарс") {
+                            $imgsrc = DOCBASE."templates/default/images/nars.png";
+
+                            if ($tree_status == "зарагдсан") {
+                                $imgsrc = DOCBASE."templates/default/images/soldNars.png";
+                            }   
+                        } else if ($tree_name == "Голт бор") {
+                            $imgsrc = DOCBASE."templates/default/images/goltBor.png";
+
+                            if ($tree_status == "зарагдсан") {
+                                $imgsrc = DOCBASE."templates/default/images/soldGoltBor.png";
+                            }
+                        }
+
+
                         
-                        echo "<div id='$tree_code' class='tree' data-code='$tree_code' data-name='$tree_name' data-age='$tree_age' data-status='$tree_status' data-owner='$tree_owner'></div>";
+                        echo "<div id='$tree_code' class='tree' data-code='$tree_code' data-name='$tree_name' data-age='$tree_age' data-status='$tree_status' data-owner='$tree_owner' data-description='$tree_description'>
+                            <img src='$imgsrc'>
+                        </div>";
 
                         ?>
                  
@@ -221,29 +239,7 @@ Trade Development bank of Mongolia</label>
 <script>
 
 $("document").ready(function(){
-
-      $('.tree').each(function(){
-            var name = $(this).data("name");
-            if(name=="Нарс"){
-                  $(this).addClass('treeNars');
-            } 
-            if(name=="Голт бор") {
-                  $(this).addClass('treeGoltBor');
-            } 
-      });
        
-      $('.treeGoltBor').each(function(){
-            var states = $(this).data("status");
-            if(states=="зарагдсан"){
-                  $(this).addClass('soldGoltBor');
-            }   
-      });
-      $('.treeNars').each(function(){
-            var states = $(this).data("status");
-            if(states=="зарагдсан"){
-                  $(this).addClass('soldNars');
-            }   
-      });
       
       $('.tree').click(function() {
             var code = $(this).data("code");
