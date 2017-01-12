@@ -88,39 +88,40 @@ Trade Development bank of Mongolia</label>
                                 </div>
                                 <div class="treeInfo">
                                      <div class="form-group">
-                                            <label class="col-sm-3 control-label">Код:</label>
-                                            <div class="col-sm-8">
+                                            <label class="col-sm-4 control-label">Код:</label>
+                                            <div class="col-sm-7">
                                                 <input type="text" class="form-control tree-code" id="code" name="code" value="" placeholder="Модны код"  >
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-3 control-label">Нэр:</label>
-                                            <div class="col-sm-8">
+                                            <label class="col-sm-4 control-label">Нэр:</label>
+                                            <div class="col-sm-7">
                                                 <input type="text" class="form-control tree-name" id="name" name="name" value="" placeholder="Модны нэр"  >
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label  class="col-sm-3 control-label">Нас:</label>
-                                            <div class="col-sm-8">
+                                            <label  class="col-sm-4 control-label">Нас:</label>
+                                            <div class="col-sm-7">
                                                 <input type="text" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас" >
                                             </div>
                                         </div>                                      
                                         <div class="form-group">
-                                            <label  class="col-sm-3 control-label">Төлөв:</label>
-                                            <div class="col-sm-8">
+                                            <label  class="col-sm-4 control-label">Төлөв:</label>
+                                            <div class="col-sm-7">
                                                 <input type="text" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв" >
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label  class="col-sm-3 control-label">Эзэмшигч:</label>
-                                            <div class="col-sm-8">
+                                            <label  class="col-sm-4 control-label">Эзэмшигч:</label>
+                                            <div class="col-sm-7">
                                                 <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Эзэмшигч" value="" >
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label  class="col-sm-3 control-label">Тайлбар:</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control  accountid" id="description" name="description" placeholder="" value="" >
+                                            <label  class="col-sm-12 control-label">Пайз дээр байрших үг:</label>
+                                            <div class="col-sm-12">
+                                                <textarea type="text" class="form-control  accountid" id="description" name="description" placeholder="" value="" >
+                                                </textarea>
                                             </div>
                                         </div>
                                        
@@ -176,7 +177,7 @@ Trade Development bank of Mongolia</label>
                   <table class="tg">
                     <tr>
                       <th class="tg-031e"></th>
-                      <th class="tg-031e"style="margin-right: 2px;">Голт бор<br> </th>
+                      <th class="tg-031e">Голт бор<br> </th>
                       <th class="tg-yw4l"> Нарс</th>
                     </tr>
                     <tr>
@@ -218,9 +219,7 @@ Trade Development bank of Mongolia</label>
                                 $imgsrc = DOCBASE."templates/default/images/soldGoltBor.png";
                             }
                         }
-
-
-                        
+           
                         echo "<div id='$tree_code' class='tree' data-code='$tree_code' data-name='$tree_name' data-age='$tree_age' data-status='$tree_status' data-owner='$tree_owner' data-description='$tree_description'>
                             <img src='$imgsrc'>
                         </div>";
@@ -229,10 +228,7 @@ Trade Development bank of Mongolia</label>
                  
                     <?php }
                 } ?>
-            
-     
         </div>
-    
     </div>
 </section>
 
