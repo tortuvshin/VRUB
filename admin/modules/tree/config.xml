@@ -14,6 +14,7 @@
 		<col label="Нас" name="age" type="none"/>
 		<col label="Статус" name="status" type="none"/>
 		<col label="Эзэн" name="owner" type="none"/>
+		<col label="И-мэйл" name="email" type="none"/>
 		<col label="Тайлбар" name="description" type="none"/>
 	</list>
 	<form>
@@ -28,6 +29,7 @@
             </options>
 		</field>
 		<field multi="0" label="Эзэн" name="owner" type="text" required="0" unique="0" validation="none"/>
+		<field multi="0" label="И-мэйл" name="email" type="text" required="0" unique="0" validation="none"/>
 		<field multi="0" label="Тайлбар" name="description" type="textarea" required="0" unique="0" validation="none"/>
 	</form>
     <roles>
