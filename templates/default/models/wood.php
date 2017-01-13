@@ -160,9 +160,7 @@ require(getFromTemplate("common/header.php", false));
       <!-- Modal content-->
       <div class="modal-content">
           
-          <!-- 
-          <div class="alert alert-success" style="display:none;"></div>
-          <div class="alert alert-danger" style="display:none;"></div> -->
+          
           <form class="form-horizontal company" action="<?php echo DOCBASE.$page['alias']; ?>" method="POST" role="form" id="comp">
                           
             <div class="modal-body">
@@ -179,7 +177,7 @@ require(getFromTemplate("common/header.php", false));
               </div>
               <div class="treeInfo">
                 <input type="hidden" class="form-control tree-code" id="code" name="code" value="" placeholder="Модны код"  >
-                <input type="hidden" class="form-control " id="name" name="name" value="" placeholder="Модны нэр"  >  
+                <input type="hidden" class="form-control tree-name" id="name" name="name" value="" placeholder="Модны нэр"  >  
                 <input type="hidden" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас" >
                 <input type="hidden" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв" >        
                   <div class="form-group">
@@ -238,6 +236,8 @@ $("document").ready(function(){
             if(name=="Нарс") {                
                  $('#treePic').attr('src', '<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/treeLarge.jpg');
             }
+
+
             $("#myModal").modal('show');     
             $(".tree-code").val(code);          
             $(".billing-code").html(code);
