@@ -63,93 +63,6 @@ require(getFromTemplate("common/header.php", false));
     
     <?php include(getFromTemplate("common/page_header.php", false)); ?>
   
-  
-  
-         <div class="modal fade" id="myModal" role="dialog">
-
-
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        
-                        <div class="alert alert-success" style="display:none;"></div>
-                        <div class="alert alert-danger" style="display:none;"></div>
-                        <form class="form-horizontal company" action="<?php echo DOCBASE.$page['alias']; ?>" method="POST" role="form" id="comp">
-                                        
-                          <div class="modal-body">
-                            <label  class="col-sm-12 control-label" style="margin-bottom: 20px"> Мод ивээн тэтгэх заавар:
-Khard llc
-457052038
-Swift code: TDBMMNUB
-100$ шилжүүлж гүйлгээний утга дээр ивээн тэтгэх модны кодыг бичнэ үү.
-Trade Development bank of Mongolia</label>
-                                <div class="treeImage">
-                                     <img id="treePic">
-                                </div>
-                                <div class="treeInfo">
-                                     <div class="form-group">
-                                            <label class="col-sm-4 control-label">Код:</label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control tree-code" id="code" name="code" value="" placeholder="Модны код"  >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-4 control-label">Нэр:</label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control tree-name" id="name" name="name" value="" placeholder="Модны нэр"  >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label  class="col-sm-4 control-label">Нас:</label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас" >
-                                            </div>
-                                        </div>                                      
-                                        <div class="form-group">
-                                            <label  class="col-sm-4 control-label">Төлөв:</label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label  class="col-sm-4 control-label">Эзэмшигч:</label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Эзэмшигч" value="" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label  class="col-sm-4 control-label">Мэйл хаяг:</label>
-                                            <div class="col-sm-7">
-                                                <input type="text" class="form-control  tree-email" id="owner" name="email" placeholder="Мэйл хаяг" value="" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label  class="col-sm-12 control-label">Пайз дээр байрших үг:</label>
-                                            <div class="col-sm-12">
-                                                <textarea type="text" class="form-control  accountid" id="description" name="description" placeholder="" value="" >
-                                                </textarea>
-                                            </div>
-                                        </div>
-                                       
-                                </div>
-  
-                          </div>
-                          
-                          <div class="modal-footer">
-                              <button type="submit" class="treeBooking btn btn-default" name="save" id="order">Захиалах</button>
-                              <button class="btn btn-default" data-dismiss="modal">Гарах</button>
-                          </div>
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
     <section>
             <style>
             .parallaxWood2 {
@@ -241,6 +154,71 @@ Trade Development bank of Mongolia</label>
     </div>
 </section>
 
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+          <!-- 
+          <div class="alert alert-success" style="display:none;"></div>
+          <div class="alert alert-danger" style="display:none;"></div> -->
+          <form class="form-horizontal company" action="<?php echo DOCBASE.$page['alias']; ?>" method="POST" role="form" id="comp">
+                          
+            <div class="modal-body">
+              
+              <div class="treeImage">
+                   <img id="treePic">
+                    <p class="name-or-age">
+                      <a class="img-age"></a>
+                      <a> настай</a>
+                      <a class="img-name"></a>
+                    </p>
+                   </img>
+                   
+              </div>
+              <div class="treeInfo">
+                <input type="hidden" class="form-control tree-code" id="code" name="code" value="" placeholder="Модны код"  >
+                <input type="hidden" class="form-control " id="name" name="name" value="" placeholder="Модны нэр"  >  
+                <input type="hidden" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас" >
+                <input type="hidden" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв" >        
+                      <label  class="col-sm-12 control-label" style="margin-bottom: 20px">
+                    <h1></h1>
+                    <p>Khard llc: 457052038<p>
+                    <p>Swift code: TDBMMNUB<p>
+                    <p>100$ шилжүүлж гүйлгээний утга дээр <label class="billing-code"></label> энэхүү кодыг бичнэ үү.<p>
+                    <p>Trade Development bank of Mongolia<p>
+                  </label>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">Овог нэр:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Эзэмшигч" value="" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">Мэйл хаяг:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control  tree-email" id="owner" name="email" placeholder="Мэйл хаяг" value="" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">Пайз дээр байрших үг:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control  tree-description" id="description" name="description" placeholder="" value="" >     
+                    </div>
+                </div> 
+                <div class="form-group">
+                  <button type="submit" class="treeBooking btn btn-default" name="save" id="order">Захиалах</button>
+                  <button class="btn btn-default" data-dismiss="modal">Гарах</button>
+                </div>
+              </div>
+            </div>
+            
+          </form>
+      </div>
+  </div>
+</div>
 <script>
 
 $("document").ready(function(){
@@ -258,12 +236,15 @@ $("document").ready(function(){
             if(name=="Нарс") {                
                  $('#treePic').attr('src', '<?php echo DOCBASE; ?>templates/<?php echo TEMPLATE; ?>/images/treeLarge.jpg');
             }
-            $("#myModal").modal('show');          
-            $(".tree-code").val(code);
+            $("#myModal").modal('show');     
+            $(".tree-code").val(code);          
+            $(".billing-code").html(code);
             $(".tree-name").val(name);
             $(".tree-age").val(age);
             $(".tree-state").val(state);
             $(".tree-owner").val(owner);
+            $(".img-name").html(name);
+            $(".img-age").html(age);
             
       });
       $('.tree').mouseover(function(){

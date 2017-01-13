@@ -9623,10 +9623,6 @@ td, th {
     padding-left: 10px;
 }
 
-.modal-body{
-	height:550px;
-}
-
 .treeImage{
 	float:left;
 	width: 50%;
@@ -9648,9 +9644,6 @@ td, th {
 	color:#fff;
 }
 
-.modal-dialog{
-	width: 90%;
-}
 .form-control{
 	border-radius:10px;
 }
@@ -9693,4 +9686,16 @@ td, th {
 .treeState{
 
     font-family: 'Roboto', sans-serif;
+}
+
+.modal-dialog{
+	width: 90%;
+}
+
+.modal-body{
+	height:550px;
+}
+
+.modal-content {
+	border-radius: 0 !important;
 }
