@@ -21,12 +21,14 @@ if(isset($_POST['save'])){
     $age = $_POST['age'];
     $owner = $_POST['owner'];
     $state = $_POST['state'];
+    $email = $_POST['email'];
     $description = $_POST['description'];
     
     if($code == "") $field_notice['code'] = $texts['REQUIRED_FIELD'];
     if($name == "") $field_notice['name'] = $texts['REQUIRED_FIELD'];
     if($age == "") $field_notice['age'] = $texts['REQUIRED_FIELD'];
     if($owner == "") $field_notice['owner'] = $texts['REQUIRED_FIELD'];
+    if($email == "") $field_notice['email'] = $texts['REQUIRED_FIELD'];
     if($description == "") $field_notice['description'] = $texts['REQUIRED_FIELD'];
     
     if(count($field_notice) == 0){
@@ -36,6 +38,7 @@ if(isset($_POST['save'])){
         $data['age'] = $age;
         $data['status'] = $state;
         $data['owner'] = $owner;
+        $data['email'] = $email;
         $data['description'] = $description;
     
         $result_tree = db_prepareInsert($db, "pm_wd", $data);
@@ -115,6 +118,12 @@ Trade Development bank of Mongolia</label>
                                             <label  class="col-sm-4 control-label">Эзэмшигч:</label>
                                             <div class="col-sm-7">
                                                 <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Эзэмшигч" value="" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label  class="col-sm-4 control-label">Мэйл хаяг:</label>
+                                            <div class="col-sm-7">
+                                                <input type="text" class="form-control  tree-email" id="owner" name="email" placeholder="Мэйл хаяг" value="" >
                                             </div>
                                         </div>
                                         <div class="form-group">
