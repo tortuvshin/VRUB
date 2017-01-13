@@ -159,7 +159,6 @@ require(getFromTemplate("common/header.php", false));
   <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
           
           <!-- 
           <div class="alert alert-success" style="display:none;"></div>
@@ -183,29 +182,32 @@ require(getFromTemplate("common/header.php", false));
                 <input type="hidden" class="form-control " id="name" name="name" value="" placeholder="Модны нэр"  >  
                 <input type="hidden" class="form-control tree-age" id="age" name="age" value="" placeholder="Нас" >
                 <input type="hidden" class="form-control tree-state" id="state" name="state" value="" placeholder="Төлөв" >        
-                      <label  class="col-sm-12 control-label" style="margin-bottom: 20px">
-                    <h1></h1>
-                    <p>Khard llc: 457052038<p>
-                    <p>Swift code: TDBMMNUB<p>
-                    <p>100$ шилжүүлж гүйлгээний утга дээр <label class="billing-code"></label> энэхүү кодыг бичнэ үү.<p>
-                    <p>Trade Development bank of Mongolia<p>
-                  </label>
+                  <div class="form-group">
+                    <label  class="col-sm-12 control-label" style="margin-bottom: 20px">
+                      <h4>Мод ивээн тэтгэх заавар</h4>
+                      <p>Хүлээн авагч:  Khard LLC<p>
+                      <p>Дансны дугаар: 457052038<p>
+                      <p>Swift code: TDBMMNUB<p>
+                      <p>100$ шилжүүлж гүйлгээний утга дээр <label class="billing-code"></label> энэхүү кодыг бичнэ үү.<p>
+                      <p>Trade Development bank of Mongolia<p>
+                    </label>
+                  </div>
                 <div class="form-group">
                     <label  class="col-sm-4 control-label">Овог нэр:</label>
                     <div class="col-sm-7">
-                        <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Эзэмшигч" value="" >
+                        <input type="text" class="form-control  tree-owner" id="owner" name="owner" placeholder="Овог нэр оруулна уу" value="" >
                     </div>
                 </div>
                 <div class="form-group">
                     <label  class="col-sm-4 control-label">Мэйл хаяг:</label>
                     <div class="col-sm-7">
-                        <input type="text" class="form-control  tree-email" id="owner" name="email" placeholder="Мэйл хаяг" value="" >
+                        <input type="text" class="form-control  tree-email" id="owner" name="email" placeholder="Мэйл хаягаа оруулна уу" value="" >
                     </div>
                 </div>
                 <div class="form-group">
                     <label  class="col-sm-4 control-label">Пайз дээр байрших үг:</label>
                     <div class="col-sm-7">
-                        <input type="text" class="form-control  tree-description" id="description" name="description" placeholder="" value="" >     
+                        <input type="text" class="form-control  tree-description" id="description" name="description" placeholder="Пайз дээр байрших үг оруулна уу" value="" >     
                     </div>
                 </div> 
                 <div class="form-group">
