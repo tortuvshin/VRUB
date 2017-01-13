@@ -9632,7 +9632,8 @@ td, th {
 	width: 50%;
 }
 .treeImage img{
-	width: 90%;
+	width: 100%;
+	height: 100%;
 }
 .treeInfo{
 	width: 50%;
@@ -9648,7 +9649,7 @@ td, th {
 }
 
 .modal-dialog{
-	width: 700px;
+	width: 90%;
 }
 .form-control{
 	border-radius:10px;
@@ -9657,23 +9658,6 @@ td, th {
 	cursor: pointer;
 }
 
-.treeGoltBor{
-	background: url(../images/goltbor.png);
-	background-repeat: no-repeat;
-
-}
-.treeNars{
-	background: url(../images/nars.png);
-    background-repeat: no-repeat;
-}
-.soldGoltBor{
-	background: url(../images/soldGoltBor.png);
-	background-size: 18px 23px;
-}
-.soldNars{
-	background: url(../images/soldNars.png);
-	background-size: 19px 23px;
-}
 .tree-Hover{
 	width: 20px;
 	height: 24px;
