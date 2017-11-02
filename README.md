@@ -1,12 +1,12 @@
 <p align="center">
     <a href="https://github.com/tortuvshin/taracode/issues">
-        <img src="https://img.shields.io/github/issues/tortuvshin/boxshop.svg"
+        <img src="https://img.shields.io/github/issues/tortuvshin/taracode.svg"
             alt="Issues"></a>
      <a href="https://github.com/tortuvshin/taracode/fork">
-        <img src="https://img.shields.io/github/forks/tortuvshin/boxshop.svg?style=social&label=Fork"
+        <img src="https://img.shields.io/github/forks/tortuvshin/taracode.svg?style=social&label=Fork"
             alt="Forks"></a>
     <a href="https://github.com/tortuvshin/taracode/stargers">
-        <img src="https://img.shields.io/github/stars/tortuvshin/boxshop.svg?style=social&label=Stars"
+        <img src="https://img.shields.io/github/stars/tortuvshin/taracode.svg?style=social&label=Stars"
             alt="Stars"></a>
     <a href="https://github.com/tortuvshin/">
         <img src="https://img.shields.io/github/followers/tortuvshin.svg?style=social&label=Follow"
